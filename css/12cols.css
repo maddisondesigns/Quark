@@ -1,0 +1,202 @@
+/*  GRID COLUMN SETUP   ============================================================================= */
+
+.col {
+	display: block;
+	float:left;
+	margin: 0 0 0 1.6%;
+}
+
+.col:first-child { margin-left: 0; } /* all browsers except IE6 and lower */
+
+.row {
+	clear: both;
+	padding: 0;
+	margin: 0;
+}
+
+
+/*  GRID OF TWELVE   ============================================================================= */
+
+.span_12_of_12 { width: 100%; }
+
+.span_11_of_12 { width: 91.46%; }
+
+.span_10_of_12 { width: 83%; }
+
+.span_9_of_12 { width: 74.54%; }
+
+.span_8_of_12 { width: 66.08%; }
+
+.span_7_of_12 { width: 57.62%; }
+
+.span_6_of_12 { width: 49.16%; }
+
+.span_5_of_12 { width: 40.7%; }
+
+.span_4_of_12 { width: 32.24%; }
+
+.span_3_of_12 { width: 23.78%; }
+
+.span_2_of_12 { width: 15.32%; }
+
+.span_1_of_12 { width: 6.86%; }
+
+
+/* ==========================================================================
+   Start of Media Queries
+   ========================================================================== */
+
+/*  Breakpoints are set based on the design, not based on device sizes */
+
+@media only screen and (max-width: 1100px) {
+	.banner h1 {
+		font-size: 44px;
+		font-size: 2.75rem; /* 44px / 16px */
+	}
+	.banner h2 {
+		font-size: 24px;
+		font-size: 1.5rem; /* 24px / 16px */
+	}
+	.main-navigation {
+		margin: 32px 0 0 0;
+		margin: 2rem 0 0 0;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.banner h1 {
+		font-size: 44px;
+		font-size: 2.75rem; /* 44px / 16px */
+	}
+	.banner h2 {
+		font-size: 24px;
+		font-size: 1.5rem; /* 24px / 16px */
+	}
+	.banner .span_6_of_12 {
+		width: 100%; 
+	}
+	.banner h1, .banner h2, .banner p {
+		text-align: center;
+	}
+	.main-navigation {
+		margin: 20px 0 0 0;
+		margin: 1.25rem 0 0 0;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	header .span_4_of_12 {
+		width: 100%; 
+	}
+	header .span_8_of_12 {
+		width: 100%;
+		margin-left: 0;
+	}
+	header .main-navigation {
+		margin-top: 0;
+		float: none;
+	}
+	.main-navigation .nav-menu > li:first-child {
+		margin-left: 0;
+	}
+	.social-media-icons {
+		float: none;
+		text-align: left;
+	}
+	.social-media-icons li {
+		margin: 0.1em 0.5em 0 0;
+	}
+}
+
+/*  Go full Width at less than 650px */
+
+@media only screen and (max-width: 650px) {
+	.span_12_of_12 {
+		width: 100%; 
+	}
+	.span_11_of_12 {
+		width: 100%; 
+	}
+	.span_10_of_12 {
+		width: 100%; 
+	}
+	.span_9_of_12 {
+		width: 100%; 
+	}
+	.span_8_of_12 {
+		width: 100%; 
+	}
+	.span_7_of_12 {
+		width: 100%; 
+	}
+	.span_6_of_12 {
+		width: 100%; 
+	}
+	.span_5_of_12 {
+		width: 100%; 
+	}
+	.span_4_of_12 {
+		width: 100%; 
+	}
+	.span_3_of_12 {
+		width: 100%; 
+	}
+	.span_2_of_12 {
+		width: 100%; 
+	}
+	.span_1_of_12 {
+		width: 100%; 
+	}
+	.col { 
+		margin: 1% 0 1% 0%;
+	}
+	.main-small-navigation .nav-menu, .nav-menu ul {
+		padding: 0;
+	}
+	.main-small-navigation .nav-menu ul {
+		padding-left: 16px;
+		padding-left: 1rem;
+	}
+}
+
+
+/*  Adjust the menu at less than 520px */
+
+@media only screen and (max-width: 520px) {
+	.site-title h1 {
+		text-align: center;
+	}
+	.main-small-navigation .nav-menu,
+	.main-small-navigation .nav-menu ul,
+	.nav-menu,
+	.nav-menu ul {
+		padding: 0;
+	}
+	.main-small-navigation,
+	.main-navigation li {
+		width: 100%;
+	}
+	.main-small-navigation {
+		text-align: center;
+	}
+	.main-small-navigation ul li,
+	.main-navigation ul li {
+		background-color: #fff;
+		margin: 5px 0;
+		text-align: center;
+	}
+	.main-navigation ul ul, .main-navigation ul ul li ul {
+		position: relative;
+	}
+	.main-navigation ul ul li ul {
+		left: 0;
+	}
+	.main-navigation ul ul a {
+		color: #fff; /* Nav bar dropdown link color */
+		background-color: #333;  /* Nav bar dropdown background color */
+		width: 100%; /* Nav bar dropdown width */
+	}
+	.social-media-icons {
+		text-align: center;
+	}
+}
