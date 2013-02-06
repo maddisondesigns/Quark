@@ -61,8 +61,6 @@
 						<?php	echo quark_get_social_media(); ?>
 					</div>
 					<nav id="site-navigation" class="main-navigation" role="navigation">
-						<!-- <h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
-						<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a> -->
 						<h3 class="menu-toggle assistive-text"><?php _e( 'Menu', 'quark' ); ?></h3>
 						<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'quark' ); ?>"><?php _e( 'Skip to content', 'quark' ); ?></a></div>
 						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
