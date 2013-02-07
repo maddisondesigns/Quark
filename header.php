@@ -22,9 +22,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="www.maddisondesigns.com">
 	<meta http-equiv="cleartype" content="on">
 
 	<!-- Responsive and mobile friendly stuff -->
