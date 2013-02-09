@@ -179,24 +179,24 @@ h1 {
 	margin-bottom: 10px;
 	margin-bottom: 0.625rem;
 	font-size: 48px;
-	font-size: 3rem; /* 48px / 16 */
-	line-height: 1.25; /* 60px / 48px */
+	font-size: 3rem;
+	line-height: 1.25;
 }
 
 h2 { 
 	margin-bottom: 8px;
 	margin-bottom: .5rem;
 	font-size: 36px;
-	font-size: 2.25rem; /* 36px / 16 */
-	line-height: 1.1666; /* 42px / 36px */
+	font-size: 2.25rem;
+	line-height: 1.1666;
 }
 
 h3 { 
 	margin-bottom: 6px;
 	margin-bottom: 0.375rem;
 	font-size: 28px;
-	font-size: 1.75rem; /* 28px / 16 */
-	line-height: 1.2857; /* 36px / 28px */
+	font-size: 1.75rem;
+	line-height: 1.2857;
 }
 
 
@@ -204,24 +204,24 @@ h4 {
 	margin-bottom: 5px;
 	margin-bottom: 0.3125rem;
 	font-size: 24px;
-	font-size: 1.5rem; /* 24px / 16  */
-	line-height: 1.25; /* 30px / 24px */
+	font-size: 1.5rem;
+	line-height: 1.25;
 }
 
 h5 { 
 	margin-bottom: 5px;
 	margin-bottom: 0.3125rem;
 	font-size: 16px;
-	font-size: 1rem; /* 16px / 16 */
-	line-height: 1.25; /* 20px / 16px */
+	font-size: 1rem;
+	line-height: 1.25;
 }
 
 h6 { 
 	margin-bottom: 5px;
 	margin-bottom: 0.3125rem;
 	font-size: 14px;
-	font-size: .875rem; /* 14px / 16 */
-	line-height: 1.2142; /* 17px / 14px */
+	font-size: .875rem;
+	line-height: 1.2142;
 }
 
 hr {
@@ -229,7 +229,7 @@ hr {
 	border: 0;
 	height: 1px;
 	margin: 24px;
-	margin-bottom: 1.5rem;
+	margin: 1.5rem;
 }
 
 ol, ul {
@@ -240,7 +240,7 @@ p, ol, ul, dl, address {
 	margin: 0 0 24px 0;
 	margin: 0 0 1.5rem 0;
 	font-size: 16px;
-	font-size: 1rem; /* 16px / 16 */
+	font-size: 1rem;
 	line-height: 1.5;
 }
 
@@ -330,7 +330,8 @@ q:after {
 blockquote {
 	border-left: 5px solid #333;
 	margin: 0 0 18px 20px;
-	padding: 0 0 0 15px;
+	margin: 0 0 1.125rem 1.25rem;
+	padding: 0 0 0 16px;
 	padding: 0 0 0 1rem;
 }
 
@@ -338,7 +339,9 @@ blockquote.pull-right {
 	border-left: 0 none;
 	border-right: 5px solid #333;
 	margin: 0 20px 18px 0;
-	padding: 0 15px 0 0;
+	margin: 0 1.25rem 1.125rem 0;
+	padding: 0 16px 0 0;
+	padding: 0 1rem 0 0;
 }
 
 blockquote p {
@@ -346,7 +349,7 @@ blockquote p {
 	font-weight: normal;
 	font-style: normal;
 	font-size: 24px;
-	font-size: 1.5rem; /* 24px / 16px */
+	font-size: 1.5rem;
 	margin-bottom: 0;
 }
 
@@ -363,8 +366,8 @@ blockquote cite {
 	font-weight: normal;
 	font-style: normal;
 	font-size: 14px;
-	font-size: 0.875rem; /* 14px / 16px */
-	line-height: 1.125; /* 18px / 16px */
+	font-size: 0.875rem;
+	line-height: 1.125;
 	color: #999;
 	display: block;
 }
@@ -386,14 +389,16 @@ code, pre {
 	color: #555;
 	font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
 	font-size: 12px;
-	font-size: 0.75rem; /* 12px / 16px */
+	font-size: 0.75rem;
 	padding: 0 3px 2px;
+	padding: 0 0.1875rem 0.125rem;
 }
 
 code {
 	background-color: #f7f7f9;
 	border: 1px solid #e1e1e8;
 	padding: 2px 4px;
+	padding: 0.125rem 0.25rem;
 }
 
 abbr,
@@ -422,6 +427,7 @@ sub {
 .wp-caption {
 	max-width: 100%; /* Keep wide captions from overflowing their container. */
 	padding: 4px;
+	padding: 0.25rem;
 }
 
 .wp-caption .wp-caption-text,
@@ -431,7 +437,7 @@ sub {
 	font-weight: normal;
 	font-style: normal;
 	font-size: 14px;
-	font-size: 0.875rem; /* 14px / 16px */
+	font-size: 0.875rem;
 	line-height: 1.5;
 	color: #777;
 	text-align: center;
@@ -474,8 +480,8 @@ img.wp-smiley, .rsswidget img {
 .menu-toggle, button, input {
 	font-family: 'PTSansRegular', Helvetica, Arial, sans-serif;
 	font-size: 16px;
-	font-size: 1rem; /* 16px / 16 */
-	line-height: 1.25; /* 20px / 16px */
+	font-size: 1rem; 
+	line-height: 1.25;
 	margin: 0;
 	font-size: 100%;
 	vertical-align: middle;
@@ -511,11 +517,12 @@ input[type="submit"] {
 	display: inline-block;
 	*display: inline;
 	padding: 8px 14px;
+	padding: 0.5rem 0.875rem;
 	margin-bottom: 0;
 	*margin-left: .3em;
 	font-size: 16px;
-	font-size: 1rem; /* 16px / 16 */
-	line-height: 1.25; /* 20px / 16px */
+	font-size: 1rem;
+	line-height: 1.25;
 	color: #333333;
 	text-align: center;
 	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
@@ -632,8 +639,9 @@ input[type="submit"].btn::-moz-focus-inner {
 .btn-large,
 input[type="submit"].btn-large {
 	padding: 10px 15px;
+	padding: 0.625rem 0.9375rem;
 	font-size: 20px;
-	font-size: 1.25rem; /* 20px / 16 */
+	font-size: 1.25rem;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -642,8 +650,9 @@ input[type="submit"].btn-large {
 .btn-small,
 input[type="submit"].btn-small {
 	padding: 5px 9px;
+	padding: 0.3125rem 0.5625rem;
 	font-size: 13px;
-	font-size: 0.8125rem; /* 13px / 16 */
+	font-size: 0.8125rem;
 }
 
 /* Form fields */
@@ -653,7 +662,7 @@ input[type="email"],
 input[type="url"],
 textarea {
 	font-family: inherit;
-	padding: 6px;
+	padding: 8px;
 	padding: 0.5rem;
 	font-family: inherit;
 	border: 1px solid #ccc;
@@ -669,15 +678,11 @@ textarea {
 	font-weight: normal;
 	font-style: normal;
 	font-size: 14px;
-	font-size: 0.875rem; /* 14px / 16px */
+	font-size: 0.875rem;
 	line-height: 2;
 	text-transform: uppercase;
 }
 
-#optionsframework .section-text .controls input, #optionsframework .section-text .controls {
-    min-width: 350px;
-    width: 350px;
-}
 
 /* ==========================================================================
    Site specific styles
@@ -697,7 +702,7 @@ textarea {
 	clear: both;
 	width: 90%;
 	font-size: 16px;
-	font-size: 1rem; /* 16px / 16 */
+	font-size: 1rem;
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0;
@@ -707,6 +712,7 @@ textarea {
 
 .site-title img {
 	margin: 20px 0 0 0;
+	margin: 1.25rem 0 0 0;
 }
 
 #bannercontainer {
@@ -718,23 +724,24 @@ textarea {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 15px 0;
+	padding: 0.9375rem 0;
 	min-height: 75px;
 }
 
 .home .banner .widget {
 	margin: 24px 0;
-	margin: 1.5em 0; /* 24px / 16px */
+	margin: 1.5rem 0;
 }
 
 .banner h1 {
 	color: #eaeaea;
 	font-size: 60px;
-	font-size: 3.75rem; /* 60px / 16px */
+	font-size: 3.75rem;
 }
 .banner h2 {
 	color: #eaeaea;
 	font-size: 32px;
-	font-size: 2rem; /* 32px / 16px */
+	font-size: 2rem;
 }
 
 .home #maincontentcontainer .widget {
@@ -746,6 +753,7 @@ textarea {
 	-webkit-background-clip: padding-box;
 	background-clip: padding-box;
 	padding: 10px;
+	padding: 0.625rem;
 }
 
 #maincontentcontainer {
@@ -756,7 +764,7 @@ textarea {
 	clear: both;
 	width: 90%;
 	font-size: 16px;
-	font-size: 1rem; /* 16px / 16 */
+	font-size: 1rem;
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 32px 0;
@@ -766,22 +774,20 @@ textarea {
 	position: relative;
 }
 
+.home-sidebar {
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding-bottom: 32px;
+	padding-bottom: 2rem;
+}
+
+.home .site-content {
+	padding-bottom: 0;
+}
+
 .home .site-content article {
 	margin-bottom: 0;
-}
-
-/* Prettify the list of icons so they easy to read */
-ul.the-icons {
-	list-style: none;
-	padding: 0;
-}
-
-ul.the-icons li {
-	background: none repeat scroll 0 0 #EEEEEE;
-	display: inline-block;
-	margin: 0.5em 1em 0.5em 0;
-	padding: 0.25em 0.5em;
-	width: 13em;
 }
 
 /* Social Media icons */
@@ -829,7 +835,7 @@ ul.the-icons li {
 	font-weight: normal;
 	font-style: normal;
 	font-size: 14px;
-	font-size: 0.875rem; /* 14px / 16px */
+	font-size: 0.875rem;
 	float: right;
 }
 
@@ -866,14 +872,16 @@ article.sticky {
 
 .site-content article {
 	margin-bottom: 40px;
-	margin-bottom: 2.5rem; /* 60px / 16px */
+	margin-bottom: 2.5rem;
 }
 
 .header-meta {
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 	margin-bottom: 10px;
+	margin-bottom: 0.625rem;
 	padding: 5px 0;
+	padding: 0.3125rem 0;
 }
 
 .header-meta a {
@@ -890,16 +898,19 @@ article.sticky {
 
 .entry-content {
 	margin-bottom: 20px;
+	margin-bottom: 1.25rem;
 }
 
 .post-categories a,
 .post-tags a {
 	font-size: 14px;
-	font-size: 0.875rem; /* 14px / 16px */
-	background-color:#333;
-	color:#fff;
-	padding:0 5px;
+	font-size: 0.875rem;
+	background-color: #333;
+	color: #fff;
+	padding: 0 5px;
+	padding: 0 0.3125rem;
 	margin: 0 3px 0 0;
+	margin: 0 0.1875rem 0 0;
 	display: inline;
 	text-decoration: none;
 }
@@ -933,8 +944,9 @@ article.sticky {
 	font-weight: normal;
 	font-style: normal;
 	font-size: 14px;
-	font-size: 0.875rem; /* 14px / 16px */
+	font-size: 0.875rem;
 	margin: 0 20px 0 0;
+	margin: 0 1.25rem 0 0;
 }
 
 .page-links {
@@ -947,6 +959,7 @@ article.sticky {
 	background-color: #333;
 	border: 1px solid #333;
 	padding: 2px 4px;
+	padding: 0.125rem 0.25rem;
 	color: #fff;
 }
 
@@ -1016,6 +1029,7 @@ article.sticky {
 .comment-content td {
 	border-top: 1px solid #ccc;
 	padding: 6px 10px 6px 0;
+	padding: 0.375rem 0.625rem 0.375rem 0;
 }
 
 .entry-content ol,
@@ -1130,6 +1144,7 @@ article.sticky {
 .social-meta a {
 	text-decoration: none;
 	margin-right: 5px;
+	margin-right: 0.3125rem;
 }
 
 
@@ -1140,6 +1155,7 @@ article.sticky {
 /* Aside */
 .format-aside .entry-content {
 	margin: 20px 0 18px 0;
+	margin: 1.25rem 0 1.125rem 0;
 }
 
 .format-aside .entry-content p:last-child {
@@ -1150,7 +1166,9 @@ article.sticky {
 .format-status .entry-content {
 	border-left: 5px solid #333;
 	margin: 20px 0 18px 0;
+	margin: 1.25rem 0 1.125rem 0;
 	padding: 0 0 0 15px;
+	padding: 0 0 0 0.9375rem;
 }
 
 .format-status .entry-content p:last-child {
@@ -1164,8 +1182,8 @@ article.sticky {
 	font-style: normal;
 	speak: none;
 	vertical-align: top;
-	font-size: 80px;
-	font-size: 2rem; /* 80px / 16px */
+	font-size: 32px;
+	font-size: 2rem;
 	content: "\e062";
 	color: #ddd;
 	top: -15px;
@@ -1176,6 +1194,7 @@ article.sticky {
 
 .format-quote .entry-content {
 	margin-top: 40px;
+	margin-top: 2.5rem;
 	position: relative;
 }
 
@@ -1190,6 +1209,7 @@ article.sticky {
 
 .audiojs .time {
 	padding-left: 22px;
+	padding-left: 1.375rem;
 }
 
 .audiojs .time em {
@@ -1205,7 +1225,7 @@ article.sticky {
 .archive-header,
 .page-header {
 	margin-bottom: 32px;
-	margin-bottom: 2rem; /* 32px / 16px */
+	margin-bottom: 2rem;
 	border-bottom: 1px solid #CCCCCC;
 }
 
@@ -1215,10 +1235,10 @@ article.sticky {
 	font-style: normal;
 	color: #777;
 	font-size: 14px;
-	font-size: 0.875rem; /* 14px / 16px*/
+	font-size: 0.875rem;
 	line-height: 2;
 	margin-top: 16px;
-	margin-top: 1rem; /* 16px / 16px*/
+	margin-top: 1rem;
 }
 
 
@@ -1329,7 +1349,7 @@ article.sticky {
 
 a.comment-reply-link {
 	font-size: 14px;
-	font-size: 0..875rem;
+	font-size: 0.875rem;
 	line-height: 1.8;
 	color: #686868;
 	text-decoration: none;
@@ -1430,10 +1450,12 @@ form label.error {
 	font-family: 'PTSansBold', Helvetica, Arial, sans-serif;
 	font-style: normal;
 	display:block;
-	padding:0 10px 0 10px;
-	margin:5px 0 5px 0;
-	font-size:14px;
-	font-size: 0.875rem; /* 14px / 16px */
+	padding: 0 10px 0 10px;
+	padding: 0 0.625rem 0 0.625rem;
+	margin: 5px 0 5px 0;
+	margin: 0.3125rem 0 0.3125rem 0;
+	font-size: 14px;
+	font-size: 0.875rem;
 	border-left: 4px solid #bb0504;
 	display: none;
 }
@@ -1454,10 +1476,11 @@ form label.error {
 	clear: both;
 	width: 90%;
 	font-size: 16px;
-	font-size: 1rem; /* 16px / 16px */
+	font-size: 1rem;
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 30px 0 10px 0;
+	padding: 30px 0 0 0;
+	padding: 1.875rem 0 0 0;
 	color: #999;
 }
 
@@ -1484,13 +1507,18 @@ form label.error {
 
 .site-footer .widget-area .widget {
 	margin-bottom: 16px;
-	margin-bottom: 1rem; /* 16px / 16px */
+	margin-bottom: 1rem;
 }
 
 .smallprint {
+	width: 90%;
+	max-width: 1200px;
+}
+
+.smallprint p {
 	color: #999;
 	font-size: 14px;
-	font-size: 0.875rem; /* 14px / 16 */
+	font-size: 0.875rem;
 }
 
 
@@ -1517,31 +1545,32 @@ form label.error {
 
 .widget select {
 	margin-left: 1px;
+	margin-left: 0.0625rem;
 }
 
 .widget-area .widget ul ul {
 	margin-left: 12px;
-	margin-left: 0.75rem; /* 12px / 16px */
+	margin-left: 0.75rem;
 }
 
 .widget_rss li {
 	margin: 12px 0;
-	margin: 0.75rem;  /* 12px / 16px */
+	margin: 0.75rem;
 }
 
 .widget_recent_entries .post-date,
 .widget_rss .rss-date {
 	font-size: 12px;
-	font-size: 0.75rem; /* 12px / 16px */
+	font-size: 0.75rem;
 	margin-left: 12px;
-	margin-left: 0.75rem; /* 12px / 16px */
+	margin-left: 0.75rem;
 }
 
 #wp-calendar {
 	margin: 0;
 	width: 100%;
 	font-size: 14px;
-	font-size: 0.875rem; /* 14px / 16px */
+	font-size: 0.875rem;
 	line-height: 2;
 }
 
@@ -1575,14 +1604,14 @@ form label.error {
 
 #wp-calendar #next {
 	padding-right: 24px;
-	padding-right: 1.5rem; /* 24px / 16px */
+	padding-right: 1.5rem;
 	text-align: right;
 }
 
 .widget_search label {
 	display: block;
 	font-size: 14px;
-	font-size: 0.875rem; /* 14px / 16px */
+	font-size: 0.875rem;
 	line-height: 1.5;
 }
 
@@ -1608,7 +1637,7 @@ form label.error {
 
 #nav-above {
 	padding: 24px;
-	padding: 1.5rem; /* 24px / 16px */
+	padding: 1.5rem;
 }
 
 #nav-above {
@@ -1642,7 +1671,7 @@ form label.error {
 .nav-single + .comments-area,
 #comment-nav-above {
 	margin: 48px 48px 48px 0;
-	margin: 3rem 3rem 3rem 0; /* 48px / 16px */
+	margin: 3rem 3rem 3rem 0;
 }
 
 ul.page-numbers {
@@ -1655,6 +1684,7 @@ ul.page-numbers {
 li a.page-numbers,
 li span.page-numbers {
 	padding: 5px;
+	padding: 0.3125rem;
 	border: 1px solid #333;
 	text-decoration: none;
 }
@@ -1703,14 +1733,15 @@ li span.dots {
 }
 
 .main-navigation h1 {
-	font-size: 2rem; /* 32px / 16 */
-	line-height: 1.25; /* 40px / 32px */
+	font-size: 32px;
+	font-size: 2rem;
+	line-height: 1.25;
 }
 
 .nav-menu {
 	font-family: 'PTSansBold', Helvetica, Arial, sans-serif;
 	font-size: 18px;
-	font-size: 1.125rem; /* 18px / 16px */
+	font-size: 1.125rem;
 	line-height: 1.5;
 }
 
@@ -1724,6 +1755,7 @@ li span.dots {
 	float: left;
 	position: relative;
 	margin: 0 0 0 20px; /* Margin on the left side of each top level menu item (since it's floated right) */
+	margin: 0 0 0 1.25rem;
 }
 
 .main-navigation ul ul li {
@@ -1737,7 +1769,7 @@ li span.dots {
 	speak: none;
 	vertical-align: middle;
 	font-size: 8px;
-	font-size: .5rem; /* 8px / 16px */
+	font-size: .5rem;
 	content: " \e10c";
 }
 
@@ -1748,7 +1780,7 @@ li span.dots {
 	speak: none;
 	vertical-align: middle;
 	font-size: 8px;
-	font-size: .5rem; /* 8px / 16px */
+	font-size: .5rem;
 	content: " \e10b";
 }
 
@@ -1758,6 +1790,7 @@ li span.dots {
 
 .main-navigation ul ul a {
 	padding: 0 5px; /* Padding around each dropdown menu option */
+	padding: 0 0.3125rem;
 }
 
 .main-small-navigation a, .main-navigation a {
@@ -1821,7 +1854,7 @@ li span.dots {
 .main-navigation ul .divider {
     border-bottom: 1px solid #aaa;
     height: 0;
-    line-height: 1px;
+    line-height: 0.0625;
     overflow: hidden;
 }
 

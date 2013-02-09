@@ -102,7 +102,7 @@ Install from the WordPress Theme Directory:
 
 1. Click on the Appearance > Themes menu option in the WordPress Dashboard
 2. Click the Install Themes tab at the top of the page
-3. Type 'Quark' in the search field and then click the Search button
+3. Type 'Quark' in the search field, without the quotes, and then click the Search button
 4. Click the Install Now link below the Quark preview thumbnail
 5. Once the theme has been installed, click the Activate link
 
@@ -114,6 +114,27 @@ Install by uploading the theme zip file:
 4. Click the Browse button, browse to the folder that contains the theme zip file, select it and then click the Open button
 5. Click the Install Now button
 6. Once the theme has been installed, click the Activate link
+
+
+=== Getting Started ===
+
+Since Quark is a starter theme to kick of your own awesome theme, the first thing you want to do is copy the quark theme folder and change the name to something else. You'll then need to do a three-step find and replace on the name in all the templates.
+
+1. Search for quark inside single quotations to capture the text domain.
+2. Search for quark_ to capture all the function names.
+3. Search for quark with a space before it to replace all the occurrences of it in comments.
+   (You'd replace this with the capitalized version of your theme name.)
+
+or, to put it another way...
+
+Search for:'quark'
+ Replace with:'yourawesomethemename'
+Search for:quark_
+ Replace with:yourawesomethemename_
+Search for: quark
+ Replace with: YourAwesomeThemeName
+
+Lastly, update the stylesheet header in style.css and either update or delete this readme.txt file.
 
 
 == License ==
@@ -142,6 +163,14 @@ Background images, licensed under a Creative Commons Attribution-ShareAlike 3.0 
 
 == Changelog ==
 
+= 1.1 =
+- Changed margin and removed padding on .row class and consolidated html to remove extra container elements from templates
+- Removed unnecessary comments from style.css
+- Updated margin, padding & font-size with matching rem values, where missing
+- Updated readme.txt with Getting Started information
+- Initial Repository Release
+
+
 = 1.0 =
-* Initial Release
+- Initial version
 

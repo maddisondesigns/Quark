@@ -14,24 +14,22 @@
 
 get_header(); ?>
 
-		<div id="primary" class="site-content">
+	<div id="primary" class="site-content row clearfix" role="main">
 
-			<div id="content" class="row clearfix" role="main">
-				<div class="col span_8_of_12">
+		<div class="col span_8_of_12">
 
-					<?php if ( have_posts() ) : ?>
-					
-						<?php // Start the Loop ?>
-						<?php while ( have_posts() ) : the_post(); ?>
-							<?php get_template_part( 'content', 'page' ); ?>
-						<?php endwhile; ?>
-					
-					<?php endif; // end have_posts() check ?>
+			<?php if ( have_posts() ) : ?>
+			
+				<?php // Start the Loop ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+					<?php get_template_part( 'content', 'page' ); ?>
+				<?php endwhile; ?>
+			
+			<?php endif; // end have_posts() check ?>
 
-				</div> <!-- /.col.span_8_of_12 -->
-				<?php get_sidebar(); ?>
-			</div> <!-- /#content.row -->
-	
-		</div> <!-- /#primary.site-content -->
+		</div> <!-- /.col.span_8_of_12 -->
+		<?php get_sidebar(); ?>
+
+	</div> <!-- /#primary.site-content.row -->
 
 <?php get_footer(); ?>

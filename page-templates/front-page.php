@@ -16,24 +16,21 @@
 
 get_header(); ?>
 
-	<div id="primary" class="site-content">
-		<div id="content" class="row clearfix" role="main">
-			<div class="col span_12_of_12">
+	<div id="primary" class="site-content row clearfix" role="main">
+		<div class="col span_12_of_12">
 
-				<?php if ( have_posts() ) : ?>
+			<?php if ( have_posts() ) : ?>
 
-					<?php while ( have_posts() ) : the_post(); ?>
-						<?php get_template_part( 'content', 'page' ); ?>
-						<?php comments_template( '', true ); ?>
-					<?php endwhile; // end of the loop. ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+					<?php get_template_part( 'content', 'page' ); ?>
+					<?php comments_template( '', true ); ?>
+				<?php endwhile; // end of the loop. ?>
 
-				<?php endif; // end have_posts() check ?>
+			<?php endif; // end have_posts() check ?>
 
-			</div> <!-- /.col.span_12_of_12 -->
-		</div><!-- /#content.row -->
+		</div> <!-- /.col.span_12_of_12 -->
 
-		<?php get_sidebar( 'front' ); ?>
-
-	</div><!-- /#primary.site-content -->
+	</div><!-- /#primary.site-content.row -->
+	<?php get_sidebar( 'front' ); ?>
 
 <?php get_footer(); ?>
