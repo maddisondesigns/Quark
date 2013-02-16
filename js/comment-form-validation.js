@@ -1,8 +1,8 @@
 /**
  * Handles the client side Comments form validation.
  */
-jQuery(document).ready(function($) {
-	$("#commentform").validate({
+jQuery( document ).ready( function( $ ) {
+	$( "#commentform" ).validate( {
 		rules: {
 			author: "required",
 			email: {
@@ -16,6 +16,6 @@ jQuery(document).ready(function($) {
 			email: '<i class="icon-close icon-small" aria-hidden="true"></i> ' + comments_object.email,
 			comment: '<i class="icon-close icon-small" aria-hidden="true"></i> ' + comments_object.comment
 		}
-	});
+	} );
 
 } );
