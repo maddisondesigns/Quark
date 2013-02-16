@@ -54,7 +54,7 @@
 
 			<div class="col span_8_of_12">
 				<div class="social-media-icons">
-					<?php	echo quark_get_social_media(); ?>
+					<?php echo quark_get_social_media(); ?>
 				</div>
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<h3 class="menu-toggle assistive-text"><?php _e( 'Menu', 'quark' ); ?></h3>
@@ -70,29 +70,29 @@
 			<?php if ( is_front_page() ) {
 				// Count how many banner sidebars are active so we can work out how many containers we need
 				$bannerSidebars = 0;
-				for( $x=1; $x<=2; $x++ ) {
+				for ( $x=1; $x<=2; $x++ ) {
 					if ( is_active_sidebar( 'frontpage-banner' . $x ) ) {
 						$bannerSidebars++;
 					}
 				}
-				
+
 				// If there's one or more one active sidebars, create a row and add them
-				if( $bannerSidebars > 0 ) { ?>
+				if ( $bannerSidebars > 0 ) { ?>
 					<?php
 					// Work out the container class name based on the number of active banner sidebars
 					$containerClass = "span_" . 12 / $bannerSidebars . "_of_12";
 
 					// Display the active banner sidebars
-					for( $x=1; $x<=2; $x++ ) {
+					for ( $x=1; $x<=2; $x++ ) {
 						if ( is_active_sidebar( 'frontpage-banner'. $x ) ) { ?>
-							<div class="col <?php echo( $containerClass ) ?>">
+							<div class="col <?php echo $containerClass?>">
 								<div class="widget-area" role="complementary">
 									<?php dynamic_sidebar( 'frontpage-banner'. $x ); ?>
 								</div> <!-- /.widget-area -->
-							</div> <!-- /.col.<?php echo( $containerClass ) ?> -->
+							</div> <!-- /.col.<?php echo $containerClass?> -->
 						<?php }
 					} ?>
-	
+
 				<?php }
 			} ?>
 		</div> <!-- /.banner.row -->

@@ -12,7 +12,7 @@
 			<header class="entry-header">
 				<h1 class="entry-title"><?php the_title(); ?></h1>
 			</header>
-		<?php	} ?>
+		<?php } ?>
 		<div class="entry-content clearfix">
 			<?php the_content(); ?>
 
@@ -22,7 +22,7 @@
 					'showcount' => 'true',
 					'title_li' => '',
 					'show_count' => 'true'
-					) ); ?>
+				) ); ?>
 			</ul>
 
 			<h2>Archives by Month</h2>

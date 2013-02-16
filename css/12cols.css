@@ -59,9 +59,12 @@
 		font-size: 24px;
 		font-size: 1.5rem; /* 24px / 16px */
 	}
+}
+
+@media only screen and (max-width: 980px) {
 	.main-navigation {
-		margin: 32px 0 0 0;
-		margin: 2rem 0 0 0;
+		margin: 38px 0 0 0;
+		margin: 2.375rem 0 0 0;
 	}
 }
 
@@ -81,8 +84,8 @@
 		text-align: center;
 	}
 	.main-navigation {
-		margin: 20px 0 0 0;
-		margin: 1.25rem 0 0 0;
+		margin: 32px 0 0 0;
+		margin: 2rem 0 0 0;
 	}
 }
 

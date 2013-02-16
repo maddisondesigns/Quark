@@ -21,6 +21,6 @@
 			}
 			?>
 
-		</div><!-- /#secondary.widget-area -->
+		</div> <!-- /#secondary.widget-area -->
 
 	</div> <!-- /.col.span_4_of_12 -->

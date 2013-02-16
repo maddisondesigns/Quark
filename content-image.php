@@ -9,7 +9,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php	quark_posted_on(); ?>
+		<?php quark_posted_on(); ?>
 	</header> <!-- /.entry-header -->
 	<div class="entry-content clearfix">
 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'quark' ) ); ?>

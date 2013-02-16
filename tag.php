@@ -28,9 +28,9 @@ get_header(); ?>
 					<?php endwhile; ?>
 
 					<?php quark_content_nav( 'nav-below' ); ?>
-				
+
 				<?php else : ?>
-				
+
 					<?php get_template_part( 'no-results' ); // Include the template that displays a message that posts cannot be found ?>
 
 				<?php endif; // end have_posts() check ?>

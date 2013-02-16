@@ -9,7 +9,7 @@ function optionsframework_option_name() {
 
 	// This gets the theme name from the stylesheet
 	$themename = get_option( 'stylesheet' );
-	$themename = preg_replace("/\W/", "_", strtolower($themename) );
+	$themename = preg_replace( "/\W/", "_", strtolower( $themename ) );
 
 	$optionsframework_settings = get_option( 'optionsframework' );
 	$optionsframework_settings['id'] = $themename;
@@ -44,7 +44,7 @@ function optionsframework_options() {
 		'textarea_rows' => 5,
 		'tinymce' => array( 'plugins' => 'wordpress' )
 	);
-	
+
 	// Footer Position settings
 	$footer_position_settings = array(
 		'left' => __( 'Left aligned', 'quark' ),
@@ -146,7 +146,7 @@ function optionsframework_options() {
 		'id' => 'footer_color',
 		'std' => '#222222',
 		'type' => 'color' );
-		
+
 	$options[] = array(
 		'name' => __( 'Footer Content', 'quark' ),
 		'desc' => __( 'Enter the text you&lsquo;d like to display in the footer. This content will be displayed just below the footer widgets. It&lsquo;s ideal for displaying your copyright message or credits.', 'quark' ),
@@ -162,7 +162,7 @@ function optionsframework_options() {
 		'std' => 'center',
 		'type' => 'select',
 		'class' => 'mini',
-		'options' => $footer_position_settings);
+		'options' => $footer_position_settings );
 
 	$options[] = array(
 		'name' => __( 'Google Analytics', 'quark' ),

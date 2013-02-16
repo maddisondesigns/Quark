@@ -22,8 +22,8 @@
 					<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'quark' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
 				</h1>
 			<?php } // is_single() ?>
-			<?php	quark_posted_on(); ?>
-			<?php if ( has_post_thumbnail() && !is_search() ){ ?>
+			<?php quark_posted_on(); ?>
+			<?php if ( has_post_thumbnail() && !is_search() ) { ?>
 				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'quark' ), the_title_attribute( 'echo=0' ) ) ); ?>">
 					<?php the_post_thumbnail( 'post_feature_full_width' ); ?>
 				</a>

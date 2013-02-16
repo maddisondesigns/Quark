@@ -9,7 +9,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php	quark_posted_on(); ?>
+		<?php quark_posted_on(); ?>
 	</header> <!-- /.entry-header -->
 	<div class="entry-content clearfix">
 		<blockquote>
@@ -17,7 +17,7 @@
 			<cite><?php the_title(); ?></cite>
 		</blockquote>
 	</div> <!-- /.entry-content -->
-	
+
 	<footer class="entry-meta">
 		<?php if ( is_singular() ) {
 			// Only show the tags on the Single Post page

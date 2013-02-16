@@ -19,12 +19,12 @@ get_header(); ?>
 		<div class="col span_8_of_12">
 
 			<?php if ( have_posts() ) : ?>
-			
+
 				<?php // Start the Loop ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<?php get_template_part( 'content', 'page' ); ?>
 				<?php endwhile; ?>
-			
+
 			<?php endif; // end have_posts() check ?>
 
 		</div> <!-- /.col.span_8_of_12 -->

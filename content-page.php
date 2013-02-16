@@ -12,7 +12,7 @@
 			<header class="entry-header">
 				<h1 class="entry-title"><?php the_title(); ?></h1>
 			</header>
-		<?php	} ?>
+		<?php } ?>
 		<div class="entry-content clearfix">
 			<?php the_content(); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'quark' ), 'after' => '</div>' ) ); ?>
