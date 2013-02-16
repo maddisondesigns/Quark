@@ -27,7 +27,7 @@ if ( ! isset( $content_width ) )
 if ( ! function_exists( 'quark_setup' ) ) {
 	function quark_setup() {
 		global $content_width;
-	
+
 		/**
 		 * Make theme available for translation
 		 * Translations can be filed in the /languages/ directory
@@ -35,55 +35,56 @@ if ( ! function_exists( 'quark_setup' ) ) {
 		 * to change 'quark' to the name of your theme in all the template files
 		 */
 		load_theme_textdomain( 'quark', trailingslashit( get_template_directory() ) . 'languages' );
-	
+
 		// This theme styles the visual editor with editor-style.css to match the theme style.
 		add_editor_style();
 
 		// Add default posts and comments RSS feed links to head
 		add_theme_support( 'automatic-feed-links' );
-	
+
 		// Enable support for Post Thumbnails
 		add_theme_support( 'post-thumbnails' );
-		
+
 		// Create an extra image size for the Post featured image
 		add_image_size( 'post_feature_full_width', 792, 300, true );
-	
+
 		// This theme uses wp_nav_menu() in one location
 		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'quark' )
-		) );
-	
+				'primary' => __( 'Primary Menu', 'quark' )
+			) );
+
 		// This theme supports a variety of post formats
 		add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
-		
+
 		// Enable support for Custom Backgrounds
 		add_theme_support( 'custom-background', array(
-			// Background color default
-			'default-color' => 'fff',
-			// Background image default
-			'default-image' => trailingslashit( get_template_directory_uri() ) . 'images/subtle_freckles.png'
-		) );
+				// Background color default
+				'default-color' => 'fff',
+				// Background image default
+				'default-image' => trailingslashit( get_template_directory_uri() ) . 'images/subtle_freckles.png'
+			) );
 
 		// Enable support for Custom Headers (or in our case, a custom logo)
 		add_theme_support( 'custom-header', array(
-			// Header image default
-			'default-image' => trailingslashit( get_template_directory_uri() ) . 'images/logo.png',
-			// Header text display default
-			'header-text' => false,
-			// Header text color default
-			'default-text-color' => '000',
-			// Flexible width
-			'flex-width' => true,
-			// Header image width (in pixels)
-			'width' => 300,
-			// Flexible height
-			'flex-height' => true,
-			// Header image height (in pixels)
-			'height' => 80
-		) );
+				// Header image default
+				'default-image' => trailingslashit( get_template_directory_uri() ) . 'images/logo.png',
+				// Header text display default
+				'header-text' => false,
+				// Header text color default
+				'default-text-color' => '000',
+				// Flexible width
+				'flex-width' => true,
+				// Header image width (in pixels)
+				'width' => 300,
+				// Flexible height
+				'flex-height' => true,
+				// Header image height (in pixels)
+				'height' => 80
+			) );
 
 		// Enable support for Theme Options.
-		// Rather than reinvent the wheel, we're using the Options Framework (V1.4.1) by Devin Price, so huge props to him! http://wptheming.com/options-framework-theme/
+		// Rather than reinvent the wheel, we're using the Options Framework by Devin Price, so huge props to him!
+		// http://wptheming.com/options-framework-theme/
 		if ( !function_exists( 'optionsframework_init' ) ) {
 			define( 'OPTIONS_FRAMEWORK_DIRECTORY', trailingslashit( get_template_directory_uri() ) . 'inc/' );
 			require_once trailingslashit( dirname( __FILE__ ) ) . 'inc/options-framework.php';
@@ -101,144 +102,144 @@ add_action( 'after_setup_theme', 'quark_setup' );
  */
 function quark_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'Main Sidebar', 'quark' ),
-		'id' => 'sidebar-main',
-		'description' => __( 'Appears in the sidebar on posts and pages except the optional Homepage template, which has its own widgets', 'quark' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+			'name' => __( 'Main Sidebar', 'quark' ),
+			'id' => 'sidebar-main',
+			'description' => __( 'Appears in the sidebar on posts and pages except the optional Homepage template, which has its own widgets', 'quark' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		) );
 
 	register_sidebar( array(
-		'name' => __( 'Blog Sidebar', 'quark' ),
-		'id' => 'sidebar-blog',
-		'description' => __( 'Appears in the sidebar on the blog only', 'quark' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+			'name' => __( 'Blog Sidebar', 'quark' ),
+			'id' => 'sidebar-blog',
+			'description' => __( 'Appears in the sidebar on the blog only', 'quark' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		) );
 
 	register_sidebar( array(
-		'name' => __( 'Single Post Sidebar', 'quark' ),
-		'id' => 'sidebar-single',
-		'description' => __( 'Appears in the sidebar on single posts only', 'quark' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+			'name' => __( 'Single Post Sidebar', 'quark' ),
+			'id' => 'sidebar-single',
+			'description' => __( 'Appears in the sidebar on single posts only', 'quark' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		) );
 
 	register_sidebar( array(
-		'name' => __( 'Page Sidebar', 'quark' ),
-		'id' => 'sidebar-page',
-		'description' => __( 'Appears in the sidebar on pages only', 'quark' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+			'name' => __( 'Page Sidebar', 'quark' ),
+			'id' => 'sidebar-page',
+			'description' => __( 'Appears in the sidebar on pages only', 'quark' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		) );
 
 	register_sidebar( array(
-		'name' => __( 'First Front Page Banner Widget', 'quark' ),
-		'id' => 'frontpage-banner1',
-		'description' => __( 'Appears in the banner area on the Front Page', 'quark' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
-	) );
+			'name' => __( 'First Front Page Banner Widget', 'quark' ),
+			'id' => 'frontpage-banner1',
+			'description' => __( 'Appears in the banner area on the Front Page', 'quark' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h1 class="widget-title">',
+			'after_title' => '</h1>'
+		) );
 
 	register_sidebar( array(
-		'name' => __( 'Second Front Page Banner Widget', 'quark' ),
-		'id' => 'frontpage-banner2',
-		'description' => __( 'Appears in the banner area on the Front Page', 'quark' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
-	) );
+			'name' => __( 'Second Front Page Banner Widget', 'quark' ),
+			'id' => 'frontpage-banner2',
+			'description' => __( 'Appears in the banner area on the Front Page', 'quark' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h1 class="widget-title">',
+			'after_title' => '</h1>'
+		) );
 
 	register_sidebar( array(
-		'name' => __( 'First Homepage Widget Area', 'quark' ),
-		'id' => 'sidebar-homepage1',
-		'description' => __( 'Appears when using the optional homepage template with a page set as Static Front Page', 'quark' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+			'name' => __( 'First Homepage Widget Area', 'quark' ),
+			'id' => 'sidebar-homepage1',
+			'description' => __( 'Appears when using the optional homepage template with a page set as Static Front Page', 'quark' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		) );
 
 	register_sidebar( array(
-		'name' => __( 'Second Homepage Widget Area', 'quark' ),
-		'id' => 'sidebar-homepage2',
-		'description' => __( 'Appears when using the optional homepage template with a page set as Static Front Page', 'quark' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+			'name' => __( 'Second Homepage Widget Area', 'quark' ),
+			'id' => 'sidebar-homepage2',
+			'description' => __( 'Appears when using the optional homepage template with a page set as Static Front Page', 'quark' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		) );
 
 	register_sidebar( array(
-		'name' => __( 'Third Homepage Widget Area', 'quark' ),
-		'id' => 'sidebar-homepage3',
-		'description' => __( 'Appears when using the optional homepage template with a page set as Static Front Page', 'quark' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+			'name' => __( 'Third Homepage Widget Area', 'quark' ),
+			'id' => 'sidebar-homepage3',
+			'description' => __( 'Appears when using the optional homepage template with a page set as Static Front Page', 'quark' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		) );
 
 	register_sidebar( array(
-		'name' => __( 'Fourth Homepage Widget Area', 'quark' ),
-		'id' => 'sidebar-homepage4',
-		'description' => __( 'Appears when using the optional homepage template with a page set as Static Front Page', 'quark' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+			'name' => __( 'Fourth Homepage Widget Area', 'quark' ),
+			'id' => 'sidebar-homepage4',
+			'description' => __( 'Appears when using the optional homepage template with a page set as Static Front Page', 'quark' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		) );
 
 	register_sidebar( array(
-		'name' => __( 'First Footer Widget Area', 'quark' ),
-		'id' => 'sidebar-footer1',
-		'description' => __( 'Appears in the footer sidebar', 'quark' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+			'name' => __( 'First Footer Widget Area', 'quark' ),
+			'id' => 'sidebar-footer1',
+			'description' => __( 'Appears in the footer sidebar', 'quark' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		) );
 
 	register_sidebar( array(
-		'name' => __( 'Second Footer Widget Area', 'quark' ),
-		'id' => 'sidebar-footer2',
-		'description' => __( 'Appears in the footer sidebar', 'quark' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+			'name' => __( 'Second Footer Widget Area', 'quark' ),
+			'id' => 'sidebar-footer2',
+			'description' => __( 'Appears in the footer sidebar', 'quark' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		) );
 
 	register_sidebar( array(
-		'name' => __( 'Third Footer Widget Area', 'quark' ),
-		'id' => 'sidebar-footer3',
-		'description' => __( 'Appears in the footer sidebar', 'quark' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+			'name' => __( 'Third Footer Widget Area', 'quark' ),
+			'id' => 'sidebar-footer3',
+			'description' => __( 'Appears in the footer sidebar', 'quark' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		) );
 
 	register_sidebar( array(
-		'name' => __( 'Fourth Footer Widget Area', 'quark' ),
-		'id' => 'sidebar-footer4',
-		'description' => __( 'Appears in the footer sidebar', 'quark' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+			'name' => __( 'Fourth Footer Widget Area', 'quark' ),
+			'id' => 'sidebar-footer4',
+			'description' => __( 'Appears in the footer sidebar', 'quark' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		) );
 }
 add_action( 'widgets_init', 'quark_widgets_init' );
 
@@ -257,13 +258,13 @@ function quark_scripts_styles() {
 	// Start off with a clean base by using normalise. If you prefer to use a reset stylesheet or something else, simply replace this
 	wp_register_style( 'normalize', trailingslashit( get_template_directory_uri() ) . 'css/normalize.css' , array(), '2.1.0', 'all' );
 	wp_enqueue_style( 'normalize' );
-	
+
 	// Register and enqueue the default WordPress stylesheet
 	wp_register_style( 'style', get_stylesheet_uri(), array(), '20130130', 'all' );
 	wp_enqueue_style( 'style' );
-	
+
 	// Our styles for setting up the grid and media queries. If you prefer to use a different grid system, simply replace this and perform a find/replace in the php for the relevant styles. I'm nice like that!
-	wp_register_style( 'gridsystem', trailingslashit( get_template_directory_uri() ) . 'css/12cols.css' , array(), '20130130', 'all' );
+	wp_register_style( 'gridsystem', trailingslashit( get_template_directory_uri() ) . 'css/12cols.css' , array(), '20130216', 'all' );
 	wp_enqueue_style( 'gridsystem' );
 
 	/**
@@ -308,6 +309,13 @@ function quark_scripts_styles() {
 		wp_enqueue_script( 'initaudiojs' );
 	}
 
+	// Load Google Analytics Tracking script only if the GA ID is specified in the Theme Options
+	if ( of_get_option( 'ga_trackingid', '' ) ) {
+		wp_register_script( 'analytics', trailingslashit( get_template_directory_uri() ) . 'js/google-analytics.js', array(), '20130216', true );
+		wp_enqueue_script( 'analytics' );
+		wp_localize_script( 'analytics', 'analytics_object', array( 'gatrackingid' => of_get_option( 'ga_trackingid', '' ) ) );
+	}
+
 	// Include this script to envoke a button toggle for the main navigation menu on small screens
 	//wp_register_script( 'small-menu', trailingslashit( get_template_directory_uri() ) . 'js/small-menu.js', array( 'jquery' ), '20130130', true );
 	//wp_enqueue_script( 'small-menu' );
@@ -325,20 +333,23 @@ add_action( 'wp_enqueue_scripts', 'quark_scripts_styles' );
 function quark_wp_title( $title, $sep ) {
 	global $paged, $page;
 
-	if ( is_feed() )
+	if ( is_feed() ) {
 		return $title;
+	}
 
 	// Add the blog name.
 	$title .= get_bloginfo( 'name' );
 
 	// Add the blog description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
+	if ( $site_description && ( is_home() || is_front_page() ) ) {
 		$title = "$title $sep $site_description";
+	}
 
 	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
+	if ( $paged >= 2 || $page >= 2 ) {
 		$title = "$title $sep " . sprintf( __( 'Page %s', 'quark' ), max( $paged, $page ) );
+	}
 
 	return $title;
 }
@@ -362,26 +373,27 @@ if ( ! function_exists( 'quark_content_nav' ) ) {
 		?>
 		<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
 			<h3 class="assistive-text"><?php _e( 'Post navigation', 'quark' ); ?></h3>
-	
+
 			<?php if ( is_single() ) { // navigation links for single posts ?>
-	
+
 				<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '<i class="icon-arrow-left icon-small" aria-hidden="true"></i>', 'Previous post link', 'quark' ) . '</span> %title' ); ?>
 				<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '<i class="icon-arrow-right icon-small" aria-hidden="true"></i>', 'Next post link', 'quark' ) . '</span>' ); ?>
-		
-			<?php } elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) { // navigation links for home, archive, and search pages ?>
-		
+
+			<?php } 
+			elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) { // navigation links for home, archive, and search pages ?>
+
 				<?php echo paginate_links( array(
 					'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 					'format' => '?paged=%#%',
-					'current' => max( 1, get_query_var('paged') ),
+					'current' => max( 1, get_query_var( 'paged' ) ),
 					'total' => $wp_query->max_num_pages,
 					'type' => 'list',
 					'prev_text' => __( '<i class="icon-arrow-left icon-small" aria-hidden="true"></i> Previous' ),
 					'next_text' => __( 'Next <i class="icon-arrow-right icon-small" aria-hidden="true"></i>' )
 				) ); ?>
-		
+
 			<?php } ?>
-	
+
 		</nav><!-- #<?php echo $nav_id; ?> -->
 		<?php
 	}
@@ -403,55 +415,52 @@ if ( ! function_exists( 'quark_comment' ) ) {
 	function quark_comment( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
 		switch ( $comment->comment_type ) {
-			case 'pingback' :
-			case 'trackback' :
-				// Display trackbacks differently than normal comments
-				?>
-				<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-					<article id="comment-<?php comment_ID(); ?>" class="pingback">
-						<p><?php _e( 'Pingback:', 'quark' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'quark' ), '<span class="edit-link">', '</span>' ); ?></p>
-					</article><!-- #comment-##.pingback -->
-				<?php
-				break;
-			default :
-				// Proceed with normal comments.
-				global $post;
-				?>
-				<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-					<article id="comment-<?php comment_ID(); ?>" class="comment">
-						<header class="comment-meta comment-author vcard">
-							<?php
-								echo get_avatar( $comment, 44 );
-								printf( '<cite class="fn">%1$s %2$s</cite>',
-									get_comment_author_link(),
-									// If current post author is also comment author, make it known visually.
-									( $comment->user_id === $post->post_author ) ? '<span> ' . __( 'Post author', 'quark' ) . '</span>' : ''
-								);
-								printf( '<a href="%1$s" title="Posted %2$s"><time pubdate datetime="%3$s">%4$s</time></a>',
-									esc_url( get_comment_link( $comment->comment_ID ) ),
-									sprintf( __( '%1$s @ %2$s', 'quark' ), esc_html( get_comment_date() ), esc_attr( get_comment_time() ) ),
-									get_comment_time( 'c' ),
-									/* Translators: 1: date, 2: time */
-									sprintf( __( '%1$s at %2$s', 'quark' ), get_comment_date(), get_comment_time() )
-								);
-							?>
-						</header><!-- .comment-meta -->
-			
-						<?php if ( '0' == $comment->comment_approved ) { ?>
-							<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'quark' ); ?></p>
-						<?php } ?>
-			
-						<section class="comment-content comment">
-							<?php comment_text(); ?>
-							<?php edit_comment_link( __( 'Edit', 'quark' ), '<p class="edit-link">', '</p>' ); ?>
-						</section><!-- .comment-content -->
-			
-						<div class="reply">
-							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'quark' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-						</div><!-- .reply -->
-					</article><!-- #comment-## -->
-				<?php
-				break;
+		case 'pingback' :
+		case 'trackback' :
+			// Display trackbacks differently than normal comments ?>
+			<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+				<article id="comment-<?php comment_ID(); ?>" class="pingback">
+					<p><?php _e( 'Pingback:', 'quark' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'quark' ), '<span class="edit-link">', '</span>' ); ?></p>
+				</article> <!-- #comment-##.pingback -->
+			<?php
+			break;
+		default :
+			// Proceed with normal comments.
+			global $post; ?>
+			<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+				<article id="comment-<?php comment_ID(); ?>" class="comment">
+					<header class="comment-meta comment-author vcard">
+						<?php
+						echo get_avatar( $comment, 44 );
+						printf( '<cite class="fn">%1$s %2$s</cite>',
+							get_comment_author_link(),
+							// If current post author is also comment author, make it known visually.
+							( $comment->user_id === $post->post_author ) ? '<span> ' . __( 'Post author', 'quark' ) . '</span>' : '' );
+							printf( '<a href="%1$s" title="Posted %2$s"><time pubdate datetime="%3$s">%4$s</time></a>',
+							esc_url( get_comment_link( $comment->comment_ID ) ),
+							sprintf( __( '%1$s @ %2$s', 'quark' ), esc_html( get_comment_date() ), esc_attr( get_comment_time() ) ),
+							get_comment_time( 'c' ),
+							/* Translators: 1: date, 2: time */
+							sprintf( __( '%1$s at %2$s', 'quark' ), get_comment_date(), get_comment_time() )
+						);
+						?>
+					</header> <!-- .comment-meta -->
+
+					<?php if ( '0' == $comment->comment_approved ) { ?>
+						<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'quark' ); ?></p>
+					<?php } ?>
+
+					<section class="comment-content comment">
+						<?php comment_text(); ?>
+						<?php edit_comment_link( __( 'Edit', 'quark' ), '<p class="edit-link">', '</p>' ); ?>
+					</section> <!-- .comment-content -->
+
+					<div class="reply">
+						<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'quark' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+					</div> <!-- .reply -->
+				</article> <!-- #comment-## -->
+			<?php
+			break;
 		} // end comment_type check
 	}
 }
@@ -473,7 +482,7 @@ function quark_comment_form_default_fields( $fields ) {
 	$fields[ 'email' ] =  '<p class="comment-form-email"><label for="email">' . __( 'Email', 'quark' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' . '<input id="email" email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
 
 	$fields[ 'url' ] =  '<p class="comment-form-url"><label for="url">' . __( 'Website', 'quark' ) . '</label>' . '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>';
-		
+
 	return $fields;
 
 }
@@ -488,7 +497,7 @@ add_action( 'comment_form_default_fields', 'quark_comment_form_default_fields' )
 function quark_comment_form_field_comment( $field ) {
 
 	$field = '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun', 'quark' ) . ' <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>';
-		
+
 	return $field;
 
 }
@@ -551,10 +560,10 @@ if ( ! function_exists( 'quark_posted_on' ) ) {
 			esc_attr( sprintf( __( 'View all posts by %s', 'quark' ), get_the_author() ) ),
 			get_the_author()
 		);
-	
+
 		// Return the Categories as a list
 		$categories_list = get_the_category_list( __( ' ', 'quark' ) );
-	
+
 		// Translators: 1: Permalink 2: Title 3: No. of Comments
 		$comments = sprintf( '<span class="comments-link"><i class="icon-bubble-3" aria-hidden="true"></i> <a href="%1$s" title="%2$s">%3$s</a></span>',
 			esc_url( get_comments_link() ),
@@ -582,10 +591,10 @@ if ( ! function_exists( 'quark_entry_meta' ) ) {
 	function quark_entry_meta() {
 		// Return the Tags as a list
 		$tag_list = "";
-		if(get_the_tag_list()) {
+		if ( get_the_tag_list() ) {
 			$tag_list = get_the_tag_list( '<span class="post-tags">', __( ' ', 'quark' ), '</span>' );
 		}
-		
+
 		// Translators: 1 is tag
 		if ( $tag_list ) {
 			printf( __( '<i class="icon-tag-2" aria-hidden="true"></i> %1$s', 'quark' ), $tag_list );
@@ -613,10 +622,10 @@ add_action( 'template_redirect', 'quark_content_width' );
  *
  * @since Quark 1.0
  */
-function quark_remove_more_jump_link( $link ) { 
+function quark_remove_more_jump_link( $link ) {
 	$offset = strpos( $link, '#more-' );
 	if ( $offset ) {
-		$end = strpos( $link, '"',$offset );
+		$end = strpos( $link, '"', $offset );
 	}
 	if ( $end ) {
 		$link = substr_replace( $link, '', $offset, $end-$offset );
@@ -673,24 +682,24 @@ add_filter( 'user_contactmethods', 'quark_new_contactmethods', 10, 1 );
  *
  * @since Quark 1.0
  */
-add_filter( 'wp_nav_menu_objects', 'quark_add_menu_parent_class' );
 function quark_add_menu_parent_class( $items ) {
-	
+
 	$parents = array();
 	foreach ( $items as $item ) {
 		if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) {
 			$parents[] = $item->menu_item_parent;
 		}
 	}
-	
+
 	foreach ( $items as $item ) {
 		if ( in_array( $item->ID, $parents ) ) {
-			$item->classes[] = 'menu-parent-item'; 
+			$item->classes[] = 'menu-parent-item';
 		}
 	}
-	
-	return $items;    
+
+	return $items;
 }
+add_filter( 'wp_nav_menu_objects', 'quark_add_menu_parent_class' );
 
 
 /**
@@ -740,10 +749,10 @@ if ( ! function_exists( 'quark_get_social_media' ) ) {
 			array( 'url' => of_get_option( 'social_flickr', '' ), 'icon' => 'icon-flickr', 'title' => __( 'Connect with me on Flickr', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_pinterest', '' ), 'icon' => 'icon-pinterest', 'title' => __( 'Follow me on Pinterest', 'quark' ) )
 		);
-		
-		foreach ($icons as $key) {
+
+		foreach ( $icons as $key ) {
 			$value = $key['url'];
-			if( !empty( $value ) ) {
+			if ( !empty( $value ) ) {
 				$output .= sprintf( '<li><a href="%1$s" title="%2$s"><i class="%3$s" aria-hidden="true"></i></a></li>',
 					$value,
 					$key['title'],
@@ -752,7 +761,7 @@ if ( ! function_exists( 'quark_get_social_media' ) ) {
 			}
 		}
 
-		if( !empty( $output ) ) {
+		if ( !empty( $output ) ) {
 			$output = '<ul>' . $output . '</ul>';
 		}
 
@@ -795,7 +804,7 @@ function quark_theme_options_styles() {
 		'repeat' => 'repeat',
 		'position' => 'top left',
 		'attachment'=>'scroll' );
-	
+
 	$background = of_get_option( 'banner_background', $background_defaults );
 	if ( $background ) {
 		$output .= "#bannercontainer { ";
@@ -821,10 +830,10 @@ function quark_theme_options_styles() {
 	}
 }
 
-add_action('wp_head', 'quark_theme_options_styles');
+add_action( 'wp_head', 'quark_theme_options_styles' );
 
 
-/** 
+/**
  * Recreate the default filters on the_content
  * This will make it much easier to output the Theme Options Editor content with proper/expected formatting
  *
@@ -836,4 +845,3 @@ add_filter( 'meta_content', 'convert_chars'  );
 add_filter( 'meta_content', 'wpautop' );
 add_filter( 'meta_content', 'shortcode_unautop'  );
 add_filter( 'meta_content', 'prepend_attachment' );
-
