@@ -1,6 +1,6 @@
 === Quark ===
 Contributors: ahortin
-Donate link: http://quarktheme.com/
+Donate link: http://maddisondesigns.com/
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.4
 Tested up to: 3.5.1
@@ -166,8 +166,10 @@ Background images, licensed under a Creative Commons Attribution-ShareAlike 3.0 
 = 1.1 =
 - Changed margin and removed padding on .row class and consolidated html to remove extra container elements from templates
 - Removed unnecessary comments from style.css
+- Updated navigation margins in media queries
 - Updated margin, padding & font-size with matching rem values, where missing
 - Updated readme.txt with Getting Started information
+- Removed Google Analytics code from footer and enqueued with other scripts
 - Initial Repository Release
 
 
