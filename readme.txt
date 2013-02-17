@@ -1,6 +1,6 @@
 === Quark ===
 Contributors: ahortin
-Donate link: http://maddisondesigns.com/
+Donate link: http://maddisondesigns.com/quark/
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.4
 Tested up to: 3.5.1
