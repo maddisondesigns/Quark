@@ -151,8 +151,8 @@
 	.span_1_of_12 {
 		width: 100%; 
 	}
-	.col { 
-		margin: 1% 0 1% 0%;
+	.col {
+		margin: 0;
 	}
 	.main-small-navigation .nav-menu, .nav-menu ul {
 		padding: 0;
