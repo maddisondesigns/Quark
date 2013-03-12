@@ -61,7 +61,7 @@ if ( ! function_exists( 'quark_setup' ) ) {
 				// Background color default
 				'default-color' => 'fff',
 				// Background image default
-				'default-image' => trailingslashit( get_template_directory_uri() ) . 'images/subtle_freckles.png'
+				'default-image' => trailingslashit( get_template_directory_uri() ) . 'images/faint-squares.jpg'
 			) );
 
 		// Enable support for Custom Headers (or in our case, a custom logo)
@@ -104,7 +104,7 @@ function quark_widgets_init() {
 	register_sidebar( array(
 			'name' => __( 'Main Sidebar', 'quark' ),
 			'id' => 'sidebar-main',
-			'description' => __( 'Appears in the sidebar on posts and pages except the optional Homepage template, which has its own widgets', 'quark' ),
+			'description' => __( 'Appears in the sidebar on posts and pages except the optional Front Page template, which has its own widgets', 'quark' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -162,9 +162,9 @@ function quark_widgets_init() {
 		) );
 
 	register_sidebar( array(
-			'name' => __( 'First Homepage Widget Area', 'quark' ),
+			'name' => __( 'First Front Page Widget Area', 'quark' ),
 			'id' => 'sidebar-homepage1',
-			'description' => __( 'Appears when using the optional homepage template with a page set as Static Front Page', 'quark' ),
+			'description' => __( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -172,9 +172,9 @@ function quark_widgets_init() {
 		) );
 
 	register_sidebar( array(
-			'name' => __( 'Second Homepage Widget Area', 'quark' ),
+			'name' => __( 'Second Front Page Widget Area', 'quark' ),
 			'id' => 'sidebar-homepage2',
-			'description' => __( 'Appears when using the optional homepage template with a page set as Static Front Page', 'quark' ),
+			'description' => __( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -182,9 +182,9 @@ function quark_widgets_init() {
 		) );
 
 	register_sidebar( array(
-			'name' => __( 'Third Homepage Widget Area', 'quark' ),
+			'name' => __( 'Third Front Page Widget Area', 'quark' ),
 			'id' => 'sidebar-homepage3',
-			'description' => __( 'Appears when using the optional homepage template with a page set as Static Front Page', 'quark' ),
+			'description' => __( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -192,9 +192,9 @@ function quark_widgets_init() {
 		) );
 
 	register_sidebar( array(
-			'name' => __( 'Fourth Homepage Widget Area', 'quark' ),
+			'name' => __( 'Fourth Front Page Widget Area', 'quark' ),
 			'id' => 'sidebar-homepage4',
-			'description' => __( 'Appears when using the optional homepage template with a page set as Static Front Page', 'quark' ),
+			'description' => __( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -259,13 +259,27 @@ function quark_scripts_styles() {
 	wp_register_style( 'normalize', trailingslashit( get_template_directory_uri() ) . 'css/normalize.css' , array(), '2.1.0', 'all' );
 	wp_enqueue_style( 'normalize' );
 
+	// Register and enqueue our icon fonts
+	// We're using the awesome Font Awesome icon font. http://gregoryloucas.github.com/Font-Awesome-More
+	wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome.min.css' , array(), '3.0.2', 'all' );
+	wp_enqueue_style( 'fontawesome' );
+	// We want the social icons as well
+	wp_register_style( 'fontawesomesocial', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome-social.css' , array(), '3.0.2', 'all' );
+	wp_enqueue_style( 'fontawesomesocial' );
+	// If you want to use the Corp. Extension & More icons as well, uncomment the following 4 lines
+	wp_register_style( 'fontawesomecorp', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome-corp.css' , array(), '3.0.2', 'all' );
+	wp_enqueue_style( 'fontawesomecorp' );
+	wp_register_style( 'fontawesomeext', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome-ext.css' , array(), '3.0.2', 'all' );
+	wp_enqueue_style( 'fontawesomeext' );
+
+	// Our styles for setting up the grid.
+	// If you prefer to use a different grid system, simply replace this and perform a find/replace in the php for the relevant styles. I'm nice like that!
+	wp_register_style( 'gridsystem', trailingslashit( get_template_directory_uri() ) . 'css/grid.css' , array(), '1.0.0', 'all' );
+	wp_enqueue_style( 'gridsystem' );
+
 	// Register and enqueue the default WordPress stylesheet
 	wp_register_style( 'style', get_stylesheet_uri(), array(), '20130130', 'all' );
 	wp_enqueue_style( 'style' );
-
-	// Our styles for setting up the grid and media queries. If you prefer to use a different grid system, simply replace this and perform a find/replace in the php for the relevant styles. I'm nice like that!
-	wp_register_style( 'gridsystem', trailingslashit( get_template_directory_uri() ) . 'css/12cols.css' , array(), '20130216', 'all' );
-	wp_enqueue_style( 'gridsystem' );
 
 	/**
 	 * Register and enqueue our scripts
@@ -376,8 +390,8 @@ if ( ! function_exists( 'quark_content_nav' ) ) {
 
 			<?php if ( is_single() ) { // navigation links for single posts ?>
 
-				<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '<i class="icon-arrow-left icon-small" aria-hidden="true"></i>', 'Previous post link', 'quark' ) . '</span> %title' ); ?>
-				<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '<i class="icon-arrow-right icon-small" aria-hidden="true"></i>', 'Next post link', 'quark' ) . '</span>' ); ?>
+				<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '<i class="icon-angle-left"></i>', 'Previous post link', 'quark' ) . '</span> %title' ); ?>
+				<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '<i class="icon-angle-right"></i>', 'Next post link', 'quark' ) . '</span>' ); ?>
 
 			<?php } 
 			elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) { // navigation links for home, archive, and search pages ?>
@@ -388,8 +402,8 @@ if ( ! function_exists( 'quark_content_nav' ) ) {
 					'current' => max( 1, get_query_var( 'paged' ) ),
 					'total' => $wp_query->max_num_pages,
 					'type' => 'list',
-					'prev_text' => __( '<i class="icon-arrow-left icon-small" aria-hidden="true"></i> Previous' ),
-					'next_text' => __( 'Next <i class="icon-arrow-right icon-small" aria-hidden="true"></i>' )
+					'prev_text' => __( '<i class="icon-angle-left"></i>Previous' ),
+					'next_text' => __( 'Next<i class="icon-angle-right"></i>' )
 				) ); ?>
 
 			<?php } ?>
@@ -490,7 +504,8 @@ add_action( 'comment_form_default_fields', 'quark_comment_form_default_fields' )
 
 
 /**
- * Update the Comments form to add a 'required' span to the Comment textarea, within the form label.
+ * Update the Comments form to add a 'required' span to the Comment textarea within the form label, because it's pointless 
+ * submitting a comment that doesn't actually have any text in the comment field!
  *
  * @since Quark 1.0
  */
@@ -514,31 +529,31 @@ if ( ! function_exists( 'quark_posted_on' ) ) {
 		$post_icon = '';
 		switch ( get_post_format() ) {
 			case 'aside':
-				$post_icon = 'icon-file-3';
+				$post_icon = 'icon-file-alt';
 				break;
 			case 'audio':
-				$post_icon = 'icon-volume-medium';
+				$post_icon = 'icon-volume-up';
 				break;
 			case 'chat':
-				$post_icon = 'icon-bubble-3';
+				$post_icon = 'icon-comment';
 				break;
 			case 'gallery':
-				$post_icon = 'icon-images';
+				$post_icon = 'icon-camera';
 				break;
 			case 'image':
-				$post_icon = 'icon-image';
+				$post_icon = 'icon-picture';
 				break;
 			case 'link':
-				$post_icon = 'icon-link-4';
+				$post_icon = 'icon-link';
 				break;
 			case 'quote':
-				$post_icon = 'icon-quotes-left';
+				$post_icon = 'icon-quote-left';
 				break;
 			case 'status':
 				$post_icon = 'icon-user';
 				break;
 			case 'video':
-				$post_icon = 'icon-camera-4';
+				$post_icon = 'icon-facetime-video';
 				break;
 			default:
 				$post_icon = 'icon-calendar';
@@ -546,7 +561,7 @@ if ( ! function_exists( 'quark_posted_on' ) ) {
 		}
 
 		// Translators: 1: Icon 2: Permalink 3: Post date and time 4: Publish date in ISO format 5: Post date
-		$date = sprintf( '<i class="%1$s" aria-hidden="true"></i> <a href="%2$s" title="Posted %3$s" rel="bookmark"><time class="entry-date" datetime="%4$s" pubdate>%5$s</time></a>',
+		$date = sprintf( '<i class="%1$s"></i> <a href="%2$s" title="Posted %3$s" rel="bookmark"><time class="entry-date" datetime="%4$s" pubdate>%5$s</time></a>',
 			$post_icon,
 			esc_url( get_permalink() ),
 			sprintf( __( '%1$s @ %2$s', 'quark' ), esc_html( get_the_date() ), esc_attr( get_the_time() ) ),
@@ -555,7 +570,7 @@ if ( ! function_exists( 'quark_posted_on' ) ) {
 		);
 
 		// Translators: 1: Date link 2: Author link 3: Categories 4: No. of Comments
-		$author = sprintf( '<i class="icon-pencil" aria-hidden="true"></i> <address class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></address>',
+		$author = sprintf( '<i class="icon-pencil"></i> <address class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></address>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_attr( sprintf( __( 'View all posts by %s', 'quark' ), get_the_author() ) ),
 			get_the_author()
@@ -565,7 +580,7 @@ if ( ! function_exists( 'quark_posted_on' ) ) {
 		$categories_list = get_the_category_list( __( ' ', 'quark' ) );
 
 		// Translators: 1: Permalink 2: Title 3: No. of Comments
-		$comments = sprintf( '<span class="comments-link"><i class="icon-bubble-3" aria-hidden="true"></i> <a href="%1$s" title="%2$s">%3$s</a></span>',
+		$comments = sprintf( '<span class="comments-link"><i class="icon-comment"></i> <a href="%1$s" title="%2$s">%3$s</a></span>',
 			esc_url( get_comments_link() ),
 			esc_attr( __( 'Comment on ' . the_title_attribute( 'echo=0' ) ) ),
 			( get_comments_number() > 0 ? sprintf( _n( '%1$s Comment', '%1$s Comments', get_comments_number() ), get_comments_number() ) : __( 'No Comments', 'quark' ) )
@@ -597,7 +612,7 @@ if ( ! function_exists( 'quark_entry_meta' ) ) {
 
 		// Translators: 1 is tag
 		if ( $tag_list ) {
-			printf( __( '<i class="icon-tag-2" aria-hidden="true"></i> %1$s', 'quark' ), $tag_list );
+			printf( __( '<i class="icon-tag"></i> %1$s', 'quark' ), $tag_list );
 		}
 	}
 }
@@ -743,17 +758,18 @@ if ( ! function_exists( 'quark_get_social_media' ) ) {
 			array( 'url' => of_get_option( 'social_twitter', '' ), 'icon' => 'icon-twitter', 'title' => __( 'Follow me on Twitter', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_facebook', '' ), 'icon' => 'icon-facebook', 'title' => __( 'Friend me on Facebook', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_googleplus', '' ), 'icon' => 'icon-google-plus', 'title' => __( 'Connect with me on Google+', 'quark' ) ),
-			array( 'url' => of_get_option( 'social_linkedin', '' ), 'icon' => 'icon-linkedin', 'title' => __( 'Connect with me on LinkedIn', 'quark' ) ),
-			array( 'url' => of_get_option( 'social_youtube', '' ), 'icon' => 'icon-youtube-2', 'title' => __( 'Subscribe to me on YouTube', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_linkedin', '' ), 'icon' => 'icon-linkedin-sign', 'title' => __( 'Connect with me on LinkedIn', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_github', '' ), 'icon' => 'icon-github-alt', 'title' => __( 'Fork me on GitHub', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_youtube', '' ), 'icon' => 'icon-youtube-sign', 'title' => __( 'Subscribe to me on YouTube', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_instagram', '' ), 'icon' => 'icon-instagram', 'title' => __( 'Follow me on Instagram', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_flickr', '' ), 'icon' => 'icon-flickr', 'title' => __( 'Connect with me on Flickr', 'quark' ) ),
-			array( 'url' => of_get_option( 'social_pinterest', '' ), 'icon' => 'icon-pinterest', 'title' => __( 'Follow me on Pinterest', 'quark' ) )
+			array( 'url' => of_get_option( 'social_pinterest', '' ), 'icon' => 'icon-pinterest-sign', 'title' => __( 'Follow me on Pinterest', 'quark' ) )
 		);
 
 		foreach ( $icons as $key ) {
 			$value = $key['url'];
 			if ( !empty( $value ) ) {
-				$output .= sprintf( '<li><a href="%1$s" title="%2$s"><i class="%3$s" aria-hidden="true"></i></a></li>',
+				$output .= sprintf( '<li><a href="%1$s" title="%2$s"><i class="%3$s"></i></a></li>',
 					$value,
 					$key['title'],
 					$key['icon']
@@ -800,7 +816,7 @@ function quark_theme_options_styles() {
 	$imagepath =  trailingslashit( get_template_directory_uri() ) . 'images/';
 	$background_defaults = array(
 		'color' => '#222222',
-		'image' => $imagepath . 'irongrip.png',
+		'image' => $imagepath . 'dark-noise.jpg',
 		'repeat' => 'repeat',
 		'position' => 'top left',
 		'attachment'=>'scroll' );

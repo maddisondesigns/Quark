@@ -10,7 +10,7 @@ get_header(); ?>
 
 	<div id="primary" class="site-content row clearfix" role="main">
 
-			<div class="col span_8_of_12">
+			<div class="col grid_8_of_12">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -27,7 +27,7 @@ get_header(); ?>
 
 				<?php endwhile; // end of the loop. ?>
 
-			</div> <!-- /.col.span_8_of_12 -->
+			</div> <!-- /.col.grid_8_of_12 -->
 			<?php get_sidebar(); ?>
 
 	</div> <!-- /#primary.site-content.row -->

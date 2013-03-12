@@ -6,7 +6,7 @@
  * @since Quark 1.0
  */
 ?>
-	<div class="col span_4_of_12">
+	<div class="col grid_4_of_12">
 
 		<div id="secondary" class="widget-area" role="complementary">
 			<?php
@@ -23,4 +23,4 @@
 
 		</div> <!-- /#secondary.widget-area -->
 
-	</div> <!-- /.col.span_4_of_12 -->
+	</div> <!-- /.col.grid_4_of_12 -->

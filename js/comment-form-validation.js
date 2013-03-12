@@ -12,9 +12,9 @@ jQuery( document ).ready( function( $ ) {
 			comment: "required"
 		},
 		messages: {
-			author: '<i class="icon-close icon-small" aria-hidden="true"></i> ' + comments_object.author,
-			email: '<i class="icon-close icon-small" aria-hidden="true"></i> ' + comments_object.email,
-			comment: '<i class="icon-close icon-small" aria-hidden="true"></i> ' + comments_object.comment
+			author: '<i class="icon-remove"></i> ' + comments_object.author,
+			email: '<i class="icon-remove"></i> ' + comments_object.email,
+			comment: '<i class="icon-remove"></i> ' + comments_object.comment
 		}
 	} );
 

@@ -21,7 +21,7 @@
 		<div id="secondary" class="home-sidebar row clearfix">
 			<?php
 			// Work out the container class name based on the number of active front page sidebars
-			$containerClass = "span_" . 12 / $footerSidebars . "_of_12";
+			$containerClass = "grid_" . 12 / $footerSidebars . "_of_12";
 
 			// Display the active front page sidebars
 			for ( $x=1; $x<=4; $x++ ) {

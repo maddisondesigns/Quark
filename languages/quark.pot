@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: quark\n"
-"POT-Creation-Date: 2013-01-28 19:24+1000\n"
-"PO-Revision-Date: 2013-01-28 19:24+1000\n"
+"POT-Creation-Date: 2013-03-12 12:20+1000\n"
+"PO-Revision-Date: 2013-03-12 12:20+1000\n"
 "Last-Translator: Anthony Hortin <support@maddisondesigns.com>\n"
-"Language-Team: Maddison Designs\n"
+"Language-Team:  <support@maddisondesigns.com>\n"
 "Language: english\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -99,81 +99,89 @@ msgid "Enter your LinkedIn URL."
 msgstr ""
 
 #: ../options.php:105
-msgid "YouTube"
+msgid "GitHub"
 msgstr ""
 
 #: ../options.php:106
-msgid "Enter your YouTube URL."
+msgid "Enter your GitHub URL."
 msgstr ""
 
 #: ../options.php:112
-msgid "Instagram"
+msgid "YouTube"
 msgstr ""
 
 #: ../options.php:113
-msgid "Enter your Instagram URL."
+msgid "Enter your YouTube URL."
 msgstr ""
 
 #: ../options.php:119
-msgid "Flickr"
+msgid "Instagram"
 msgstr ""
 
 #: ../options.php:120
-msgid "Enter your Flickr URL."
+msgid "Enter your Instagram URL."
 msgstr ""
 
 #: ../options.php:126
-msgid "Pinterest"
+msgid "Flickr"
 msgstr ""
 
 #: ../options.php:127
-msgid "Enter your Pinterest URL."
+msgid "Enter your Flickr URL."
 msgstr ""
 
 #: ../options.php:133
+msgid "Pinterest"
+msgstr ""
+
+#: ../options.php:134
+msgid "Enter your Pinterest URL."
+msgstr ""
+
+#: ../options.php:140
 msgid "Advanced settings"
 msgstr ""
 
-#: ../options.php:137
+#: ../options.php:144
 msgid "Banner Background"
 msgstr ""
 
-#: ../options.php:138
+#: ../options.php:145
 msgid "Select an image and background color for the homepage banner."
 msgstr ""
 
-#: ../options.php:144
+#: ../options.php:151
 msgid "Footer Background Color"
 msgstr ""
 
-#: ../options.php:145
+#: ../options.php:152
 msgid "Select the background color for the footer."
 msgstr ""
 
-#: ../options.php:151
+#: ../options.php:158
 msgid "Footer Content"
 msgstr ""
 
-#: ../options.php:152
+#: ../options.php:159
 msgid ""
 "Enter the text you&lsquo;d like to display in the footer. This content will "
 "be displayed just below the footer widgets. It&lsquo;s ideal for displaying "
 "your copyright message or credits."
 msgstr ""
 
-#: ../options.php:159
+#: ../options.php:166
 msgid "Footer Content Position"
 msgstr ""
 
-#: ../options.php:160
+#: ../options.php:167
 msgid "Select what position you would like the footer content aligned to."
 msgstr ""
 
-#: ../options.php:168
+#: ../options.php:175
 msgid "Google Analytics"
 msgstr ""
 
-#: ../options.php:169
+#: ../options.php:176
 msgid ""
 "Enter your Google Analytics Tracking ID. The Tracking ID will be in the form "
 "of UA-1234567-1."
@@ -185,7 +193,7 @@ msgstr ""
 
 #: ../content-postarchives.php:36 ../content-page.php:21
 #: ../content-video.php:31 ../content-chat.php:23 ../content.php:55
-#: ../functions.php:446 ../content-audio.php:40 ../content-link.php:23
+#: ../functions.php:469 ../content-audio.php:40 ../content-link.php:23
 #: ../content-aside.php:23 ../content-status.php:23 ../content-quote.php:26
 #: ../content-gallery.php:31 ../content-image.php:23
 msgid "Edit"
@@ -197,30 +205,30 @@ msgstr ""
 msgid "Permalink to %s"
 msgstr ""
 
-#: ../tag.php:20
+#: ../tag.php:18
 #, php-format
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: ../author.php:25
+#: ../author.php:24
 #, php-format
 msgid "Author Archives: %s"
 msgstr ""
 
-#: ../author.php:37 ../content.php:62
+#: ../author.php:35 ../content.php:62
 #, php-format
 msgid "About %s"
 msgstr ""
 
-#: ../header.php:89
+#: ../header.php:60
 msgid "Menu"
 msgstr ""
 
-#: ../header.php:90
+#: ../header.php:61
 msgid "Skip to content"
 msgstr ""
 
-#: ../content-chat.php:15 ../content.php:40 ../functions.php:631
+#: ../content-chat.php:15 ../content.php:40 ../functions.php:659
 #: ../content-audio.php:31 ../content-link.php:15 ../content-aside.php:15
 #: ../content-status.php:15 ../content-quote.php:16 ../content-image.php:15
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
@@ -239,276 +247,279 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: ../functions.php:104
+#: ../functions.php:105
 msgid "Main Sidebar"
 msgstr ""
 
-#: ../functions.php:106
+#: ../functions.php:107
 msgid ""
-"Appears in the sidebar on posts and pages except the optional Homepage "
+"Appears in the sidebar on posts and pages except the optional Front Page "
 "template, which has its own widgets"
 msgstr ""
 
-#: ../functions.php:114
+#: ../functions.php:115
 msgid "Blog Sidebar"
 msgstr ""
 
-#: ../functions.php:116
+#: ../functions.php:117
 msgid "Appears in the sidebar on the blog only"
 msgstr ""
 
-#: ../functions.php:124
+#: ../functions.php:125
 msgid "Single Post Sidebar"
 msgstr ""
 
-#: ../functions.php:126
+#: ../functions.php:127
 msgid "Appears in the sidebar on single posts only"
 msgstr ""
 
-#: ../functions.php:134
+#: ../functions.php:135
 msgid "Page Sidebar"
 msgstr ""
 
-#: ../functions.php:136
+#: ../functions.php:137
 msgid "Appears in the sidebar on pages only"
 msgstr ""
 
-#: ../functions.php:144
+#: ../functions.php:145
 msgid "First Front Page Banner Widget"
 msgstr ""
 
-#: ../functions.php:146 ../functions.php:156
+#: ../functions.php:147 ../functions.php:157
 msgid "Appears in the banner area on the Front Page"
 msgstr ""
 
-#: ../functions.php:154
+#: ../functions.php:155
 msgid "Second Front Page Banner Widget"
 msgstr ""
 
-#: ../functions.php:164
-msgid "First Homepage Widget Area"
+#: ../functions.php:165
+msgid "First Front Page Widget Area"
 msgstr ""
 
-#: ../functions.php:166 ../functions.php:176 ../functions.php:186
-#: ../functions.php:196
+#: ../functions.php:167 ../functions.php:177 ../functions.php:187
+#: ../functions.php:197
 msgid ""
-"Appears when using the optional homepage template with a page set as Static "
-"Front Page"
+"Appears when using the optional Front Page template with a page set as "
+"Static Front Page"
 msgstr ""
 
-#: ../functions.php:174
-msgid "Second Homepage Widget Area"
+#: ../functions.php:175
+msgid "Second Front Page Widget Area"
 msgstr ""
 
-#: ../functions.php:184
-msgid "Third Homepage Widget Area"
+#: ../functions.php:185
+msgid "Third Front Page Widget Area"
 msgstr ""
 
-#: ../functions.php:194
-msgid "Fourth Homepage Widget Area"
+#: ../functions.php:195
+msgid "Fourth Front Page Widget Area"
 msgstr ""
 
-#: ../functions.php:204
+#: ../functions.php:205
 msgid "First Footer Widget Area"
 msgstr ""
 
-#: ../functions.php:206 ../functions.php:216 ../functions.php:226
-#: ../functions.php:236
+#: ../functions.php:207 ../functions.php:217 ../functions.php:227
+#: ../functions.php:237
 msgid "Appears in the footer sidebar"
 msgstr ""
 
-#: ../functions.php:214
+#: ../functions.php:215
 msgid "Second Footer Widget Area"
 msgstr ""
 
-#: ../functions.php:224
+#: ../functions.php:225
 msgid "Third Footer Widget Area"
 msgstr ""
 
-#: ../functions.php:234
+#: ../functions.php:235
 msgid "Fourth Footer Widget Area"
 msgstr ""
 
-#: ../functions.php:295
+#: ../functions.php:310
 msgid "Please enter your name"
 msgstr ""
 
-#: ../functions.php:296
+#: ../functions.php:311
 msgid "Please enter a valid email address"
 msgstr ""
 
-#: ../functions.php:297
+#: ../functions.php:312
 msgid "Please add a comment"
 msgstr ""
 
-#: ../functions.php:341
+#: ../functions.php:365
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: ../functions.php:364
+#: ../functions.php:389
 msgid "Post navigation"
 msgstr ""
 
-#: ../functions.php:368
+#: ../functions.php:393
 msgctxt "Previous post link"
-msgid "<i class=\"icon-arrow-left icon-small\" aria-hidden=\"true\"></i>"
+msgid "<i class=\"icon-angle-left\"></i>"
 msgstr ""
 
-#: ../functions.php:369
+#: ../functions.php:394
 msgctxt "Next post link"
-msgid "<i class=\"icon-arrow-right icon-small\" aria-hidden=\"true\"></i>"
+msgid "<i class=\"icon-angle-right\"></i>"
 msgstr ""
 
-#: ../functions.php:379
-msgid ""
-"<i class=\"icon-arrow-left icon-small\" aria-hidden=\"true\"></i> Previous"
+#: ../functions.php:405
+msgid "<i class=\"icon-angle-left\"></i>Previous"
 msgstr ""
 
-#: ../functions.php:380
-msgid "Next <i class=\"icon-arrow-right icon-small\" aria-hidden=\"true\"></i>"
+#: ../functions.php:406
+msgid "Next<i class=\"icon-angle-right\"></i>"
 msgstr ""
 
-#: ../functions.php:412
+#: ../functions.php:437
 msgid "Pingback:"
 msgstr ""
 
-#: ../functions.php:412
+#: ../functions.php:437
 msgid "(Edit)"
 msgstr ""
 
-#: ../functions.php:428
+#: ../functions.php:452
 msgid "Post author"
 msgstr ""
 
-#: ../functions.php:432 ../functions.php:543
+#: ../functions.php:455 ../functions.php:567
 #, php-format
 msgid "%1$s @ %2$s"
 msgstr ""
 
-#: ../functions.php:435
+#: ../functions.php:458
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../functions.php:441
+#: ../functions.php:464
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../functions.php:450
+#: ../functions.php:473
 msgid "Reply <span>&darr;</span>"
 msgstr ""
 
-#: ../functions.php:471
+#: ../functions.php:494
 msgid "Name"
 msgstr ""
 
-#: ../functions.php:473
+#: ../functions.php:496
 msgid "Email"
 msgstr ""
 
-#: ../functions.php:475
+#: ../functions.php:498
 msgid "Website"
 msgstr ""
 
-#: ../functions.php:490
+#: ../functions.php:514
 msgctxt "noun"
 msgid "Comment"
 msgstr ""
 
-#: ../functions.php:551
+#: ../functions.php:575
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: ../functions.php:556 ../functions.php:586
+#: ../functions.php:580 ../functions.php:610
 msgid " "
 msgstr ""
 
-#: ../functions.php:561
+#: ../functions.php:585
 msgid "Comment on "
 msgstr ""
 
-#: ../functions.php:562
+#: ../functions.php:586
 #, php-format
 msgid "%1$s Comment"
 msgid_plural "%1$s Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../functions.php:562
+#: ../functions.php:586
 msgid "No Comments"
 msgstr ""
 
-#: ../functions.php:566
+#: ../functions.php:590
 #, php-format
 msgid ""
 "<div class=\"header-meta clearfix\">%1$s%2$s<span class=\"post-categories\">"
 "%3$s</span>%4$s</div>"
 msgstr ""
 
-#: ../functions.php:591
+#: ../functions.php:615
 #, php-format
-msgid "<i class=\"icon-tag-2\" aria-hidden=\"true\"></i> %1$s"
+msgid "<i class=\"icon-tag\"></i> %1$s"
 msgstr ""
 
-#: ../functions.php:631
+#: ../functions.php:659
 msgid "Continue reading"
 msgstr ""
 
-#: ../functions.php:719
+#: ../functions.php:758
 msgid "Follow me on Twitter"
 msgstr ""
 
-#: ../functions.php:720
+#: ../functions.php:759
 msgid "Friend me on Facebook"
 msgstr ""
 
-#: ../functions.php:721
+#: ../functions.php:760
 msgid "Connect with me on Google+"
 msgstr ""
 
-#: ../functions.php:722
+#: ../functions.php:761
 msgid "Connect with me on LinkedIn"
 msgstr ""
 
-#: ../functions.php:723
+#: ../functions.php:762
+msgid "Fork me on GitHub"
+msgstr ""
+
+#: ../functions.php:763
 msgid "Subscribe to me on YouTube"
 msgstr ""
 
-#: ../functions.php:724
+#: ../functions.php:764
 msgid "Follow me on Instagram"
 msgstr ""
 
-#: ../functions.php:725
+#: ../functions.php:765
 msgid "Connect with me on Flickr"
 msgstr ""
 
-#: ../functions.php:726
+#: ../functions.php:766
 msgid "Follow me on Pinterest"
 msgstr ""
 
-#: ../functions.php:758
+#: ../functions.php:798
 msgid "Proudly powered by"
 msgstr ""
 
-#: ../functions.php:759
+#: ../functions.php:799
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: ../functions.php:760
+#: ../functions.php:800
 msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
-#: ../functions.php:761
+#: ../functions.php:801
 msgid "WordPress"
 msgstr ""
 
-#: ../404.php:18
-msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+#: ../404.php:17
+msgid "Uh Oh! This is somewhat embarrassing!"
 msgstr ""
 
-#: ../404.php:21 ../no-results.php:29
+#: ../404.php:20 ../no-results.php:29
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
@@ -533,7 +544,7 @@ msgstr ""
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: ../comments.php:50
+#: ../comments.php:49
 msgid "Comments are closed."
 msgstr ""
 
@@ -553,17 +564,17 @@ msgid ""
 "different keywords."
 msgstr ""
 
-#: ../search.php:20
+#: ../search.php:19
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: ../category.php:19
+#: ../category.php:18
 #, php-format
 msgid "Category Archives: %s"
 msgstr ""
 
-#: ../inc/options-framework.php:162 ../inc/options-framework.php:378
+#: ../inc/options-framework.php:163 ../inc/options-framework.php:378
 msgid "Theme Options"
 msgstr ""
 
@@ -679,14 +690,18 @@ msgstr ""
 msgid "No file chosen"
 msgstr ""
 
-#: ../inc/options-media-uploader.php:53 ../inc/options-media-uploader.php:100
+#: ../inc/options-media-uploader.php:54 ../inc/options-media-uploader.php:107
 msgid "Upload"
 msgstr ""
 
-#: ../inc/options-media-uploader.php:55 ../inc/options-media-uploader.php:101
+#: ../inc/options-media-uploader.php:56 ../inc/options-media-uploader.php:108
 msgid "Remove"
 msgstr ""
 
-#: ../inc/options-media-uploader.php:79
+#: ../inc/options-media-uploader.php:59
+msgid "Upgrade your version of WordPress for full media support."
+msgstr ""
+
+#: ../inc/options-media-uploader.php:83
 msgid "View File"
 msgstr ""

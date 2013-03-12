@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Column & Row Setup
+   ========================================================================== */
+
+.col {
+	display: block;
+	float:left;
+	margin: 0 0 0 1.6%;
+}
+
+/* Remove the margin on the first column. Works on all browsers incl. IE7+ */
+.col:first-child { margin-left: 0; }
+
+.row {
+	clear: both;
+	margin: 0 auto;
+}
+
+
+/* ==========================================================================
+   Twelve Column Grid
+   ========================================================================== */
+
+.grid_12_of_12 { width: 100%; }
+.grid_11_of_12 { width: 91.46%; }
+.grid_10_of_12 { width: 83%; }
+.grid_9_of_12  { width: 74.54%; }
+.grid_8_of_12  { width: 66.08%; }
+.grid_7_of_12  { width: 57.62%; }
+.grid_6_of_12  { width: 49.16%; }
+.grid_5_of_12  { width: 40.7%; }
+.grid_4_of_12  { width: 32.24%; }
+.grid_3_of_12  { width: 23.78%; }
+.grid_2_of_12  { width: 15.32%; }
+.grid_1_of_12  { width: 6.86%; }

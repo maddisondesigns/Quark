@@ -10,7 +10,7 @@ get_header(); ?>
 
 	<div id="primary" class="site-content row clearfix" role="main">
 
-		<div class="col span_8_of_12">
+		<div class="col grid_8_of_12">
 
 			<?php if ( have_posts() ) : ?>
 
@@ -36,16 +36,16 @@ get_header(); ?>
 							<p><?php the_author_meta( 'description' ); ?></p>
 							<p class="social-meta">
 								<?php if ( get_the_author_meta( 'url' ) ) { ?>
-									<a href="<?php the_author_meta( 'url' ) ?>" title="Website"><i class="icon-link-3" aria-hidden="true"></i></a>
+									<a href="<?php the_author_meta( 'url' ) ?>" title="Website"><i class="icon-link"></i></a>
 								<?php } ?>
 								<?php if ( get_the_author_meta( 'twitter' ) ) { ?>
-									<a href="<?php the_author_meta( 'twitter' ) ?>" title="Twitter"><i class="icon-twitter" aria-hidden="true"></i></a>
+									<a href="<?php the_author_meta( 'twitter' ) ?>" title="Twitter"><i class="icon-twitter"></i></a>
 								<?php } ?>
 								<?php if ( get_the_author_meta( 'facebook' ) ) { ?>
-									<a href="<?php the_author_meta( 'facebook' ) ?>" title="Facebook"><i class="icon-facebook-2" aria-hidden="true"></i></a>
+									<a href="<?php the_author_meta( 'facebook' ) ?>" title="Facebook"><i class="icon-facebook-sign"></i></a>
 								<?php } ?>
 								<?php if ( get_the_author_meta( 'googleplus' ) ) { ?>
-									<a href="<?php the_author_meta( 'googleplus' ) ?>" title="Google+"><i class="icon-google-plus" aria-hidden="true"></i></a>
+									<a href="<?php the_author_meta( 'googleplus' ) ?>" title="Google+"><i class="icon-google-plus"></i></a>
 								<?php } ?>
 							</p>
 
@@ -72,7 +72,7 @@ get_header(); ?>
 
 			<?php endif; // end have_posts() check ?>
 
-		</div> <!-- /.col.span_8_of_12 -->
+		</div> <!-- /.col.grid_8_of_12 -->
 		<?php get_sidebar(); ?>
 
 	</div> <!-- /#primary.site-content.row -->

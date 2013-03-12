@@ -20,6 +20,6 @@
 			// Only show the tags on the Single Post page
 			quark_entry_meta();
 		} ?>
-		<?php edit_post_link( __( 'Edit', 'quark' ) . ' <i class="icon-arrow-right icon-small" aria-hidden="true"></i>', '<div class="edit-link">', '</div>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'quark' ) . ' <i class="icon-angle-right"></i>', '<div class="edit-link">', '</div>' ); ?>
 	</footer> <!-- /.entry-meta -->
 </article> <!-- /#post -->

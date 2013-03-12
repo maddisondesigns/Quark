@@ -1,21 +1,16 @@
 /*
 Theme Name: Quark
-Theme URI: http://maddisondesigns.com/quark/
+Theme URI: http://quarktheme.com
 Author: Anthony Hortin
 Author URI: http://maddisondesigns.com/
 Description: A WordPress starter theme based on Responsive Grid System, HTML5 Boilerplate & Automattic's _S theme. It's your basic building block for creating beautiful, responsive custom themes built on HTML5 &amp; CSS3
-Version: 1.0
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+Text Domain: quark
 */
 
-
-/* ==========================================================================
-   IcoMoon icon webfont by the awesome guys at Keyamoon - http://keyamoon.com/icomoon
-   ========================================================================== */
-
-@import "css/icomoon.css";
 
 /* ==========================================================================
    Default stylings from HTML5 Boilerplate
@@ -41,7 +36,7 @@ td { vertical-align: top; }
 
 
 /* ==========================================================================
-   Web fonts - Provided by Font Squirrel http://www.fontsquirrel.com
+   Web fonts - Google webfonts http://www.google.com/webfonts
    ========================================================================== */
 
 @font-face {
@@ -89,12 +84,12 @@ td { vertical-align: top; }
 }
 
 @font-face {
-	font-family: 'museo_500regular';
-	src: url('fonts/museo500-regular-webfont.eot');
-	src: url('fonts/museo500-regular-webfont.eot?#iefix') format('embedded-opentype'),
-		  url('fonts/museo500-regular-webfont.woff') format('woff'),
-		  url('fonts/museo500-regular-webfont.ttf') format('truetype'),
-		  url('fonts/museo500-regular-webfont.svg#museo_500regular') format('svg');
+	font-family: 'ArvoRegular';
+	src: url('fonts/Arvo-Regular-webfont.eot');
+	src: url('fonts/Arvo-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+		  url('fonts/Arvo-Regular-webfont.woff') format('woff'),
+		  url('fonts/Arvo-Regular-webfont.ttf') format('truetype'),
+		  url('fonts/Arvo-Regular-webfont.svg#ArvoRegular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -168,7 +163,7 @@ img.wp-smiley,
 /* Header */
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'museo_500regular', Georgia, "Times New Roman", Times, serif;
+	font-family: 'ArvoRegular', Georgia, "Times New Roman", Times, serif;
 	font-weight: normal;
 	font-style: normal;
 	color: #333;
@@ -387,7 +382,7 @@ td {
 code, pre {
 	border-radius: 3px;
 	color: #555;
-	font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 	font-size: 12px;
 	font-size: 0.75rem;
 	padding: 0 3px 2px;
@@ -465,9 +460,8 @@ img.wp-smiley, .rsswidget img {
 	height: auto;
 }
 
- /* Need to add !important since we're using an attribute selector otherwise specificity wont override the inline generated gallery css. Blerg! */
-.entry-content [id^="gallery-"] img {
-	border: none !important;
+#primary .entry-content [id^="gallery-"] img {
+	border: none;
 }
 
 /* Text meant only for screen readers */
@@ -735,8 +729,8 @@ textarea {
 
 .banner h1 {
 	color: #eaeaea;
-	font-size: 60px;
-	font-size: 3.75rem;
+	font-size: 56px;
+	font-size: 3.50rem;
 }
 .banner h2 {
 	color: #eaeaea;
@@ -805,7 +799,7 @@ textarea {
 
 .social-media-icons li {
 	display: inline-block;
-	margin: 0.1em 0 0 0.5em;
+	margin: 0.1em 0 0 0.2em;
 }
 
 .social-media-icons a {
@@ -852,7 +846,7 @@ textarea {
 }
 
 article.sticky .featured-post {
-	font-family: 'museo_500regular', Georgia, "Times New Roman", Times, serif;
+	font-family: 'ArvoRegular', Georgia, "Times New Roman", Times, serif;
 	font-weight: normal;
 	font-style: normal;
 	border-top: 4px double #aaa;
@@ -1177,14 +1171,14 @@ article.sticky {
 
 /* Quote */
 .format-quote .entry-content blockquote:before {
-	font-family: 'icomoon';
+	font-family: 'FontAwesome';
 	font-weight: normal;
 	font-style: normal;
 	speak: none;
 	vertical-align: top;
 	font-size: 32px;
 	font-size: 2rem;
-	content: "\e062";
+	content: "\f10d";
 	color: #ddd;
 	top: -15px;
 	left: 0;
@@ -1626,7 +1620,7 @@ form label.error {
 
 
 /* ==========================================================================
-   Navigation
+   Content Navigation
    ========================================================================== */
 
 .site-content nav {
@@ -1763,25 +1757,25 @@ li span.dots {
 }
 
 .main-navigation li.menu-parent-item > a:after { /* If you don't want the arrows on the top level drop down, simply remove this style */
-	font-family: 'icomoon';
+	font-family: 'FontAwesome';
 	font-weight: normal;
 	font-style: normal;
 	speak: none;
 	vertical-align: middle;
-	font-size: 8px;
-	font-size: .5rem;
-	content: " \e10c";
+	font-size: 9px;
+	font-size: 0.5625rem;
+	content: " \f078";
 }
 
 .main-navigation ul li li.menu-parent-item > a:after { /* If you don't want the arrows on the sub-menu options, simply remove this style */
-	font-family: 'icomoon';
+	font-family: 'FontAwesome';
 	font-weight: normal;
 	font-style: normal;
 	speak: none;
 	vertical-align: middle;
-	font-size: 8px;
-	font-size: .5rem;
-	content: " \e10b";
+	font-size: 9px;
+	font-size: 0.5625rem;
+	content: " \f054";
 }
 
 .main-navigation ul a {
@@ -1871,6 +1865,144 @@ li span.dots {
 
 .main-small-navigation .nav-menu {
 	display: none;
+}
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/*  Breakpoints are set based on the design, not based on device sizes */
+@media only screen and (max-width: 1100px) {
+	.banner h1 {
+		font-size: 44px;
+		font-size: 2.75rem; /* 44px / 16px */
+	}
+	.banner h2 {
+		font-size: 24px;
+		font-size: 1.5rem; /* 24px / 16px */
+	}
+}
+
+@media only screen and (max-width: 980px) {
+	.main-navigation {
+		margin: 38px 0 0 0;
+		margin: 2.375rem 0 0 0;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.banner h1 {
+		font-size: 44px;
+		font-size: 2.75rem; /* 44px / 16px */
+	}
+	.banner h2 {
+		font-size: 24px;
+		font-size: 1.5rem; /* 24px / 16px */
+	}
+	.banner .grid_6_of_12 {
+		width: 100%; 
+	}
+	.banner h1, .banner h2, .banner p {
+		text-align: center;
+	}
+	.main-navigation {
+		margin: 32px 0 0 0;
+		margin: 2rem 0 0 0;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	header .grid_4_of_12 {
+		width: 100%; 
+	}
+	header .grid_8_of_12 {
+		width: 100%;
+		margin-left: 0;
+	}
+	header .main-navigation {
+		margin-top: 0;
+		float: none;
+	}
+	.main-navigation .nav-menu > li:first-child {
+		margin-left: 0;
+	}
+	.social-media-icons {
+		float: none;
+		text-align: left;
+	}
+	.social-media-icons li {
+		margin: 0.1em 0.5em 0 0;
+	}
+}
+
+/*  Go full Width at less than 650px */
+@media only screen and (max-width: 650px) {
+	.grid_1_of_12,
+	.grid_2_of_12,
+	.grid_3_of_12,
+	.grid_4_of_12,
+	.grid_5_of_12,
+	.grid_6_of_12,
+	.grid_7_of_12,
+	.grid_8_of_12,
+	.grid_9_of_12,
+	.grid_10_of_12,
+	.grid_11_of_12,
+	.grid_12_of_12 {
+		width: 100%; 
+	}
+	.col {
+		margin: 0;
+	}
+	.main-small-navigation .nav-menu, .nav-menu ul {
+		padding: 0;
+	}
+	.main-small-navigation .nav-menu ul {
+		padding-left: 16px;
+		padding-left: 1rem;
+	}
+}
+
+
+/*  Adjust the menu at less than 520px */
+@media only screen and (max-width: 520px) {
+	.site-title h1 {
+		text-align: center;
+	}
+	.main-small-navigation .nav-menu,
+	.main-small-navigation .nav-menu ul,
+	.nav-menu,
+	.nav-menu ul {
+		padding: 0;
+	}
+	.main-small-navigation,
+	.main-navigation li {
+		width: 100%;
+	}
+	.main-small-navigation {
+		text-align: center;
+	}
+	.main-small-navigation ul li,
+	.main-navigation ul li {
+		background-color: #fff;
+		margin: 5px 0;
+		text-align: center;
+	}
+	.main-navigation ul ul, .main-navigation ul ul li ul {
+		position: relative;
+	}
+	.main-navigation ul ul li ul {
+		left: 0;
+	}
+	.main-navigation ul ul a {
+		color: #fff; /* Nav bar dropdown link color */
+		background-color: #333;  /* Nav bar dropdown background color */
+		width: 100%; /* Nav bar dropdown width */
+	}
+	.social-media-icons {
+		text-align: center;
+	}
 }
 
 

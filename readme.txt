@@ -1,10 +1,10 @@
 === Quark ===
 Contributors: ahortin
-Donate link: http://maddisondesigns.com/quark/
+Donate link: http://quarktheme.com
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.4
 Tested up to: 3.5.1
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,18 +13,18 @@ Quark is your basic building block for creating beautiful, responsive custom the
 
 == Description ==
 
-Quark is your basic building block for creating beautiful, responsive custom themes. It's not a convoluted or confusing framework that's hard to learn.
-It's a simple and elegant starter theme built on HTML5 & CSS3. It's based on the Underscores (_S) and TwentyTwelve themes, so that means not only
-is it flexible, it's extremely easy to customise. There's no need to make a child theme (unless you really want to), just dig in to the code & use it to
-give yourself a kickstart in creating your next awesome theme.
+Quark is your basic building block for creating beautiful, responsive custom themes. It's not a convoluted or confusing framework that's hard to learn or
+even harder to modify. It's a simple and elegant starter theme built on HTML5 & CSS3. It's based on the Underscores (_s) and TwentyTwelve themes, so that
+means not only is it flexible, it's extremely easy to customise. There's no need to make a child theme (unless you really want to), just dig in to the
+code & use it to give yourself a kickstart in creating your next awesome theme.
 
 Its base is a responsive, 12 column grid. It uses Normalize to make sure that browsers render all elements more consistently and Mordernizr for
 detecting HTML5 and CSS3 browser capabilities along with some default stylings from HTML5 Boilerplate.
 
-It incorporates the [Options Framework](http://wptheming.com/options-framework-theme/) by Devin Price to make is super easy to add custom Theme Options
-as well as the gorgeous IcoMoon icon font from the talented [Keyamoon](http://keyamoon.com/icomoon).
+It incorporates the [Options Framework](http://wptheming.com/options-framework-theme/) by Devin Price to make it super easy to add custom Theme Options
+as well as the gorgeous [Font Awesome](http://gregoryloucas.github.com/Font-Awesome-More) icon font by Dave Gandy.
 
-The main navigation uses the standard WordPress menu. Support for dropdown menus is inluded by default. If you'd like to envoke a button toggle for the main navigation menu on small screens, simply uncomment the two lines from the quark_scripts_styles() function within functions.php to register and enqueue the necessary javascript file.
+The main navigation uses the standard WordPress menu. Support for dropdown menus is inluded by default. If you'd like to envoke a button toggle for the main navigation menu on small screens, simply uncomment the two lines from the quark_scripts_styles() function within functions.php to register and enqueue the necessary javascript file, and BAM! You're done!
 
 Templates
 
@@ -34,7 +34,7 @@ Categories, Authors, Search, Posts Archive and 404.
 Post Formats
 
 All the standard WordPress Post Formats are supported. These include; Aside, Gallery, Link, Image, Quote, Status, Video, Audio, Chat and of course, 
-your std post.
+your standard post.
 
 Widgets
 
@@ -47,13 +47,13 @@ Page Sidebar: Appears in the sidebar on pages only
 
 The Front Page Banner Widget areas are dynamic! You can use up to two of these and they'll magically space themselves out evenly. For example, if you 
 only add widgets into the First Front Page Banner Widget Area, then it will expand the full width of the page. However, if you add widgets to both Front 
-Page Banner Widget areas, they'll magically space themselves out over two columns.
+Page Banner Widget areas, they'll magically space themselves out over two equal columns.
 First Front Page Banner Widget: Appears in the banner area on the Front Page
 Second Front Page Banner Widget: Appears in the banner area on the Front Page
 
-The Homepage Widget areas are dynamic! You can use up to four of these and they'll magically space themselves out evenly. For example, if you only add 
-widgets into the First Homepage Widget Area, then it will expand the full width of the page. However, if you add widgets to all four Homepage Widget 
-Areas, they'll magically space themselves out over four columns.
+The Front Page Widget areas are dynamic! You can use up to four of these and they'll magically space themselves out evenly. For example, if you only add 
+widgets into the First Front Page Widget Area, then it will expand the full width of the page. However, if you add widgets to all four Front Page Widget 
+Areas, they'll magically space themselves out over four equal columns.
 First Homepage Widget Area: Appears when using the optional homepage template with a page set as Static Front Page
 Second Homepage Widget Area: Appears when using the optional homepage template with a page set as Static Front Page
 Third Homepage Widget Area: Appears when using the optional homepage template with a page set as Static Front Page
@@ -61,7 +61,7 @@ Fourth Homepage Widget Area: Appears when using the optional homepage template w
 
 The Footer Widget areas are dynamic! You can use up to four of these and they'll magically space themselves out evenly. For example, if you only add 
 widgets into the First Footer Widget Area, then it will expand the full width of the page. However, if you add widgets to all four Footer Widget Areas, 
-they'll magically space themselves out over four columns.
+they'll magically space themselves out over four equal columns.
 First Footer Widget Area: Appears in the footer sidebar
 Second Footer Widget Area: Appears in the footer sidebar
 Third Footer Widget Area: Appears in the footer sidebar
@@ -81,13 +81,14 @@ Additional Theme Options can be found in the Appearance > Theme Options menu opt
 Specifying the URL's for various social media networks
 Specifying the banner background image & color
 Specifying the footer color
-Changing the footer credit text.
+Changing the footer credit text
 
 
 == Installation ==
 
-There are three ways to install your theme. It can be installed by manually uploading the files to the themes folder using an FTP application, it can be installed
-by downloading from the WordPress Theme Directory within the Dashboard or it can be installed by uploading the theme zip file that you downloaded.
+There are three ways to install your theme. It can be installed by manually uploading the files to the themes folder using an FTP application,
+it can be installed by downloading from the WordPress Theme Directory within the Dashboard or it can be installed by uploading the theme zip
+file that you downloaded.
 
 Use the following instructions to install & activate Quark using your preferred method.
 
@@ -116,9 +117,10 @@ Install by uploading the theme zip file:
 6. Once the theme has been installed, click the Activate link
 
 
-=== Getting Started ===
+== Getting Started ==
 
-Since Quark is a starter theme to kick of your own awesome theme, the first thing you want to do is copy the quark theme folder and change the name to something else. You'll then need to do a three-step find and replace on the name in all the templates.
+Since Quark is a starter theme to kick off your own awesome theme, the first thing you want to do is copy the quark theme folder 
+and change the name to something else. You'll then need to do a three-step find and replace on the name in all the templates.
 
 1. Search for quark inside single quotations to capture the text domain.
 2. Search for quark_ to capture all the function names.
@@ -150,18 +152,25 @@ Free Software Foundation; either version 2 of the License, or (at your option) a
 Quark utilises the following awesomeness:
 
 [Options Framework](http://wptheming.com/options-framework-theme), which is licensed under the GPLv2 License
-[Responsive Grid System](http://www.responsivegridsystem.com), which is licensed under a Creative Commons Attribution 3.0 License
 [Modernizr](http://modernizr.com), which is licensed under the MIT license
 [Normalize.css](https://github.com/necolas/normalize.css), which is licensed under the MIT license
 [Audio.js](http://kolber.github.com/audiojs), which is licensed under the MIT License
 [jQuery Validation](http://bassistance.de/jquery-plugins/jquery-plugin-validation) which is dual licensed under the MIT license and GPL licenses
-[IcoMoon icon font](http://icomoon.io), which is licensed with a royalty free license from [KeyaMoon](https://twitter.com/keyamoon)
-[PT Sans font](http://www.fontsquirrel.com/fonts/PT-Sans) which is licensed as per [Font Squirrel](http://www.fontsquirrel.com)
-[Museo 500 font](http://www.fontsquirrel.com/fonts/Museo), which is licensed as per the [Font Squirrel](http://www.fontsquirrel.com)
-Background images, licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License from [Subtle Patterns](http://subtlepatterns.com)
+[Font Awesome](http://gregoryloucas.github.com/Font-Awesome-More) icon font, which is licensed under SIL Open Font License and MIT License
+[PT Sans font](http://www.google.com/fonts/specimen/PT+Sans), which is licensed under SIL Open Font License 1.1
+[Arvo font](http://www.google.com/fonts/specimen/Arvo), which is licensed under SIL Open Font License 1.1
 
 
 == Changelog ==
+
+= 1.2 =
+- Updated Options Framework to version 1.5.2
+- Replaced Museo font with Arvo font
+- Replaced background images
+- Replaced Responsive Grid System with own custom grid
+- Replaced IcoMoon icon font with Font Awesome icon font
+- Added GitHub social icon theme option
+
 
 = 1.1 =
 - Changed margin and removed padding on .row class and consolidated html to remove extra container elements from templates
@@ -175,4 +184,3 @@ Background images, licensed under a Creative Commons Attribution-ShareAlike 3.0 
 
 = 1.0 =
 - Initial version
-

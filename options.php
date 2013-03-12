@@ -33,7 +33,7 @@ function optionsframework_options() {
 	// Background Defaults
 	$background_defaults = array(
 		'color' => '#222222',
-		'image' => $imagepath . 'irongrip.png',
+		'image' => $imagepath . 'dark-noise.jpg',
 		'repeat' => 'repeat',
 		'position' => 'top left',
 		'attachment'=>'scroll' );
@@ -98,6 +98,13 @@ function optionsframework_options() {
 		'name' => __( 'LinkedIn', 'quark' ),
 		'desc' => __( 'Enter your LinkedIn URL.', 'quark' ),
 		'id' => 'social_linkedin',
+		'std' => '',
+		'type' => 'text' );
+
+	$options[] = array(
+		'name' => __( 'GitHub', 'quark' ),
+		'desc' => __( 'Enter your GitHub URL.', 'quark' ),
+		'id' => 'social_github',
 		'std' => '',
 		'type' => 'text' );
 
