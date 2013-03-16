@@ -3,8 +3,8 @@ Theme Name: Quark
 Theme URI: http://quarktheme.com
 Author: Anthony Hortin
 Author URI: http://maddisondesigns.com/
-Description: A WordPress starter theme based on Responsive Grid System, HTML5 Boilerplate & Automattic's _S theme. It's your basic building block for creating beautiful, responsive custom themes built on HTML5 &amp; CSS3
-Version: 1.2
+Description: Quark is your basic building block for creating beautiful, responsive custom themes. It's a simple and elegant starter theme built on HTML5 & CSS3.
+Version: 1.2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -539,8 +539,7 @@ input[type="submit"] {
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
-	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
-	filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6');
 	*zoom: 1;
 	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -738,7 +737,7 @@ textarea {
 	font-size: 2rem;
 }
 
-.home #maincontentcontainer .widget {
+#maincontentcontainer .home-sidebar .widget {
 	background-color: #fcfcfc;
 	border: 1px solid #bbb;
 	-webkit-border-radius: 5px;

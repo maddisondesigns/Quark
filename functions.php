@@ -114,7 +114,7 @@ function quark_widgets_init() {
 	register_sidebar( array(
 			'name' => __( 'Blog Sidebar', 'quark' ),
 			'id' => 'sidebar-blog',
-			'description' => __( 'Appears in the sidebar on the blog only', 'quark' ),
+			'description' => __( 'Appears in the sidebar on the blog and archive pages only', 'quark' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',

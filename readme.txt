@@ -4,7 +4,7 @@ Donate link: http://quarktheme.com
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.4
 Tested up to: 3.5.1
-Stable tag: 1.2
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,7 +41,7 @@ Widgets
 Widgets are a great way of adding extra content to your site and Quark has a whole assortment of them.
 
 Main Sidebar: Appears in the sidebar on posts and pages except the optional Homepage template, which has its own widgets
-Blog Sidebar: Appears in the sidebar on the blog only
+Blog Sidebar: Appears in the sidebar on the blog and archive pages only
 Single Post Sidebar: Appears in the sidebar on single posts only
 Page Sidebar: Appears in the sidebar on pages only
 
@@ -162,6 +162,13 @@ Quark utilises the following awesomeness:
 
 
 == Changelog ==
+
+= 1.2.1 =
+- Fixed sidebars
+- Updated description in stylesheet
+- Updated IE filters in btn class 
+- Added extra class when styling frontpage widgets
+
 
 = 1.2 =
 - Updated Options Framework to version 1.5.2
