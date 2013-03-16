@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: quark\n"
-"POT-Creation-Date: 2013-03-12 12:20+1000\n"
-"PO-Revision-Date: 2013-03-12 12:20+1000\n"
+"POT-Creation-Date: 2013-03-16 18:23+1000\n"
+"PO-Revision-Date: 2013-03-16 18:23+1000\n"
 "Last-Translator: Anthony Hortin <support@maddisondesigns.com>\n"
 "Language-Team:  <support@maddisondesigns.com>\n"
 "Language: english\n"
@@ -262,7 +262,7 @@ msgid "Blog Sidebar"
 msgstr ""
 
 #: ../functions.php:117
-msgid "Appears in the sidebar on the blog only"
+msgid "Appears in the sidebar on the blog and archive pages only"
 msgstr ""
 
 #: ../functions.php:125
