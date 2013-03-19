@@ -337,6 +337,7 @@ blockquote.pull-right {
 	margin: 0 1.25rem 1.125rem 0;
 	padding: 0 16px 0 0;
 	padding: 0 1rem 0 0;
+	float: none;
 }
 
 blockquote p {
