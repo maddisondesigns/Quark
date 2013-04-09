@@ -4,7 +4,7 @@ Donate link: http://quarktheme.com
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.4
 Tested up to: 3.5.1
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -163,12 +163,15 @@ Quark utilises the following awesomeness:
 
 == Changelog ==
 
+= 1.2.2 =
+- Updated blockquote.pull-right style
+- Remove the add_filter for 'prepend_attachment' for the meta_content filter as it causes an image to appear in the filtered content, on attachment pages
+
 = 1.2.1 =
 - Fixed sidebars
 - Updated description in stylesheet
 - Updated IE filters in btn class 
 - Added extra class when styling frontpage widgets
-
 
 = 1.2 =
 - Updated Options Framework to version 1.5.2
@@ -178,7 +181,6 @@ Quark utilises the following awesomeness:
 - Replaced IcoMoon icon font with Font Awesome icon font
 - Added GitHub social icon theme option
 
-
 = 1.1 =
 - Changed margin and removed padding on .row class and consolidated html to remove extra container elements from templates
 - Removed unnecessary comments from style.css
@@ -187,7 +189,6 @@ Quark utilises the following awesomeness:
 - Updated readme.txt with Getting Started information
 - Removed Google Analytics code from footer and enqueued with other scripts
 - Initial Repository Release
-
 
 = 1.0 =
 - Initial version
