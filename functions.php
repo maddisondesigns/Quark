@@ -851,7 +851,9 @@ add_action( 'wp_head', 'quark_theme_options_styles' );
 
 /**
  * Recreate the default filters on the_content
- * This will make it much easier to output the Theme Options Editor content with proper/expected formatting
+ * This will make it much easier to output the Theme Options Editor content with proper/expected formatting.
+ * We don't include an add_filter for 'prepend_attachment' as it causes an image to appear in the content, on attachment pages.
+ * Also, since the Theme Options editor doesn't allow you to add images anyway, no big deal.
  *
  * @since Quark 1.0
  */
@@ -860,4 +862,3 @@ add_filter( 'meta_content', 'convert_smilies' );
 add_filter( 'meta_content', 'convert_chars'  );
 add_filter( 'meta_content', 'wpautop' );
 add_filter( 'meta_content', 'shortcode_unautop'  );
-add_filter( 'meta_content', 'prepend_attachment' );
