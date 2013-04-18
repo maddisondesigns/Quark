@@ -845,7 +845,6 @@ function quark_theme_options_styles() {
 		echo $output;
 	}
 }
-
 add_action( 'wp_head', 'quark_theme_options_styles' );
 
 
