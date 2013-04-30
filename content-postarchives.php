@@ -16,7 +16,7 @@
 		<div class="entry-content clearfix">
 			<?php the_content(); ?>
 
-			<h2>Archives by Category</h2>
+			<h2><?php _e( 'Archives by Category', 'quark' ); ?></h2>
 			<ul class="content-archives-by-category">
 				<?php wp_list_categories( array(
 					'showcount' => 'true',
@@ -25,7 +25,7 @@
 				) ); ?>
 			</ul>
 
-			<h2>Archives by Month</h2>
+			<h2><?php _e( 'Archives by Month', 'quark' ); ?></h2>
 			<ul class="content-archives-by-month">
 				<?php wp_get_archives( 'type=monthly' ); ?>
 			</ul>
