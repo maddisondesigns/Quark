@@ -266,27 +266,66 @@ function quark_scripts_styles() {
 	// We want the social icons as well
 	wp_register_style( 'fontawesomesocial', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome-social.css' , array(), '3.0.2', 'all' );
 	wp_enqueue_style( 'fontawesomesocial' );
-	// If you want to use the Corp. Extension & More icons as well, uncomment the following 4 lines
-	wp_register_style( 'fontawesomecorp', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome-corp.css' , array(), '3.0.2', 'all' );
-	wp_enqueue_style( 'fontawesomecorp' );
-	wp_register_style( 'fontawesomeext', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome-ext.css' , array(), '3.0.2', 'all' );
-	wp_enqueue_style( 'fontawesomeext' );
+	// If you want to use the Corp. Extension & More icons as well, uncomment the following 4 lines. I haven't included them by default
+	//wp_register_style( 'fontawesomecorp', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome-corp.css' , array(), '3.0.2', 'all' );
+	//wp_enqueue_style( 'fontawesomecorp' );
+	//wp_register_style( 'fontawesomeext', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome-ext.css' , array(), '3.0.2', 'all' );
+	//wp_enqueue_style( 'fontawesomeext' );
 
 	// Our styles for setting up the grid.
 	// If you prefer to use a different grid system, simply replace this and perform a find/replace in the php for the relevant styles. I'm nice like that!
 	wp_register_style( 'gridsystem', trailingslashit( get_template_directory_uri() ) . 'css/grid.css' , array(), '1.0.0', 'all' );
 	wp_enqueue_style( 'gridsystem' );
 
-	// Register and enqueue the default WordPress stylesheet
-	wp_register_style( 'style', get_stylesheet_uri(), array(), '20130130', 'all' );
-	wp_enqueue_style( 'style' );
+	/*
+	 * Load our Google Fonts.
+	 * The use of PT Sans and Arvo by default is localized. For languages that use characters not supported by the fonts, the fonts can be disabled.
+	 *
+	 * To disable in a child theme, use wp_dequeue_style()
+	 * function mytheme_dequeue_fonts() {
+	 *     wp_dequeue_style( 'quark-ptsans' );
+	 *     wp_dequeue_style( 'quark-arvo' );
+	 * }
+	 * add_action( 'wp_enqueue_scripts', 'mytheme_dequeue_fonts', 11 );
+	 */
+
+	/* translators: If there are characters in your language that are not supported by PT Sans, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'PT Sans font: on or off', 'quark' ) ) {
+		$subsets = 'latin';
+
+		/* translators: To add an additional PT Sans character subset specific to your language, translate this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate into your own language. */
+		$subset = _x( 'no-subset', 'PT Sans font: add new subset (cyrillic)', 'quark' );
+
+		if ( 'cyrillic' == $subset )
+			$subsets .= ',cyrillic';
+
+		$protocol = is_ssl() ? 'https' : 'http';
+		$query_args = array(
+			'family' => 'PT+Sans:400,400italic,700,700italic',
+			'subset' => $subsets,
+		);
+		wp_enqueue_style( 'quark-ptsans', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null );
+	}
+
+	/* translators: If there are characters in your language that are not supported by Arvo, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Arvo font: on or off', 'quark' ) ) {
+		$subsets = 'latin';
+
+		$protocol = is_ssl() ? 'https' : 'http';
+		$query_args = array(
+			'family' => 'Arvo:400',
+			'subset' => $subsets,
+		);
+		wp_enqueue_style( 'quark-arvo', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null );
+	}
+
+	// Enqueue the default WordPress stylesheet
+	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '1.2.3', 'all' );
+
 
 	/**
 	 * Register and enqueue our scripts
 	 */
-
-	// jQuery has been pre-registered within WordPress by default, so just enqueue it
-	wp_enqueue_script( 'jquery' );
 
 	// Load Modernizr at the top of the document, which enables HTML5 elements and feature detects
 	wp_register_script( 'modernizr', trailingslashit( get_template_directory_uri() ) . 'js/modernizr-2.6.2-min.js', array(), '2.6.2', false );
@@ -302,9 +341,8 @@ function quark_scripts_styles() {
 	// You can change the validation error messages below
 	if ( is_singular() && comments_open() ) {
 		wp_register_script( 'validate', trailingslashit( get_template_directory_uri() ) . 'js/jquery.validate.min.1.11.0pre.js', array( 'jquery' ), '1.11.0', true );
-		wp_enqueue_script( 'validate' );
-
 		wp_register_script( 'commentvalidate', trailingslashit( get_template_directory_uri() ) . 'js/comment-form-validation.js', array( 'jquery', 'validate' ), '1.11.0', true );
+
 		wp_enqueue_script( 'commentvalidate' );
 		wp_localize_script( 'commentvalidate', 'comments_object', array(
 			'author'  => __( 'Please enter your name', 'quark' ),
@@ -316,16 +354,16 @@ function quark_scripts_styles() {
 	// Load Audio.js as well as the initialiser to provide an inline audio player for Audio Post Formats
 	// Accepts valid .mp3 urls
 	if ( is_singular() || is_home() ) {
-		wp_register_script( 'audiojs', trailingslashit( get_template_directory_uri() ) . 'js/audiojs/audio.min.js', array(), '20121212', true );
-		wp_enqueue_script( 'audiojs' );
+		wp_register_script( 'audiojs', trailingslashit( get_template_directory_uri() ) . 'js/audiojs/audio.min.js', array(), '1.0', true );
+		wp_register_script( 'initaudiojs', trailingslashit( get_template_directory_uri() ) . 'js/audiojs/init-audio.js', array( 'audiojs' ), '1.0', true );
 
-		wp_register_script( 'initaudiojs', trailingslashit( get_template_directory_uri() ) . 'js/audiojs/init-audio.js', array( 'audiojs' ), '20121212', true );
 		wp_enqueue_script( 'initaudiojs' );
 	}
 
 	// Load Google Analytics Tracking script only if the GA ID is specified in the Theme Options
 	if ( of_get_option( 'ga_trackingid', '' ) ) {
-		wp_register_script( 'analytics', trailingslashit( get_template_directory_uri() ) . 'js/google-analytics.js', array(), '20130216', true );
+		wp_register_script( 'analytics', trailingslashit( get_template_directory_uri() ) . 'js/google-analytics.js', array(), '1.0', true );
+
 		wp_enqueue_script( 'analytics' );
 		wp_localize_script( 'analytics', 'analytics_object', array( 'gatrackingid' => of_get_option( 'ga_trackingid', '' ) ) );
 	}
@@ -723,14 +761,6 @@ add_filter( 'wp_nav_menu_objects', 'quark_add_menu_parent_class' );
  * @since Quark 1.0
  */
 add_filter( 'widget_text', 'do_shortcode' );
-
-
-/**
- * Hook used to remove the WordPress version number from the site <head>
- *
- * @since Quark 1.0
- */
-remove_action( 'wp_head', 'wp_generator' );
 
 
 /**
