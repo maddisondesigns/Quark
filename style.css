@@ -36,75 +36,16 @@ td { vertical-align: top; }
 
 
 /* ==========================================================================
-   Web fonts - Google webfonts http://www.google.com/webfonts
-   ========================================================================== */
-
-@font-face {
-	font-family: 'PTSansBoldItalic';
-	src: url('fonts/PTS76F-webfont.eot');
-	src: url('fonts/PTS76F-webfont.eot?#iefix') format('embedded-opentype'),
-		  url('fonts/PTS76F-webfont.woff') format('woff'),
-		  url('fonts/PTS76F-webfont.ttf') format('truetype'),
-		  url('fonts/PTS76F-webfont.svg#PTSansBoldItalic') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'PTSansBold';
-	src: url('fonts/PTS75F-webfont.eot');
-	src: url('fonts/PTS75F-webfont.eot?#iefix') format('embedded-opentype'),
-		  url('fonts/PTS75F-webfont.woff') format('woff'),
-		  url('fonts/PTS75F-webfont.ttf') format('truetype'),
-		  url('fonts/PTS75F-webfont.svg#PTSansBold') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'PTSansItalic';
-	src: url('fonts/PTS56F-webfont.eot');
-	src: url('fonts/PTS56F-webfont.eot?#iefix') format('embedded-opentype'),
-		  url('fonts/PTS56F-webfont.woff') format('woff'),
-		  url('fonts/PTS56F-webfont.ttf') format('truetype'),
-		  url('fonts/PTS56F-webfont.svg#PTSansItalic') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'PTSansRegular';
-	src: url('fonts/PTS55F-webfont.eot');
-	src: url('fonts/PTS55F-webfont.eot?#iefix') format('embedded-opentype'),
-		  url('fonts/PTS55F-webfont.woff') format('woff'),
-		  url('fonts/PTS55F-webfont.ttf') format('truetype'),
-		  url('fonts/PTS55F-webfont.svg#PTSansRegular') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'ArvoRegular';
-	src: url('fonts/Arvo-Regular-webfont.eot');
-	src: url('fonts/Arvo-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-		  url('fonts/Arvo-Regular-webfont.woff') format('woff'),
-		  url('fonts/Arvo-Regular-webfont.ttf') format('truetype'),
-		  url('fonts/Arvo-Regular-webfont.svg#ArvoRegular') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-
-/* ==========================================================================
    Basic page styles
    ========================================================================== */
 
 body { 
 	margin: 0 auto;
 	padding: 0;
-	font: 16px/1.5 'PTSansRegular', Helvetica, Arial, sans-serif;
+	font: 16px/1.5 'PT Sans', Helvetica, Arial, sans-serif;
 	font-size: 1rem;
-	font-weight: normal;
+	font-style: normal;
+	font-weight: 400;
 	color: #333;
 	text-align: left;
 }
@@ -161,11 +102,10 @@ img.wp-smiley,
 }
 
 /* Header */
-
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'ArvoRegular', Georgia, "Times New Roman", Times, serif;
-	font-weight: normal;
+	font-family: 'Arvo', Georgia, "Times New Roman", Times, serif;
 	font-style: normal;
+	font-weight: 400;
 	color: #333;
 	margin-top: 0;
 }
@@ -244,27 +184,27 @@ ul ul, ul ol, ol ol, ol ul {
 }
 
 dt {
-	font-family: 'PTSansBold', Helvetica, Arial, sans-serif;
-	font-weight: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 	font-style: normal;
+	font-weight: 700;
 }
 
 b, strong { 
-	font-family: 'PTSansBold', Helvetica, Arial, sans-serif;
-	font-weight: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 	font-style: normal;
+	font-weight: 700;
 }
 
 em {
-	font-family: 'PTSansItalic', Helvetica, Arial, sans-serif;
-	font-weight: normal;
-	font-style: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-weight: 400;
 }
 
 strong em, b em {
-	font-family: 'PTSansBoldItalic', Helvetica, Arial, sans-serif;
-	font-weight: normal;
-	font-style: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-weight: 700;
 }
 
 ins {
@@ -341,9 +281,9 @@ blockquote.pull-right {
 }
 
 blockquote p {
-	font-family: 'PTSansItalic', Helvetica, Arial, sans-serif;
-	font-weight: normal;
-	font-style: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-weight: 400;
 	font-size: 24px;
 	font-size: 1.5rem;
 	margin-bottom: 0;
@@ -358,9 +298,9 @@ blockquote cite:before {
 }
 
 blockquote cite {
-	font-family: 'PTSansRegular', Helvetica, Arial, sans-serif;
-	font-weight: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 	font-style: normal;
+	font-weight: 400;
 	font-size: 14px;
 	font-size: 0.875rem;
 	line-height: 1.125;
@@ -429,9 +369,9 @@ sub {
 .wp-caption .wp-caption-text,
 .gallery-caption,
 .entry-caption {
-	font-family: 'PTSansItalic', Helvetica, Arial, sans-serif;
-	font-weight: normal;
-	font-style: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-weight: 400;
 	font-size: 14px;
 	font-size: 0.875rem;
 	line-height: 1.5;
@@ -473,7 +413,9 @@ img.wp-smiley, .rsswidget img {
 }
 
 .menu-toggle, button, input {
-	font-family: 'PTSansRegular', Helvetica, Arial, sans-serif;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: 400;
 	font-size: 16px;
 	font-size: 1rem; 
 	line-height: 1.25;
@@ -663,14 +605,18 @@ textarea {
 	border-radius: 3px;
 }
 
+select {
+	max-width: 100%;
+}
+
 /* Small headers */
 .archive-title,
 .page-title,
 .entry-content th,
 .comment-content th {
-	font-family: 'PTSansBold', Helvetica, Arial, sans-serif;
-	font-weight: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 	font-style: normal;
+	font-weight: 700;
 	font-size: 14px;
 	font-size: 0.875rem;
 	line-height: 2;
@@ -704,13 +650,25 @@ textarea {
 	color: #000;
 }
 
+.site-title h1 {
+	margin-top: 20px;
+	margin-top: 1.25rem;
+}
+
 .site-title img {
-	margin: 20px 0 0 0;
-	margin: 1.25rem 0 0 0;
+	vertical-align: text-bottom;
+}
+
+.site-title a {
+	color: #333;
+	font-size: 64px;
+	font-size: 4rem;
+	text-decoration: none;
 }
 
 #bannercontainer {
 	width: 100%;
+	margin-top: 10px;
 }
 
 .banner {
@@ -776,7 +734,7 @@ textarea {
 	padding-bottom: 2rem;
 }
 
-.home .site-content {
+.home.page .site-content {
 	padding-bottom: 0;
 }
 
@@ -825,9 +783,9 @@ textarea {
 }
 
 .comments-link {
-	font-family: 'PTSansItalic', Helvetica, Arial, sans-serif;
-	font-weight: normal;
-	font-style: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-weight: 400;
 	font-size: 14px;
 	font-size: 0.875rem;
 	float: right;
@@ -846,9 +804,9 @@ textarea {
 }
 
 article.sticky .featured-post {
-	font-family: 'ArvoRegular', Georgia, "Times New Roman", Times, serif;
-	font-weight: normal;
+	font-family: 'Arvo', Georgia, "Times New Roman", Times, serif;
 	font-style: normal;
+	font-weight: 400;
 	border-top: 4px double #aaa;
 	border-bottom: 4px double #aaa;
 	color: #777;
@@ -922,9 +880,9 @@ article.sticky {
 
 .entry-header address,
 .comment-content address {
-	font-family: 'PTSansItalic', Helvetica, Arial, sans-serif;
-	font-weight: normal;
-	font-style: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-weight: 400;
 	display: block;
 }
 
@@ -934,9 +892,9 @@ article.sticky {
 
 .entry-header time,
 .entry-header address {
-	font-family: 'PTSansItalic', Helvetica, Arial, sans-serif;
-	font-weight: normal;
-	font-style: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-weight: 400;
 	font-size: 14px;
 	font-size: 0.875rem;
 	margin: 0 20px 0 0;
@@ -987,9 +945,9 @@ article.sticky {
 
 .entry-content dt,
 .comment-content dt {
-	font-family: 'PTSansBold', Helvetica, Arial, sans-serif;
-	font-weight: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 	font-style: normal;
+	font-weight: 700;
 	line-height: 1.5;
 }
 
@@ -1207,8 +1165,9 @@ article.sticky {
 }
 
 .audiojs .time em {
-	font-family: 'PTSansRegular', Helvetica, Arial, sans-serif;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 	font-style: normal;
+	font-weight: 400;
 }
 
 
@@ -1224,9 +1183,9 @@ article.sticky {
 }
 
 .archive-meta {
-	font-family: 'PTSansItalic', Helvetica, Arial, sans-serif;
-	font-weight: normal;
-	font-style: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-weight: 400;
 	color: #777;
 	font-size: 14px;
 	font-size: 0.875rem;
@@ -1284,8 +1243,9 @@ article.sticky {
 }
 
 .comments-area article header time {
-	font-family: 'PTSansItalic', Helvetica, Arial, sans-serif;
-	font-weight: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-weight: 400;
 	line-height: 1.8;
 	text-decoration: none;
 	font-size: 14px;
@@ -1441,8 +1401,9 @@ span.required {
 }
 
 form label.error {
-	font-family: 'PTSansBold', Helvetica, Arial, sans-serif;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 	font-style: normal;
+	font-weight: 700;
 	display:block;
 	padding: 0 10px 0 10px;
 	padding: 0 0.625rem 0 0.625rem;
@@ -1515,6 +1476,18 @@ form label.error {
 	font-size: 0.875rem;
 }
 
+.smallprint a { 
+	color: #555;
+}
+
+.smallprint a:visited { 
+	color: #555;
+}
+
+.smallprint a:hover { 
+	color: #2997ab;
+}
+
 
 /* ==========================================================================
    Widgets
@@ -1580,9 +1553,9 @@ form label.error {
 }
 
 #wp-calendar caption {
-	font-family: 'PTSansBold', Helvetica, Arial, sans-serif;
-	font-weight: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 	font-style: normal;
+	font-weight: 700;
 	text-transform: uppercase;
 	text-align: left;
 }
@@ -1733,7 +1706,9 @@ li span.dots {
 }
 
 .nav-menu {
-	font-family: 'PTSansBold', Helvetica, Arial, sans-serif;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: 700;
 	font-size: 18px;
 	font-size: 1.125rem;
 	line-height: 1.5;
@@ -1874,13 +1849,17 @@ li span.dots {
 
 /*  Breakpoints are set based on the design, not based on device sizes */
 @media only screen and (max-width: 1100px) {
+	.site-title a {
+		font-size: 52px;
+		font-size: 3.25rem;
+	}
 	.banner h1 {
 		font-size: 44px;
-		font-size: 2.75rem; /* 44px / 16px */
+		font-size: 2.75rem;
 	}
 	.banner h2 {
 		font-size: 24px;
-		font-size: 1.5rem; /* 24px / 16px */
+		font-size: 1.5rem;
 	}
 }
 
@@ -1892,14 +1871,6 @@ li span.dots {
 }
 
 @media only screen and (max-width: 900px) {
-	.banner h1 {
-		font-size: 44px;
-		font-size: 2.75rem; /* 44px / 16px */
-	}
-	.banner h2 {
-		font-size: 24px;
-		font-size: 1.5rem; /* 24px / 16px */
-	}
 	.banner .grid_6_of_12 {
 		width: 100%; 
 	}
@@ -1913,10 +1884,10 @@ li span.dots {
 }
 
 @media only screen and (max-width: 800px) {
-	header .grid_4_of_12 {
+	header .grid_5_of_12 {
 		width: 100%; 
 	}
-	header .grid_8_of_12 {
+	header .grid_7_of_12 {
 		width: 100%;
 		margin-left: 0;
 	}
