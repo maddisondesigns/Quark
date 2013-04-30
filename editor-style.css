@@ -11,67 +11,6 @@ Description: Used to style the TinyMCE editor.
 
 
 /* ==========================================================================
-   Web fonts - Google webfonts http://www.google.com/webfonts
-   ========================================================================== */
-
-@font-face {
-	font-family: 'PTSansBoldItalic';
-	src: url('fonts/PTS76F-webfont.eot');
-	src: url('fonts/PTS76F-webfont.eot?#iefix') format('embedded-opentype'),
-		  url('fonts/PTS76F-webfont.woff') format('woff'),
-		  url('fonts/PTS76F-webfont.ttf') format('truetype'),
-		  url('fonts/PTS76F-webfont.svg#PTSansBoldItalic') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'PTSansBold';
-	src: url('fonts/PTS75F-webfont.eot');
-	src: url('fonts/PTS75F-webfont.eot?#iefix') format('embedded-opentype'),
-		  url('fonts/PTS75F-webfont.woff') format('woff'),
-		  url('fonts/PTS75F-webfont.ttf') format('truetype'),
-		  url('fonts/PTS75F-webfont.svg#PTSansBold') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'PTSansItalic';
-	src: url('fonts/PTS56F-webfont.eot');
-	src: url('fonts/PTS56F-webfont.eot?#iefix') format('embedded-opentype'),
-		  url('fonts/PTS56F-webfont.woff') format('woff'),
-		  url('fonts/PTS56F-webfont.ttf') format('truetype'),
-		  url('fonts/PTS56F-webfont.svg#PTSansItalic') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'PTSansRegular';
-	src: url('fonts/PTS55F-webfont.eot');
-	src: url('fonts/PTS55F-webfont.eot?#iefix') format('embedded-opentype'),
-		  url('fonts/PTS55F-webfont.woff') format('woff'),
-		  url('fonts/PTS55F-webfont.ttf') format('truetype'),
-		  url('fonts/PTS55F-webfont.svg#PTSansRegular') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'ArvoRegular';
-	src: url('fonts/Arvo-Regular-webfont.eot');
-	src: url('fonts/Arvo-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-		  url('fonts/Arvo-Regular-webfont.woff') format('woff'),
-		  url('fonts/Arvo-Regular-webfont.ttf') format('truetype'),
-		  url('fonts/Arvo-Regular-webfont.svg#ArvoRegular') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-
-
-/* ==========================================================================
    Basic page styles
    ========================================================================== */
 
@@ -85,9 +24,10 @@ html .mceContentBody {
 
 body {
 	color: #333;
-	font: 16px/1.5 'PTSansRegular', Helvetica, Arial, sans-serif;
+	font: 16px/1.5 'PT Sans', Helvetica, Arial, sans-serif;
 	font-size: 1rem;
-	font-weight: normal;
+	font-style: normal;
+	font-weight: 400;
 	text-rendering: optimizeLegibility;
 	vertical-align: baseline;
 }
@@ -98,9 +38,9 @@ body {
    ========================================================================== */
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'ArvoRegular', Georgia, "Times New Roman", Times, serif;
-	font-weight: normal;
+	font-family: 'Arvo', Georgia, "Times New Roman", Times, serif;
 	font-style: normal;
+	font-weight: 400;
 	color: #333;
 	margin-top: 0;
 }
@@ -208,10 +148,9 @@ dl {
 }
 
 dt {
-	font-family: 'PTSansBold', Helvetica, Arial, sans-serif;
-	font-weight: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 	font-style: normal;
-	line-height: 1.5;
+	font-weight: 700;
 }
 
 dd {
@@ -221,20 +160,21 @@ dd {
 }
 
 b, strong { 
-	font-family: 'PTSansBold', Helvetica, Arial, sans-serif;
-	font-weight: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 	font-style: normal;
+	font-weight: 700;
 }
 
-cite,
-em,
-i {
-	font-family: 'PTSansItalic', Helvetica, Arial, sans-serif;
-	font-weight: normal;
-	font-style: normal;
+em {
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-weight: 400;
 }
 
 cite {
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: 400;
 	border: none;
 }
 
@@ -244,9 +184,9 @@ big {
 }
 
 .mceContentBody blockquote {
-	font-family: 'PTSansItalic', Helvetica, Arial, sans-serif;
-	font-weight: normal;
-	font-style: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-weight: 400;
 	font-size: 24px;
 	font-size: 1.5rem; /* 24px / 16px */
 	border-left: 5px solid #333;
@@ -282,9 +222,9 @@ dfn {
 }
 
 address {
-	font-family: 'PTSansItalic', Helvetica, Arial, sans-serif;
-	font-weight: normal;
-	font-style: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-weight: 400;
 	display: block;
 }
 
@@ -396,9 +336,9 @@ table {
 
 tr th {
 	color: #636363;
-	font-family: 'PTSansBold', Helvetica, Arial, sans-serif;
-	font-weight: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 	font-style: normal;
+	font-weight: 700;
 	line-height: 2;
 	text-align: left;
 }
@@ -449,9 +389,9 @@ img.wp-smiley {
 }
 
 .wp-caption {
-	font-family: 'PTSansItalic', Helvetica, Arial, sans-serif;
-	font-weight: normal;
-	font-style: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-weight: 400;
 	font-size: 14px;
 	font-size: 0.875rem; /* 14px / 16px */
 	line-height: 1.5;
@@ -465,9 +405,9 @@ img.wp-smiley {
 
 .wp-caption .wp-caption-text,
 .wp-caption-dd {
-	font-family: 'PTSansItalic', Helvetica, Arial, sans-serif;
-	font-weight: normal;
-	font-style: normal;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-weight: 400;
 	font-size: 14px;
 	font-size: 0.875rem; /* 14px / 16px */
 	line-height: 1.5;
