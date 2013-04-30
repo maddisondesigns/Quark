@@ -165,7 +165,14 @@ Quark utilises the following awesomeness:
 
 = 1.2.2 =
 - Updated blockquote.pull-right style
-- Remove the add_filter for 'prepend_attachment' for the meta_content filter as it causes an image to appear in the filtered content, on attachment pages
+- Updated footer smallprint link colour
+- Fixed display of site name in header area if no Custom Header is specified (ie. no logo image)
+- Removed wp_head hook that removes the WP version number. This is best left for plugins
+- Updated enqueing of scripts. Scripts that are being depended on, will automatically get enqueued so no need to enqueue them manually.
+- Added max-with of 100% to select form fields. Field no longer extends past container in sidebar
+- Fixed padding in main content area when homepage is a blog, so pagination doesn't touch footer
+- Changed fonts so they're called from Google Fonts rather than local
+- Removed unrequired font files from fonts folder
 
 = 1.2.1 =
 - Fixed sidebars
