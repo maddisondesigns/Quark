@@ -44,15 +44,22 @@
 	<div id="headercontainer">
 
 		<header id="masthead" class="site-header row clearfix" role="banner">
-			<div class="col grid_4_of_12 site-title">
+			<div class="col grid_5_of_12 site-title">
 				<h1>
 					<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" rel="home">
-						<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+						<?php 
+						$headerImg = get_header_image();
+						if( !empty( $headerImg ) ) { ?>
+							<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+						<?php } 
+						else {
+							echo get_bloginfo( 'name' );
+						} ?>
 					</a>
 				</h1>
-			</div> <!-- /.col.grid_4_of_12 -->
+			</div> <!-- /.col.grid_5_of_12 -->
 
-			<div class="col grid_8_of_12">
+			<div class="col grid_7_of_12">
 				<div class="social-media-icons">
 					<?php echo quark_get_social_media(); ?>
 				</div>
@@ -61,7 +68,7 @@
 					<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'quark' ); ?>"><?php _e( 'Skip to content', 'quark' ); ?></a></div>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 				</nav> <!-- /.site-navigation.main-navigation -->
-			</div> <!-- /.col.grid_8_of_12 -->
+			</div> <!-- /.col.grid_7_of_12 -->
 		</header> <!-- /#masthead.site-header.row -->
 
 	</div> <!-- /#headercontainer -->
