@@ -37,7 +37,7 @@
 
 <body <?php body_class(); ?>>
 
-<div class="visuallyhidden"><a href="#maincontent">skip to main content</a></div>
+<div class="visuallyhidden"><a href="#primary" title="<?php esc_attr_e( 'Skip to main content', 'quark' ); ?>"><?php _e( 'Skip to main content', 'quark' ); ?></a></div>
 
 <div id="wrapper" class="hfeed site">
 
@@ -46,7 +46,7 @@
 		<header id="masthead" class="site-header row clearfix" role="banner">
 			<div class="col grid_5_of_12 site-title">
 				<h1>
-					<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" rel="home">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" rel="home">
 						<?php 
 						$headerImg = get_header_image();
 						if( !empty( $headerImg ) ) { ?>
