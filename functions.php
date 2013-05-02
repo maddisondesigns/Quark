@@ -365,7 +365,7 @@ function quark_scripts_styles() {
 		wp_register_script( 'analytics', trailingslashit( get_template_directory_uri() ) . 'js/google-analytics.js', array(), '1.0', true );
 
 		wp_enqueue_script( 'analytics' );
-		wp_localize_script( 'analytics', 'analytics_object', array( 'gatrackingid' => of_get_option( 'ga_trackingid', '' ) ) );
+		wp_localize_script( 'analytics', 'analytics_object', array( 'gatrackingid' => sanitize_text_field( of_get_option( 'ga_trackingid', '' ) ) ) );
 	}
 
 	// Include this script to envoke a button toggle for the main navigation menu on small screens
@@ -800,7 +800,7 @@ if ( ! function_exists( 'quark_get_social_media' ) ) {
 			$value = $key['url'];
 			if ( !empty( $value ) ) {
 				$output .= sprintf( '<li><a href="%1$s" title="%2$s"><i class="%3$s"></i></a></li>',
-					$value,
+					esc_url( $value ),
 					$key['title'],
 					$key['icon']
 				);
@@ -854,19 +854,20 @@ function quark_theme_options_styles() {
 	$background = of_get_option( 'banner_background', $background_defaults );
 	if ( $background ) {
 		$output .= "#bannercontainer { ";
-		$output .= "background: " . $background['color'] . " url('" . $background['image'] . "') " . $background['repeat'] . " " . $background['attachment'] . " " . $background['position'] . ";";
+		$output .= "background: " . ( of_validate_hex( $background['color'] ) ? $background['color'] : '' ) . " url('" . esc_url( $background['image'] ) . "') " . $background['repeat'] . " " . $background['attachment'] . " " . $background['position'] . ";";
 		$output .= " }";
 	}
 
-	if ( of_get_option( 'footer_color', '#222' ) ) {
+	$footerColour = of_get_option( 'footer_color', '#222222' );
+	if ( of_validate_hex( $footerColour ) ) {
 		$output .= "\n#footercontainer { ";
-		$output .= "background-color: " . of_get_option( 'footer_color', '#222222' ) . ";";
+		$output .= "background-color: " . $footerColour . ";";
 		$output .= " }";
 	}
 
 	if ( of_get_option( 'footer_position', 'center' ) ) {
 		$output .= "\n.smallprint { ";
-		$output .= "text-align: " . of_get_option( 'footer_position', 'center' ) . ";";
+		$output .= "text-align: " . sanitize_text_field( of_get_option( 'footer_position', 'center' ) ) . ";";
 		$output .= " }";
 	}
 

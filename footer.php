@@ -49,7 +49,7 @@
 
 		<?php if ( of_get_option( 'footer_content', quark_get_credits() ) ) {
 			echo '<div class="row smallprint clearfix">';
-			echo apply_filters( 'meta_content', of_get_option( 'footer_content', quark_get_credits() ) );
+			echo apply_filters( 'meta_content', wp_kses_post( of_get_option( 'footer_content', quark_get_credits() ) ) );
 			echo '</div> <!-- /.smallprint -->';
 		} ?>
 
