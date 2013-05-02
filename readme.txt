@@ -4,7 +4,7 @@ Donate link: http://quarktheme.com
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.4
 Tested up to: 3.5.1
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -162,6 +162,14 @@ Quark utilises the following awesomeness:
 
 
 == Changelog ==
+
+= 1.2.3 =
+- Updated strings that weren't wrapped in gettext functions for translation purposes
+- Updated Text Domain in Options Framework
+- Added esc_url() when using site URL in header
+- Added sanitation when outputting theme options
+- Fixed bottom margin on blog articles on homepage
+- Fixed text colour in homepage banner
 
 = 1.2.2 =
 - Updated blockquote.pull-right style
