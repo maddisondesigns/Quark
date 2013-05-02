@@ -160,7 +160,7 @@ function optionsframework_setdefaults() {
 if ( !function_exists( 'optionsframework_add_page' ) ) {
 
 	function optionsframework_add_page() {
-		$of_page = add_theme_page( __('Theme Options', 'options_framework_theme'), __('Theme Options', 'options_framework_theme'), 'edit_theme_options', 'options-framework','optionsframework_page' );
+		$of_page = add_theme_page( __('Theme Options', 'quark'), __('Theme Options', 'quark'), 'edit_theme_options', 'options-framework','optionsframework_page' );
 
 		// Load the required CSS and javscript
 		add_action( 'admin_enqueue_scripts', 'optionsframework_load_scripts' );
@@ -191,9 +191,9 @@ function optionsframework_load_scripts( $hook ) {
 		wp_register_script( 'iris', OPTIONS_FRAMEWORK_DIRECTORY . 'js/iris.min.js', array( 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch' ), false, 1 );
 		wp_register_script( 'wp-color-picker', OPTIONS_FRAMEWORK_DIRECTORY . 'js/color-picker.min.js', array( 'jquery', 'iris' ) );
 		$colorpicker_l10n = array(
-			'clear' => __( 'Clear','options_framework_theme' ),
-			'defaultString' => __( 'Default', 'options_framework_theme' ),
-			'pick' => __( 'Select Color', 'options_framework_theme' )
+			'clear' => __( 'Clear', 'quark' ),
+			'defaultString' => __( 'Default', 'quark' ),
+			'pick' => __( 'Select Color', 'quark' )
 		);
 		wp_localize_script( 'wp-color-picker', 'wpColorPickerL10n', $colorpicker_l10n );
 	}
@@ -238,8 +238,8 @@ function optionsframework_page() {
 			<?php settings_fields( 'optionsframework' ); ?>
 			<?php optionsframework_fields(); /* Settings */ ?>
 			<div id="optionsframework-submit">
-				<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'options_framework_theme' ); ?>" />
-				<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'options_framework_theme' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'options_framework_theme' ) ); ?>' );" />
+				<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'quark' ); ?>" />
+				<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'quark' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'quark' ) ); ?>' );" />
 				<div class="clear"></div>
 			</div>
 			</form>
@@ -271,7 +271,7 @@ function optionsframework_validate( $input ) {
 	 */
 
 	if ( isset( $_POST['reset'] ) ) {
-		add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'options_framework_theme' ), 'updated fade' );
+		add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'quark' ), 'updated fade' );
 		return of_get_default_values();
 	}
 	
@@ -325,7 +325,7 @@ function optionsframework_validate( $input ) {
  */
  
 function optionsframework_save_options_notice() {
-	add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'options_framework_theme' ), 'updated fade' );
+	add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'quark' ), 'updated fade' );
 }
 
 add_action( 'optionsframework_after_validate', 'optionsframework_save_options_notice' );
@@ -375,7 +375,7 @@ function optionsframework_adminbar() {
 	$wp_admin_bar->add_menu( array(
 			'parent' => 'appearance',
 			'id' => 'of_theme_options',
-			'title' => __( 'Theme Options', 'options_framework_theme' ),
+			'title' => __( 'Theme Options', 'quark' ),
 			'href' => admin_url( 'themes.php?page=options-framework' )
 		));
 }
