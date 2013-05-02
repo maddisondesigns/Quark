@@ -4,7 +4,7 @@ Theme URI: http://quarktheme.com
 Author: Anthony Hortin
 Author URI: http://maddisondesigns.com/
 Description: Quark is your basic building block for creating beautiful, responsive custom themes. It's a simple and elegant starter theme built on HTML5 & CSS3.
-Version: 1.2.2
+Version: 1.2.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -672,6 +672,7 @@ select {
 }
 
 .banner {
+	color: #eaeaea;
 	width: 90%;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -685,13 +686,21 @@ select {
 	margin: 1.5rem 0;
 }
 
-.banner h1 {
+.banner h1,
+.banner h2,
+.banner h3,
+.banner h4,
+.banner h5,
+.banner h6 {
 	color: #eaeaea;
+ }
+
+.banner h1 {
 	font-size: 56px;
 	font-size: 3.50rem;
 }
+
 .banner h2 {
-	color: #eaeaea;
 	font-size: 32px;
 	font-size: 2rem;
 }
@@ -738,7 +747,7 @@ select {
 	padding-bottom: 0;
 }
 
-.home .site-content article {
+.home.page .site-content article {
 	margin-bottom: 0;
 }
 
@@ -1466,12 +1475,12 @@ form label.error {
 }
 
 .smallprint {
+	color: #999;
 	width: 90%;
 	max-width: 1200px;
 }
 
 .smallprint p {
-	color: #999;
 	font-size: 14px;
 	font-size: 0.875rem;
 }
