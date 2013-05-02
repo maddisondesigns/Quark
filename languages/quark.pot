@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: quark\n"
-"POT-Creation-Date: 2013-04-24 19:29+1000\n"
-"PO-Revision-Date: 2013-04-24 19:29+1000\n"
+"POT-Creation-Date: 2013-05-02 17:58+1000\n"
+"PO-Revision-Date: 2013-05-02 17:58+1000\n"
 "Last-Translator: Anthony Hortin <support@maddisondesigns.com>\n"
 "Language-Team:  <support@maddisondesigns.com>\n"
 "Language: english\n"
@@ -187,6 +187,14 @@ msgid ""
 "of UA-1234567-1."
 msgstr ""
 
+#: ../content-postarchives.php:19
+msgid "Archives by Category"
+msgstr ""
+
+#: ../content-postarchives.php:28
+msgid "Archives by Month"
+msgstr ""
+
 #: ../content-postarchives.php:33 ../content-page.php:18 ../content.php:42
 msgid "Pages:"
 msgstr ""
@@ -218,6 +226,10 @@ msgstr ""
 #: ../author.php:35 ../content.php:62
 #, php-format
 msgid "About %s"
+msgstr ""
+
+#: ../header.php:40
+msgid "Skip to main content"
 msgstr ""
 
 #: ../header.php:67
