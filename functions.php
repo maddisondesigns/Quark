@@ -764,19 +764,6 @@ add_filter( 'widget_text', 'do_shortcode' );
 
 
 /**
- * Provide an extra layer of security by changing the login error message so it's not specific as to whether the Username or Password was incorrect
- *
- * @since Quark 1.0
- */
-if ( ! function_exists( 'quark_failed_login' ) ) {
-	function quark_failed_login() {
-		return '<strong>ERROR:</strong> The login information you have entered is incorrect.';
-	}
-	add_filter( 'login_errors', 'quark_failed_login' );
-}
-
-
-/**
  * Return an unordered list of linked social media icons, based on the urls provided in the Theme Options
  *
  * @since Quark 1.0
