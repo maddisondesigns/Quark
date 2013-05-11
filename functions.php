@@ -256,7 +256,7 @@ function quark_scripts_styles() {
 	 */
 
 	// Start off with a clean base by using normalise. If you prefer to use a reset stylesheet or something else, simply replace this
-	wp_register_style( 'normalize', trailingslashit( get_template_directory_uri() ) . 'css/normalize.css' , array(), '2.1.0', 'all' );
+	wp_register_style( 'normalize', trailingslashit( get_template_directory_uri() ) . 'css/normalize.css' , array(), '2.1.1', 'all' );
 	wp_enqueue_style( 'normalize' );
 
 	// Register and enqueue our icon fonts
