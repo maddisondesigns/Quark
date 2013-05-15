@@ -4,11 +4,12 @@ Donate link: http://quarktheme.com
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.4
 Tested up to: 3.5.1
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Quark is your basic building block for creating beautiful, responsive custom themes. It's a simple and elegant starter theme built on HTML5 & CSS3. 
+Quark is your basic building block for creating beautiful, responsive custom themes. It's not a convoluted or confusing framework that's hard to learn or
+even harder to modify. It's a simple and elegant starter theme built on HTML5 & CSS3. 
 
 
 == Description ==
@@ -162,6 +163,11 @@ Quark utilises the following awesomeness:
 
 
 == Changelog ==
+
+= 1.2.5 =
+- Removed login_errors filter. This is best left for plugins
+- Updated normalize.css to v2.1.1
+- Updated Font Awesome icon font to v3.1.1
 
 = 1.2.4 =
 - Updated strings that weren't wrapped in gettext functions for translation purposes
