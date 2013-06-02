@@ -47,124 +47,132 @@ function optionsframework_options() {
 
 	// Footer Position settings
 	$footer_position_settings = array(
-		'left' => __( 'Left aligned', 'quark' ),
-		'center' => __( 'Center aligned', 'quark' ),
-		'right' => __( 'Right aligned', 'quark' )
+		'left' => esc_html__( 'Left aligned', 'quark' ),
+		'center' => esc_html__( 'Center aligned', 'quark' ),
+		'right' => esc_html__( 'Right aligned', 'quark' )
 	);
 
 	$options = array();
 
 	$options[] = array(
-		'name' => __( 'Basic Settings', 'quark' ),
+		'name' => esc_html__( 'Basic Settings', 'quark' ),
 		'type' => 'heading' );
 
 	$options[] = array(
-		'name' => __( 'Background', 'quark' ),
-		'desc' => sprintf( __( 'If you&rsquo;d like to replace or remove the default background image, use the <a href="%1$s" title="Custom background">Appearance &gt; Background</a> menu option.', 'quark' ), admin_url( 'themes.php?page=custom-background' ) ),
+		'name' => esc_html__( 'Background', 'quark' ),
+		'desc' => sprintf( wp_kses( __( 'If you&rsquo;d like to replace or remove the default background image, use the <a href="%1$s" title="Custom background">Appearance &gt; Background</a> menu option.', 'quark' ), array( 
+			'a' => array( 
+				'href' => array(),
+				'title' => array() )
+			) ), admin_url( 'themes.php?page=custom-background' ) ),
 		'type' => 'info' );
 
 	$options[] = array(
-		'name' => __( 'Logo', 'quark' ),
-		'desc' => sprintf( __( 'If you&rsquo;d like to replace or remove the default logo, use the <a href="%1$s" title="Custom header">Appearance &gt; Header</a> menu option.', 'quark' ), admin_url( 'themes.php?page=custom-header' ) ),
+		'name' => esc_html__( 'Logo', 'quark' ),
+		'desc' => sprintf( wp_kses( __( 'If you&rsquo;d like to replace or remove the default logo, use the <a href="%1$s" title="Custom header">Appearance &gt; Header</a> menu option.', 'quark' ), array( 
+			'a' => array( 
+				'href' => array(),
+				'title' => array() )
+			) ), admin_url( 'themes.php?page=custom-header' ) ),
 		'type' => 'info' );
 
 	$options[] = array(
-		'name' => __( 'Social Media Settings', 'quark' ),
-		'desc' => __( 'Enter the URLs for your Social Media platforms', 'quark' ),
+		'name' => esc_html__( 'Social Media Settings', 'quark' ),
+		'desc' => esc_html__( 'Enter the URLs for your Social Media platforms', 'quark' ),
 		'type' => 'info' );
 
 	$options[] = array(
-		'name' => __( 'Twitter', 'quark' ),
-		'desc' => __( 'Enter your Twitter URL.', 'quark' ),
+		'name' => esc_html__( 'Twitter', 'quark' ),
+		'desc' => esc_html__( 'Enter your Twitter URL.', 'quark' ),
 		'id' => 'social_twitter',
 		'std' => '',
 		'type' => 'text' );
 
 	$options[] = array(
-		'name' => __( 'Facebook', 'quark' ),
-		'desc' => __( 'Enter your Facebook URL.', 'quark' ),
+		'name' => esc_html__( 'Facebook', 'quark' ),
+		'desc' => esc_html__( 'Enter your Facebook URL.', 'quark' ),
 		'id' => 'social_facebook',
 		'std' => '',
 		'type' => 'text' );
 
 	$options[] = array(
-		'name' => __( 'Google+', 'quark' ),
-		'desc' => __( 'Enter your Google+ URL.', 'quark' ),
+		'name' => esc_html__( 'Google+', 'quark' ),
+		'desc' => esc_html__( 'Enter your Google+ URL.', 'quark' ),
 		'id' => 'social_googleplus',
 		'std' => '',
 		'type' => 'text' );
 
 	$options[] = array(
-		'name' => __( 'LinkedIn', 'quark' ),
-		'desc' => __( 'Enter your LinkedIn URL.', 'quark' ),
+		'name' => esc_html__( 'LinkedIn', 'quark' ),
+		'desc' => esc_html__( 'Enter your LinkedIn URL.', 'quark' ),
 		'id' => 'social_linkedin',
 		'std' => '',
 		'type' => 'text' );
 
 	$options[] = array(
-		'name' => __( 'GitHub', 'quark' ),
-		'desc' => __( 'Enter your GitHub URL.', 'quark' ),
+		'name' => esc_html__( 'GitHub', 'quark' ),
+		'desc' => esc_html__( 'Enter your GitHub URL.', 'quark' ),
 		'id' => 'social_github',
 		'std' => '',
 		'type' => 'text' );
 
 	$options[] = array(
-		'name' => __( 'YouTube', 'quark' ),
-		'desc' => __( 'Enter your YouTube URL.', 'quark' ),
+		'name' => esc_html__( 'YouTube', 'quark' ),
+		'desc' => esc_html__( 'Enter your YouTube URL.', 'quark' ),
 		'id' => 'social_youtube',
 		'std' => '',
 		'type' => 'text' );
 
 	$options[] = array(
-		'name' => __( 'Instagram', 'quark' ),
-		'desc' => __( 'Enter your Instagram URL.', 'quark' ),
+		'name' => esc_html__( 'Instagram', 'quark' ),
+		'desc' => esc_html__( 'Enter your Instagram URL.', 'quark' ),
 		'id' => 'social_instagram',
 		'std' => '',
 		'type' => 'text' );
 
 	$options[] = array(
-		'name' => __( 'Flickr', 'quark' ),
-		'desc' => __( 'Enter your Flickr URL.', 'quark' ),
+		'name' => esc_html__( 'Flickr', 'quark' ),
+		'desc' => esc_html__( 'Enter your Flickr URL.', 'quark' ),
 		'id' => 'social_flickr',
 		'std' => '',
 		'type' => 'text' );
 
 	$options[] = array(
-		'name' => __( 'Pinterest', 'quark' ),
-		'desc' => __( 'Enter your Pinterest URL.', 'quark' ),
+		'name' => esc_html__( 'Pinterest', 'quark' ),
+		'desc' => esc_html__( 'Enter your Pinterest URL.', 'quark' ),
 		'id' => 'social_pinterest',
 		'std' => '',
 		'type' => 'text' );
 
 	$options[] = array(
-		'name' => __( 'Advanced settings', 'quark' ),
+		'name' => esc_html__( 'Advanced settings', 'quark' ),
 		'type' => 'heading' );
 
 	$options[] = array(
-		'name' =>  __( 'Banner Background', 'quark' ),
-		'desc' => __( 'Select an image and background color for the homepage banner.', 'quark' ),
+		'name' =>  esc_html__( 'Banner Background', 'quark' ),
+		'desc' => esc_html__( 'Select an image and background color for the homepage banner.', 'quark' ),
 		'id' => 'banner_background',
 		'std' => $background_defaults,
 		'type' => 'background' );
 
 	$options[] = array(
-		'name' => __( 'Footer Background Color', 'quark' ),
-		'desc' => __( 'Select the background color for the footer.', 'quark' ),
+		'name' => esc_html__( 'Footer Background Color', 'quark' ),
+		'desc' => esc_html__( 'Select the background color for the footer.', 'quark' ),
 		'id' => 'footer_color',
 		'std' => '#222222',
 		'type' => 'color' );
 
 	$options[] = array(
-		'name' => __( 'Footer Content', 'quark' ),
-		'desc' => __( 'Enter the text you&lsquo;d like to display in the footer. This content will be displayed just below the footer widgets. It&lsquo;s ideal for displaying your copyright message or credits.', 'quark' ),
+		'name' => esc_html__( 'Footer Content', 'quark' ),
+		'desc' => esc_html__( 'Enter the text you&lsquo;d like to display in the footer. This content will be displayed just below the footer widgets. It&lsquo;s ideal for displaying your copyright message or credits.', 'quark' ),
 		'id' => 'footer_content',
 		'std' => quark_get_credits(),
 		'type' => 'editor',
 		'settings' => $wp_editor_settings );
 
 	$options[] = array(
-		'name' => __( 'Footer Content Position', 'quark' ),
-		'desc' => __( 'Select what position you would like the footer content aligned to.', 'quark' ),
+		'name' => esc_html__( 'Footer Content Position', 'quark' ),
+		'desc' => esc_html__( 'Select what position you would like the footer content aligned to.', 'quark' ),
 		'id' => 'footer_position',
 		'std' => 'center',
 		'type' => 'select',
@@ -172,8 +180,8 @@ function optionsframework_options() {
 		'options' => $footer_position_settings );
 
 	$options[] = array(
-		'name' => __( 'Google Analytics', 'quark' ),
-		'desc' => __( 'Enter your Google Analytics Tracking ID. The Tracking ID will be in the form of UA-1234567-1.', 'quark' ),
+		'name' => esc_html__( 'Google Analytics', 'quark' ),
+		'desc' => esc_html__( 'Enter your Google Analytics Tracking ID. The Tracking ID will be in the form of UA-1234567-1.', 'quark' ),
 		'id' => 'ga_trackingid',
 		'std' => '',
 		'class' => 'mini',
