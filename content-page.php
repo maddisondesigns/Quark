@@ -7,17 +7,22 @@
  */
 ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<?php if ( !is_front_page() ) { ?>
-			<header class="entry-header">
-				<h1 class="entry-title"><?php the_title(); ?></h1>
-			</header>
-		<?php } ?>
-		<div class="entry-content clearfix">
-			<?php the_content(); ?>
-			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'quark' ), 'after' => '</div>' ) ); ?>
-		</div><!-- /.entry-content -->
-		<footer class="entry-meta">
-			<?php edit_post_link( __( 'Edit', 'quark' ) . ' <i class="icon-angle-right"></i>', '<div class="edit-link">', '</div>' ); ?>
-		</footer><!-- /.entry-meta -->
-	</article><!-- /#post -->
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php if ( !is_front_page() ) { ?>
+		<header class="entry-header">
+			<h1 class="entry-title"><?php the_title(); ?></h1>
+		</header>
+	<?php } ?>
+	<div class="entry-content">
+		<?php the_content(); ?>
+		<?php wp_link_pages( array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'quark' ),
+			'after' => '</div>',
+			'link_before' => '<span class="page-numbers">',
+			'link_after' => '</span>'
+		) ); ?>
+	</div><!-- /.entry-content -->
+	<footer class="entry-meta">
+		<?php edit_post_link( esc_html__( 'Edit', 'quark' ) . ' <i class="icon-angle-right"></i>', '<div class="edit-link">', '</div>' ); ?>
+	</footer><!-- /.entry-meta -->
+</article><!-- /#post -->
