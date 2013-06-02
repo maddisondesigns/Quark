@@ -37,13 +37,13 @@
 
 <body <?php body_class(); ?>>
 
-<div class="visuallyhidden"><a href="#primary" title="<?php esc_attr_e( 'Skip to main content', 'quark' ); ?>"><?php _e( 'Skip to main content', 'quark' ); ?></a></div>
+<div class="visuallyhidden"><a href="#primary" title="<?php esc_attr_e( 'Skip to main content', 'quark' ); ?>"><?php esc_html_e( 'Skip to main content', 'quark' ); ?></a></div>
 
 <div id="wrapper" class="hfeed site">
 
 	<div id="headercontainer">
 
-		<header id="masthead" class="site-header row clearfix" role="banner">
+		<header id="masthead" class="site-header row" role="banner">
 			<div class="col grid_5_of_12 site-title">
 				<h1>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" rel="home">
@@ -64,8 +64,8 @@
 					<?php echo quark_get_social_media(); ?>
 				</div>
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<h3 class="menu-toggle assistive-text"><?php _e( 'Menu', 'quark' ); ?></h3>
-					<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'quark' ); ?>"><?php _e( 'Skip to content', 'quark' ); ?></a></div>
+					<h3 class="menu-toggle assistive-text"><?php esc_html_e( 'Menu', 'quark' ); ?></h3>
+					<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'quark' ); ?>"><?php esc_html_e( 'Skip to content', 'quark' ); ?></a></div>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 				</nav> <!-- /.site-navigation.main-navigation -->
 			</div> <!-- /.col.grid_7_of_12 -->
@@ -73,7 +73,7 @@
 
 	</div> <!-- /#headercontainer -->
 	<div id="bannercontainer">
-		<div class="banner row clearfix">
+		<div class="banner row">
 			<?php if ( is_front_page() ) {
 				// Count how many banner sidebars are active so we can work out how many containers we need
 				$bannerSidebars = 0;
