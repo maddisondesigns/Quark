@@ -14,7 +14,16 @@
 .row {
 	clear: both;
 	margin: 0 auto;
+	*zoom: 1;
 }
+
+.row:before,
+.row:after {
+	content: "";
+	display: table;
+}
+
+.row:after { clear: both; }
 
 
 /* ==========================================================================
