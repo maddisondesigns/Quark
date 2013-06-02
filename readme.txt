@@ -2,14 +2,14 @@
 Contributors: ahortin
 Donate link: http://quarktheme.com
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
-Requires at least: 3.4
-Tested up to: 3.5.1
+Requires at least: 3.6
+Tested up to: 3.6
 Stable tag: 1.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Quark is your basic building block for creating beautiful, responsive custom themes. It's not a convoluted or confusing framework that's hard to learn or
-even harder to modify. It's a simple and elegant starter theme built on HTML5 & CSS3. 
+even harder to modify. It's a simple and elegant starter theme built on HTML5 & CSS3. Its base is a responsive, 12 column grid. It incorporates custom Theme Options that are easy to modify, a set of common templates, support for WordPress Post Formats and the gorgeous, retina friendly Font Awesome icon font.
 
 
 == Description ==
@@ -23,7 +23,7 @@ Its base is a responsive, 12 column grid. It uses Normalize to make sure that br
 detecting HTML5 and CSS3 browser capabilities along with some default stylings from HTML5 Boilerplate.
 
 It incorporates the [Options Framework](http://wptheming.com/options-framework-theme/) by Devin Price to make it super easy to add custom Theme Options
-as well as the gorgeous [Font Awesome](http://gregoryloucas.github.com/Font-Awesome-More) icon font by Dave Gandy.
+as well as the gorgeous [Font Awesome](http://fortawesome.github.io/Font-Awesome/) icon font by Dave Gandy.
 
 The main navigation uses the standard WordPress menu. Support for dropdown menus is inluded by default. If you'd like to envoke a button toggle for the main navigation menu on small screens, simply uncomment the two lines from the quark_scripts_styles() function within functions.php to register and enqueue the necessary javascript file, and BAM! You're done!
 
@@ -157,7 +157,7 @@ Quark utilises the following awesomeness:
 [Normalize.css](https://github.com/necolas/normalize.css), which is licensed under the MIT license
 [Audio.js](http://kolber.github.com/audiojs), which is licensed under the MIT License
 [jQuery Validation](http://bassistance.de/jquery-plugins/jquery-plugin-validation) which is dual licensed under the MIT license and GPL licenses
-[Font Awesome](http://gregoryloucas.github.com/Font-Awesome-More) icon font, which is licensed under SIL Open Font License and MIT License
+[Font Awesome](http://fortawesome.github.io/Font-Awesome) icon font, which is licensed under SIL Open Font License and MIT License
 [PT Sans font](http://www.google.com/fonts/specimen/PT+Sans), which is licensed under SIL Open Font License 1.1
 [Arvo font](http://www.google.com/fonts/specimen/Arvo), which is licensed under SIL Open Font License 1.1
 
@@ -165,9 +165,18 @@ Quark utilises the following awesomeness:
 == Changelog ==
 
 = 1.2.5 =
-- Removed login_errors filter. This is best left for plugins
 - Updated normalize.css to v2.1.1
 - Updated Font Awesome icon font to v3.1.1
+- Updated theme short description
+- Updated Post Format templates to contain Author bio
+- Updated _e() references to esc_html_e() to ensure any html added into translation file is neutralised
+- Updated __() references to esc_html__() to ensure any html added into translation file is neutralised
+- Added template for displaying Author bios
+- Added extra use of wp_kses() to ensure only authorised HTML is allowed in translations
+- Added loading of Google Fonts in TinyMCE Editor
+- Removed login_errors filter. This is best left for plugins
+- Removed loading of Audio.js since audio functionality is now part of core
+- Removed use of clearfix class as containers will now automatically clear
 
 = 1.2.4 =
 - Updated strings that weren't wrapped in gettext functions for translation purposes
