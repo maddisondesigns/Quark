@@ -23,6 +23,8 @@ if ( ! isset( $content_width ) )
  * support post thumbnails.
  *
  * @since Quark 1.0
+ *
+ * @return void
  */
 if ( ! function_exists( 'quark_setup' ) ) {
 	function quark_setup() {
@@ -50,7 +52,7 @@ if ( ! function_exists( 'quark_setup' ) ) {
 
 		// This theme uses wp_nav_menu() in one location
 		register_nav_menus( array(
-				'primary' => __( 'Primary Menu', 'quark' )
+				'primary' => esc_html__( 'Primary Menu', 'quark' )
 			) );
 
 		// This theme supports a variety of post formats
@@ -96,15 +98,95 @@ add_action( 'after_setup_theme', 'quark_setup' );
 
 
 /**
+ * Returns the Google font stylesheet URL, if available.
+ *
+ * The use of PT Sans and Arvo by default is localized. For languages that use characters not supported by the fonts, the fonts can be disabled.
+ *
+ * @since Quark 1.2.5
+ *
+ * @return string Font stylesheet or empty string if disabled.
+ */
+function quark_fonts_url() {
+	$fonts_url = '';
+	$subsets = 'latin';
+
+	/* translators: If there are characters in your language that are not supported by PT Sans, translate this to 'off'.
+	 * Do not translate into your own language.
+	 */
+	$pt_sans = _x( 'on', 'PT Sans font: on or off', 'quark' );
+
+	/* translators: To add an additional PT Sans character subset specific to your language, translate this to 'greek', 'cyrillic' or 'vietnamese'.
+	 * Do not translate into your own language.
+	 */
+	$subset = _x( 'no-subset', 'PT Sans font: add new subset (cyrillic)', 'quark' );
+
+	if ( 'cyrillic' == $subset )
+		$subsets .= ',cyrillic';
+
+	/* translators: If there are characters in your language that are not supported by Arvo, translate this to 'off'.
+	 * Do not translate into your own language.
+	 */
+	$arvo = _x( 'on', 'Arvo font: on or off', 'quark' );
+
+	if ( 'off' !== $pt_sans || 'off' !== $arvo ) {
+		$font_families = array();
+
+		if ( 'off' !== $pt_sans )
+			$font_families[] = 'PT+Sans:400,400italic,700,700italic';
+
+		if ( 'off' !== $arvo )
+			$font_families[] = 'Arvo:400';
+
+		$protocol = is_ssl() ? 'https' : 'http';
+		$query_args = array(
+			'family' => implode( '|', $font_families ),
+			'subset' => $subsets,
+		);
+		$fonts_url = add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" );
+	}
+
+	return $fonts_url;
+}
+
+
+/**
+ * Adds additional stylesheets to the TinyMCE editor if needed.
+ *
+ * @since Quark 1.2.5
+ *
+ * @param string $mce_css CSS path to load in TinyMCE.
+ * @return string The filtered CSS paths list.
+ */
+function quark_mce_css( $mce_css ) {
+	$fonts_url = quark_fonts_url();
+
+	if ( empty( $fonts_url ) ) {
+		return $mce_css;
+	}
+
+	if ( !empty( $mce_css ) ) {
+		$mce_css .= ',';
+	}
+
+	$mce_css .= esc_url_raw( str_replace( ',', '%2C', $fonts_url ) );
+
+	return $mce_css;
+}
+add_filter( 'mce_css', 'quark_mce_css' );
+
+
+/**
  * Register widgetized areas
  *
  * @since Quark 1.0
+ *
+ * @return void
  */
 function quark_widgets_init() {
 	register_sidebar( array(
-			'name' => __( 'Main Sidebar', 'quark' ),
+			'name' => esc_html__( 'Main Sidebar', 'quark' ),
 			'id' => 'sidebar-main',
-			'description' => __( 'Appears in the sidebar on posts and pages except the optional Front Page template, which has its own widgets', 'quark' ),
+			'description' => esc_html__( 'Appears in the sidebar on posts and pages except the optional Front Page template, which has its own widgets', 'quark' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -112,9 +194,9 @@ function quark_widgets_init() {
 		) );
 
 	register_sidebar( array(
-			'name' => __( 'Blog Sidebar', 'quark' ),
+			'name' => esc_html__( 'Blog Sidebar', 'quark' ),
 			'id' => 'sidebar-blog',
-			'description' => __( 'Appears in the sidebar on the blog and archive pages only', 'quark' ),
+			'description' => esc_html__( 'Appears in the sidebar on the blog and archive pages only', 'quark' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -122,9 +204,9 @@ function quark_widgets_init() {
 		) );
 
 	register_sidebar( array(
-			'name' => __( 'Single Post Sidebar', 'quark' ),
+			'name' => esc_html__( 'Single Post Sidebar', 'quark' ),
 			'id' => 'sidebar-single',
-			'description' => __( 'Appears in the sidebar on single posts only', 'quark' ),
+			'description' => esc_html__( 'Appears in the sidebar on single posts only', 'quark' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -132,9 +214,9 @@ function quark_widgets_init() {
 		) );
 
 	register_sidebar( array(
-			'name' => __( 'Page Sidebar', 'quark' ),
+			'name' => esc_html__( 'Page Sidebar', 'quark' ),
 			'id' => 'sidebar-page',
-			'description' => __( 'Appears in the sidebar on pages only', 'quark' ),
+			'description' => esc_html__( 'Appears in the sidebar on pages only', 'quark' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -142,9 +224,9 @@ function quark_widgets_init() {
 		) );
 
 	register_sidebar( array(
-			'name' => __( 'First Front Page Banner Widget', 'quark' ),
+			'name' => esc_html__( 'First Front Page Banner Widget', 'quark' ),
 			'id' => 'frontpage-banner1',
-			'description' => __( 'Appears in the banner area on the Front Page', 'quark' ),
+			'description' => esc_html__( 'Appears in the banner area on the Front Page', 'quark' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<h1 class="widget-title">',
@@ -152,9 +234,9 @@ function quark_widgets_init() {
 		) );
 
 	register_sidebar( array(
-			'name' => __( 'Second Front Page Banner Widget', 'quark' ),
+			'name' => esc_html__( 'Second Front Page Banner Widget', 'quark' ),
 			'id' => 'frontpage-banner2',
-			'description' => __( 'Appears in the banner area on the Front Page', 'quark' ),
+			'description' => esc_html__( 'Appears in the banner area on the Front Page', 'quark' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<h1 class="widget-title">',
@@ -162,9 +244,9 @@ function quark_widgets_init() {
 		) );
 
 	register_sidebar( array(
-			'name' => __( 'First Front Page Widget Area', 'quark' ),
+			'name' => esc_html__( 'First Front Page Widget Area', 'quark' ),
 			'id' => 'sidebar-homepage1',
-			'description' => __( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
+			'description' => esc_html__( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -172,9 +254,9 @@ function quark_widgets_init() {
 		) );
 
 	register_sidebar( array(
-			'name' => __( 'Second Front Page Widget Area', 'quark' ),
+			'name' => esc_html__( 'Second Front Page Widget Area', 'quark' ),
 			'id' => 'sidebar-homepage2',
-			'description' => __( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
+			'description' => esc_html__( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -182,9 +264,9 @@ function quark_widgets_init() {
 		) );
 
 	register_sidebar( array(
-			'name' => __( 'Third Front Page Widget Area', 'quark' ),
+			'name' => esc_html__( 'Third Front Page Widget Area', 'quark' ),
 			'id' => 'sidebar-homepage3',
-			'description' => __( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
+			'description' => esc_html__( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -192,9 +274,9 @@ function quark_widgets_init() {
 		) );
 
 	register_sidebar( array(
-			'name' => __( 'Fourth Front Page Widget Area', 'quark' ),
+			'name' => esc_html__( 'Fourth Front Page Widget Area', 'quark' ),
 			'id' => 'sidebar-homepage4',
-			'description' => __( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
+			'description' => esc_html__( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -202,9 +284,9 @@ function quark_widgets_init() {
 		) );
 
 	register_sidebar( array(
-			'name' => __( 'First Footer Widget Area', 'quark' ),
+			'name' => esc_html__( 'First Footer Widget Area', 'quark' ),
 			'id' => 'sidebar-footer1',
-			'description' => __( 'Appears in the footer sidebar', 'quark' ),
+			'description' => esc_html__( 'Appears in the footer sidebar', 'quark' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -212,9 +294,9 @@ function quark_widgets_init() {
 		) );
 
 	register_sidebar( array(
-			'name' => __( 'Second Footer Widget Area', 'quark' ),
+			'name' => esc_html__( 'Second Footer Widget Area', 'quark' ),
 			'id' => 'sidebar-footer2',
-			'description' => __( 'Appears in the footer sidebar', 'quark' ),
+			'description' => esc_html__( 'Appears in the footer sidebar', 'quark' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -222,9 +304,9 @@ function quark_widgets_init() {
 		) );
 
 	register_sidebar( array(
-			'name' => __( 'Third Footer Widget Area', 'quark' ),
+			'name' => esc_html__( 'Third Footer Widget Area', 'quark' ),
 			'id' => 'sidebar-footer3',
-			'description' => __( 'Appears in the footer sidebar', 'quark' ),
+			'description' => esc_html__( 'Appears in the footer sidebar', 'quark' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -232,9 +314,9 @@ function quark_widgets_init() {
 		) );
 
 	register_sidebar( array(
-			'name' => __( 'Fourth Footer Widget Area', 'quark' ),
+			'name' => esc_html__( 'Fourth Footer Widget Area', 'quark' ),
 			'id' => 'sidebar-footer4',
-			'description' => __( 'Appears in the footer sidebar', 'quark' ),
+			'description' => esc_html__( 'Appears in the footer sidebar', 'quark' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
@@ -248,6 +330,8 @@ add_action( 'widgets_init', 'quark_widgets_init' );
  * Enqueue scripts and styles
  *
  * @since Quark 1.0
+ *
+ * @return void
  */
 function quark_scripts_styles() {
 
@@ -279,44 +363,16 @@ function quark_scripts_styles() {
 
 	/*
 	 * Load our Google Fonts.
-	 * The use of PT Sans and Arvo by default is localized. For languages that use characters not supported by the fonts, the fonts can be disabled.
 	 *
 	 * To disable in a child theme, use wp_dequeue_style()
 	 * function mytheme_dequeue_fonts() {
-	 *     wp_dequeue_style( 'quark-ptsans' );
-	 *     wp_dequeue_style( 'quark-arvo' );
+	 *     wp_dequeue_style( 'quark-fonts' );
 	 * }
 	 * add_action( 'wp_enqueue_scripts', 'mytheme_dequeue_fonts', 11 );
 	 */
-
-	/* translators: If there are characters in your language that are not supported by PT Sans, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'PT Sans font: on or off', 'quark' ) ) {
-		$subsets = 'latin';
-
-		/* translators: To add an additional PT Sans character subset specific to your language, translate this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate into your own language. */
-		$subset = _x( 'no-subset', 'PT Sans font: add new subset (cyrillic)', 'quark' );
-
-		if ( 'cyrillic' == $subset )
-			$subsets .= ',cyrillic';
-
-		$protocol = is_ssl() ? 'https' : 'http';
-		$query_args = array(
-			'family' => 'PT+Sans:400,400italic,700,700italic',
-			'subset' => $subsets,
-		);
-		wp_enqueue_style( 'quark-ptsans', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null );
-	}
-
-	/* translators: If there are characters in your language that are not supported by Arvo, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Arvo font: on or off', 'quark' ) ) {
-		$subsets = 'latin';
-
-		$protocol = is_ssl() ? 'https' : 'http';
-		$query_args = array(
-			'family' => 'Arvo:400',
-			'subset' => $subsets,
-		);
-		wp_enqueue_style( 'quark-arvo', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null );
+	$fonts_url = quark_fonts_url();
+	if ( !empty( $fonts_url ) ) {
+		wp_enqueue_style( 'quark-fonts', esc_url_raw( $fonts_url ), array(), null );
 	}
 
 	// Enqueue the default WordPress stylesheet
@@ -345,19 +401,10 @@ function quark_scripts_styles() {
 
 		wp_enqueue_script( 'commentvalidate' );
 		wp_localize_script( 'commentvalidate', 'comments_object', array(
-			'author'  => __( 'Please enter your name', 'quark' ),
-			'email'  => __( 'Please enter a valid email address', 'quark' ),
-			'comment' => __( 'Please add a comment', 'quark' ) )
+			'author'  => esc_html__( 'Please enter your name', 'quark' ),
+			'email'  => esc_html__( 'Please enter a valid email address', 'quark' ),
+			'comment' => esc_html__( 'Please add a comment', 'quark' ) )
 		);
-	}
-
-	// Load Audio.js as well as the initialiser to provide an inline audio player for Audio Post Formats
-	// Accepts valid .mp3 urls
-	if ( is_singular() || is_home() ) {
-		wp_register_script( 'audiojs', trailingslashit( get_template_directory_uri() ) . 'js/audiojs/audio.min.js', array(), '1.0', true );
-		wp_register_script( 'initaudiojs', trailingslashit( get_template_directory_uri() ) . 'js/audiojs/init-audio.js', array( 'audiojs' ), '1.0', true );
-
-		wp_enqueue_script( 'initaudiojs' );
 	}
 
 	// Load Google Analytics Tracking script only if the GA ID is specified in the Theme Options
@@ -381,6 +428,10 @@ add_action( 'wp_enqueue_scripts', 'quark_scripts_styles' );
  * for output in head of document, based on current view.
  *
  * @since Quark 1.0
+ *
+ * @param string $title Default title text for current view.
+ * @param string $sep Optional separator.
+ * @return string The filtered title.
  */
 function quark_wp_title( $title, $sep ) {
 	global $paged, $page;
@@ -400,7 +451,7 @@ function quark_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 ) {
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'quark' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf( esc_html__( 'Page %s', 'quark' ), max( $paged, $page ) );
 	}
 
 	return $title;
@@ -412,6 +463,9 @@ add_filter( 'wp_title', 'quark_wp_title', 10, 2 );
  * Displays navigation to next/previous pages when applicable.
  *
  * @since Quark 1.0
+ *
+ * @param string html ID
+ * @return void
  */
 if ( ! function_exists( 'quark_content_nav' ) ) {
 	function quark_content_nav( $nav_id ) {
@@ -424,7 +478,7 @@ if ( ! function_exists( 'quark_content_nav' ) ) {
 		}
 		?>
 		<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
-			<h3 class="assistive-text"><?php _e( 'Post navigation', 'quark' ); ?></h3>
+			<h3 class="assistive-text"><?php esc_html_e( 'Post navigation', 'quark' ); ?></h3>
 
 			<?php if ( is_single() ) { // navigation links for single posts ?>
 
@@ -440,8 +494,10 @@ if ( ! function_exists( 'quark_content_nav' ) ) {
 					'current' => max( 1, get_query_var( 'paged' ) ),
 					'total' => $wp_query->max_num_pages,
 					'type' => 'list',
-					'prev_text' => __( '<i class="icon-angle-left"></i>Previous' ),
-					'next_text' => __( 'Next<i class="icon-angle-right"></i>' )
+					'prev_text' => wp_kses( __( '<i class="icon-angle-left"></i> Previous', 'quark' ), array( 'i' => array( 
+						'class' => array() ) ) ),
+					'next_text' => wp_kses( __( 'Next <i class="icon-angle-right"></i>', 'quark' ), array( 'i' => array( 
+						'class' => array() ) ) )
 				) ); ?>
 
 			<?php } ?>
@@ -462,6 +518,11 @@ if ( ! function_exists( 'quark_content_nav' ) ) {
  * (Note the lack of a trailing </li>. WordPress will add it itself once it's done listing any children and whatnot)
  *
  * @since Quark 1.0
+ *
+ * @param array Comment
+ * @param array Arguments
+ * @param integer Comment depth
+ * @return void
  */
 if ( ! function_exists( 'quark_comment' ) ) {
 	function quark_comment( $comment, $args, $depth ) {
@@ -472,7 +533,7 @@ if ( ! function_exists( 'quark_comment' ) ) {
 			// Display trackbacks differently than normal comments ?>
 			<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
 				<article id="comment-<?php comment_ID(); ?>" class="pingback">
-					<p><?php _e( 'Pingback:', 'quark' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'quark' ), '<span class="edit-link">', '</span>' ); ?></p>
+					<p><?php esc_html_e( 'Pingback:', 'quark' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( esc_html__( '(Edit)', 'quark' ), '<span class="edit-link">', '</span>' ); ?></p>
 				</article> <!-- #comment-##.pingback -->
 			<?php
 			break;
@@ -487,28 +548,28 @@ if ( ! function_exists( 'quark_comment' ) ) {
 						printf( '<cite class="fn">%1$s %2$s</cite>',
 							get_comment_author_link(),
 							// If current post author is also comment author, make it known visually.
-							( $comment->user_id === $post->post_author ) ? '<span> ' . __( 'Post author', 'quark' ) . '</span>' : '' );
-							printf( '<a href="%1$s" title="Posted %2$s"><time pubdate datetime="%3$s">%4$s</time></a>',
+							( $comment->user_id === $post->post_author ) ? '<span> ' . esc_html__( 'Post author', 'quark' ) . '</span>' : '' );
+						printf( '<a href="%1$s" title="Posted %2$s"><time pubdate datetime="%3$s">%4$s</time></a>',
 							esc_url( get_comment_link( $comment->comment_ID ) ),
-							sprintf( __( '%1$s @ %2$s', 'quark' ), esc_html( get_comment_date() ), esc_attr( get_comment_time() ) ),
+							sprintf( esc_html__( '%1$s @ %2$s', 'quark' ), esc_html( get_comment_date() ), esc_attr( get_comment_time() ) ),
 							get_comment_time( 'c' ),
 							/* Translators: 1: date, 2: time */
-							sprintf( __( '%1$s at %2$s', 'quark' ), get_comment_date(), get_comment_time() )
+							sprintf( esc_html__( '%1$s at %2$s', 'quark' ), get_comment_date(), get_comment_time() )
 						);
 						?>
 					</header> <!-- .comment-meta -->
 
 					<?php if ( '0' == $comment->comment_approved ) { ?>
-						<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'quark' ); ?></p>
+						<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'quark' ); ?></p>
 					<?php } ?>
 
 					<section class="comment-content comment">
 						<?php comment_text(); ?>
-						<?php edit_comment_link( __( 'Edit', 'quark' ), '<p class="edit-link">', '</p>' ); ?>
+						<?php edit_comment_link( esc_html__( 'Edit', 'quark' ), '<p class="edit-link">', '</p>' ); ?>
 					</section> <!-- .comment-content -->
 
 					<div class="reply">
-						<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'quark' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+						<?php comment_reply_link( array_merge( $args, array( 'reply_text' => wp_kses( __( 'Reply <span>&darr;</span>', 'quark' ), array( 'span' => array() ) ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 					</div> <!-- .reply -->
 				</article> <!-- #comment-## -->
 			<?php
@@ -522,6 +583,9 @@ if ( ! function_exists( 'quark_comment' ) ) {
  * Update the Comments form so that the 'required' span is contained within the form label.
  *
  * @since Quark 1.0
+ *
+ * @param string Comment form fields html
+ * @return string The updated comment form fields html
  */
 function quark_comment_form_default_fields( $fields ) {
 
@@ -529,11 +593,11 @@ function quark_comment_form_default_fields( $fields ) {
 	$req = get_option( 'require_name_email' );
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 
-	$fields[ 'author' ] = '<p class="comment-form-author">' . '<label for="author">' . __( 'Name', 'quark' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' . '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
+	$fields[ 'author' ] = '<p class="comment-form-author">' . '<label for="author">' . esc_html__( 'Name', 'quark' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' . '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
 
-	$fields[ 'email' ] =  '<p class="comment-form-email"><label for="email">' . __( 'Email', 'quark' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' . '<input id="email" email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
+	$fields[ 'email' ] =  '<p class="comment-form-email"><label for="email">' . esc_html__( 'Email', 'quark' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' . '<input id="email" email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
 
-	$fields[ 'url' ] =  '<p class="comment-form-url"><label for="url">' . __( 'Website', 'quark' ) . '</label>' . '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>';
+	$fields[ 'url' ] =  '<p class="comment-form-url"><label for="url">' . esc_html__( 'Website', 'quark' ) . '</label>' . '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>';
 
 	return $fields;
 
@@ -546,6 +610,9 @@ add_action( 'comment_form_default_fields', 'quark_comment_form_default_fields' )
  * submitting a comment that doesn't actually have any text in the comment field!
  *
  * @since Quark 1.0
+ *
+ * @param string Comment form textarea html
+ * @return string The updated comment form textarea html
  */
 function quark_comment_form_field_comment( $field ) {
 
@@ -561,6 +628,8 @@ add_action( 'comment_form_field_comment', 'quark_comment_form_field_comment' );
  * Prints HTML with meta information for current post: author and date
  *
  * @since Quark 1.0
+ *
+ * @return void
  */
 if ( ! function_exists( 'quark_posted_on' ) ) {
 	function quark_posted_on() {
@@ -602,7 +671,7 @@ if ( ! function_exists( 'quark_posted_on' ) ) {
 		$date = sprintf( '<i class="%1$s"></i> <a href="%2$s" title="Posted %3$s" rel="bookmark"><time class="entry-date" datetime="%4$s" pubdate>%5$s</time></a>',
 			$post_icon,
 			esc_url( get_permalink() ),
-			sprintf( __( '%1$s @ %2$s', 'quark' ), esc_html( get_the_date() ), esc_attr( get_the_time() ) ),
+			sprintf( esc_html__( '%1$s @ %2$s', 'quark' ), esc_html( get_the_date() ), esc_attr( get_the_time() ) ),
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() )
 		);
@@ -610,22 +679,26 @@ if ( ! function_exists( 'quark_posted_on' ) ) {
 		// Translators: 1: Date link 2: Author link 3: Categories 4: No. of Comments
 		$author = sprintf( '<i class="icon-pencil"></i> <address class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></address>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_attr( sprintf( __( 'View all posts by %s', 'quark' ), get_the_author() ) ),
+			esc_attr( sprintf( esc_html__( 'View all posts by %s', 'quark' ), get_the_author() ) ),
 			get_the_author()
 		);
 
 		// Return the Categories as a list
-		$categories_list = get_the_category_list( __( ' ', 'quark' ) );
+		$categories_list = get_the_category_list( esc_html__( ' ', 'quark' ) );
 
 		// Translators: 1: Permalink 2: Title 3: No. of Comments
 		$comments = sprintf( '<span class="comments-link"><i class="icon-comment"></i> <a href="%1$s" title="%2$s">%3$s</a></span>',
 			esc_url( get_comments_link() ),
-			esc_attr( __( 'Comment on ' . the_title_attribute( 'echo=0' ) ) ),
-			( get_comments_number() > 0 ? sprintf( _n( '%1$s Comment', '%1$s Comments', get_comments_number() ), get_comments_number() ) : __( 'No Comments', 'quark' ) )
+			esc_attr( esc_html__( 'Comment on ' . the_title_attribute( 'echo=0' ) ) ),
+			( get_comments_number() > 0 ? sprintf( _n( '%1$s Comment', '%1$s Comments', get_comments_number() ), get_comments_number() ) : esc_html__( 'No Comments', 'quark' ) )
 		);
 
 		// Translators: 1: Date 2: Author 3: Categories 4: Comments
-		printf( __( '<div class="header-meta clearfix">%1$s%2$s<span class="post-categories">%3$s</span>%4$s</div>', 'quark' ),
+		printf( wp_kses( __( '<div class="header-meta">%1$s%2$s<span class="post-categories">%3$s</span>%4$s</div>', 'quark' ), array( 
+			'div' => array ( 
+				'class' => array() ), 
+			'span' => array( 
+				'class' => array() ) ) ),
 			$date,
 			$author,
 			$categories_list,
@@ -639,18 +712,20 @@ if ( ! function_exists( 'quark_posted_on' ) ) {
  * Prints HTML with meta information for current post: categories, tags, permalink
  *
  * @since Quark 1.0
+ *
+ * @return void
  */
 if ( ! function_exists( 'quark_entry_meta' ) ) {
 	function quark_entry_meta() {
 		// Return the Tags as a list
 		$tag_list = "";
 		if ( get_the_tag_list() ) {
-			$tag_list = get_the_tag_list( '<span class="post-tags">', __( ' ', 'quark' ), '</span>' );
+			$tag_list = get_the_tag_list( '<span class="post-tags">', esc_html__( ' ', 'quark' ), '</span>' );
 		}
 
 		// Translators: 1 is tag
 		if ( $tag_list ) {
-			printf( __( '<i class="icon-tag"></i> %1$s', 'quark' ), $tag_list );
+			printf( wp_kses( __( '<i class="icon-tag"></i> %1$s', 'quark' ), array( 'i' => array( 'class' => array() ) ) ), $tag_list );
 		}
 	}
 }
@@ -660,6 +735,8 @@ if ( ! function_exists( 'quark_entry_meta' ) ) {
  * Adjusts content_width value for full-width templates and attachments
  *
  * @since Quark 1.0
+ *
+ * @return void
  */
 function quark_content_width() {
 	if ( is_page_template( 'page-templates/full-width.php' ) || is_attachment() ) {
@@ -674,6 +751,9 @@ add_action( 'template_redirect', 'quark_content_width' );
  * Change the "read more..." link so it links to the top of the page rather than part way down
  *
  * @since Quark 1.0
+ *
+ * @param string The 'Read more' link
+ * @return string The link to the post url without the more tag appended on the end
  */
 function quark_remove_more_jump_link( $link ) {
 	$offset = strpos( $link, '#more-' );
@@ -692,9 +772,12 @@ add_filter( 'the_content_more_link', 'quark_remove_more_jump_link' );
  * Returns a "Continue Reading" link for excerpts
  *
  * @since Quark 1.0
+ *
+ * @return string The 'Continue reading' link
  */
 function quark_continue_reading_link() {
-	return '&hellip;<p><a class="more-link" href="'. esc_url( get_permalink() ) . '" title="' . __( 'Continue reading', 'quark' ) . ' &lsquo;' . get_the_title() . '&rsquo;">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'quark' ) . '</a></p>';
+	return '&hellip;<p><a class="more-link" href="'. esc_url( get_permalink() ) . '" title="' . esc_html__( 'Continue reading', 'quark' ) . ' &lsquo;' . get_the_title() . '&rsquo;">' . wp_kses( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'quark' ), array( 'span' => array( 
+			'class' => array() ) ) ) . '</a></p>';
 }
 
 
@@ -702,6 +785,9 @@ function quark_continue_reading_link() {
  * Replaces "[...]" (appended to automatically generated excerpts) with the quark_continue_reading_link().
  *
  * @since Quark 1.0
+ *
+ * @param string Auto generated excerpt
+ * @return string The filtered excerpt
  */
 function quark_auto_excerpt_more( $more ) {
 	return quark_continue_reading_link();
@@ -713,6 +799,9 @@ add_filter( 'excerpt_more', 'quark_auto_excerpt_more' );
  * Extend the user contact methods to include Twitter, Facebook and Google+
  *
  * @since Quark 1.0
+ *
+ * @param array List of user contact methods
+ * @return array The filtered list of updated user contact methods
  */
 function quark_new_contactmethods( $contactmethods ) {
 	// Add Twitter
@@ -734,6 +823,9 @@ add_filter( 'user_contactmethods', 'quark_new_contactmethods', 10, 1 );
  * This allows us to perform some nicer styling on our menu items that have multiple levels (eg. dropdown menu arrows)
  *
  * @since Quark 1.0
+ *
+ * @param Menu items
+ * @return array An extra css class is on menu items with children
  */
 function quark_add_menu_parent_class( $items ) {
 
@@ -767,20 +859,22 @@ add_filter( 'widget_text', 'do_shortcode' );
  * Return an unordered list of linked social media icons, based on the urls provided in the Theme Options
  *
  * @since Quark 1.0
+ *
+ * @return string Unordered list of linked social media icons
  */
 if ( ! function_exists( 'quark_get_social_media' ) ) {
 	function quark_get_social_media() {
 		$output = '';
 		$icons = array(
-			array( 'url' => of_get_option( 'social_twitter', '' ), 'icon' => 'icon-twitter', 'title' => __( 'Follow me on Twitter', 'quark' ) ),
-			array( 'url' => of_get_option( 'social_facebook', '' ), 'icon' => 'icon-facebook', 'title' => __( 'Friend me on Facebook', 'quark' ) ),
-			array( 'url' => of_get_option( 'social_googleplus', '' ), 'icon' => 'icon-google-plus', 'title' => __( 'Connect with me on Google+', 'quark' ) ),
-			array( 'url' => of_get_option( 'social_linkedin', '' ), 'icon' => 'icon-linkedin-sign', 'title' => __( 'Connect with me on LinkedIn', 'quark' ) ),
-			array( 'url' => of_get_option( 'social_github', '' ), 'icon' => 'icon-github-alt', 'title' => __( 'Fork me on GitHub', 'quark' ) ),
-			array( 'url' => of_get_option( 'social_youtube', '' ), 'icon' => 'icon-youtube-sign', 'title' => __( 'Subscribe to me on YouTube', 'quark' ) ),
-			array( 'url' => of_get_option( 'social_instagram', '' ), 'icon' => 'icon-instagram', 'title' => __( 'Follow me on Instagram', 'quark' ) ),
-			array( 'url' => of_get_option( 'social_flickr', '' ), 'icon' => 'icon-flickr', 'title' => __( 'Connect with me on Flickr', 'quark' ) ),
-			array( 'url' => of_get_option( 'social_pinterest', '' ), 'icon' => 'icon-pinterest-sign', 'title' => __( 'Follow me on Pinterest', 'quark' ) )
+			array( 'url' => of_get_option( 'social_twitter', '' ), 'icon' => 'icon-twitter', 'title' => esc_html__( 'Follow me on Twitter', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_facebook', '' ), 'icon' => 'icon-facebook', 'title' => esc_html__( 'Friend me on Facebook', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_googleplus', '' ), 'icon' => 'icon-google-plus', 'title' => esc_html__( 'Connect with me on Google+', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_linkedin', '' ), 'icon' => 'icon-linkedin-sign', 'title' => esc_html__( 'Connect with me on LinkedIn', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_github', '' ), 'icon' => 'icon-github', 'title' => esc_html__( 'Fork me on GitHub', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_youtube', '' ), 'icon' => 'icon-youtube-sign', 'title' => esc_html__( 'Subscribe to me on YouTube', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_instagram', '' ), 'icon' => 'icon-instagram', 'title' => esc_html__( 'Follow me on Instagram', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_flickr', '' ), 'icon' => 'icon-flickr', 'title' => esc_html__( 'Connect with me on Flickr', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_pinterest', '' ), 'icon' => 'icon-pinterest-sign', 'title' => esc_html__( 'Follow me on Pinterest', 'quark' ) )
 		);
 
 		foreach ( $icons as $key ) {
@@ -807,15 +901,17 @@ if ( ! function_exists( 'quark_get_social_media' ) ) {
  * Return a string containing the footer credits & link
  *
  * @since Quark 1.0
+ *
+ * @return string Footer credits & link
  */
 if ( ! function_exists( 'quark_get_credits' ) ) {
 	function quark_get_credits() {
 		$output = '';
 		$output = sprintf( '%1$s <a href="%2$s" title="%3$s">%4$s</a>',
-			__( 'Proudly powered by', 'quark' ),
-			esc_url( __( 'http://wordpress.org/', 'quark' ) ),
-			esc_attr( __( 'Semantic Personal Publishing Platform', 'quark' ) ),
-			__( 'WordPress', 'quark' )
+			esc_html__( 'Proudly powered by', 'quark' ),
+			esc_url( esc_html__( 'http://wordpress.org/', 'quark' ) ),
+			esc_attr( esc_html__( 'Semantic Personal Publishing Platform', 'quark' ) ),
+			esc_html__( 'WordPress', 'quark' )
 		);
 
 		return $output;
@@ -827,6 +923,8 @@ if ( ! function_exists( 'quark_get_credits' ) ) {
  * Outputs the selected Theme Options inline into the <head>
  *
  * @since Quark 1.0
+ *
+ * @return void
  */
 function quark_theme_options_styles() {
 	$output = '';
