@@ -10,7 +10,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="site-content row clearfix" role="main">
+	<div id="primary" class="site-content row" role="main">
 
 		<?php get_sidebar(); ?>
 		<div class="col grid_8_of_12">

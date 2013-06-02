@@ -18,7 +18,7 @@
 
 	// If there's one or more one active sidebars, create a row and add them
 	if ( $footerSidebars > 0 ) { ?>
-		<div id="secondary" class="home-sidebar row clearfix">
+		<div id="secondary" class="home-sidebar row">
 			<?php
 			// Work out the container class name based on the number of active front page sidebars
 			$containerClass = "grid_" . 12 / $footerSidebars . "_of_12";
