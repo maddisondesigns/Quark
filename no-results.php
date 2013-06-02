@@ -11,22 +11,25 @@
 
 <article id="post-0" class="post no-results not-found">
 	<header class="entry-header">
-		<h1 class="entry-title"><?php _e( 'Nothing Found', 'quark' ); ?></h1>
+		<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'quark' ); ?></h1>
 	</header><!-- /.entry-header -->
 
 	<div class="entry-content">
 		<?php if ( is_home() && current_user_can( 'edit_posts' ) ) { ?>
 
-			<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'quark' ), admin_url( 'post-new.php' ) ); ?></p>
+			<p><?php printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'quark' ), array( 
+				'a' => array( 
+					'href' => array() )
+				) ), admin_url( 'post-new.php' ) ); ?></p>
 
 		<?php } elseif ( is_search() ) { ?>
 
-			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'quark' ); ?></p>
+			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'quark' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php } else { ?>
 
-			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'quark' ); ?></p>
+			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'quark' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php } ?>
