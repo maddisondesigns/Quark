@@ -229,10 +229,10 @@ add_filter( 'of_font_face', 'of_sanitize_font_face' );
  */
 function of_recognized_background_repeat() {
 	$default = array(
-		'no-repeat' => __( 'No Repeat', 'quark' ),
-		'repeat-x'  => __( 'Repeat Horizontally', 'quark' ),
-		'repeat-y'  => __( 'Repeat Vertically', 'quark' ),
-		'repeat'    => __( 'Repeat All', 'quark' ),
+		'no-repeat' => esc_html__( 'No Repeat', 'quark' ),
+		'repeat-x'  => esc_html__( 'Repeat Horizontally', 'quark' ),
+		'repeat-y'  => esc_html__( 'Repeat Vertically', 'quark' ),
+		'repeat'    => esc_html__( 'Repeat All', 'quark' ),
 		);
 	return apply_filters( 'of_recognized_background_repeat', $default );
 }
@@ -245,15 +245,15 @@ function of_recognized_background_repeat() {
  */
 function of_recognized_background_position() {
 	$default = array(
-		'top left'      => __( 'Top Left', 'quark' ),
-		'top center'    => __( 'Top Center', 'quark' ),
-		'top right'     => __( 'Top Right', 'quark' ),
-		'center left'   => __( 'Middle Left', 'quark' ),
-		'center center' => __( 'Middle Center', 'quark' ),
-		'center right'  => __( 'Middle Right', 'quark' ),
-		'bottom left'   => __( 'Bottom Left', 'quark' ),
-		'bottom center' => __( 'Bottom Center', 'quark' ),
-		'bottom right'  => __( 'Bottom Right', 'quark')
+		'top left'      => esc_html__( 'Top Left', 'quark' ),
+		'top center'    => esc_html__( 'Top Center', 'quark' ),
+		'top right'     => esc_html__( 'Top Right', 'quark' ),
+		'center left'   => esc_html__( 'Middle Left', 'quark' ),
+		'center center' => esc_html__( 'Middle Center', 'quark' ),
+		'center right'  => esc_html__( 'Middle Right', 'quark' ),
+		'bottom left'   => esc_html__( 'Bottom Left', 'quark' ),
+		'bottom center' => esc_html__( 'Bottom Center', 'quark' ),
+		'bottom right'  => esc_html__( 'Bottom Right', 'quark')
 		);
 	return apply_filters( 'of_recognized_background_position', $default );
 }
@@ -266,8 +266,8 @@ function of_recognized_background_position() {
  */
 function of_recognized_background_attachment() {
 	$default = array(
-		'scroll' => __( 'Scroll Normally', 'quark' ),
-		'fixed'  => __( 'Fixed in Place', 'quark')
+		'scroll' => esc_html__( 'Scroll Normally', 'quark' ),
+		'fixed'  => esc_html__( 'Fixed in Place', 'quark')
 		);
 	return apply_filters( 'of_recognized_background_attachment', $default );
 }
@@ -341,10 +341,10 @@ function of_recognized_font_faces() {
  */
 function of_recognized_font_styles() {
 	$default = array(
-		'normal'      => __( 'Normal', 'quark' ),
-		'italic'      => __( 'Italic', 'quark' ),
-		'bold'        => __( 'Bold', 'quark' ),
-		'bold italic' => __( 'Bold Italic', 'quark' )
+		'normal'      => esc_html__( 'Normal', 'quark' ),
+		'italic'      => esc_html__( 'Italic', 'quark' ),
+		'bold'        => esc_html__( 'Bold', 'quark' ),
+		'bold italic' => esc_html__( 'Bold Italic', 'quark' )
 	);
 	return apply_filters( 'of_recognized_font_styles', $default );
 }

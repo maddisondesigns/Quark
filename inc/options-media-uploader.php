@@ -48,15 +48,15 @@ function optionsframework_uploader( $_id, $_value, $_desc = '', $_name = '' ) {
 	if ( $value ) {
 		$class = ' has-file';
 	}
-	$output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" placeholder="' . __('No file chosen', 'quark') .'" />' . "\n";
+	$output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" placeholder="' . esc_html__('No file chosen', 'quark') .'" />' . "\n";
 	if ( function_exists( 'wp_enqueue_media' ) ) {
 		if ( ( $value == '' ) ) {
-			$output .= '<input id="upload-' . $id . '" class="upload-button button" type="button" value="' . __( 'Upload', 'quark' ) . '" />' . "\n";
+			$output .= '<input id="upload-' . $id . '" class="upload-button button" type="button" value="' . esc_html__( 'Upload', 'quark' ) . '" />' . "\n";
 		} else {
-			$output .= '<input id="remove-' . $id . '" class="remove-file button" type="button" value="' . __( 'Remove', 'quark' ) . '" />' . "\n";
+			$output .= '<input id="remove-' . $id . '" class="remove-file button" type="button" value="' . esc_html__( 'Remove', 'quark' ) . '" />' . "\n";
 		}
 	} else {
-		$output .= '<p><i>' . __( 'Upgrade your version of WordPress for full media support.', 'quark' ) . '</i></p>';
+		$output .= '<p><i>' . esc_html__( 'Upgrade your version of WordPress for full media support.', 'quark' ) . '</i></p>';
 	}
 	
 	if ( $_desc != '' ) {
@@ -80,7 +80,7 @@ function optionsframework_uploader( $_id, $_value, $_desc = '', $_name = '' ) {
 			$output .= '';
 		
 			// Standard generic output if it's not an image.	
-			$title = __( 'View File', 'quark' );
+			$title = esc_html__( 'View File', 'quark' );
 			$output .= '<div class="no-image"><span class="file_link"><a href="' . $value . '" target="_blank" rel="external">'.$title.'</a></span></div>';
 		}	
 	}
@@ -104,8 +104,8 @@ function optionsframework_media_scripts(){
 	wp_register_script( 'of-media-uploader', OPTIONS_FRAMEWORK_DIRECTORY .'js/media-uploader.js', array( 'jquery' ) );
 	wp_enqueue_script( 'of-media-uploader' );
 	wp_localize_script( 'of-media-uploader', 'optionsframework_l10n', array(
-		'upload' => __( 'Upload', 'quark' ),
-		'remove' => __( 'Remove', 'quark' )
+		'upload' => esc_html__( 'Upload', 'quark' ),
+		'remove' => esc_html__( 'Remove', 'quark' )
 	) );
 }
 
