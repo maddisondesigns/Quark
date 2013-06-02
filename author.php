@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="site-content row clearfix" role="main">
+	<div id="primary" class="site-content row" role="main">
 
 		<div class="col grid_8_of_12">
 
@@ -21,38 +21,13 @@ get_header(); ?>
 				?>
 
 				<header class="archive-header">
-					<h1 class="archive-title"><?php printf( __( 'Author Archives: %s', 'quark' ), '<span>' . get_the_author() . '</span>' ); ?></h1>
+					<h1 class="archive-title"><?php printf( esc_html__( 'Author Archives: %s', 'quark' ), '<span class="vcard">' . get_the_author() . '</span>' ); ?></h1>
 				</header><!-- .archive-header -->
 
 				<?php // If a user has filled out their description, show a bio on their entries.
-				if ( get_the_author_meta( 'description' ) ) { ?>
-
-					<div class="author-info clearfix">
-						<div class="author-avatar">
-							<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'quark_author_bio_avatar_size', 68 ) ); ?>
-						</div> <!-- /#author-avatar -->
-						<div class="author-description">
-							<h2><?php printf( __( 'About %s', 'quark' ), get_the_author() ); ?></h2>
-							<p><?php the_author_meta( 'description' ); ?></p>
-							<p class="social-meta">
-								<?php if ( get_the_author_meta( 'url' ) ) { ?>
-									<a href="<?php the_author_meta( 'url' ) ?>" title="Website"><i class="icon-link"></i></a>
-								<?php } ?>
-								<?php if ( get_the_author_meta( 'twitter' ) ) { ?>
-									<a href="<?php the_author_meta( 'twitter' ) ?>" title="Twitter"><i class="icon-twitter"></i></a>
-								<?php } ?>
-								<?php if ( get_the_author_meta( 'facebook' ) ) { ?>
-									<a href="<?php the_author_meta( 'facebook' ) ?>" title="Facebook"><i class="icon-facebook-sign"></i></a>
-								<?php } ?>
-								<?php if ( get_the_author_meta( 'googleplus' ) ) { ?>
-									<a href="<?php the_author_meta( 'googleplus' ) ?>" title="Google+"><i class="icon-google-plus"></i></a>
-								<?php } ?>
-							</p>
-
-						</div> <!-- /.author-description -->
-					</div> <!-- /.author-info -->
-
-				<?php } ?>
+				if ( get_the_author_meta( 'description' ) ) {
+					get_template_part( 'author-bio' );
+				} ?>
 
 				<?php
 				// Since we called the_post() above, we need to rewind the loop back to the beginning that way we can run the loop properly, in full.
