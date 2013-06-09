@@ -174,6 +174,7 @@ Quark utilises the following awesomeness:
 - Added template for displaying Author bios
 - Added extra use of wp_kses() to ensure only authorised HTML is allowed in translations
 - Added loading of Google Fonts in TinyMCE Editor
+- Added display of Featured Image on Pages, if used
 - Removed login_errors filter. This is best left for plugins
 - Removed loading of Audio.js since audio functionality is now part of core
 - Removed use of clearfix class as containers will now automatically clear
