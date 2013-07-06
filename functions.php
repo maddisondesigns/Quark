@@ -344,7 +344,7 @@ function quark_scripts_styles() {
 	wp_enqueue_style( 'normalize' );
 
 	// Register and enqueue our icon fonts
-	// We're using the awesome Font Awesome icon font. http://gregoryloucas.github.com/Font-Awesome-More
+	// We're using the awesome Font Awesome icon font. http://fortawesome.github.io/Font-Awesome
 	wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome.min.css' , array(), '3.1.1', 'all' );
 	wp_enqueue_style( 'fontawesome' );
 	// We want the social icons as well
