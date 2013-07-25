@@ -834,6 +834,9 @@ article.sticky {
 .site-content article {
 	margin-bottom: 40px;
 	margin-bottom: 2.5rem;
+	-ms-word-wrap: break-word;
+	-webkit-hyphens: auto;
+	word-wrap: break-word;
 }
 
 .header-meta {
