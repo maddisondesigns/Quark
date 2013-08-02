@@ -165,7 +165,7 @@ Quark utilises the following awesomeness:
 == Changelog ==
 
 = 1.2.5 =
-- Updated normalize.css to v2.1.1
+- Updated normalize.css to v2.1.2
 - Updated Font Awesome icon font to v3.1.1
 - Updated theme short description
 - Updated Post Format templates to contain Author bio
@@ -176,7 +176,7 @@ Quark utilises the following awesomeness:
 - Added loading of Google Fonts in TinyMCE Editor
 - Added display of Featured Image on Pages, if used
 - Removed login_errors filter. This is best left for plugins
-- Removed loading of Audio.js since audio functionality is now part of core
+- Removed audio.js since audio functionality is now part of core
 - Removed use of clearfix class as containers will now automatically clear
 
 = 1.2.4 =
