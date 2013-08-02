@@ -166,7 +166,7 @@ Quark utilises the following awesomeness:
 
 = 1.2.5 =
 - Updated normalize.css to v2.1.2
-- Updated Font Awesome icon font to v3.1.1
+- Updated Font Awesome icon font to v3.2.1
 - Updated theme short description
 - Updated Post Format templates to contain Author bio
 - Updated _e() references to esc_html_e() to ensure any html added into translation file is neutralised
