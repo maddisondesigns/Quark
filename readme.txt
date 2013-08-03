@@ -155,7 +155,6 @@ Quark utilises the following awesomeness:
 [Options Framework](http://wptheming.com/options-framework-theme), which is licensed under the GPLv2 License
 [Modernizr](http://modernizr.com), which is licensed under the MIT license
 [Normalize.css](https://github.com/necolas/normalize.css), which is licensed under the MIT license
-[Audio.js](http://kolber.github.com/audiojs), which is licensed under the MIT License
 [jQuery Validation](http://bassistance.de/jquery-plugins/jquery-plugin-validation) which is dual licensed under the MIT license and GPL licenses
 [Font Awesome](http://fortawesome.github.io/Font-Awesome) icon font, which is licensed under SIL Open Font License and MIT License
 [PT Sans font](http://www.google.com/fonts/specimen/PT+Sans), which is licensed under SIL Open Font License 1.1
@@ -175,6 +174,7 @@ Quark utilises the following awesomeness:
 - Added extra use of wp_kses() to ensure only authorised HTML is allowed in translations
 - Added loading of Google Fonts in TinyMCE Editor
 - Added display of Featured Image on Pages, if used
+- Added extra styling to make sure non-breaking text in the title, content, and comments doesn't break layout
 - Removed login_errors filter. This is best left for plugins
 - Removed audio.js since audio functionality is now part of core
 - Removed use of clearfix class as containers will now automatically clear
