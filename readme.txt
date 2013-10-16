@@ -162,6 +162,9 @@ Quark utilises the following awesomeness:
 
 == Changelog ==
 
+= 1.2.6 =
+- Removed extra period from blockquote style. Props @angeliquejw
+
 = 1.2.5 =
 - Updated normalize.css to v2.1.2
 - Updated Font Awesome icon font to v3.2.1
