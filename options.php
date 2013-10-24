@@ -78,8 +78,15 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => esc_html__( 'Social Media Settings', 'quark' ),
-		'desc' => esc_html__( 'Enter the URLs for your Social Media platforms', 'quark' ),
+		'desc' => esc_html__( 'Enter the URLs for your Social Media platforms. You can also optionally specify whether you want these links opened in a new browser tab/window.', 'quark' ),
 		'type' => 'info' );
+
+	$options[] = array(
+		'name' => esc_html__('Open links in new Window/Tab', 'quark'),
+		'desc' => esc_html__('Open the social media links in a new browser tab/window', 'quark'),
+		'id' => 'social_newtab',
+		'std' => '0',
+		'type' => 'checkbox');
 
 	$options[] = array(
 		'name' => esc_html__( 'Twitter', 'quark' ),
