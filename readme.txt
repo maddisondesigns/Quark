@@ -3,8 +3,8 @@ Contributors: ahortin
 Donate link: http://quarktheme.com
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.6
-Tested up to: 3.6
-Stable tag: 1.2.5
+Tested up to: 3.7
+Stable tag: 1.2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -164,6 +164,10 @@ Quark utilises the following awesomeness:
 
 = 1.2.6 =
 - Removed extra period from blockquote style. Props @angeliquejw
+- Removed minimum-scale & maximum-scale from viewport meta tag
+- Fixed 'Skip to main content' accessibility link
+- Added extra theme option to allow social media links to open in another browser tab/window
+- Added check for 'Comment author must fill out name and e-mail' setting when validating comments
 
 = 1.2.5 =
 - Updated normalize.css to v2.1.2
