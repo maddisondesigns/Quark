@@ -401,6 +401,7 @@ function quark_scripts_styles() {
 
 		wp_enqueue_script( 'commentvalidate' );
 		wp_localize_script( 'commentvalidate', 'comments_object', array(
+			'req' => get_option( 'require_name_email' ),
 			'author'  => esc_html__( 'Please enter your name', 'quark' ),
 			'email'  => esc_html__( 'Please enter a valid email address', 'quark' ),
 			'comment' => esc_html__( 'Please add a comment', 'quark' ) )
@@ -591,7 +592,7 @@ function quark_comment_form_default_fields( $fields ) {
 
 	$commenter = wp_get_current_commenter();
 	$req = get_option( 'require_name_email' );
-	$aria_req = ( $req ? " aria-required='true'" : '' );
+	$aria_req = ( $req ? ' aria-required="true"' : "" );
 
 	$fields[ 'author' ] = '<p class="comment-form-author">' . '<label for="author">' . esc_html__( 'Name', 'quark' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' . '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
 
@@ -880,9 +881,10 @@ if ( ! function_exists( 'quark_get_social_media' ) ) {
 		foreach ( $icons as $key ) {
 			$value = $key['url'];
 			if ( !empty( $value ) ) {
-				$output .= sprintf( '<li><a href="%1$s" title="%2$s"><i class="%3$s"></i></a></li>',
+				$output .= sprintf( '<li><a href="%1$s" title="%2$s"%3$s><i class="%4$s"></i></a></li>',
 					esc_url( $value ),
 					$key['title'],
+					( !of_get_option( 'social_newtab' ) ? '' : ' target="_blank"' ),
 					$key['icon']
 				);
 			}
