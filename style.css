@@ -754,8 +754,7 @@ select {
 /* Social Media icons */
 .social-media-icons {
 	float: right;
-	text-align: right;
-	height: 34px;
+	height: auto;
 }
 
 .social-media-icons ul {
@@ -767,6 +766,8 @@ select {
 .social-media-icons li {
 	display: inline-block;
 	margin: 0.1em 0 0 0.6em;
+	font-size: 0.6rem;
+	text-align: left;
 }
 
 .social-media-icons a {
