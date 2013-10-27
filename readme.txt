@@ -163,10 +163,14 @@ Quark utilises the following awesomeness:
 == Changelog ==
 
 = 1.2.6 =
-- Removed extra period from blockquote style. Props @angeliquejw
+- Updated normalize.css to v2.1.3
+- Updated Font Awesome icon font to v4.0.0 (incl. renaming font classes as per their new naming convention)
+- Removed Font Awesome More font as it's now outdated and no longer needed 
 - Removed minimum-scale & maximum-scale from viewport meta tag
+- Fixed extra period in blockquote style. Props @angeliquejw
 - Fixed 'Skip to main content' accessibility link
 - Added extra theme option to allow social media links to open in another browser tab/window
+- Added extra social media profiles in the theme options for Dribbble, Tumblr, Bitbucket and Foursquare
 - Added check for 'Comment author must fill out name and e-mail' setting when validating comments
 
 = 1.2.5 =
