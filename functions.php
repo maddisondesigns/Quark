@@ -343,18 +343,10 @@ function quark_scripts_styles() {
 	wp_register_style( 'normalize', trailingslashit( get_template_directory_uri() ) . 'css/normalize.css' , array(), '2.1.1', 'all' );
 	wp_enqueue_style( 'normalize' );
 
-	// Register and enqueue our icon fonts
+	// Register and enqueue our icon font
 	// We're using the awesome Font Awesome icon font. http://fortawesome.github.io/Font-Awesome
-	wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome.min.css' , array(), '3.1.1', 'all' );
+	wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome.min.css' , array(), '4.0.0', 'all' );
 	wp_enqueue_style( 'fontawesome' );
-	// We want the social icons as well
-	wp_register_style( 'fontawesomesocial', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome-social.css' , array(), '3.0.2', 'all' );
-	wp_enqueue_style( 'fontawesomesocial' );
-	// If you want to use the Corp. Extension & More icons as well, uncomment the following 4 lines. I haven't included them by default
-	//wp_register_style( 'fontawesomecorp', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome-corp.css' , array(), '3.0.2', 'all' );
-	//wp_enqueue_style( 'fontawesomecorp' );
-	//wp_register_style( 'fontawesomeext', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome-ext.css' , array(), '3.0.2', 'all' );
-	//wp_enqueue_style( 'fontawesomeext' );
 
 	// Our styles for setting up the grid.
 	// If you prefer to use a different grid system, simply replace this and perform a find/replace in the php for the relevant styles. I'm nice like that!
@@ -483,8 +475,8 @@ if ( ! function_exists( 'quark_content_nav' ) ) {
 
 			<?php if ( is_single() ) { // navigation links for single posts ?>
 
-				<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '<i class="icon-angle-left"></i>', 'Previous post link', 'quark' ) . '</span> %title' ); ?>
-				<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '<i class="icon-angle-right"></i>', 'Next post link', 'quark' ) . '</span>' ); ?>
+				<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '<i class="fa fa-angle-left"></i>', 'Previous post link', 'quark' ) . '</span> %title' ); ?>
+				<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '<i class="fa fa-angle-right"></i>', 'Next post link', 'quark' ) . '</span>' ); ?>
 
 			<?php } 
 			elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) { // navigation links for home, archive, and search pages ?>
@@ -495,9 +487,9 @@ if ( ! function_exists( 'quark_content_nav' ) ) {
 					'current' => max( 1, get_query_var( 'paged' ) ),
 					'total' => $wp_query->max_num_pages,
 					'type' => 'list',
-					'prev_text' => wp_kses( __( '<i class="icon-angle-left"></i> Previous', 'quark' ), array( 'i' => array( 
+					'prev_text' => wp_kses( __( '<i class="fa fa-angle-left"></i> Previous', 'quark' ), array( 'i' => array( 
 						'class' => array() ) ) ),
-					'next_text' => wp_kses( __( 'Next <i class="icon-angle-right"></i>', 'quark' ), array( 'i' => array( 
+					'next_text' => wp_kses( __( 'Next <i class="fa fa-angle-right"></i>', 'quark' ), array( 'i' => array( 
 						'class' => array() ) ) )
 				) ); ?>
 
@@ -637,39 +629,39 @@ if ( ! function_exists( 'quark_posted_on' ) ) {
 		$post_icon = '';
 		switch ( get_post_format() ) {
 			case 'aside':
-				$post_icon = 'icon-file-alt';
+				$post_icon = 'fa-file-o';
 				break;
 			case 'audio':
-				$post_icon = 'icon-volume-up';
+				$post_icon = 'fa-volume-up';
 				break;
 			case 'chat':
-				$post_icon = 'icon-comment';
+				$post_icon = 'fa-comment';
 				break;
 			case 'gallery':
-				$post_icon = 'icon-camera';
+				$post_icon = 'fa-camera';
 				break;
 			case 'image':
-				$post_icon = 'icon-picture';
+				$post_icon = 'fa-picture-o';
 				break;
 			case 'link':
-				$post_icon = 'icon-link';
+				$post_icon = 'fa-link';
 				break;
 			case 'quote':
-				$post_icon = 'icon-quote-left';
+				$post_icon = 'fa-quote-left';
 				break;
 			case 'status':
-				$post_icon = 'icon-user';
+				$post_icon = 'fa-user';
 				break;
 			case 'video':
-				$post_icon = 'icon-facetime-video';
+				$post_icon = 'fa-video-camera';
 				break;
 			default:
-				$post_icon = 'icon-calendar';
+				$post_icon = 'fa-calendar';
 				break;
 		}
 
 		// Translators: 1: Icon 2: Permalink 3: Post date and time 4: Publish date in ISO format 5: Post date
-		$date = sprintf( '<i class="%1$s"></i> <a href="%2$s" title="Posted %3$s" rel="bookmark"><time class="entry-date" datetime="%4$s" pubdate>%5$s</time></a>',
+		$date = sprintf( '<i class="fa %1$s"></i> <a href="%2$s" title="Posted %3$s" rel="bookmark"><time class="entry-date" datetime="%4$s" pubdate>%5$s</time></a>',
 			$post_icon,
 			esc_url( get_permalink() ),
 			sprintf( esc_html__( '%1$s @ %2$s', 'quark' ), esc_html( get_the_date() ), esc_attr( get_the_time() ) ),
@@ -678,7 +670,7 @@ if ( ! function_exists( 'quark_posted_on' ) ) {
 		);
 
 		// Translators: 1: Date link 2: Author link 3: Categories 4: No. of Comments
-		$author = sprintf( '<i class="icon-pencil"></i> <address class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></address>',
+		$author = sprintf( '<i class="fa fa-pencil"></i> <address class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></address>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_attr( sprintf( esc_html__( 'View all posts by %s', 'quark' ), get_the_author() ) ),
 			get_the_author()
@@ -688,7 +680,7 @@ if ( ! function_exists( 'quark_posted_on' ) ) {
 		$categories_list = get_the_category_list( esc_html__( ' ', 'quark' ) );
 
 		// Translators: 1: Permalink 2: Title 3: No. of Comments
-		$comments = sprintf( '<span class="comments-link"><i class="icon-comment"></i> <a href="%1$s" title="%2$s">%3$s</a></span>',
+		$comments = sprintf( '<span class="comments-link"><i class="fa fa-comment"></i> <a href="%1$s" title="%2$s">%3$s</a></span>',
 			esc_url( get_comments_link() ),
 			esc_attr( esc_html__( 'Comment on ' . the_title_attribute( 'echo=0' ) ) ),
 			( get_comments_number() > 0 ? sprintf( _n( '%1$s Comment', '%1$s Comments', get_comments_number() ), get_comments_number() ) : esc_html__( 'No Comments', 'quark' ) )
@@ -726,7 +718,7 @@ if ( ! function_exists( 'quark_entry_meta' ) ) {
 
 		// Translators: 1 is tag
 		if ( $tag_list ) {
-			printf( wp_kses( __( '<i class="icon-tag"></i> %1$s', 'quark' ), array( 'i' => array( 'class' => array() ) ) ), $tag_list );
+			printf( wp_kses( __( '<i class="fa fa-tag"></i> %1$s', 'quark' ), array( 'i' => array( 'class' => array() ) ) ), $tag_list );
 		}
 	}
 }
@@ -867,21 +859,25 @@ if ( ! function_exists( 'quark_get_social_media' ) ) {
 	function quark_get_social_media() {
 		$output = '';
 		$icons = array(
-			array( 'url' => of_get_option( 'social_twitter', '' ), 'icon' => 'icon-twitter', 'title' => esc_html__( 'Follow me on Twitter', 'quark' ) ),
-			array( 'url' => of_get_option( 'social_facebook', '' ), 'icon' => 'icon-facebook', 'title' => esc_html__( 'Friend me on Facebook', 'quark' ) ),
-			array( 'url' => of_get_option( 'social_googleplus', '' ), 'icon' => 'icon-google-plus', 'title' => esc_html__( 'Connect with me on Google+', 'quark' ) ),
-			array( 'url' => of_get_option( 'social_linkedin', '' ), 'icon' => 'icon-linkedin-sign', 'title' => esc_html__( 'Connect with me on LinkedIn', 'quark' ) ),
-			array( 'url' => of_get_option( 'social_github', '' ), 'icon' => 'icon-github', 'title' => esc_html__( 'Fork me on GitHub', 'quark' ) ),
-			array( 'url' => of_get_option( 'social_youtube', '' ), 'icon' => 'icon-youtube-sign', 'title' => esc_html__( 'Subscribe to me on YouTube', 'quark' ) ),
-			array( 'url' => of_get_option( 'social_instagram', '' ), 'icon' => 'icon-instagram', 'title' => esc_html__( 'Follow me on Instagram', 'quark' ) ),
-			array( 'url' => of_get_option( 'social_flickr', '' ), 'icon' => 'icon-flickr', 'title' => esc_html__( 'Connect with me on Flickr', 'quark' ) ),
-			array( 'url' => of_get_option( 'social_pinterest', '' ), 'icon' => 'icon-pinterest-sign', 'title' => esc_html__( 'Follow me on Pinterest', 'quark' ) )
+			array( 'url' => of_get_option( 'social_twitter', '' ), 'icon' => 'fa-twitter', 'title' => esc_html__( 'Follow me on Twitter', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_facebook', '' ), 'icon' => 'fa-facebook', 'title' => esc_html__( 'Friend me on Facebook', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_googleplus', '' ), 'icon' => 'fa-google-plus', 'title' => esc_html__( 'Connect with me on Google+', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_linkedin', '' ), 'icon' => 'fa-linkedin', 'title' => esc_html__( 'Connect with me on LinkedIn', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_dribbble', '' ), 'icon' => 'fa-dribbble', 'title' => esc_html__( 'Follow me on Dribbble', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_tumblr', '' ), 'icon' => 'fa-tumblr', 'title' => esc_html__( 'Follow me on Tumblr', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_github', '' ), 'icon' => 'fa-github', 'title' => esc_html__( 'Fork me on GitHub', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_bitbucket', '' ), 'icon' => 'fa-bitbucket', 'title' => esc_html__( 'Fork me on Bitbucket', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_foursquare', '' ), 'icon' => 'fa-foursquare', 'title' => esc_html__( 'Follow me on Foursquare', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_youtube', '' ), 'icon' => 'fa-youtube', 'title' => esc_html__( 'Subscribe to me on YouTube', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_instagram', '' ), 'icon' => 'fa-instagram', 'title' => esc_html__( 'Follow me on Instagram', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_flickr', '' ), 'icon' => 'fa-flickr', 'title' => esc_html__( 'Connect with me on Flickr', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_pinterest', '' ), 'icon' => 'fa-pinterest', 'title' => esc_html__( 'Follow me on Pinterest', 'quark' ) )
 		);
 
 		foreach ( $icons as $key ) {
 			$value = $key['url'];
 			if ( !empty( $value ) ) {
-				$output .= sprintf( '<li><a href="%1$s" title="%2$s"%3$s><i class="%4$s"></i></a></li>',
+				$output .= sprintf( '<li><a href="%1$s" title="%2$s"%3$s><span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa %4$s fa-stack-1x fa-inverse"></i></span></a></li>',
 					esc_url( $value ),
 					$key['title'],
 					( !of_get_option( 'social_newtab' ) ? '' : ' target="_blank"' ),
