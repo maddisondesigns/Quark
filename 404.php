@@ -14,7 +14,7 @@ get_header(); ?>
 
 			<article id="post-0" class="post error404 no-results not-found">
 				<header class="entry-header">
-					<h1 class="entry-title"><i class="icon-thumbs-down icon-large"></i> <?php esc_html_e( 'Uh Oh! This is somewhat embarrassing!', 'quark' ); ?></h1>
+					<h1 class="entry-title"><i class="fa fa-frown-o fa-lg"></i> <?php esc_html_e( 'Uh Oh! This is somewhat embarrassing!', 'quark' ); ?></h1>
 				</header>
 				<div class="entry-content">
 					<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'quark' ); ?></p>
