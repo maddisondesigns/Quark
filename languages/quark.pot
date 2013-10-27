@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: quark\n"
-"POT-Creation-Date: 2013-08-03 15:50+1000\n"
-"PO-Revision-Date: 2013-08-03 15:50+1000\n"
+"POT-Creation-Date: 2013-10-27 18:47+1000\n"
+"PO-Revision-Date: 2013-10-27 18:47+1000\n"
 "Last-Translator: Anthony Hortin <support@maddisondesigns.com>\n"
 "Language-Team: Maddison Designs <support@maddisondesigns.com>\n"
 "Language: english\n"
@@ -75,7 +75,7 @@ msgstr ""
 #: ../content-aside.php:15 ../content-audio.php:24 ../content-chat.php:15
 #: ../content-gallery.php:23 ../content-image.php:15 ../content-link.php:15
 #: ../content-quote.php:16 ../content-status.php:15 ../content-video.php:23
-#: ../content.php:40 ../functions.php:779
+#: ../content.php:40 ../functions.php:772
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
@@ -91,7 +91,7 @@ msgstr ""
 #: ../content-gallery.php:40 ../content-image.php:32 ../content-link.php:32
 #: ../content-page.php:29 ../content-postarchives.php:36
 #: ../content-quote.php:35 ../content-status.php:31 ../content-video.php:40
-#: ../content.php:57 ../functions.php:568
+#: ../content.php:57 ../functions.php:561
 msgid "Edit"
 msgstr ""
 
@@ -222,185 +222,201 @@ msgstr ""
 msgid "Fourth Footer Widget Area"
 msgstr ""
 
-#: ../functions.php:404
+#: ../functions.php:397
 msgid "Please enter your name"
 msgstr ""
 
-#: ../functions.php:405
+#: ../functions.php:398
 msgid "Please enter a valid email address"
 msgstr ""
 
-#: ../functions.php:406
+#: ../functions.php:399
 msgid "Please add a comment"
 msgstr ""
 
-#: ../functions.php:454
+#: ../functions.php:447
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: ../functions.php:481
+#: ../functions.php:474
 msgid "Post navigation"
 msgstr ""
 
-#: ../functions.php:485
+#: ../functions.php:478
 msgctxt "Previous post link"
-msgid "<i class=\"icon-angle-left\"></i>"
+msgid "<i class=\"fa fa-angle-left\"></i>"
 msgstr ""
 
-#: ../functions.php:486
+#: ../functions.php:479
 msgctxt "Next post link"
-msgid "<i class=\"icon-angle-right\"></i>"
+msgid "<i class=\"fa fa-angle-right\"></i>"
 msgstr ""
 
-#: ../functions.php:497
-msgid "<i class=\"icon-angle-left\"></i> Previous"
+#: ../functions.php:490
+msgid "<i class=\"fa fa-angle-left\"></i> Previous"
 msgstr ""
 
-#: ../functions.php:499
-msgid "Next <i class=\"icon-angle-right\"></i>"
+#: ../functions.php:492
+msgid "Next <i class=\"fa fa-angle-right\"></i>"
 msgstr ""
 
-#: ../functions.php:536
+#: ../functions.php:529
 msgid "Pingback:"
 msgstr ""
 
-#: ../functions.php:536
+#: ../functions.php:529
 msgid "(Edit)"
 msgstr ""
 
-#: ../functions.php:551
+#: ../functions.php:544
 msgid "Post author"
 msgstr ""
 
-#: ../functions.php:554 ../functions.php:674
+#: ../functions.php:547 ../functions.php:667
 #, php-format
 msgid "%1$s @ %2$s"
 msgstr ""
 
-#: ../functions.php:557
+#: ../functions.php:550
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../functions.php:563
+#: ../functions.php:556
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../functions.php:572
+#: ../functions.php:565
 msgid "Reply <span>&darr;</span>"
 msgstr ""
 
-#: ../functions.php:596
+#: ../functions.php:589
 msgid "Name"
 msgstr ""
 
-#: ../functions.php:598
+#: ../functions.php:591
 msgid "Email"
 msgstr ""
 
-#: ../functions.php:600
+#: ../functions.php:593
 msgid "Website"
 msgstr ""
 
-#: ../functions.php:619
+#: ../functions.php:612
 msgctxt "noun"
 msgid "Comment"
 msgstr ""
 
-#: ../functions.php:682
+#: ../functions.php:675
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: ../functions.php:687 ../functions.php:723
+#: ../functions.php:680 ../functions.php:716
 msgid " "
 msgstr ""
 
-#: ../functions.php:692
+#: ../functions.php:685
 msgid "Comment on "
 msgstr ""
 
-#: ../functions.php:693
+#: ../functions.php:686
 #, php-format
 msgid "%1$s Comment"
 msgid_plural "%1$s Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../functions.php:693
+#: ../functions.php:686
 msgid "No Comments"
 msgstr ""
 
-#: ../functions.php:697
+#: ../functions.php:690
 #, php-format
 msgid ""
 "<div class=\"header-meta\">%1$s%2$s<span class=\"post-categories\">%3$s</"
 "span>%4$s</div>"
 msgstr ""
 
-#: ../functions.php:728
+#: ../functions.php:721
 #, php-format
-msgid "<i class=\"icon-tag\"></i> %1$s"
+msgid "<i class=\"fa fa-tag\"></i> %1$s"
 msgstr ""
 
-#: ../functions.php:779
+#: ../functions.php:772
 msgid "Continue reading"
 msgstr ""
 
-#: ../functions.php:869
+#: ../functions.php:862
 msgid "Follow me on Twitter"
 msgstr ""
 
-#: ../functions.php:870
+#: ../functions.php:863
 msgid "Friend me on Facebook"
 msgstr ""
 
-#: ../functions.php:871
+#: ../functions.php:864
 msgid "Connect with me on Google+"
 msgstr ""
 
-#: ../functions.php:872
+#: ../functions.php:865
 msgid "Connect with me on LinkedIn"
 msgstr ""
 
-#: ../functions.php:873
+#: ../functions.php:866
+msgid "Follow me on Dribbble"
+msgstr ""
+
+#: ../functions.php:867
+msgid "Follow me on Tumblr"
+msgstr ""
+
+#: ../functions.php:868
 msgid "Fork me on GitHub"
 msgstr ""
 
-#: ../functions.php:874
+#: ../functions.php:869
+msgid "Fork me on Bitbucket"
+msgstr ""
+
+#: ../functions.php:870
+msgid "Follow me on Foursquare"
+msgstr ""
+
+#: ../functions.php:871
 msgid "Subscribe to me on YouTube"
 msgstr ""
 
-#: ../functions.php:875
+#: ../functions.php:872
 msgid "Follow me on Instagram"
 msgstr ""
 
-#: ../functions.php:876
+#: ../functions.php:873
 msgid "Connect with me on Flickr"
 msgstr ""
 
-#: ../functions.php:877
+#: ../functions.php:874
 msgid "Follow me on Pinterest"
 msgstr ""
 
-#: ../functions.php:911
+#: ../functions.php:909
 msgid "Proudly powered by"
 msgstr ""
 
-#: ../functions.php:912
+#: ../functions.php:910
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: ../functions.php:913
+#: ../functions.php:911
 msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
-#: ../functions.php:914
+#: ../functions.php:912
 msgid "WordPress"
 msgstr ""
 
-#: ../header.php:40
+#: ../header.php:42
 msgid "Skip to main content"
 msgstr ""
 
@@ -472,125 +488,167 @@ msgid "Social Media Settings"
 msgstr ""
 
 #: ../options.php:81
-msgid "Enter the URLs for your Social Media platforms"
+msgid ""
+"Enter the URLs for your Social Media platforms. You can also optionally "
+"specify whether you want these links opened in a new browser tab/window."
 msgstr ""
 
 #: ../options.php:85
-msgid "Twitter"
+msgid "Open links in new Window/Tab"
 msgstr ""
 
 #: ../options.php:86
-msgid "Enter your Twitter URL."
+msgid "Open the social media links in a new browser tab/window"
 msgstr ""
 
 #: ../options.php:92
-msgid "Facebook"
+msgid "Twitter"
 msgstr ""
 
 #: ../options.php:93
-msgid "Enter your Facebook URL."
+msgid "Enter your Twitter URL."
 msgstr ""
 
 #: ../options.php:99
-msgid "Google+"
+msgid "Facebook"
 msgstr ""
 
 #: ../options.php:100
-msgid "Enter your Google+ URL."
+msgid "Enter your Facebook URL."
 msgstr ""
 
 #: ../options.php:106
-msgid "LinkedIn"
+msgid "Google+"
 msgstr ""
 
 #: ../options.php:107
-msgid "Enter your LinkedIn URL."
+msgid "Enter your Google+ URL."
 msgstr ""
 
 #: ../options.php:113
-msgid "GitHub"
+msgid "LinkedIn"
 msgstr ""
 
 #: ../options.php:114
-msgid "Enter your GitHub URL."
+msgid "Enter your LinkedIn URL."
 msgstr ""
 
 #: ../options.php:120
-msgid "YouTube"
+msgid "Dribbble"
 msgstr ""
 
 #: ../options.php:121
-msgid "Enter your YouTube URL."
+msgid "Enter your Dribbble URL."
 msgstr ""
 
 #: ../options.php:127
-msgid "Instagram"
+msgid "Tumblr"
 msgstr ""
 
 #: ../options.php:128
-msgid "Enter your Instagram URL."
+msgid "Enter your Tumblr URL."
 msgstr ""
 
 #: ../options.php:134
-msgid "Flickr"
+msgid "GitHub"
 msgstr ""
 
 #: ../options.php:135
-msgid "Enter your Flickr URL."
+msgid "Enter your GitHub URL."
 msgstr ""
 
 #: ../options.php:141
-msgid "Pinterest"
+msgid "Bitbucket"
 msgstr ""
 
 #: ../options.php:142
-msgid "Enter your Pinterest URL."
+msgid "Enter your Bitbucket URL."
 msgstr ""
 
 #: ../options.php:148
+msgid "Foursquare"
+msgstr ""
+
+#: ../options.php:149
+msgid "Enter your Foursquare URL."
+msgstr ""
+
+#: ../options.php:155
+msgid "YouTube"
+msgstr ""
+
+#: ../options.php:156
+msgid "Enter your YouTube URL."
+msgstr ""
+
+#: ../options.php:162
+msgid "Instagram"
+msgstr ""
+
+#: ../options.php:163
+msgid "Enter your Instagram URL."
+msgstr ""
+
+#: ../options.php:169
+msgid "Flickr"
+msgstr ""
+
+#: ../options.php:170
+msgid "Enter your Flickr URL."
+msgstr ""
+
+#: ../options.php:176
+msgid "Pinterest"
+msgstr ""
+
+#: ../options.php:177
+msgid "Enter your Pinterest URL."
+msgstr ""
+
+#: ../options.php:183
 msgid "Advanced settings"
 msgstr ""
 
-#: ../options.php:152
+#: ../options.php:187
 msgid "Banner Background"
 msgstr ""
 
-#: ../options.php:153
+#: ../options.php:188
 msgid "Select an image and background color for the homepage banner."
 msgstr ""
 
-#: ../options.php:159
+#: ../options.php:194
 msgid "Footer Background Color"
 msgstr ""
 
-#: ../options.php:160
+#: ../options.php:195
 msgid "Select the background color for the footer."
 msgstr ""
 
-#: ../options.php:166
+#: ../options.php:201
 msgid "Footer Content"
 msgstr ""
 
-#: ../options.php:167
+#: ../options.php:202
 msgid ""
 "Enter the text you&lsquo;d like to display in the footer. This content will "
 "be displayed just below the footer widgets. It&lsquo;s ideal for displaying "
 "your copyright message or credits."
 msgstr ""
 
-#: ../options.php:174
+#: ../options.php:209
 msgid "Footer Content Position"
 msgstr ""
 
-#: ../options.php:175
+#: ../options.php:210
 msgid "Select what position you would like the footer content aligned to."
 msgstr ""
 
-#: ../options.php:183
+#: ../options.php:218
 msgid "Google Analytics"
 msgstr ""
 
-#: ../options.php:184
+#: ../options.php:219
 msgid ""
 "Enter your Google Analytics Tracking ID. The Tracking ID will be in the form "
 "of UA-1234567-1."
