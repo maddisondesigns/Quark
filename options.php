@@ -117,9 +117,37 @@ function optionsframework_options() {
 		'type' => 'text' );
 
 	$options[] = array(
+		'name' => esc_html__( 'Dribbble', 'quark' ),
+		'desc' => esc_html__( 'Enter your Dribbble URL.', 'quark' ),
+		'id' => 'social_dribbble',
+		'std' => '',
+		'type' => 'text' );
+
+	$options[] = array(
+		'name' => esc_html__( 'Tumblr', 'quark' ),
+		'desc' => esc_html__( 'Enter your Tumblr URL.', 'quark' ),
+		'id' => 'social_tumblr',
+		'std' => '',
+		'type' => 'text' );
+
+	$options[] = array(
 		'name' => esc_html__( 'GitHub', 'quark' ),
 		'desc' => esc_html__( 'Enter your GitHub URL.', 'quark' ),
 		'id' => 'social_github',
+		'std' => '',
+		'type' => 'text' );
+
+	$options[] = array(
+		'name' => esc_html__( 'Bitbucket', 'quark' ),
+		'desc' => esc_html__( 'Enter your Bitbucket URL.', 'quark' ),
+		'id' => 'social_bitbucket',
+		'std' => '',
+		'type' => 'text' );
+
+	$options[] = array(
+		'name' => esc_html__( 'Foursquare', 'quark' ),
+		'desc' => esc_html__( 'Enter your Foursquare URL.', 'quark' ),
+		'id' => 'social_foursquare',
 		'std' => '',
 		'type' => 'text' );
 
