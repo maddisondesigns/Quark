@@ -805,11 +805,11 @@ select {
 	text-decoration: none;
 }
 
-.entry-header h1 a:visited {
+.entry-header h1 a:visited, .entry-header h2 a:visited {
 	color: #333;
 }
 
-.entry-header h1 a:hover {
+.entry-header h1 a:hover, .entry-header h2 a:hover {
 	color: #2997ab;
 }
 
