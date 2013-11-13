@@ -14,9 +14,9 @@ jQuery( document ).ready( function( $ ) {
 				comment: "required"
 			},
 			messages: {
-				author: '<i class="fa fa-times"></i> ' + comments_object.author,
-				email: '<i class="fa fa-times"></i> ' + comments_object.email,
-				comment: '<i class="fa fa-times"></i> ' + comments_object.comment
+				author: '<span class="fa fa-times"></span> ' + comments_object.author,
+				email: '<span class="fa fa-times"></span> ' + comments_object.email,
+				comment: '<span class="fa fa-times"></span> ' + comments_object.comment
 			}
 		} );
 
@@ -28,7 +28,7 @@ jQuery( document ).ready( function( $ ) {
 				comment: "required"
 			},
 			messages: {
-				comment: '<i class="fa fa-times"></i> ' + comments_object.comment
+				comment: '<span class="fa fa-times"></span> ' + comments_object.comment
 			}
 		} );
 

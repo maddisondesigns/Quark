@@ -16,16 +16,16 @@
 		<p><?php the_author_meta( 'description' ); ?></p>
 		<p class="social-meta">
 			<?php if ( get_the_author_meta( 'url' ) ) { ?>
-				<a href="<?php the_author_meta( 'url' ) ?>" title="Website"><i class="fa fa-link fa-fw"></i></a>
+				<a href="<?php the_author_meta( 'url' ) ?>" title="Website"><span class="fa fa-link fa-fw"></span></a>
 			<?php } ?>
 			<?php if ( get_the_author_meta( 'twitter' ) ) { ?>
-				<a href="<?php the_author_meta( 'twitter' ) ?>" title="Twitter"><i class="fa fa-twitter fa-fw"></i></a>
+				<a href="<?php the_author_meta( 'twitter' ) ?>" title="Twitter"><span class="fa fa-twitter fa-fw"></span></a>
 			<?php } ?>
 			<?php if ( get_the_author_meta( 'facebook' ) ) { ?>
-				<a href="<?php the_author_meta( 'facebook' ) ?>" title="Facebook"><i class="fa fa-facebook fa-fw"></i></a>
+				<a href="<?php the_author_meta( 'facebook' ) ?>" title="Facebook"><span class="fa fa-facebook fa-fw"></span></a>
 			<?php } ?>
 			<?php if ( get_the_author_meta( 'googleplus' ) ) { ?>
-				<a href="<?php the_author_meta( 'googleplus' ) ?>" title="Google+"><i class="fa fa-google-plus fa-fw"></i></a>
+				<a href="<?php the_author_meta( 'googleplus' ) ?>" title="Google+"><span class="fa fa-google-plus fa-fw"></span></a>
 			<?php } ?>
 		</p>
 		<div class="author-link">
