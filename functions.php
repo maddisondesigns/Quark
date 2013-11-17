@@ -475,8 +475,8 @@ if ( ! function_exists( 'quark_content_nav' ) ) {
 
 			<?php if ( is_single() ) { // navigation links for single posts ?>
 
-				<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '<i class="fa fa-angle-left"></i>', 'Previous post link', 'quark' ) . '</span> %title' ); ?>
-				<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '<i class="fa fa-angle-right"></i>', 'Next post link', 'quark' ) . '</span>' ); ?>
+				<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '<span class="fa fa-angle-left"></span>', 'Previous post link', 'quark' ) . '</span> %title' ); ?>
+				<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '<span class="fa fa-angle-right"></span>', 'Next post link', 'quark' ) . '</span>' ); ?>
 
 			<?php } 
 			elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) { // navigation links for home, archive, and search pages ?>
@@ -487,9 +487,9 @@ if ( ! function_exists( 'quark_content_nav' ) ) {
 					'current' => max( 1, get_query_var( 'paged' ) ),
 					'total' => $wp_query->max_num_pages,
 					'type' => 'list',
-					'prev_text' => wp_kses( __( '<i class="fa fa-angle-left"></i> Previous', 'quark' ), array( 'i' => array( 
+					'prev_text' => wp_kses( __( '<span class="fa fa-angle-left"></span> Previous', 'quark' ), array( 'span' => array( 
 						'class' => array() ) ) ),
-					'next_text' => wp_kses( __( 'Next <i class="fa fa-angle-right"></i>', 'quark' ), array( 'i' => array( 
+					'next_text' => wp_kses( __( 'Next <span class="fa fa-angle-right"></span>', 'quark' ), array( 'span' => array( 
 						'class' => array() ) ) )
 				) ); ?>
 
@@ -661,7 +661,7 @@ if ( ! function_exists( 'quark_posted_on' ) ) {
 		}
 
 		// Translators: 1: Icon 2: Permalink 3: Post date and time 4: Publish date in ISO format 5: Post date
-		$date = sprintf( '<i class="fa %1$s"></i> <a href="%2$s" title="Posted %3$s" rel="bookmark"><time class="entry-date" datetime="%4$s" pubdate>%5$s</time></a>',
+		$date = sprintf( '<span class="fa %1$s"></span> <a href="%2$s" title="Posted %3$s" rel="bookmark"><time class="entry-date" datetime="%4$s" pubdate>%5$s</time></a>',
 			$post_icon,
 			esc_url( get_permalink() ),
 			sprintf( esc_html__( '%1$s @ %2$s', 'quark' ), esc_html( get_the_date() ), esc_attr( get_the_time() ) ),
@@ -670,7 +670,7 @@ if ( ! function_exists( 'quark_posted_on' ) ) {
 		);
 
 		// Translators: 1: Date link 2: Author link 3: Categories 4: No. of Comments
-		$author = sprintf( '<i class="fa fa-pencil"></i> <address class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></address>',
+		$author = sprintf( '<span class="fa fa-pencil"></span> <address class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></address>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_attr( sprintf( esc_html__( 'View all posts by %s', 'quark' ), get_the_author() ) ),
 			get_the_author()
@@ -680,7 +680,7 @@ if ( ! function_exists( 'quark_posted_on' ) ) {
 		$categories_list = get_the_category_list( esc_html__( ' ', 'quark' ) );
 
 		// Translators: 1: Permalink 2: Title 3: No. of Comments
-		$comments = sprintf( '<span class="comments-link"><i class="fa fa-comment"></i> <a href="%1$s" title="%2$s">%3$s</a></span>',
+		$comments = sprintf( '<span class="comments-link"><span class="fa fa-comment"></span> <a href="%1$s" title="%2$s">%3$s</a></span>',
 			esc_url( get_comments_link() ),
 			esc_attr( esc_html__( 'Comment on ' . the_title_attribute( 'echo=0' ) ) ),
 			( get_comments_number() > 0 ? sprintf( _n( '%1$s Comment', '%1$s Comments', get_comments_number() ), get_comments_number() ) : esc_html__( 'No Comments', 'quark' ) )
@@ -718,7 +718,7 @@ if ( ! function_exists( 'quark_entry_meta' ) ) {
 
 		// Translators: 1 is tag
 		if ( $tag_list ) {
-			printf( wp_kses( __( '<i class="fa fa-tag"></i> %1$s', 'quark' ), array( 'i' => array( 'class' => array() ) ) ), $tag_list );
+			printf( wp_kses( __( '<span class="fa fa-tag"></span> %1$s', 'quark' ), array( 'span' => array( 'class' => array() ) ) ), $tag_list );
 		}
 	}
 }
@@ -877,7 +877,7 @@ if ( ! function_exists( 'quark_get_social_media' ) ) {
 		foreach ( $icons as $key ) {
 			$value = $key['url'];
 			if ( !empty( $value ) ) {
-				$output .= sprintf( '<li><a href="%1$s" title="%2$s"%3$s><span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa %4$s fa-stack-1x fa-inverse"></i></span></a></li>',
+				$output .= sprintf( '<li><a href="%1$s" title="%2$s"%3$s><span class="fa-stack fa-lg"><span class="fa fa-square fa-stack-2x"></span><span class="fa %4$s fa-stack-1x fa-inverse"></span></span></a></li>',
 					esc_url( $value ),
 					$key['title'],
 					( !of_get_option( 'social_newtab' ) ? '' : ' target="_blank"' ),

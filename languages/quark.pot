@@ -245,20 +245,20 @@ msgstr ""
 
 #: ../functions.php:478
 msgctxt "Previous post link"
-msgid "<i class=\"fa fa-angle-left\"></i>"
+msgid "<span class=\"fa fa-angle-left\"></span>"
 msgstr ""
 
 #: ../functions.php:479
 msgctxt "Next post link"
-msgid "<i class=\"fa fa-angle-right\"></i>"
+msgid "<span class=\"fa fa-angle-right\"></span>"
 msgstr ""
 
 #: ../functions.php:490
-msgid "<i class=\"fa fa-angle-left\"></i> Previous"
+msgid "<span class=\"fa fa-angle-left\"></span> Previous"
 msgstr ""
 
 #: ../functions.php:492
-msgid "Next <i class=\"fa fa-angle-right\"></i>"
+msgid "Next <span class=\"fa fa-angle-right\"></span>"
 msgstr ""
 
 #: ../functions.php:529
@@ -341,7 +341,7 @@ msgstr ""
 
 #: ../functions.php:721
 #, php-format
-msgid "<i class=\"fa fa-tag\"></i> %1$s"
+msgid "<span class=\"fa fa-tag\"></span> %1$s"
 msgstr ""
 
 #: ../functions.php:772
