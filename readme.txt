@@ -162,6 +162,11 @@ Quark utilises the following awesomeness:
 
 == Changelog ==
 
+= 1.2.7 =
+- Removed pubdate from post/comment meta. Replaced with itemprop
+- Removed invalid attribute from email input box. Props @gnotaras
+- Updated comments to be enclosed in <section> rather than <div>. Props @gnotaras
+
 = 1.2.6 =
 - Updated normalize.css to v2.1.3
 - Updated Font Awesome icon font to v4.0.0 (incl. renaming font classes as per their new naming convention)
