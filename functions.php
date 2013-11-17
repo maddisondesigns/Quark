@@ -14,6 +14,18 @@
 if ( ! isset( $content_width ) )
 	$content_width = 790; /* Default the embedded content width to 790px */
 
+/**
+ * Send extra HTTP headers for IE compatibility.
+ */
+if ( ! function_exists( 'quark_http_headers' ) ) {
+	function quark_http_headers() {
+		// Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		header('X-UA-Compatible: IE=edge,chrome=1');
+		// IEMobile
+		header('Cleartype: on');
+	}
+}
+add_action( 'send_headers', 'quark_http_headers' );
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
