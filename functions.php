@@ -542,7 +542,7 @@ if ( ! function_exists( 'quark_comment' ) ) {
 							get_comment_author_link(),
 							// If current post author is also comment author, make it known visually.
 							( $comment->user_id === $post->post_author ) ? '<span> ' . esc_html__( 'Post author', 'quark' ) . '</span>' : '' );
-						printf( '<a href="%1$s" title="Posted %2$s"><time pubdate datetime="%3$s">%4$s</time></a>',
+						printf( '<a href="%1$s" title="Posted %2$s"><time itemprop="datePublished" datetime="%3$s">%4$s</time></a>',
 							esc_url( get_comment_link( $comment->comment_ID ) ),
 							sprintf( esc_html__( '%1$s @ %2$s', 'quark' ), esc_html( get_comment_date() ), esc_attr( get_comment_time() ) ),
 							get_comment_time( 'c' ),
@@ -661,7 +661,7 @@ if ( ! function_exists( 'quark_posted_on' ) ) {
 		}
 
 		// Translators: 1: Icon 2: Permalink 3: Post date and time 4: Publish date in ISO format 5: Post date
-		$date = sprintf( '<i class="fa %1$s"></i> <a href="%2$s" title="Posted %3$s" rel="bookmark"><time class="entry-date" datetime="%4$s" pubdate>%5$s</time></a>',
+		$date = sprintf( '<i class="fa %1$s"></i> <a href="%2$s" title="Posted %3$s" rel="bookmark"><time class="entry-date" datetime="%4$s" itemprop="datePublished">%5$s</time></a>',
 			$post_icon,
 			esc_url( get_permalink() ),
 			sprintf( esc_html__( '%1$s @ %2$s', 'quark' ), esc_html( get_the_date() ), esc_attr( get_the_time() ) ),
