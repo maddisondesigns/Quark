@@ -1,12 +1,23 @@
 <?php
+/**
+ * @package   Options_Framework
+ * @author    Devin Price <devin@wptheming.com>
+ * @license   GPL-2.0+
+ * @link      http://wptheming.com
+ * @copyright 2013 WP Theming
+ */
 
 /* Text */
 
 add_filter( 'of_sanitize_text', 'sanitize_text_field' );
 
+/* Password */
+
+add_filter( 'of_sanitize_password', 'sanitize_text_field' );
+
 /* Textarea */
 
-function of_sanitize_textarea($input) {
+function of_sanitize_textarea(  $input) {
 	global $allowedposttags;
 	$output = wp_kses( $input, $allowedposttags);
 	return $output;
@@ -44,7 +55,7 @@ function of_sanitize_multicheck( $input, $option ) {
 	$output = '';
 	if ( is_array( $input ) ) {
 		foreach( $option['options'] as $key => $value ) {
-			$output[$key] = "0";
+			$output[$key] = false;
 		}
 		foreach( $input as $key => $value ) {
 			if ( array_key_exists( $key, $option['options'] ) && $value ) {
@@ -88,22 +99,20 @@ add_filter( 'of_sanitize_editor', 'of_sanitize_editor' );
 
 /* Allowed Tags */
 
-function of_sanitize_allowedtags($input) {
+function of_sanitize_allowedtags( $input ) {
 	global $allowedtags;
-	$output = wpautop(wp_kses( $input, $allowedtags));
+	$output = wpautop( wp_kses( $input, $allowedtags ) );
 	return $output;
 }
 
 /* Allowed Post Tags */
 
-function of_sanitize_allowedposttags($input) {
+function of_sanitize_allowedposttags( $input ) {
 	global $allowedposttags;
 	$output = wpautop(wp_kses( $input, $allowedposttags));
 	return $output;
 }
-
 add_filter( 'of_sanitize_info', 'of_sanitize_allowedposttags' );
-
 
 /* Check that the key value sent is valid */
 
@@ -325,7 +334,7 @@ function of_recognized_font_faces() {
 		'tahoma'    => 'Tahoma, Geneva',
 		'palatino'  => 'Palatino',
 		'helvetica' => 'Helvetica*'
-	);
+		);
 	return apply_filters( 'of_recognized_font_faces', $default );
 }
 
@@ -345,7 +354,7 @@ function of_recognized_font_styles() {
 		'italic'      => esc_html__( 'Italic', 'quark' ),
 		'bold'        => esc_html__( 'Bold', 'quark' ),
 		'bold italic' => esc_html__( 'Bold Italic', 'quark' )
-	);
+		);
 	return apply_filters( 'of_recognized_font_styles', $default );
 }
 
