@@ -936,13 +936,14 @@ function quark_theme_options_styles() {
 
 	$background = of_get_option( 'banner_background', $background_defaults );
 	if ( $background ) {
+		$bkgrnd_color = apply_filters( 'of_sanitize_color', $background['color'] );
 		$output .= "#bannercontainer { ";
-		$output .= "background: " . ( of_validate_hex( $background['color'] ) ? $background['color'] : '' ) . " url('" . esc_url( $background['image'] ) . "') " . $background['repeat'] . " " . $background['attachment'] . " " . $background['position'] . ";";
+		$output .= "background: " . $bkgrnd_color . " url('" . esc_url( $background['image'] ) . "') " . $background['repeat'] . " " . $background['attachment'] . " " . $background['position'] . ";";
 		$output .= " }";
 	}
 
-	$footerColour = of_get_option( 'footer_color', '#222222' );
-	if ( of_validate_hex( $footerColour ) ) {
+	$footerColour = apply_filters( 'of_sanitize_color', of_get_option( 'footer_color', '#222222' ) );
+	if ( !empty( $footerColour ) ) {
 		$output .= "\n#footercontainer { ";
 		$output .= "background-color: " . $footerColour . ";";
 		$output .= " }";
