@@ -214,13 +214,5 @@ function optionsframework_options() {
 		'class' => 'mini',
 		'options' => $footer_position_settings );
 
-	$options[] = array(
-		'name' => esc_html__( 'Google Analytics', 'quark' ),
-		'desc' => esc_html__( 'Enter your Google Analytics Tracking ID. The Tracking ID will be in the form of UA-1234567-1.', 'quark' ),
-		'id' => 'ga_trackingid',
-		'std' => '',
-		'class' => 'mini',
-		'type' => 'text' );
-
 	return $options;
 }

@@ -400,14 +400,6 @@ function quark_scripts_styles() {
 		);
 	}
 
-	// Load Google Analytics Tracking script only if the GA ID is specified in the Theme Options
-	if ( of_get_option( 'ga_trackingid', '' ) ) {
-		wp_register_script( 'analytics', trailingslashit( get_template_directory_uri() ) . 'js/google-analytics.js', array(), '1.0', true );
-
-		wp_enqueue_script( 'analytics' );
-		wp_localize_script( 'analytics', 'analytics_object', array( 'gatrackingid' => sanitize_text_field( of_get_option( 'ga_trackingid', '' ) ) ) );
-	}
-
 	// Include this script to envoke a button toggle for the main navigation menu on small screens
 	//wp_register_script( 'small-menu', trailingslashit( get_template_directory_uri() ) . 'js/small-menu.js', array( 'jquery' ), '20130130', true );
 	//wp_enqueue_script( 'small-menu' );
