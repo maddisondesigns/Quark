@@ -4,7 +4,7 @@ Donate link: http://quarktheme.com
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.6
 Tested up to: 3.8
-Stable tag: 1.2.8
+Stable tag: 1.2.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -161,6 +161,9 @@ Quark utilises the following awesomeness:
 
 
 == Changelog ==
+
+= 1.2.9 =
+- Removed Google Analytics script as requested by theme reviewer. This is best left for plugins so please ensure you add one if you were using this feature
 
 = 1.2.8 =
 - Fixed undefined function error on sanitization methods that were introduced due to Options Framework changing to class based code
