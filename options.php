@@ -180,6 +180,13 @@ function optionsframework_options() {
 		'type' => 'text' );
 
 	$options[] = array(
+		'name' => esc_html__( 'RSS', 'quark' ),
+		'desc' => esc_html__( 'Enter your RSS Feed URL.', 'quark' ),
+		'id' => 'social_rss',
+		'std' => '',
+		'type' => 'text' );
+
+	$options[] = array(
 		'name' => esc_html__( 'Advanced settings', 'quark' ),
 		'type' => 'heading' );
 
