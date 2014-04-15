@@ -69,6 +69,7 @@ img {
 	border: 0;
 	max-width: 100%;
 	height: auto;
+	vertical-align: top;
 }
 
 .entry-content img,
@@ -799,6 +800,11 @@ select {
 	font-size: 14px;
 	font-size: 0.875rem;
 	float: right;
+}
+
+.entry-header {
+	margin-bottom: 16px;
+	margin-bottom: 1rem;
 }
 
 .entry-header .entry-title a {
