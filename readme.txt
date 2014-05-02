@@ -165,6 +165,7 @@ Quark utilises the following awesomeness:
 = 1.2.10 =
 - Updated normalize.css to v3.0.1
 - Updated Modernizr to v2.7.2
+- Fixed grid percentages
 - Added RSS icon to the theme options
 - Added Spanish translation. Props @amieiro
 - Updated img element to add vertical-align so images are better aligned
