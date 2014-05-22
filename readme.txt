@@ -162,6 +162,9 @@ Quark utilises the following awesomeness:
 
 == Changelog ==
 
+= 1.2.11 =
+- Added German translation. Props Tino Groteloh
+
 = 1.2.10 =
 - Updated normalize.css to v3.0.1
 - Updated Modernizr to v2.7.2
