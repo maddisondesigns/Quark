@@ -3,12 +3,12 @@ Contributors: ahortin
 Donate link: http://quarktheme.com
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.6
-Tested up to: 3.9
-Stable tag: 1.2.10
+Tested up to: 3.9.1
+Stable tag: 1.2.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Quark is your basic building block for creating beautiful, responsive custom themes. It's not a convoluted or confusing framework that's hard to learn or even harder to modify. It's a simple and elegant starter theme built on HTML5 & CSS3. Its base is a responsive, 12 column grid. It incorporates custom Theme Options that are easy to modify, a set of common templates, support for WordPress Post Formats and the gorgeous, retina friendly Font Awesome icon font.
+Quark is your basic building block for creating beautiful, responsive custom themes. It's not a convoluted or confusing framework that's hard to learn or even harder to modify. It's a simple and elegant starter theme built on HTML5 & CSS3. Its base is a responsive, 12 column grid. It incorporates custom Theme Options that are easy to modify, a set of common templates, support for WordPress Post Formats and the gorgeous, retina friendly Font Awesome icon font. Quark is now Multilingual Ready (WPML) and translated into Spanish and German.
 
 
 == Description ==
@@ -82,6 +82,10 @@ Specifying the URL's for various social media networks
 Specifying the banner background image & color
 Specifying the footer color
 Changing the footer credit text
+
+Multilingual Ready (WPML)
+
+Using the WordPress Multilingual Plugin (WPML) it's now easy to build multilingual sites. With WPML you can translate pages, posts, custom types, taxonomy, menus and even the theme’s texts.
 
 
 == Installation ==
@@ -163,7 +167,10 @@ Quark utilises the following awesomeness:
 == Changelog ==
 
 = 1.2.11 =
+- Updated Modernizr to v2.8.2
+- Updated Font Awesome icon font to v4.1
 - Added German translation. Props Tino Groteloh
+- Added WPML compatibility
 
 = 1.2.10 =
 - Updated normalize.css to v3.0.1
