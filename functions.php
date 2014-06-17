@@ -345,7 +345,7 @@ function quark_scripts_styles() {
 
 	// Register and enqueue our icon font
 	// We're using the awesome Font Awesome icon font. http://fortawesome.github.io/Font-Awesome
-	wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome.min.css' , array(), '4.0.3', 'all' );
+	wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome.min.css' , array(), '4.1.0', 'all' );
 	wp_enqueue_style( 'fontawesome' );
 
 	// Our styles for setting up the grid.
@@ -376,7 +376,7 @@ function quark_scripts_styles() {
 	 */
 
 	// Load Modernizr at the top of the document, which enables HTML5 elements and feature detects
-	wp_register_script( 'modernizr', trailingslashit( get_template_directory_uri() ) . 'js/modernizr-2.7.2-min.js', array(), '2.7.2', false );
+	wp_register_script( 'modernizr', trailingslashit( get_template_directory_uri() ) . 'js/modernizr-2.8.2-min.js', array(), '2.8.2', false );
 	wp_enqueue_script( 'modernizr' );
 
 	// Adds JavaScript to pages with the comment form to support sites with threaded comments (when in use)
