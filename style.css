@@ -3,8 +3,8 @@ Theme Name: Quark
 Theme URI: http://quarktheme.com
 Author: Anthony Hortin
 Author URI: http://maddisondesigns.com/
-Description: Quark is your basic building block for creating beautiful, responsive custom themes. It's not a convoluted or confusing framework that's hard to learn or even harder to modify. It's a simple and elegant starter theme built on HTML5 & CSS3. Its base is a responsive, 12 column grid. It incorporates custom Theme Options that are easy to modify, a set of common templates, support for WordPress Post Formats and the gorgeous, retina friendly Font Awesome icon font.
-Version: 1.2.10
+Description: Quark is your basic building block for creating beautiful, responsive custom themes. It's not a convoluted or confusing framework that's hard to learn or even harder to modify. It's a simple and elegant starter theme built on HTML5 & CSS3. Its base is a responsive, 12 column grid. It incorporates custom Theme Options that are easy to modify, a set of common templates, support for WordPress Post Formats and the gorgeous, retina friendly Font Awesome icon font. Quark is now Multilingual Ready (WPML) and translated into Spanish and German.
+Version: 1.2.11
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -1559,7 +1559,6 @@ form label.error {
 }
 
 .widget-area .widget {
-	overflow: hidden;
 	-moz-hyphens: auto;
 	-ms-word-break: break-all;
 	-webkit-hyphens: auto;
@@ -1902,6 +1901,51 @@ li span.dots {
 	display: none;
 }
 
+/* ==========================================================================
+   WPML translation plugin
+   ========================================================================== */
+
+#lang_sel {
+	width: 65%;
+	height: 35px;
+}
+
+#lang_sel li {
+	width: 100%;
+}
+
+#lang_sel ul ul {
+	top: 35px;
+	width: 100%;
+}
+
+#lang_sel a.lang_sel_sel {
+	border-radius: 3px;
+}
+
+#lang_sel a,
+#lang_sel a:visited {
+	font-size: 16px;
+	font-size: 1rem;
+	padding: 5px 0 5px 10px;
+}
+
+.main-navigation .menu-item-language .iclflag {
+	margin-top: 7px;
+}
+
+#lang_sel .iclflag {
+	margin-top: 2px;
+}
+
+#lang_sel .lang_sel_sel .iclflag {
+	margin-top: 6px;
+}
+
+#lang_sel_footer .iclflag,
+#lang_sel_footer .icl_lang_sel_current {
+	margin-top: 6px;
+}
 
 /* ==========================================================================
    Media Queries
