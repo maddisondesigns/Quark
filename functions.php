@@ -345,7 +345,7 @@ function quark_scripts_styles() {
 
 	// Register and enqueue our icon font
 	// We're using the awesome Font Awesome icon font. http://fortawesome.github.io/Font-Awesome
-	wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome.min.css' , array(), '4.1.0', 'all' );
+	wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome.min.css' , array(), '4.2.0', 'all' );
 	wp_enqueue_style( 'fontawesome' );
 
 	// Our styles for setting up the grid.
@@ -376,7 +376,7 @@ function quark_scripts_styles() {
 	 */
 
 	// Load Modernizr at the top of the document, which enables HTML5 elements and feature detects
-	wp_register_script( 'modernizr', trailingslashit( get_template_directory_uri() ) . 'js/modernizr-2.8.2-min.js', array(), '2.8.2', false );
+	wp_register_script( 'modernizr', trailingslashit( get_template_directory_uri() ) . 'js/modernizr-2.8.3-min.js', array(), '2.8.3', false );
 	wp_enqueue_script( 'modernizr' );
 
 	// Adds JavaScript to pages with the comment form to support sites with threaded comments (when in use)
@@ -385,11 +385,10 @@ function quark_scripts_styles() {
 	}
 
 	// Load jQuery Validation as well as the initialiser to provide client side comment form validation
-	// Using the 1.11.0pre version as it fixes an error that causes the email validation to fire immediately when text is entered in the field
 	// You can change the validation error messages below
 	if ( is_singular() && comments_open() ) {
-		wp_register_script( 'validate', trailingslashit( get_template_directory_uri() ) . 'js/jquery.validate.min.1.11.0pre.js', array( 'jquery' ), '1.11.0', true );
-		wp_register_script( 'commentvalidate', trailingslashit( get_template_directory_uri() ) . 'js/comment-form-validation.js', array( 'jquery', 'validate' ), '1.11.0', true );
+		wp_register_script( 'validate', trailingslashit( get_template_directory_uri() ) . 'js/jquery.validate.min.1.13.0.js', array( 'jquery' ), '1.13.0', true );
+		wp_register_script( 'commentvalidate', trailingslashit( get_template_directory_uri() ) . 'js/comment-form-validation.js', array( 'jquery', 'validate' ), '1.13.0', true );
 
 		wp_enqueue_script( 'commentvalidate' );
 		wp_localize_script( 'commentvalidate', 'comments_object', array(
@@ -855,6 +854,7 @@ if ( ! function_exists( 'quark_get_social_media' ) ) {
 			array( 'url' => of_get_option( 'social_facebook', '' ), 'icon' => 'fa-facebook', 'title' => esc_html__( 'Friend me on Facebook', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_googleplus', '' ), 'icon' => 'fa-google-plus', 'title' => esc_html__( 'Connect with me on Google+', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_linkedin', '' ), 'icon' => 'fa-linkedin', 'title' => esc_html__( 'Connect with me on LinkedIn', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_slideshare', '' ), 'icon' => 'fa-slideshare', 'title' => esc_html__( 'Follow me on SlideShare', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_dribbble', '' ), 'icon' => 'fa-dribbble', 'title' => esc_html__( 'Follow me on Dribbble', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_tumblr', '' ), 'icon' => 'fa-tumblr', 'title' => esc_html__( 'Follow me on Tumblr', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_github', '' ), 'icon' => 'fa-github', 'title' => esc_html__( 'Fork me on GitHub', 'quark' ) ),
