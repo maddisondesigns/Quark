@@ -117,6 +117,13 @@ function optionsframework_options() {
 		'type' => 'text' );
 
 	$options[] = array(
+		'name' => esc_html__( 'SlideShare', 'quark' ),
+		'desc' => esc_html__( 'Enter your SlideShare URL.', 'quark' ),
+		'id' => 'social_slideshare',
+		'std' => '',
+		'type' => 'text' );
+
+	$options[] = array(
 		'name' => esc_html__( 'Dribbble', 'quark' ),
 		'desc' => esc_html__( 'Enter your Dribbble URL.', 'quark' ),
 		'id' => 'social_dribbble',
