@@ -195,6 +195,21 @@ big {
 	padding: 0 0 0 1rem;
 }
 
+.mceContentBody blockquote.pull-right {
+	border-left: 0 none;
+	border-right: 5px solid #333;
+	margin: 0 20px 18px 0;
+	margin: 0 1.25rem 1.125rem 0;
+	padding: 0 16px 0 0;
+	padding: 0 1rem 0 0;
+	float: none;
+}
+
+.mceContentBody blockquote.pull-right p,
+.mceContentBody blockquote.pull-right small {
+	text-align: right;
+}
+
 pre {
 	border-radius: 3px;
 	color: #555;
@@ -253,7 +268,7 @@ sub {
 	bottom: -0.25em;
 }
 
-input[type="text"],
+inzt[type="text"],
 textarea {
 	font-family: inherit;
 	-moz-box-sizing: border-box;
