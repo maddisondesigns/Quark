@@ -290,7 +290,8 @@ blockquote p {
 	margin-bottom: 0;
 }
 
-blockquote.pull-right p, blockquote.pull-right small {
+blockquote.pull-right p,
+blockquote.pull-right small {
 	text-align: right;
 }
 
