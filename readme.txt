@@ -166,6 +166,9 @@ Quark utilises the following awesomeness:
 
 == Changelog ==
 
+= 1.2.13 =
+- Added French translation. Props @arpinfo
+
 = 1.2.12 =
 - Updated Modernizr to v2.8.3
 - Updated Font Awesome icon font to v4.2
