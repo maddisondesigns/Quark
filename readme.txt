@@ -167,6 +167,7 @@ Quark utilises the following awesomeness:
 == Changelog ==
 
 = 1.2.13 =
+- Fixed focus on footer links so they're visible
 - Added French translation. Props @arpinfo
 
 = 1.2.12 =

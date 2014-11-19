@@ -1518,7 +1518,7 @@ form label.error {
 
 .site-footer a:focus { 
 	outline: thin dotted;
-	color: rgb(0,0,0);
+	color: #2997ab;
 }
 
 .site-footer .widget-area .widget {
