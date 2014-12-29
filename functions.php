@@ -864,7 +864,7 @@ if ( ! function_exists( 'quark_get_social_media' ) ) {
 				$output .= sprintf( '<li><a href="%1$s" title="%2$s"%3$s><span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa %4$s fa-stack-1x fa-inverse"></i></span></a></li>',
 					esc_url( $value ),
 					$key['title'],
-					( !of_get_option( 'social_newtab' ) ? '' : ' target="_blank"' ),
+					( !of_get_option( 'social_newtab', '0' ) ? '' : ' target="_blank"' ),
 					$key['icon']
 				);
 			}
