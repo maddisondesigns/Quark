@@ -84,6 +84,14 @@ if ( ! function_exists( 'quark_setup' ) ) {
 				'height' => 80
 			) );
 
+		/*
+		 * Let WordPress manage the document title.
+		 * By adding theme support, we declare that this theme does not use a
+		 * hard-coded <title> tag in the document head, and expect WordPress to
+		 * provide it for us.
+		 */
+		add_theme_support( 'title-tag' );
+
 		// Enable support for Theme Options.
 		// Rather than reinvent the wheel, we're using the Options Framework by Devin Price, so huge props to him!
 		// http://wptheming.com/options-framework-theme/
@@ -95,6 +103,21 @@ if ( ! function_exists( 'quark_setup' ) ) {
 	}
 }
 add_action( 'after_setup_theme', 'quark_setup' );
+
+
+/**
+ * Enable backwards compatability for title-tag support
+ *
+ * @since Quark 1.3
+ *
+ * @return void
+ */
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
+	function quark_slug_render_title() { ?>
+		<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<?php }
+	add_action( 'wp_head', 'quark_slug_render_title' );
+}
 
 
 /**
@@ -405,42 +428,6 @@ function quark_scripts_styles() {
 
 }
 add_action( 'wp_enqueue_scripts', 'quark_scripts_styles' );
-
-
-/**
- * Creates a nicely formatted and more specific title element text
- * for output in head of document, based on current view.
- *
- * @since Quark 1.0
- *
- * @param string $title Default title text for current view.
- * @param string $sep Optional separator.
- * @return string The filtered title.
- */
-function quark_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() ) {
-		return $title;
-	}
-
-	// Add the blog name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title = "$title $sep $site_description";
-	}
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 ) {
-		$title = "$title $sep " . sprintf( esc_html__( 'Page %s', 'quark' ), max( $paged, $page ) );
-	}
-
-	return $title;
-}
-add_filter( 'wp_title', 'quark_wp_title', 10, 2 );
 
 
 /**
