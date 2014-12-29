@@ -4,7 +4,7 @@
  * @author    Devin Price <devin@wptheming.com>
  * @license   GPL-2.0+
  * @link      http://wptheming.com
- * @copyright 2013 WP Theming
+ * @copyright 2010-2014 WP Theming
  */
 
 class Options_Framework_Media_Uploader {
@@ -31,10 +31,9 @@ class Options_Framework_Media_Uploader {
 
 	static function optionsframework_uploader( $_id, $_value, $_desc = '', $_name = '' ) {
 
-		$optionsframework_settings = get_option( 'optionsframework' );
-
 		// Gets the unique option id
-		$option_name = $optionsframework_settings['id'];
+		$options_framework = new Options_Framework;
+	    $option_name = $options_framework->get_option_name();
 
 		$output = '';
 		$id = '';
@@ -60,15 +59,15 @@ class Options_Framework_Media_Uploader {
 		if ( $value ) {
 			$class = ' has-file';
 		}
-		$output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" placeholder="' . esc_html__('No file chosen', 'quark') .'" />' . "\n";
+		$output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" placeholder="' . __('No file chosen', 'theme-textdomain') .'" />' . "\n";
 		if ( function_exists( 'wp_enqueue_media' ) ) {
 			if ( ( $value == '' ) ) {
-				$output .= '<input id="upload-' . $id . '" class="upload-button button" type="button" value="' . esc_html__( 'Upload', 'quark' ) . '" />' . "\n";
+				$output .= '<input id="upload-' . $id . '" class="upload-button button" type="button" value="' . __( 'Upload', 'theme-textdomain' ) . '" />' . "\n";
 			} else {
-				$output .= '<input id="remove-' . $id . '" class="remove-file button" type="button" value="' . esc_html__( 'Remove', 'quark' ) . '" />' . "\n";
+				$output .= '<input id="remove-' . $id . '" class="remove-file button" type="button" value="' . __( 'Remove', 'theme-textdomain' ) . '" />' . "\n";
 			}
 		} else {
-			$output .= '<p><i>' . esc_html__( 'Upgrade your version of WordPress for full media support.', 'quark' ) . '</i></p>';
+			$output .= '<p><i>' . __( 'Upgrade your version of WordPress for full media support.', 'theme-textdomain' ) . '</i></p>';
 		}
 
 		if ( $_desc != '' ) {
@@ -92,7 +91,7 @@ class Options_Framework_Media_Uploader {
 				$output .= '';
 
 				// Standard generic output if it's not an image.
-				$title = esc_html__( 'View File', 'quark' );
+				$title = __( 'View File', 'theme-textdomain' );
 				$output .= '<div class="no-image"><span class="file_link"><a href="' . $value . '" target="_blank" rel="external">'.$title.'</a></span></div>';
 			}
 		}
@@ -107,7 +106,7 @@ class Options_Framework_Media_Uploader {
 
 		$menu = Options_Framework_Admin::menu_settings();
 
-		if ( 'appearance_page_' . $menu['menu_slug'] != $hook )
+        if ( substr( $hook, -strlen( $menu['menu_slug'] ) ) !== $menu['menu_slug'] )
 	        return;
 
 		if ( function_exists( 'wp_enqueue_media' ) )
@@ -116,8 +115,8 @@ class Options_Framework_Media_Uploader {
 		wp_register_script( 'of-media-uploader', OPTIONS_FRAMEWORK_DIRECTORY .'js/media-uploader.js', array( 'jquery' ), Options_Framework::VERSION );
 		wp_enqueue_script( 'of-media-uploader' );
 		wp_localize_script( 'of-media-uploader', 'optionsframework_l10n', array(
-			'upload' => esc_html__( 'Upload', 'quark' ),
-			'remove' => esc_html__( 'Remove', 'quark' )
+			'upload' => __( 'Upload', 'theme-textdomain' ),
+			'remove' => __( 'Remove', 'theme-textdomain' )
 		) );
 	}
 }

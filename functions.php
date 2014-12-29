@@ -98,6 +98,10 @@ if ( ! function_exists( 'quark_setup' ) ) {
 		if ( !function_exists( 'optionsframework_init' ) ) {
 			define( 'OPTIONS_FRAMEWORK_DIRECTORY', trailingslashit( get_template_directory_uri() ) . 'inc/' );
 			require_once trailingslashit( dirname( __FILE__ ) ) . 'inc/options-framework.php';
+
+			// Loads options.php from child or parent theme
+			$optionsfile = locate_template( 'options.php' );
+			load_template( $optionsfile );
 		}
 
 	}
