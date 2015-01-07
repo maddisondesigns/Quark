@@ -92,6 +92,9 @@ if ( ! function_exists( 'quark_setup' ) ) {
 		 */
 		add_theme_support( 'title-tag' );
 
+		// Enable support for WooCommerce
+		add_theme_support( 'woocommerce' );
+
 		// Enable support for Theme Options.
 		// Rather than reinvent the wheel, we're using the Options Framework by Devin Price, so huge props to him!
 		// http://wptheming.com/options-framework-theme/
@@ -104,6 +107,10 @@ if ( ! function_exists( 'quark_setup' ) ) {
 			load_template( $optionsfile );
 		}
 
+		// If WooCommerce is running, check if we should be displaying the Breadcrumbs
+		if( quark_is_woocommerce_active() && !of_get_option( 'woocommerce_breadcrumbs', '1' ) ) {
+			add_action( 'init', 'quark_remove_woocommerce_breadcrumbs' );
+		}
 	}
 }
 add_action( 'after_setup_theme', 'quark_setup' );
@@ -960,3 +967,139 @@ add_filter( 'meta_content', 'convert_smilies' );
 add_filter( 'meta_content', 'convert_chars'  );
 add_filter( 'meta_content', 'wpautop' );
 add_filter( 'meta_content', 'shortcode_unautop'  );
+
+
+/**
+ * Unhook the WooCommerce Wrappers
+ */
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+
+
+/**
+ * Outputs the opening container div for WooCommerce
+ *
+ * @since Quark 1.3
+ *
+ * @return void
+ */
+if ( ! function_exists( 'quark_before_woocommerce_wrapper' ) ) {
+	function quark_before_woocommerce_wrapper() {
+		echo '<div id="primary" class="site-content row" role="main">';
+	}
+}
+
+
+/**
+ * Outputs the closing container div for WooCommerce
+ *
+ * @since Quark 1.3
+ *
+ * @return void
+ */
+if ( ! function_exists( 'quark_after_woocommerce_wrapper' ) ) {
+	function quark_after_woocommerce_wrapper() {
+		echo '</div> <!-- /#primary.site-content.row -->';
+	}
+}
+
+
+/**
+ * Check if WooCommerce is active
+ *
+ * @since Quark 1.3
+ *
+ * @return void
+ */
+function quark_is_woocommerce_active() {
+	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+
+/**
+ * Check if WooCommerce is active and a WooCommerce template is in use and output the containing div
+ *
+ * @since Quark 1.3
+ *
+ * @return void
+ */
+if ( ! function_exists( 'quark_setup_woocommerce_wrappers' ) ) {
+	function quark_setup_woocommerce_wrappers() {
+		if ( quark_is_woocommerce_active() && is_woocommerce() ) {
+				add_action( 'quark_before_woocommerce', 'quark_before_woocommerce_wrapper', 10, 0 );
+				add_action( 'quark_after_woocommerce', 'quark_after_woocommerce_wrapper', 10, 0 );		
+		}
+	}
+	add_action( 'template_redirect', 'quark_setup_woocommerce_wrappers', 9 );
+}
+
+
+/**
+ * Outputs the opening wrapper for the WooCommerce content
+ *
+ * @since Quark 1.3
+ *
+ * @return void
+ */
+if ( ! function_exists( 'quark_woocommerce_before_main_content' ) ) {
+	function quark_woocommerce_before_main_content() {
+		if( ( is_shop() && !of_get_option( 'woocommerce_shopsidebar', '1' ) ) || ( is_product() && !of_get_option( 'woocommerce_productsidebar', '1' ) ) ) {
+			echo '<div class="col grid_12_of_12">';
+		}
+		else {
+			echo '<div class="col grid_8_of_12">';
+		}
+	}
+	add_action( 'woocommerce_before_main_content', 'quark_woocommerce_before_main_content', 10 );
+}
+
+
+/**
+ * Outputs the closing wrapper for the WooCommerce content
+ *
+ * @since Quark 1.3
+ *
+ * @return void
+ */
+if ( ! function_exists( 'quark_woocommerce_after_main_content' ) ) {
+	function quark_woocommerce_after_main_content() {
+		echo '</div>';
+	}
+	add_action( 'woocommerce_after_main_content', 'quark_woocommerce_after_main_content', 10 );
+}
+
+
+/**
+ * Remove the sidebar from the WooCommerce templates
+ *
+ * @since Quark 1.3
+ *
+ * @return void
+ */
+if ( ! function_exists( 'quark_remove_woocommerce_sidebar' ) ) {
+	function quark_remove_woocommerce_sidebar(){
+		if( ( is_shop() && !of_get_option( 'woocommerce_shopsidebar', '1' ) ) || ( is_product() && !of_get_option( 'woocommerce_productsidebar', '1' ) ) ) {
+			remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+		}
+	}
+	add_action('woocommerce_before_main_content', 'quark_remove_woocommerce_sidebar' );
+}
+
+
+/**
+ * Remove the breadcrumbs from the WooCommerce pages
+ *
+ * @since Quark 1.3
+ *
+ * @return void
+ */
+if ( ! function_exists( 'quark_remove_woocommerce_breadcrumbs' ) ) {
+	function quark_remove_woocommerce_breadcrumbs(){
+		remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+	}
+}

@@ -11,6 +11,7 @@
  */
 ?>
 
+		<?php	do_action( 'quark_after_woocommerce' ); ?>
 	</div> <!-- /#maincontentcontainer -->
 
 	<div id="footercontainer">

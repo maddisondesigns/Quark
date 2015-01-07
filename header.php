@@ -105,3 +105,4 @@
 	</div> <!-- /#bannercontainer -->
 
 	<div id="maincontentcontainer">
+		<?php	do_action( 'quark_before_woocommerce' ); ?>
