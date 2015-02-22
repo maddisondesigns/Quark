@@ -379,12 +379,12 @@ function quark_scripts_styles() {
 
 	// Register and enqueue our icon font
 	// We're using the awesome Font Awesome icon font. http://fortawesome.github.io/Font-Awesome
-	wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome.min.css' , array(), '4.2.0', 'all' );
+	wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome.min.css' , array( 'normalize' ), '4.2.0', 'all' );
 	wp_enqueue_style( 'fontawesome' );
 
 	// Our styles for setting up the grid.
 	// If you prefer to use a different grid system, simply replace this and perform a find/replace in the php for the relevant styles. I'm nice like that!
-	wp_register_style( 'gridsystem', trailingslashit( get_template_directory_uri() ) . 'css/grid.css' , array(), '1.0.0', 'all' );
+	wp_register_style( 'gridsystem', trailingslashit( get_template_directory_uri() ) . 'css/grid.css' , array( 'fontawesome' ), '1.0.0', 'all' );
 	wp_enqueue_style( 'gridsystem' );
 
 	/*
@@ -401,8 +401,14 @@ function quark_scripts_styles() {
 		wp_enqueue_style( 'quark-fonts', esc_url_raw( $fonts_url ), array(), null );
 	}
 
+	// If using a child theme, auto-load the parent theme style.
+	// Props to Justin Tadlock for this recommendation - http://justintadlock.com/archives/2014/11/03/loading-parent-styles-for-child-themes
+	if ( is_child_theme() ) {
+		wp_enqueue_style( 'parent-style', trailingslashit( get_template_directory_uri() ) . 'style.css' );
+	}
+
 	// Enqueue the default WordPress stylesheet
-	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '1.2.3', 'all' );
+	wp_enqueue_style( 'style', get_stylesheet_uri() );
 
 
 	/**
@@ -1082,12 +1088,12 @@ if ( ! function_exists( 'quark_woocommerce_after_main_content' ) ) {
  * @return void
  */
 if ( ! function_exists( 'quark_remove_woocommerce_sidebar' ) ) {
-	function quark_remove_woocommerce_sidebar(){
+	function quark_remove_woocommerce_sidebar() {
 		if( ( is_shop() && !of_get_option( 'woocommerce_shopsidebar', '1' ) ) || ( is_product() && !of_get_option( 'woocommerce_productsidebar', '1' ) ) ) {
 			remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 		}
 	}
-	add_action('woocommerce_before_main_content', 'quark_remove_woocommerce_sidebar' );
+	add_action( 'woocommerce_before_main_content', 'quark_remove_woocommerce_sidebar' );
 }
 
 
@@ -1099,7 +1105,25 @@ if ( ! function_exists( 'quark_remove_woocommerce_sidebar' ) ) {
  * @return void
  */
 if ( ! function_exists( 'quark_remove_woocommerce_breadcrumbs' ) ) {
-	function quark_remove_woocommerce_breadcrumbs(){
+	function quark_remove_woocommerce_breadcrumbs() {
 		remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 	}
+}
+
+
+/**
+ * Set the number of products to display on the WooCommerce shop page
+ *
+ * @since Quark 1.3.1
+ *
+ * @return void
+ */
+if ( ! function_exists( 'quark_set_number_woocommerce_products' ) ) {
+	function quark_set_number_woocommerce_products() {
+		if ( of_get_option( 'shop_products', '12' ) ) {
+			$numprods = "return " . sanitize_text_field( of_get_option( 'shop_products', '12' ) ) . ";";
+			add_filter( 'loop_shop_per_page', create_function( '$cols', $numprods ), 20 );
+		}
+	}
+	add_action( 'init', 'quark_set_number_woocommerce_products' );
 }

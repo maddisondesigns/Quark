@@ -47,6 +47,17 @@ function optionsframework_options() {
 		'right' => esc_html__( 'Right aligned', 'quark' )
 	);
 
+	// Number of shop products
+	$shop_products_settings = array(
+		'4' => esc_html__( '4 Products', 'quark' ),
+		'8' => esc_html__( '8 Products', 'quark' ),
+		'12' => esc_html__( '12 Products', 'quark' ),
+		'16' => esc_html__( '16 Products', 'quark' ),
+		'20' => esc_html__( '20 Products', 'quark' ),
+		'24' => esc_html__( '24 Products', 'quark' ),
+		'28' => esc_html__( '28 Products', 'quark' )
+	);
+
 	$options = array();
 
 	$options[] = array(
@@ -253,6 +264,15 @@ function optionsframework_options() {
 			'id' => 'woocommerce_breadcrumbs',
 			'std' => '1',
 			'type' => 'checkbox');
+
+		$options[] = array(
+			'name' => esc_html__( 'Shop Products', 'quark' ),
+			'desc' => esc_html__( 'Select the number of products to display on the shop page.', 'quark' ),
+			'id' => 'shop_products',
+			'std' => '12',
+			'type' => 'select',
+			'class' => 'mini',
+			'options' => $shop_products_settings );
 
 	}
 

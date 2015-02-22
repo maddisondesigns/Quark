@@ -4,7 +4,7 @@ Donate link: http://quarktheme.com
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.6
 Tested up to: 4.1
-Stable tag: 1.3
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,9 @@ Quark is your basic building block for creating beautiful, responsive custom the
 
 Quark is your basic building block for creating beautiful, responsive custom themes. It's not a convoluted or confusing framework that's hard to learn or even harder to modify. It's a simple and elegant starter theme built on HTML5 & CSS3. It's based on the Underscores (_s) and TwentyTwelve themes, so that means not only is it flexible, it's extremely easy to customise. There's no need to make a child theme (unless you really want to), just dig in to the code & use it to give yourself a kickstart in creating your next awesome theme.
 
-Its base is a responsive, 12 column grid. It uses Normalize to make sure that browsers render all elements more consistently and Mordernizr for detecting HTML5 and CSS3 browser capabilities along with some default stylings from HTML5 Boilerplate.
+If you do decide to use a child theme with Quark, there's no need to use CSS @import or even enqueue the parent stylesheet. Quark will automatically enqueue the parent stylesheet for you. How nice is that!
+
+Quark's base is a responsive, 12 column grid. It uses Normalize to make sure that browsers render all elements more consistently and Mordernizr for detecting HTML5 and CSS3 browser capabilities along with some default stylings from HTML5 Boilerplate.
 
 It incorporates the [Options Framework](http://wptheming.com/options-framework-theme/) by Devin Price to make it super easy to add custom Theme Options as well as the gorgeous [Font Awesome](http://fortawesome.github.io/Font-Awesome/) icon font by Dave Gandy.
 
@@ -159,6 +161,12 @@ Quark utilises the following awesomeness:
 
 
 == Changelog ==
+
+= 1.3.1 =
+- Updated styles for WooCommerce 2.3
+- Added automatic enqueueing of parent stylesheet for child themes.
+- Added dependencies when enqueing styles to ensure they're loaded in correct order
+- Added theme option to set the number of products to display on the WooCommerce shop page
 
 = 1.3 =
 - Updated normalize.css to v3.0.2
