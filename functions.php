@@ -972,8 +972,8 @@ add_filter( 'meta_content', 'wptexturize' );
 add_filter( 'meta_content', 'convert_smilies' );
 add_filter( 'meta_content', 'convert_chars'  );
 add_filter( 'meta_content', 'wpautop' );
-add_filter( 'meta_content', 'shortcode_unautop'  );
-
+add_filter( 'meta_content', 'shortcode_unautop' );
+add_filter( 'meta_content', 'do_shortcode' );
 
 /**
  * Unhook the WooCommerce Wrappers

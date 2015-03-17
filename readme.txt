@@ -162,6 +162,9 @@ Quark utilises the following awesomeness:
 
 == Changelog ==
 
+= 1.3.2 =
+- Added filter for displaying shortcodes properly in footer content
+
 = 1.3.1 =
 - Updated styles for WooCommerce 2.3
 - Added automatic enqueueing of parent stylesheet for child themes.
