@@ -2116,17 +2116,6 @@ h1.page-title {
 	color: #2997ab;
 }
 
-.woocommerce .grid_12_of_12 .related ul li.product,
-.woocommerce .grid_12_of_12 .related ul.products li.product,
-.woocommerce .grid_12_of_12 .upsells.products ul li.product,
-.woocommerce .grid_12_of_12 .upsells.products ul.products li.product,
-.woocommerce-page .grid_12_of_12 .related ul li.product,
-.woocommerce-page .grid_12_of_12 .related ul.products li.product,
-.woocommerce-page .grid_12_of_12 .upsells.products ul li.product,
-.woocommerce-page .grid_12_of_12 .upsells.products ul.products li.product {
-	width: 24%;
-}
-
 .shipping-calculator-button {
 	text-decoration: none;
 }
