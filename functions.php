@@ -58,6 +58,9 @@ if ( ! function_exists( 'quark_setup' ) ) {
 		// This theme supports a variety of post formats
 		add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
 
+		// Add theme support for HTML5 markup for the search forms, comment forms, comment lists, gallery, and caption
+		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+
 		// Enable support for Custom Backgrounds
 		add_theme_support( 'custom-background', array(
 				// Background color default

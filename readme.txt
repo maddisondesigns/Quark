@@ -3,7 +3,7 @@ Contributors: ahortin
 Donate link: http://quarktheme.com
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.6
-Tested up to: 4.3
+Tested up to: 4.3.1
 Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -165,6 +165,7 @@ Quark utilises the following awesomeness:
 = 1.3.2 =
 - Fixed display of Related Products on Single Product page
 - Added filter for displaying shortcodes properly in footer content
+- Added theme support for HTML5 markup for the search forms, comment forms, comment lists, gallery, and caption
 
 = 1.3.1 =
 - Updated styles for WooCommerce 2.3
