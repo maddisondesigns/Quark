@@ -2165,6 +2165,28 @@ h1.page-title {
 }
 
 /* ==========================================================================
+   Page Builders
+   ========================================================================== */
+
+/* Divi Builder - Resize rows to match Quark */
+.page-template-page-builders.et_divi_builder #et_builder_outer_content .et_pb_section .et_pb_row {
+	max-width: 1200px;
+	width: 90%;
+}
+
+/* Visual Composer - Remove the negative margin when using the full-width page builder template */
+.page-template-page-builders.wpb-js-composer .vc_row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* SiteOrigin Page Builder - Ensure the grid only extends 100% */
+.page-template-page-builders.siteorigin-panels .panel-grid {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
+/* ==========================================================================
    Media Queries
    ========================================================================== */
 
