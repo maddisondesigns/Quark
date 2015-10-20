@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: quark\n"
-"POT-Creation-Date: 2015-01-08 02:05+1000\n"
-"PO-Revision-Date: 2015-01-08 02:05+1000\n"
+"POT-Creation-Date: 2015-10-20 11:39+1000\n"
+"PO-Revision-Date: 2015-10-20 11:39+1000\n"
 "Last-Translator: Anthony Hortin <support@maddisondesigns.com>\n"
 "Language-Team: Maddison Designs <support@maddisondesigns.com>\n"
 "Language: english\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;"
 "esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -75,11 +75,12 @@ msgstr ""
 #: ../content-aside.php:15 ../content-audio.php:24 ../content-chat.php:15
 #: ../content-gallery.php:23 ../content-image.php:15 ../content-link.php:15
 #: ../content-quote.php:16 ../content-status.php:15 ../content-video.php:23
-#: ../content.php:40 ../functions.php:761
+#: ../content.php:40 ../functions.php:770
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: ../content-aside.php:20 ../content-audio.php:29 ../content-chat.php:20
+#: ../content-aside.php:20 ../content-audio.php:29
+#: ../content-builderboxed.php:14 ../content-chat.php:20
 #: ../content-gallery.php:28 ../content-image.php:20 ../content-link.php:20
 #: ../content-page.php:22 ../content-postarchives.php:33
 #: ../content-quote.php:23 ../content-status.php:19 ../content-video.php:28
@@ -91,14 +92,13 @@ msgstr ""
 #: ../content-gallery.php:40 ../content-image.php:32 ../content-link.php:32
 #: ../content-page.php:29 ../content-postarchives.php:36
 #: ../content-quote.php:35 ../content-status.php:31 ../content-video.php:40
-#: ../content.php:57 ../functions.php:550
+#: ../content.php:57 ../functions.php:559
 msgid "Edit"
 msgstr ""
 
 #: ../content-audio.php:17 ../content-gallery.php:17 ../content-video.php:17
 #: ../content.php:22 ../content.php:27
-#, php-format
-msgid "Permalink to %s"
+msgid "Permalink to "
 msgstr ""
 
 #: ../content-postarchives.php:19
@@ -117,305 +117,305 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: ../functions.php:150
+#: ../functions.php:153
 msgctxt "PT Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: ../functions.php:155
+#: ../functions.php:158
 msgctxt "PT Sans font: add new subset (cyrillic)"
 msgid "no-subset"
 msgstr ""
 
-#: ../functions.php:163
+#: ../functions.php:166
 msgctxt "Arvo font: on or off"
 msgid "on"
 msgstr ""
 
-#: ../functions.php:221
+#: ../functions.php:224
 msgid "Main Sidebar"
 msgstr ""
 
-#: ../functions.php:223
+#: ../functions.php:226
 msgid ""
 "Appears in the sidebar on posts and pages except the optional Front Page "
 "template, which has its own widgets"
 msgstr ""
 
-#: ../functions.php:231
+#: ../functions.php:234
 msgid "Blog Sidebar"
 msgstr ""
 
-#: ../functions.php:233
+#: ../functions.php:236
 msgid "Appears in the sidebar on the blog and archive pages only"
 msgstr ""
 
-#: ../functions.php:241
+#: ../functions.php:244
 msgid "Single Post Sidebar"
 msgstr ""
 
-#: ../functions.php:243
+#: ../functions.php:246
 msgid "Appears in the sidebar on single posts only"
 msgstr ""
 
-#: ../functions.php:251
+#: ../functions.php:254
 msgid "Page Sidebar"
 msgstr ""
 
-#: ../functions.php:253
+#: ../functions.php:256
 msgid "Appears in the sidebar on pages only"
 msgstr ""
 
-#: ../functions.php:261
+#: ../functions.php:264
 msgid "First Front Page Banner Widget"
 msgstr ""
 
-#: ../functions.php:263 ../functions.php:273
+#: ../functions.php:266 ../functions.php:276
 msgid "Appears in the banner area on the Front Page"
 msgstr ""
 
-#: ../functions.php:271
+#: ../functions.php:274
 msgid "Second Front Page Banner Widget"
 msgstr ""
 
-#: ../functions.php:281
+#: ../functions.php:284
 msgid "First Front Page Widget Area"
 msgstr ""
 
-#: ../functions.php:283 ../functions.php:293 ../functions.php:303
-#: ../functions.php:313
+#: ../functions.php:286 ../functions.php:296 ../functions.php:306
+#: ../functions.php:316
 msgid ""
 "Appears when using the optional Front Page template with a page set as "
 "Static Front Page"
 msgstr ""
 
-#: ../functions.php:291
+#: ../functions.php:294
 msgid "Second Front Page Widget Area"
 msgstr ""
 
-#: ../functions.php:301
+#: ../functions.php:304
 msgid "Third Front Page Widget Area"
 msgstr ""
 
-#: ../functions.php:311
+#: ../functions.php:314
 msgid "Fourth Front Page Widget Area"
 msgstr ""
 
-#: ../functions.php:321
+#: ../functions.php:324
 msgid "First Footer Widget Area"
 msgstr ""
 
-#: ../functions.php:323 ../functions.php:333 ../functions.php:343
-#: ../functions.php:353
+#: ../functions.php:326 ../functions.php:336 ../functions.php:346
+#: ../functions.php:356
 msgid "Appears in the footer sidebar"
 msgstr ""
 
-#: ../functions.php:331
+#: ../functions.php:334
 msgid "Second Footer Widget Area"
 msgstr ""
 
-#: ../functions.php:341
+#: ../functions.php:344
 msgid "Third Footer Widget Area"
 msgstr ""
 
-#: ../functions.php:351
+#: ../functions.php:354
 msgid "Fourth Footer Widget Area"
 msgstr ""
 
-#: ../functions.php:430
+#: ../functions.php:439
 msgid "Please enter your name"
 msgstr ""
 
-#: ../functions.php:431
+#: ../functions.php:440
 msgid "Please enter a valid email address"
 msgstr ""
 
-#: ../functions.php:432
+#: ../functions.php:441
 msgid "Please add a comment"
 msgstr ""
 
-#: ../functions.php:463
+#: ../functions.php:472
 msgid "Post navigation"
 msgstr ""
 
-#: ../functions.php:467
+#: ../functions.php:476
 msgctxt "Previous post link"
 msgid "<i class=\"fa fa-angle-left\"></i>"
 msgstr ""
 
-#: ../functions.php:468
+#: ../functions.php:477
 msgctxt "Next post link"
 msgid "<i class=\"fa fa-angle-right\"></i>"
 msgstr ""
 
-#: ../functions.php:479
+#: ../functions.php:488
 msgid "<i class=\"fa fa-angle-left\"></i> Previous"
 msgstr ""
 
-#: ../functions.php:481
+#: ../functions.php:490
 msgid "Next <i class=\"fa fa-angle-right\"></i>"
 msgstr ""
 
-#: ../functions.php:518
+#: ../functions.php:527
 msgid "Pingback:"
 msgstr ""
 
-#: ../functions.php:518
+#: ../functions.php:527
 msgid "(Edit)"
 msgstr ""
 
-#: ../functions.php:533
+#: ../functions.php:542
 msgid "Post author"
 msgstr ""
 
-#: ../functions.php:536 ../functions.php:656
+#: ../functions.php:545 ../functions.php:665
 #, php-format
 msgid "%1$s @ %2$s"
 msgstr ""
 
-#: ../functions.php:539
+#: ../functions.php:548
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../functions.php:545
+#: ../functions.php:554
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../functions.php:554
+#: ../functions.php:563
 msgid "Reply <span>&darr;</span>"
 msgstr ""
 
-#: ../functions.php:578
+#: ../functions.php:587
 msgid "Name"
 msgstr ""
 
-#: ../functions.php:580
+#: ../functions.php:589
 msgid "Email"
 msgstr ""
 
-#: ../functions.php:582
+#: ../functions.php:591
 msgid "Website"
 msgstr ""
 
-#: ../functions.php:601
+#: ../functions.php:610
 msgctxt "noun"
 msgid "Comment"
 msgstr ""
 
-#: ../functions.php:664
+#: ../functions.php:673
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: ../functions.php:669 ../functions.php:705
+#: ../functions.php:678 ../functions.php:714
 msgid " "
 msgstr ""
 
-#: ../functions.php:674
+#: ../functions.php:683
 msgid "Comment on "
 msgstr ""
 
-#: ../functions.php:675
+#: ../functions.php:684
 #, php-format
 msgid "%1$s Comment"
 msgid_plural "%1$s Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../functions.php:675
+#: ../functions.php:684
 msgid "No Comments"
 msgstr ""
 
-#: ../functions.php:679
+#: ../functions.php:688
 #, php-format
 msgid ""
 "<div class=\"header-meta\">%1$s%2$s<span class=\"post-categories\">%3$s</"
 "span>%4$s</div>"
 msgstr ""
 
-#: ../functions.php:710
+#: ../functions.php:719
 #, php-format
 msgid "<i class=\"fa fa-tag\"></i> %1$s"
 msgstr ""
 
-#: ../functions.php:761
+#: ../functions.php:770
 msgid "Continue reading"
 msgstr ""
 
-#: ../functions.php:851
+#: ../functions.php:860
 msgid "Follow me on Twitter"
 msgstr ""
 
-#: ../functions.php:852
+#: ../functions.php:861
 msgid "Friend me on Facebook"
 msgstr ""
 
-#: ../functions.php:853
+#: ../functions.php:862
 msgid "Connect with me on Google+"
 msgstr ""
 
-#: ../functions.php:854
+#: ../functions.php:863
 msgid "Connect with me on LinkedIn"
 msgstr ""
 
-#: ../functions.php:855
+#: ../functions.php:864
 msgid "Follow me on SlideShare"
 msgstr ""
 
-#: ../functions.php:856
+#: ../functions.php:865
 msgid "Follow me on Dribbble"
 msgstr ""
 
-#: ../functions.php:857
+#: ../functions.php:866
 msgid "Follow me on Tumblr"
 msgstr ""
 
-#: ../functions.php:858
+#: ../functions.php:867
 msgid "Fork me on GitHub"
 msgstr ""
 
-#: ../functions.php:859
+#: ../functions.php:868
 msgid "Fork me on Bitbucket"
 msgstr ""
 
-#: ../functions.php:860
+#: ../functions.php:869
 msgid "Follow me on Foursquare"
 msgstr ""
 
-#: ../functions.php:861
+#: ../functions.php:870
 msgid "Subscribe to me on YouTube"
 msgstr ""
 
-#: ../functions.php:862
+#: ../functions.php:871
 msgid "Follow me on Instagram"
 msgstr ""
 
-#: ../functions.php:863
+#: ../functions.php:872
 msgid "Connect with me on Flickr"
 msgstr ""
 
-#: ../functions.php:864
+#: ../functions.php:873
 msgid "Follow me on Pinterest"
 msgstr ""
 
-#: ../functions.php:865
+#: ../functions.php:874
 msgid "Subscribe to my RSS Feed"
 msgstr ""
 
-#: ../functions.php:900
+#: ../functions.php:909
 msgid "Proudly powered by"
 msgstr ""
 
-#: ../functions.php:901
+#: ../functions.php:910
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: ../functions.php:902
+#: ../functions.php:911
 msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
-#: ../functions.php:903
+#: ../functions.php:912
 msgid "WordPress"
 msgstr ""
 
@@ -459,15 +459,43 @@ msgstr ""
 msgid "Right aligned"
 msgstr ""
 
+#: ../options.php:52
+msgid "4 Products"
+msgstr ""
+
 #: ../options.php:53
-msgid "Basic Settings"
+msgid "8 Products"
+msgstr ""
+
+#: ../options.php:54
+msgid "12 Products"
+msgstr ""
+
+#: ../options.php:55
+msgid "16 Products"
+msgstr ""
+
+#: ../options.php:56
+msgid "20 Products"
 msgstr ""
 
 #: ../options.php:57
-msgid "Background"
+msgid "24 Products"
 msgstr ""
 
 #: ../options.php:58
+msgid "28 Products"
+msgstr ""
+
+#: ../options.php:64
+msgid "Basic Settings"
+msgstr ""
+
+#: ../options.php:68
+msgid "Background"
+msgstr ""
+
+#: ../options.php:69
 #, php-format
 msgid ""
 "If you&rsquo;d like to replace or remove the default background image, use "
@@ -475,219 +503,219 @@ msgid ""
 "a> menu option."
 msgstr ""
 
-#: ../options.php:66
+#: ../options.php:77
 msgid "Logo"
 msgstr ""
 
-#: ../options.php:67
+#: ../options.php:78
 #, php-format
 msgid ""
 "If you&rsquo;d like to replace or remove the default logo, use the <a href="
 "\"%1$s\" title=\"Custom header\">Appearance &gt; Header</a> menu option."
 msgstr ""
 
-#: ../options.php:75
+#: ../options.php:86
 msgid "Social Media Settings"
 msgstr ""
 
-#: ../options.php:76
+#: ../options.php:87
 msgid ""
 "Enter the URLs for your Social Media platforms. You can also optionally "
 "specify whether you want these links opened in a new browser tab/window."
 msgstr ""
 
-#: ../options.php:80
+#: ../options.php:91
 msgid "Open links in new Window/Tab"
 msgstr ""
 
-#: ../options.php:81
+#: ../options.php:92
 msgid "Open the social media links in a new browser tab/window"
 msgstr ""
 
-#: ../options.php:87
+#: ../options.php:98
 msgid "Twitter"
 msgstr ""
 
-#: ../options.php:88
+#: ../options.php:99
 msgid "Enter your Twitter URL."
 msgstr ""
 
-#: ../options.php:94
+#: ../options.php:105
 msgid "Facebook"
 msgstr ""
 
-#: ../options.php:95
+#: ../options.php:106
 msgid "Enter your Facebook URL."
 msgstr ""
 
-#: ../options.php:101
+#: ../options.php:112
 msgid "Google+"
 msgstr ""
 
-#: ../options.php:102
+#: ../options.php:113
 msgid "Enter your Google+ URL."
 msgstr ""
 
-#: ../options.php:108
+#: ../options.php:119
 msgid "LinkedIn"
 msgstr ""
 
-#: ../options.php:109
+#: ../options.php:120
 msgid "Enter your LinkedIn URL."
 msgstr ""
 
-#: ../options.php:115
+#: ../options.php:126
 msgid "SlideShare"
 msgstr ""
 
-#: ../options.php:116
+#: ../options.php:127
 msgid "Enter your SlideShare URL."
 msgstr ""
 
-#: ../options.php:122
+#: ../options.php:133
 msgid "Dribbble"
 msgstr ""
 
-#: ../options.php:123
+#: ../options.php:134
 msgid "Enter your Dribbble URL."
 msgstr ""
 
-#: ../options.php:129
+#: ../options.php:140
 msgid "Tumblr"
 msgstr ""
 
-#: ../options.php:130
+#: ../options.php:141
 msgid "Enter your Tumblr URL."
 msgstr ""
 
-#: ../options.php:136
+#: ../options.php:147
 msgid "GitHub"
 msgstr ""
 
-#: ../options.php:137
+#: ../options.php:148
 msgid "Enter your GitHub URL."
 msgstr ""
 
-#: ../options.php:143
+#: ../options.php:154
 msgid "Bitbucket"
 msgstr ""
 
-#: ../options.php:144
+#: ../options.php:155
 msgid "Enter your Bitbucket URL."
 msgstr ""
 
-#: ../options.php:150
+#: ../options.php:161
 msgid "Foursquare"
 msgstr ""
 
-#: ../options.php:151
+#: ../options.php:162
 msgid "Enter your Foursquare URL."
 msgstr ""
 
-#: ../options.php:157
+#: ../options.php:168
 msgid "YouTube"
 msgstr ""
 
-#: ../options.php:158
+#: ../options.php:169
 msgid "Enter your YouTube URL."
 msgstr ""
 
-#: ../options.php:164
+#: ../options.php:175
 msgid "Instagram"
 msgstr ""
 
-#: ../options.php:165
+#: ../options.php:176
 msgid "Enter your Instagram URL."
 msgstr ""
 
-#: ../options.php:171
+#: ../options.php:182
 msgid "Flickr"
 msgstr ""
 
-#: ../options.php:172
+#: ../options.php:183
 msgid "Enter your Flickr URL."
 msgstr ""
 
-#: ../options.php:178
+#: ../options.php:189
 msgid "Pinterest"
 msgstr ""
 
-#: ../options.php:179
+#: ../options.php:190
 msgid "Enter your Pinterest URL."
 msgstr ""
 
-#: ../options.php:185
+#: ../options.php:196
 msgid "RSS"
 msgstr ""
 
-#: ../options.php:186
+#: ../options.php:197
 msgid "Enter your RSS Feed URL."
 msgstr ""
 
-#: ../options.php:192
+#: ../options.php:203
 msgid "Advanced settings"
 msgstr ""
 
-#: ../options.php:196
+#: ../options.php:207
 msgid "Banner Background"
 msgstr ""
 
-#: ../options.php:197
+#: ../options.php:208
 msgid "Select an image and background color for the homepage banner."
 msgstr ""
 
-#: ../options.php:203
+#: ../options.php:214
 msgid "Footer Background Color"
 msgstr ""
 
-#: ../options.php:204
+#: ../options.php:215
 msgid "Select the background color for the footer."
 msgstr ""
 
-#: ../options.php:210
+#: ../options.php:221
 msgid "Footer Content"
 msgstr ""
 
-#: ../options.php:211
+#: ../options.php:222
 msgid ""
 "Enter the text you&lsquo;d like to display in the footer. This content will "
 "be displayed just below the footer widgets. It&lsquo;s ideal for displaying "
 "your copyright message or credits."
 msgstr ""
 
-#: ../options.php:218
+#: ../options.php:229
 msgid "Footer Content Position"
 msgstr ""
 
-#: ../options.php:219
+#: ../options.php:230
 msgid "Select what position you would like the footer content aligned to."
 msgstr ""
 
-#: ../options.php:228
+#: ../options.php:239
 msgid "WooCommerce settings"
 msgstr ""
 
-#: ../options.php:232
+#: ../options.php:243
 msgid "Shop sidebar"
 msgstr ""
 
-#: ../options.php:233
+#: ../options.php:244
 msgid "Display the sidebar on the WooCommerce Shop page"
 msgstr ""
 
-#: ../options.php:239
+#: ../options.php:250
 msgid "Products sidebar"
 msgstr ""
 
-#: ../options.php:240
+#: ../options.php:251
 msgid "Display the sidebar on the WooCommerce Single Product page"
 msgstr ""
 
-#: ../options.php:246
+#: ../options.php:257
 msgid "Cart, Checkout & My Account sidebars"
 msgstr ""
 
-#: ../options.php:247
+#: ../options.php:258
 msgid ""
 "The &lsquo;Cart&rsquo;, &lsquo;Checkout&rsquo; and &lsquo;My Account&rsquo; "
 "pages are displayed using shortcodes. To remove the sidebar from these "
@@ -695,12 +723,20 @@ msgid ""
 "Panel) to the &lsquo;Full-width Page Template&rsquo;."
 msgstr ""
 
-#: ../options.php:251
+#: ../options.php:262
 msgid "Shop Breadcrumbs"
 msgstr ""
 
-#: ../options.php:252
+#: ../options.php:263
 msgid "Display the breadcrumbs on the WooCommerce pages"
+msgstr ""
+
+#: ../options.php:269
+msgid "Shop Products"
+msgstr ""
+
+#: ../options.php:270
+msgid "Select the number of products to display on the shop page."
 msgstr ""
 
 #: ../search.php:19
