@@ -172,9 +172,23 @@ function optionsframework_options() {
 		'type' => 'text' );
 
 	$options[] = array(
+		'name' => esc_html__( 'Vimeo', 'quark' ),
+		'desc' => esc_html__( 'Enter your Vimeo URL.', 'quark' ),
+		'id' => 'social_vimeo',
+		'std' => '',
+		'type' => 'text' );
+
+	$options[] = array(
 		'name' => esc_html__( 'Instagram', 'quark' ),
 		'desc' => esc_html__( 'Enter your Instagram URL.', 'quark' ),
 		'id' => 'social_instagram',
+		'std' => '',
+		'type' => 'text' );
+
+	$options[] = array(
+		'name' => esc_html__( 'Vine', 'quark' ),
+		'desc' => esc_html__( 'Enter your Vine URL.', 'quark' ),
+		'id' => 'social_vine',
 		'std' => '',
 		'type' => 'text' );
 
