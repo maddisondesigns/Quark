@@ -26,6 +26,6 @@
 		) ); ?>
 	</div><!-- /.entry-content -->
 	<footer class="entry-meta">
-		<?php edit_post_link( esc_html__( 'Edit', 'quark' ) . ' <i class="fa fa-angle-right"></i>', '<div class="edit-link">', '</div>' ); ?>
+		<?php edit_post_link( esc_html__( 'Edit', 'quark' ) . ' <i class="fa fa-angle-right" aria-hidden="true"></i>', '<div class="edit-link">', '</div>' ); ?>
 	</footer><!-- /.entry-meta -->
 </article><!-- /#post -->
