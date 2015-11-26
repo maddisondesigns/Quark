@@ -167,6 +167,7 @@ Quark utilises the following awesomeness:
 = 1.3.3 =
 - Added new blank page builder template
 - Added new social icon options for Vimeo & Vine
+- Added aria-hidden to icons to hide from screen readers
 - Updated Font Awesome icon font to v4.4.0
 
 = 1.3.2 =
