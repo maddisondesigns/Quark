@@ -1634,11 +1634,9 @@ form label.error {
 
 .widget-area .widget {
 	-moz-hyphens: auto;
-	-ms-word-break: break-all;
 	-webkit-hyphens: auto;
 	hyphens: auto;
-	word-wrap:break-word;
-	word-break: break-word;
+	word-wrap: break-word;
 	margin-bottom: 48px;
 	margin-bottom: 3rem;
 }
