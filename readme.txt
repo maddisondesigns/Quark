@@ -168,7 +168,7 @@ Quark utilises the following awesomeness:
 - Added new blank page builder template
 - Added new social icon options for Vimeo & Vine
 - Added aria-hidden to icons to hide from screen readers
-- Removed word-break from widgets. Props to Aaron Payne (@awdience) or pointing out an issue it was causing in stoopid IE
+- Removed word-break from widgets. Props to Aaron Payne (@awdience) for pointing out an issue it was causing in stoopid IE
 - Updated Font Awesome icon font to v4.4.0
 
 = 1.3.2 =
