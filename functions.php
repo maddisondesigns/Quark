@@ -143,48 +143,49 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) {
  *
  * @return string Font stylesheet or empty string if disabled.
  */
-function quark_fonts_url() {
-	$fonts_url = '';
-	$subsets = 'latin';
+if ( ! function_exists( 'quark_fonts_url' ) ) {
+	function quark_fonts_url() {
+		$fonts_url = '';
+		$subsets = 'latin';
 
-	/* translators: If there are characters in your language that are not supported by PT Sans, translate this to 'off'.
-	 * Do not translate into your own language.
-	 */
-	$pt_sans = _x( 'on', 'PT Sans font: on or off', 'quark' );
+		/* translators: If there are characters in your language that are not supported by PT Sans, translate this to 'off'.
+		 * Do not translate into your own language.
+		 */
+		$pt_sans = _x( 'on', 'PT Sans font: on or off', 'quark' );
 
-	/* translators: To add an additional PT Sans character subset specific to your language, translate this to 'greek', 'cyrillic' or 'vietnamese'.
-	 * Do not translate into your own language.
-	 */
-	$subset = _x( 'no-subset', 'PT Sans font: add new subset (cyrillic)', 'quark' );
+		/* translators: To add an additional PT Sans character subset specific to your language, translate this to 'greek', 'cyrillic' or 'vietnamese'.
+		 * Do not translate into your own language.
+		 */
+		$subset = _x( 'no-subset', 'PT Sans font: add new subset (cyrillic)', 'quark' );
 
-	if ( 'cyrillic' == $subset )
-		$subsets .= ',cyrillic';
+		if ( 'cyrillic' == $subset )
+			$subsets .= ',cyrillic';
 
-	/* translators: If there are characters in your language that are not supported by Arvo, translate this to 'off'.
-	 * Do not translate into your own language.
-	 */
-	$arvo = _x( 'on', 'Arvo font: on or off', 'quark' );
+		/* translators: If there are characters in your language that are not supported by Arvo, translate this to 'off'.
+		 * Do not translate into your own language.
+		 */
+		$arvo = _x( 'on', 'Arvo font: on or off', 'quark' );
 
-	if ( 'off' !== $pt_sans || 'off' !== $arvo ) {
-		$font_families = array();
+		if ( 'off' !== $pt_sans || 'off' !== $arvo ) {
+			$font_families = array();
 
-		if ( 'off' !== $pt_sans )
-			$font_families[] = 'PT+Sans:400,400italic,700,700italic';
+			if ( 'off' !== $pt_sans )
+				$font_families[] = 'PT+Sans:400,400italic,700,700italic';
 
-		if ( 'off' !== $arvo )
-			$font_families[] = 'Arvo:400';
+			if ( 'off' !== $arvo )
+				$font_families[] = 'Arvo:400';
 
-		$protocol = is_ssl() ? 'https' : 'http';
-		$query_args = array(
-			'family' => implode( '|', $font_families ),
-			'subset' => $subsets,
-		);
-		$fonts_url = add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" );
+			$protocol = is_ssl() ? 'https' : 'http';
+			$query_args = array(
+				'family' => implode( '|', $font_families ),
+				'subset' => $subsets,
+			);
+			$fonts_url = add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" );
+		}
+
+		return $fonts_url;
 	}
-
-	return $fonts_url;
 }
-
 
 /**
  * Adds additional stylesheets to the TinyMCE editor if needed.
@@ -219,149 +220,150 @@ add_filter( 'mce_css', 'quark_mce_css' );
  *
  * @return void
  */
-function quark_widgets_init() {
-	register_sidebar( array(
-			'name' => esc_html__( 'Main Sidebar', 'quark' ),
-			'id' => 'sidebar-main',
-			'description' => esc_html__( 'Appears in the sidebar on posts and pages except the optional Front Page template, which has its own widgets', 'quark' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
-		) );
+if ( ! function_exists( 'quark_widgets_init' ) ) {
+	function quark_widgets_init() {
+		register_sidebar( array(
+				'name' => esc_html__( 'Main Sidebar', 'quark' ),
+				'id' => 'sidebar-main',
+				'description' => esc_html__( 'Appears in the sidebar on posts and pages except the optional Front Page template, which has its own widgets', 'quark' ),
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside>',
+				'before_title' => '<h3 class="widget-title">',
+				'after_title' => '</h3>'
+			) );
 
-	register_sidebar( array(
-			'name' => esc_html__( 'Blog Sidebar', 'quark' ),
-			'id' => 'sidebar-blog',
-			'description' => esc_html__( 'Appears in the sidebar on the blog and archive pages only', 'quark' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
-		) );
+		register_sidebar( array(
+				'name' => esc_html__( 'Blog Sidebar', 'quark' ),
+				'id' => 'sidebar-blog',
+				'description' => esc_html__( 'Appears in the sidebar on the blog and archive pages only', 'quark' ),
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside>',
+				'before_title' => '<h3 class="widget-title">',
+				'after_title' => '</h3>'
+			) );
 
-	register_sidebar( array(
-			'name' => esc_html__( 'Single Post Sidebar', 'quark' ),
-			'id' => 'sidebar-single',
-			'description' => esc_html__( 'Appears in the sidebar on single posts only', 'quark' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
-		) );
+		register_sidebar( array(
+				'name' => esc_html__( 'Single Post Sidebar', 'quark' ),
+				'id' => 'sidebar-single',
+				'description' => esc_html__( 'Appears in the sidebar on single posts only', 'quark' ),
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside>',
+				'before_title' => '<h3 class="widget-title">',
+				'after_title' => '</h3>'
+			) );
 
-	register_sidebar( array(
-			'name' => esc_html__( 'Page Sidebar', 'quark' ),
-			'id' => 'sidebar-page',
-			'description' => esc_html__( 'Appears in the sidebar on pages only', 'quark' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
-		) );
+		register_sidebar( array(
+				'name' => esc_html__( 'Page Sidebar', 'quark' ),
+				'id' => 'sidebar-page',
+				'description' => esc_html__( 'Appears in the sidebar on pages only', 'quark' ),
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside>',
+				'before_title' => '<h3 class="widget-title">',
+				'after_title' => '</h3>'
+			) );
 
-	register_sidebar( array(
-			'name' => esc_html__( 'First Front Page Banner Widget', 'quark' ),
-			'id' => 'frontpage-banner1',
-			'description' => esc_html__( 'Appears in the banner area on the Front Page', 'quark' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h1 class="widget-title">',
-			'after_title' => '</h1>'
-		) );
+		register_sidebar( array(
+				'name' => esc_html__( 'First Front Page Banner Widget', 'quark' ),
+				'id' => 'frontpage-banner1',
+				'description' => esc_html__( 'Appears in the banner area on the Front Page', 'quark' ),
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget' => '</div>',
+				'before_title' => '<h1 class="widget-title">',
+				'after_title' => '</h1>'
+			) );
 
-	register_sidebar( array(
-			'name' => esc_html__( 'Second Front Page Banner Widget', 'quark' ),
-			'id' => 'frontpage-banner2',
-			'description' => esc_html__( 'Appears in the banner area on the Front Page', 'quark' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h1 class="widget-title">',
-			'after_title' => '</h1>'
-		) );
+		register_sidebar( array(
+				'name' => esc_html__( 'Second Front Page Banner Widget', 'quark' ),
+				'id' => 'frontpage-banner2',
+				'description' => esc_html__( 'Appears in the banner area on the Front Page', 'quark' ),
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget' => '</div>',
+				'before_title' => '<h1 class="widget-title">',
+				'after_title' => '</h1>'
+			) );
 
-	register_sidebar( array(
-			'name' => esc_html__( 'First Front Page Widget Area', 'quark' ),
-			'id' => 'sidebar-homepage1',
-			'description' => esc_html__( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
-		) );
+		register_sidebar( array(
+				'name' => esc_html__( 'First Front Page Widget Area', 'quark' ),
+				'id' => 'sidebar-homepage1',
+				'description' => esc_html__( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside>',
+				'before_title' => '<h3 class="widget-title">',
+				'after_title' => '</h3>'
+			) );
 
-	register_sidebar( array(
-			'name' => esc_html__( 'Second Front Page Widget Area', 'quark' ),
-			'id' => 'sidebar-homepage2',
-			'description' => esc_html__( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
-		) );
+		register_sidebar( array(
+				'name' => esc_html__( 'Second Front Page Widget Area', 'quark' ),
+				'id' => 'sidebar-homepage2',
+				'description' => esc_html__( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside>',
+				'before_title' => '<h3 class="widget-title">',
+				'after_title' => '</h3>'
+			) );
 
-	register_sidebar( array(
-			'name' => esc_html__( 'Third Front Page Widget Area', 'quark' ),
-			'id' => 'sidebar-homepage3',
-			'description' => esc_html__( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
-		) );
+		register_sidebar( array(
+				'name' => esc_html__( 'Third Front Page Widget Area', 'quark' ),
+				'id' => 'sidebar-homepage3',
+				'description' => esc_html__( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside>',
+				'before_title' => '<h3 class="widget-title">',
+				'after_title' => '</h3>'
+			) );
 
-	register_sidebar( array(
-			'name' => esc_html__( 'Fourth Front Page Widget Area', 'quark' ),
-			'id' => 'sidebar-homepage4',
-			'description' => esc_html__( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
-		) );
+		register_sidebar( array(
+				'name' => esc_html__( 'Fourth Front Page Widget Area', 'quark' ),
+				'id' => 'sidebar-homepage4',
+				'description' => esc_html__( 'Appears when using the optional Front Page template with a page set as Static Front Page', 'quark' ),
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside>',
+				'before_title' => '<h3 class="widget-title">',
+				'after_title' => '</h3>'
+			) );
 
-	register_sidebar( array(
-			'name' => esc_html__( 'First Footer Widget Area', 'quark' ),
-			'id' => 'sidebar-footer1',
-			'description' => esc_html__( 'Appears in the footer sidebar', 'quark' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
-		) );
+		register_sidebar( array(
+				'name' => esc_html__( 'First Footer Widget Area', 'quark' ),
+				'id' => 'sidebar-footer1',
+				'description' => esc_html__( 'Appears in the footer sidebar', 'quark' ),
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside>',
+				'before_title' => '<h3 class="widget-title">',
+				'after_title' => '</h3>'
+			) );
 
-	register_sidebar( array(
-			'name' => esc_html__( 'Second Footer Widget Area', 'quark' ),
-			'id' => 'sidebar-footer2',
-			'description' => esc_html__( 'Appears in the footer sidebar', 'quark' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
-		) );
+		register_sidebar( array(
+				'name' => esc_html__( 'Second Footer Widget Area', 'quark' ),
+				'id' => 'sidebar-footer2',
+				'description' => esc_html__( 'Appears in the footer sidebar', 'quark' ),
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside>',
+				'before_title' => '<h3 class="widget-title">',
+				'after_title' => '</h3>'
+			) );
 
-	register_sidebar( array(
-			'name' => esc_html__( 'Third Footer Widget Area', 'quark' ),
-			'id' => 'sidebar-footer3',
-			'description' => esc_html__( 'Appears in the footer sidebar', 'quark' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
-		) );
+		register_sidebar( array(
+				'name' => esc_html__( 'Third Footer Widget Area', 'quark' ),
+				'id' => 'sidebar-footer3',
+				'description' => esc_html__( 'Appears in the footer sidebar', 'quark' ),
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside>',
+				'before_title' => '<h3 class="widget-title">',
+				'after_title' => '</h3>'
+			) );
 
-	register_sidebar( array(
-			'name' => esc_html__( 'Fourth Footer Widget Area', 'quark' ),
-			'id' => 'sidebar-footer4',
-			'description' => esc_html__( 'Appears in the footer sidebar', 'quark' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
-		) );
+		register_sidebar( array(
+				'name' => esc_html__( 'Fourth Footer Widget Area', 'quark' ),
+				'id' => 'sidebar-footer4',
+				'description' => esc_html__( 'Appears in the footer sidebar', 'quark' ),
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside>',
+				'before_title' => '<h3 class="widget-title">',
+				'after_title' => '</h3>'
+			) );
+	}
 }
 add_action( 'widgets_init', 'quark_widgets_init' );
-
 
 /**
  * Enqueue scripts and styles
@@ -370,85 +372,86 @@ add_action( 'widgets_init', 'quark_widgets_init' );
  *
  * @return void
  */
-function quark_scripts_styles() {
+if ( ! function_exists( 'quark_scripts_styles' ) ) {
+	function quark_scripts_styles() {
 
-	/**
-	 * Register and enqueue our stylesheets
-	 */
+		/**
+		 * Register and enqueue our stylesheets
+		 */
 
-	// Start off with a clean base by using normalise. If you prefer to use a reset stylesheet or something else, simply replace this
-	wp_register_style( 'normalize', trailingslashit( get_template_directory_uri() ) . 'css/normalize.css' , array(), '3.0.2', 'all' );
-	wp_enqueue_style( 'normalize' );
+		// Start off with a clean base by using normalise. If you prefer to use a reset stylesheet or something else, simply replace this
+		wp_register_style( 'normalize', trailingslashit( get_template_directory_uri() ) . 'css/normalize.css' , array(), '4.1.1', 'all' );
+		wp_enqueue_style( 'normalize' );
 
-	// Register and enqueue our icon font
-	// We're using the awesome Font Awesome icon font. http://fortawesome.github.io/Font-Awesome
-	wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome.min.css' , array( 'normalize' ), '4.4.0', 'all' );
-	wp_enqueue_style( 'fontawesome' );
+		// Register and enqueue our icon font
+		// We're using the awesome Font Awesome icon font. http://fortawesome.github.io/Font-Awesome
+		wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome.min.css' , array( 'normalize' ), '4.6.3', 'all' );
+		wp_enqueue_style( 'fontawesome' );
 
-	// Our styles for setting up the grid.
-	// If you prefer to use a different grid system, simply replace this and perform a find/replace in the php for the relevant styles. I'm nice like that!
-	wp_register_style( 'gridsystem', trailingslashit( get_template_directory_uri() ) . 'css/grid.css' , array( 'fontawesome' ), '1.0.0', 'all' );
-	wp_enqueue_style( 'gridsystem' );
+		// Our styles for setting up the grid.
+		// If you prefer to use a different grid system, simply replace this and perform a find/replace in the php for the relevant styles. I'm nice like that!
+		wp_register_style( 'gridsystem', trailingslashit( get_template_directory_uri() ) . 'css/grid.css' , array( 'fontawesome' ), '1.0.0', 'all' );
+		wp_enqueue_style( 'gridsystem' );
 
-	/*
-	 * Load our Google Fonts.
-	 *
-	 * To disable in a child theme, use wp_dequeue_style()
-	 * function mytheme_dequeue_fonts() {
-	 *     wp_dequeue_style( 'quark-fonts' );
-	 * }
-	 * add_action( 'wp_enqueue_scripts', 'mytheme_dequeue_fonts', 11 );
-	 */
-	$fonts_url = quark_fonts_url();
-	if ( !empty( $fonts_url ) ) {
-		wp_enqueue_style( 'quark-fonts', esc_url_raw( $fonts_url ), array(), null );
+		/*
+		 * Load our Google Fonts.
+		 *
+		 * To disable in a child theme, use wp_dequeue_style()
+		 * function mytheme_dequeue_fonts() {
+		 *     wp_dequeue_style( 'quark-fonts' );
+		 * }
+		 * add_action( 'wp_enqueue_scripts', 'mytheme_dequeue_fonts', 11 );
+		 */
+		$fonts_url = quark_fonts_url();
+		if ( !empty( $fonts_url ) ) {
+			wp_enqueue_style( 'quark-fonts', esc_url_raw( $fonts_url ), array(), null );
+		}
+
+		// If using a child theme, auto-load the parent theme style.
+		// Props to Justin Tadlock for this recommendation - http://justintadlock.com/archives/2014/11/03/loading-parent-styles-for-child-themes
+		if ( is_child_theme() ) {
+			wp_enqueue_style( 'parent-style', trailingslashit( get_template_directory_uri() ) . 'style.css' );
+		}
+
+		// Enqueue the default WordPress stylesheet
+		wp_enqueue_style( 'style', get_stylesheet_uri() );
+
+
+		/**
+		 * Register and enqueue our scripts
+		 */
+
+		// Load Modernizr at the top of the document, which enables HTML5 elements and feature detects
+		wp_register_script( 'modernizr', trailingslashit( get_template_directory_uri() ) . 'js/modernizr-min.js', array(), '3.3.1', false );
+		wp_enqueue_script( 'modernizr' );
+
+		// Adds JavaScript to pages with the comment form to support sites with threaded comments (when in use)
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
+
+		// Load jQuery Validation as well as the initialiser to provide client side comment form validation
+		// You can change the validation error messages below
+		if ( is_singular() && comments_open() ) {
+			wp_register_script( 'validate', trailingslashit( get_template_directory_uri() ) . 'js/jquery.validate.min.1.13.0.js', array( 'jquery' ), '1.13.0', true );
+			wp_register_script( 'commentvalidate', trailingslashit( get_template_directory_uri() ) . 'js/comment-form-validation.js', array( 'jquery', 'validate' ), '1.13.0', true );
+
+			wp_enqueue_script( 'commentvalidate' );
+			wp_localize_script( 'commentvalidate', 'comments_object', array(
+				'req' => get_option( 'require_name_email' ),
+				'author'  => esc_html__( 'Please enter your name', 'quark' ),
+				'email'  => esc_html__( 'Please enter a valid email address', 'quark' ),
+				'comment' => esc_html__( 'Please add a comment', 'quark' ) )
+			);
+		}
+
+		// Include this script to envoke a button toggle for the main navigation menu on small screens
+		//wp_register_script( 'small-menu', trailingslashit( get_template_directory_uri() ) . 'js/small-menu.js', array( 'jquery' ), '20130130', true );
+		//wp_enqueue_script( 'small-menu' );
+
 	}
-
-	// If using a child theme, auto-load the parent theme style.
-	// Props to Justin Tadlock for this recommendation - http://justintadlock.com/archives/2014/11/03/loading-parent-styles-for-child-themes
-	if ( is_child_theme() ) {
-		wp_enqueue_style( 'parent-style', trailingslashit( get_template_directory_uri() ) . 'style.css' );
-	}
-
-	// Enqueue the default WordPress stylesheet
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
-
-
-	/**
-	 * Register and enqueue our scripts
-	 */
-
-	// Load Modernizr at the top of the document, which enables HTML5 elements and feature detects
-	wp_register_script( 'modernizr', trailingslashit( get_template_directory_uri() ) . 'js/modernizr-2.8.3-min.js', array(), '2.8.3', false );
-	wp_enqueue_script( 'modernizr' );
-
-	// Adds JavaScript to pages with the comment form to support sites with threaded comments (when in use)
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-
-	// Load jQuery Validation as well as the initialiser to provide client side comment form validation
-	// You can change the validation error messages below
-	if ( is_singular() && comments_open() ) {
-		wp_register_script( 'validate', trailingslashit( get_template_directory_uri() ) . 'js/jquery.validate.min.1.13.0.js', array( 'jquery' ), '1.13.0', true );
-		wp_register_script( 'commentvalidate', trailingslashit( get_template_directory_uri() ) . 'js/comment-form-validation.js', array( 'jquery', 'validate' ), '1.13.0', true );
-
-		wp_enqueue_script( 'commentvalidate' );
-		wp_localize_script( 'commentvalidate', 'comments_object', array(
-			'req' => get_option( 'require_name_email' ),
-			'author'  => esc_html__( 'Please enter your name', 'quark' ),
-			'email'  => esc_html__( 'Please enter a valid email address', 'quark' ),
-			'comment' => esc_html__( 'Please add a comment', 'quark' ) )
-		);
-	}
-
-	// Include this script to envoke a button toggle for the main navigation menu on small screens
-	//wp_register_script( 'small-menu', trailingslashit( get_template_directory_uri() ) . 'js/small-menu.js', array( 'jquery' ), '20130130', true );
-	//wp_enqueue_script( 'small-menu' );
-
 }
 add_action( 'wp_enqueue_scripts', 'quark_scripts_styles' );
-
 
 /**
  * Displays navigation to next/previous pages when applicable.
@@ -476,7 +479,7 @@ if ( ! function_exists( 'quark_content_nav' ) ) {
 				<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '<i class="fa fa-angle-left" aria-hidden="true"></i>', 'Previous post link', 'quark' ) . '</span> %title' ); ?>
 				<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '<i class="fa fa-angle-right" aria-hidden="true"></i>', 'Next post link', 'quark' ) . '</span>' ); ?>
 
-			<?php } 
+			<?php }
 			elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) { // navigation links for home, archive, and search pages ?>
 
 				<?php echo paginate_links( array(
@@ -485,9 +488,9 @@ if ( ! function_exists( 'quark_content_nav' ) ) {
 					'current' => max( 1, get_query_var( 'paged' ) ),
 					'total' => $wp_query->max_num_pages,
 					'type' => 'list',
-					'prev_text' => wp_kses( __( '<i class="fa fa-angle-left" aria-hidden="true"></i> Previous', 'quark' ), array( 'i' => array( 
+					'prev_text' => wp_kses( __( '<i class="fa fa-angle-left" aria-hidden="true"></i> Previous', 'quark' ), array( 'i' => array(
 						'class' => array(), 'aria-hidden' => array() ) ) ),
-					'next_text' => wp_kses( __( 'Next <i class="fa fa-angle-right" aria-hidden="true"></i>', 'quark' ), array( 'i' => array( 
+					'next_text' => wp_kses( __( 'Next <i class="fa fa-angle-right" aria-hidden="true"></i>', 'quark' ), array( 'i' => array(
 						'class' => array(), 'aria-hidden' => array() ) ) )
 				) ); ?>
 
@@ -597,7 +600,7 @@ add_action( 'comment_form_default_fields', 'quark_comment_form_default_fields' )
 
 
 /**
- * Update the Comments form to add a 'required' span to the Comment textarea within the form label, because it's pointless 
+ * Update the Comments form to add a 'required' span to the Comment textarea within the form label, because it's pointless
  * submitting a comment that doesn't actually have any text in the comment field!
  *
  * @since Quark 1.0
@@ -606,9 +609,9 @@ add_action( 'comment_form_default_fields', 'quark_comment_form_default_fields' )
  * @return string The updated comment form textarea html
  */
 function quark_comment_form_field_comment( $field ) {
-
-	$field = '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun', 'quark' ) . ' <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>';
-
+	if ( !quark_is_woocommerce_active() || ( quark_is_woocommerce_active() && !is_product() ) ) {
+		$field = '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun', 'quark' ) . ' <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>';
+	}
 	return $field;
 
 }
@@ -685,10 +688,10 @@ if ( ! function_exists( 'quark_posted_on' ) ) {
 		);
 
 		// Translators: 1: Date 2: Author 3: Categories 4: Comments
-		printf( wp_kses( __( '<div class="header-meta">%1$s%2$s<span class="post-categories">%3$s</span>%4$s</div>', 'quark' ), array( 
-			'div' => array ( 
-				'class' => array() ), 
-			'span' => array( 
+		printf( wp_kses( __( '<div class="header-meta">%1$s%2$s<span class="post-categories">%3$s</span>%4$s</div>', 'quark' ), array(
+			'div' => array (
+				'class' => array() ),
+			'span' => array(
 				'class' => array() ) ) ),
 			$date,
 			$author,
@@ -729,10 +732,12 @@ if ( ! function_exists( 'quark_entry_meta' ) ) {
  *
  * @return void
  */
-function quark_content_width() {
-	if ( is_page_template( 'page-templates/full-width.php' ) || is_attachment() ) {
-		global $content_width;
-		$content_width = 1200;
+if ( ! function_exists( 'quark_content_width' ) ) {
+	function quark_content_width() {
+		if ( is_page_template( 'page-templates/full-width.php' ) || is_attachment() ) {
+			global $content_width;
+			$content_width = 1200;
+		}
 	}
 }
 add_action( 'template_redirect', 'quark_content_width' );
@@ -767,7 +772,7 @@ add_filter( 'the_content_more_link', 'quark_remove_more_jump_link' );
  * @return string The 'Continue reading' link
  */
 function quark_continue_reading_link() {
-	return '&hellip;<p><a class="more-link" href="'. esc_url( get_permalink() ) . '" title="' . esc_html__( 'Continue reading', 'quark' ) . ' &lsquo;' . get_the_title() . '&rsquo;">' . wp_kses( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'quark' ), array( 'span' => array( 
+	return '&hellip;<p><a class="more-link" href="'. esc_url( get_permalink() ) . '" title="' . esc_html__( 'Continue reading', 'quark' ) . ' &lsquo;' . get_the_title() . '&rsquo;">' . wp_kses( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'quark' ), array( 'span' => array(
 			'class' => array() ) ) ) . '</a></p>';
 }
 
@@ -794,20 +799,21 @@ add_filter( 'excerpt_more', 'quark_auto_excerpt_more' );
  * @param array List of user contact methods
  * @return array The filtered list of updated user contact methods
  */
-function quark_new_contactmethods( $contactmethods ) {
-	// Add Twitter
-	$contactmethods['twitter'] = 'Twitter';
+ if ( ! function_exists( 'quark_new_contactmethods' ) ) {
+	function quark_new_contactmethods( $contactmethods ) {
+		// Add Twitter
+		$contactmethods['twitter'] = 'Twitter';
 
-	//add Facebook
-	$contactmethods['facebook'] = 'Facebook';
+		//add Facebook
+		$contactmethods['facebook'] = 'Facebook';
 
-	//add Google Plus
-	$contactmethods['googleplus'] = 'Google+';
+		//add Google Plus
+		$contactmethods['googleplus'] = 'Google+';
 
-	return $contactmethods;
+		return $contactmethods;
+	}
 }
 add_filter( 'user_contactmethods', 'quark_new_contactmethods', 10, 1 );
-
 
 /**
  * Add a filter for wp_nav_menu to add an extra class for menu items that have children (ie. sub menus)
@@ -862,15 +868,21 @@ if ( ! function_exists( 'quark_get_social_media' ) ) {
 			array( 'url' => of_get_option( 'social_googleplus', '' ), 'icon' => 'fa-google-plus', 'title' => esc_html__( 'Connect with me on Google+', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_linkedin', '' ), 'icon' => 'fa-linkedin', 'title' => esc_html__( 'Connect with me on LinkedIn', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_slideshare', '' ), 'icon' => 'fa-slideshare', 'title' => esc_html__( 'Follow me on SlideShare', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_slack', '' ), 'icon' => 'fa-slack', 'title' => esc_html__( 'Join me on Slack', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_dribbble', '' ), 'icon' => 'fa-dribbble', 'title' => esc_html__( 'Follow me on Dribbble', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_tumblr', '' ), 'icon' => 'fa-tumblr', 'title' => esc_html__( 'Follow me on Tumblr', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_reddit', '' ), 'icon' => 'fa-reddit', 'title' => esc_html__( 'Join me on Reddit', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_twitch', '' ), 'icon' => 'fa-twitch', 'title' => esc_html__( 'Follow me on Twitch', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_github', '' ), 'icon' => 'fa-github', 'title' => esc_html__( 'Fork me on GitHub', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_bitbucket', '' ), 'icon' => 'fa-bitbucket', 'title' => esc_html__( 'Fork me on Bitbucket', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_stackoverflow', '' ), 'icon' => 'fa-stack-overflow', 'title' => esc_html__( 'Join me on Stack Overflow', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_codepen', '' ), 'icon' => 'fa-codepen', 'title' => esc_html__( 'Follow me on CodePen', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_foursquare', '' ), 'icon' => 'fa-foursquare', 'title' => esc_html__( 'Follow me on Foursquare', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_youtube', '' ), 'icon' => 'fa-youtube', 'title' => esc_html__( 'Subscribe to me on YouTube', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_vimeo', '' ), 'icon' => 'fa-vimeo', 'title' => esc_html__( 'Follow me on Vimeo', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_instagram', '' ), 'icon' => 'fa-instagram', 'title' => esc_html__( 'Follow me on Instagram', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_vine', '' ), 'icon' => 'fa-vine', 'title' => esc_html__( 'Follow me on Vine', 'quark' ) ),
+			array( 'url' => of_get_option( 'social_snapchat', '' ), 'icon' => 'fa-snapchat', 'title' => esc_html__( 'Add me on Snapchat', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_flickr', '' ), 'icon' => 'fa-flickr', 'title' => esc_html__( 'Connect with me on Flickr', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_pinterest', '' ), 'icon' => 'fa-pinterest', 'title' => esc_html__( 'Follow me on Pinterest', 'quark' ) ),
 			array( 'url' => of_get_option( 'social_rss', '' ), 'icon' => 'fa-rss', 'title' => esc_html__( 'Subscribe to my RSS Feed', 'quark' ) )
@@ -1043,7 +1055,7 @@ if ( ! function_exists( 'quark_setup_woocommerce_wrappers' ) ) {
 	function quark_setup_woocommerce_wrappers() {
 		if ( quark_is_woocommerce_active() && is_woocommerce() ) {
 				add_action( 'quark_before_woocommerce', 'quark_before_woocommerce_wrapper', 10, 0 );
-				add_action( 'quark_after_woocommerce', 'quark_after_woocommerce_wrapper', 10, 0 );		
+				add_action( 'quark_after_woocommerce', 'quark_after_woocommerce_wrapper', 10, 0 );
 		}
 	}
 	add_action( 'template_redirect', 'quark_setup_woocommerce_wrappers', 9 );
