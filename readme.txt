@@ -170,6 +170,7 @@ Quark utilises the following awesomeness:
 - Added new social icon options for CodePen, Reddit, Twitch, Slack, Snapchat, Stack Overflow, Vimeo, Vine
 - Added aria-hidden to icons to hide from screen readers
 - Removed word-break from widgets. Props to Aaron Payne (@awdience) for pointing out an issue it was causing in stoopid IE
+- Removed gradients from buttons. Gradients are sooo last year!
 - Updated Font Awesome icon font to v4.6.3
 - Updated Normalize to v4.1.1
 - Updated Modernizr to v3.1.1
