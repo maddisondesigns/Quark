@@ -66,8 +66,8 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => esc_html__( 'Background', 'quark' ),
-		'desc' => sprintf( wp_kses( __( 'If you&rsquo;d like to replace or remove the default background image, use the <a href="%1$s" title="Custom background">Appearance &gt; Background</a> menu option.', 'quark' ), array( 
-			'a' => array( 
+		'desc' => sprintf( wp_kses( __( 'If you&rsquo;d like to replace or remove the default background image, use the <a href="%1$s" title="Custom background">Appearance &gt; Background</a> menu option.', 'quark' ), array(
+			'a' => array(
 				'href' => array(),
 				'title' => array() )
 			) ), admin_url( 'themes.php?page=custom-background' ) ),
@@ -75,8 +75,8 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => esc_html__( 'Logo', 'quark' ),
-		'desc' => sprintf( wp_kses( __( 'If you&rsquo;d like to replace or remove the default logo, use the <a href="%1$s" title="Custom header">Appearance &gt; Header</a> menu option.', 'quark' ), array( 
-			'a' => array( 
+		'desc' => sprintf( wp_kses( __( 'If you&rsquo;d like to replace or remove the default logo, use the <a href="%1$s" title="Custom header">Appearance &gt; Header</a> menu option.', 'quark' ), array(
+			'a' => array(
 				'href' => array(),
 				'title' => array() )
 			) ), admin_url( 'themes.php?page=custom-header' ) ),
@@ -130,6 +130,13 @@ function optionsframework_options() {
 		'type' => 'text' );
 
 	$options[] = array(
+		'name' => esc_html__( 'Slack', 'quark' ),
+		'desc' => esc_html__( 'Enter your Slack URL.', 'quark' ),
+		'id' => 'social_slack',
+		'std' => '',
+		'type' => 'text' );
+
+	$options[] = array(
 		'name' => esc_html__( 'Dribbble', 'quark' ),
 		'desc' => esc_html__( 'Enter your Dribbble URL.', 'quark' ),
 		'id' => 'social_dribbble',
@@ -144,6 +151,20 @@ function optionsframework_options() {
 		'type' => 'text' );
 
 	$options[] = array(
+		'name' => esc_html__( 'Reddit', 'quark' ),
+		'desc' => esc_html__( 'Enter your Reddit URL.', 'quark' ),
+		'id' => 'social_reddit',
+		'std' => '',
+		'type' => 'text' );
+
+	$options[] = array(
+		'name' => esc_html__( 'Twitch', 'quark' ),
+		'desc' => esc_html__( 'Enter your Twitch URL.', 'quark' ),
+		'id' => 'social_twitch',
+		'std' => '',
+		'type' => 'text' );
+
+	$options[] = array(
 		'name' => esc_html__( 'GitHub', 'quark' ),
 		'desc' => esc_html__( 'Enter your GitHub URL.', 'quark' ),
 		'id' => 'social_github',
@@ -154,6 +175,20 @@ function optionsframework_options() {
 		'name' => esc_html__( 'Bitbucket', 'quark' ),
 		'desc' => esc_html__( 'Enter your Bitbucket URL.', 'quark' ),
 		'id' => 'social_bitbucket',
+		'std' => '',
+		'type' => 'text' );
+
+	$options[] = array(
+		'name' => esc_html__( 'Stack Overflow', 'quark' ),
+		'desc' => esc_html__( 'Enter your Stack Overflow URL.', 'quark' ),
+		'id' => 'social_stackoverflow',
+		'std' => '',
+		'type' => 'text' );
+
+	$options[] = array(
+		'name' => esc_html__( 'CodePen', 'quark' ),
+		'desc' => esc_html__( 'Enter your CodePen URL.', 'quark' ),
+		'id' => 'social_codepen',
 		'std' => '',
 		'type' => 'text' );
 
@@ -189,6 +224,13 @@ function optionsframework_options() {
 		'name' => esc_html__( 'Vine', 'quark' ),
 		'desc' => esc_html__( 'Enter your Vine URL.', 'quark' ),
 		'id' => 'social_vine',
+		'std' => '',
+		'type' => 'text' );
+
+	$options[] = array(
+		'name' => esc_html__( 'Snapchat', 'quark' ),
+		'desc' => esc_html__( 'Enter your Snapchat URL.', 'quark' ),
+		'id' => 'social_snapchat',
 		'std' => '',
 		'type' => 'text' );
 
