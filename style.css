@@ -467,28 +467,15 @@ input[type="submit"] {
 	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
 	vertical-align: middle;
 	cursor: pointer;
-	background-color: #f5f5f5;
-	*background-color: #e6e6e6;
-	background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
-	background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
-	background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
-	background-image: linear-gradient(top, #ffffff, #e6e6e6);
-	background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
-	background-repeat: repeat-x;
+	background-color: #ebe9eb;
+	*background-color: #ebe9eb;
 	border: 1px solid #cccccc;
 	*border: 0;
-	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-	border-color: #e6e6e6 #e6e6e6 #bfbfbf;
-	border-bottom-color: #b3b3b3;
+	border-color: rgba(0, 0, 0, 0.1);
+	border-color: #e6e6e6 ;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
-	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6');
-	*zoom: 1;
-	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .menu-toggle, a.btn {
@@ -502,8 +489,8 @@ input[type="submit"] {
 .btn.active,
 .btn.disabled,
 .btn[disabled] {
-	background-color: #e6e6e6;
-	*background-color: #d9d9d9;
+	background-color: #dad8da;
+	*background-color: #dad8da;
 }
 
 .btn:first-child {
@@ -515,14 +502,8 @@ input[type="submit"] {
 input[type="submit"]:hover {
 	color: #333333;
 	text-decoration: none;
-	background-color: #e6e6e6;
-	*background-color: #d9d9d9; /* Buttons in IE7 don't get borders, so darken on hover */
-	background-position: 0 -15px;
-	-webkit-transition: background-position 0.1s linear;
-	-moz-transition: background-position 0.1s linear;
-	-ms-transition: background-position 0.1s linear;
-	-o-transition: background-position 0.1s linear;
-	transition: background-position 0.1s linear;
+	background-color: #dad8da;
+	*background-color: #dad8da; /* Buttons in IE7 don't get borders, so darken on hover */
 }
 
 .menu-toggle:focus,
@@ -537,20 +518,17 @@ input[type="submit"]:focus {
 .btn.active,
 .btn:active,
 input[type="submit"]:active {
-	background-color: #e6e6e6;
-	background-color: #d9d9d9 \9;
+	background-color: #dad8da;
+	background-color: #dad8da \9;
 	background-image: none;
 	outline: 0;
-	-webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-	-moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
 	position:relative;
 	top:1px;
 }
 
 .btn.disabled, .btn[disabled] {
 	cursor: default;
-	background-color: #e6e6e6;
+	background-color: #dad8da;
 	background-image: none;
 	opacity: 0.65;
 	filter: alpha(opacity=65);
@@ -2081,18 +2059,10 @@ h1.page-title {
 .woocommerce-page input.button.alt {
 	background-color: #2997ab;
 	*background-color: #2997ab;
-	background-image: -ms-linear-gradient(top, #36c1da, #2997ab);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#36c1da), to(#2997ab));
-	background-image: -webkit-linear-gradient(top, #36c1da, #2997ab);
-	background-image: -o-linear-gradient(top, #36c1da, #2997ab);
-	background-image: linear-gradient(top, #36c1da, #2997ab);
-	background-image: -moz-linear-gradient(top, #36c1da, #2997ab);
 	border: 1px solid #237e8f;
 	*border: 0;
-	border-color: rgba(35, 126, 143, 0.1) rgba(35, 126, 143, 0.1) rgba(35, 126, 143, 0.25);
-	border-color: #2997ab #2997ab #237e8f;
-	border-bottom-color: #237e8f;
-	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#36c1da', endColorstr='#2997ab');
+	border-color: rgba(35, 126, 143, 0.1);
+	border-color: #2997ab;
 	color: #fff;
 	text-shadow: none;
 	padding: 0.5em 0.75em;
@@ -2114,18 +2084,10 @@ h1.page-title {
 	color: #fff;
 	background-color: #208294;
 	*background-color: #208294;
-	background-image: -ms-linear-gradient(top, #2caec5, #208294);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2caec5), to(#208294));
-	background-image: -webkit-linear-gradient(top, #2caec5, #208294);
-	background-image: -o-linear-gradient(top, #2caec5, #208294);
-	background-image: linear-gradient(top, #2caec5, #208294);
-	background-image: -moz-linear-gradient(top, #2caec5, #208294);
 	border: 1px solid #237e8f;
 	*border: 0;
-	border-color: rgba(35, 126, 143, 0.1) rgba(35, 126, 143, 0.1) rgba(35, 126, 143, 0.25);
-	border-color: #208294 #208294 #237e8f;
-	border-bottom-color: #237e8f;
-	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#2caec5', endColorstr='#208294');
+	border-color: rgba(35, 126, 143, 0.1);
+	border-color: #208294;
 }
 
 .woocommerce span.onsale,
@@ -2133,14 +2095,8 @@ h1.page-title {
 	line-height: 2.6;
 	min-height: 3em;
 	min-width: 3em;
-	background-color: #2997ab;
-	*background-color: #2997ab;
-	background-image: -ms-linear-gradient(top, #36c1da, #2997ab);
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#36c1da), to(#2997ab));
-	background-image: -webkit-linear-gradient(top, #36c1da, #2997ab);
-	background-image: -o-linear-gradient(top, #36c1da, #2997ab);
-	background-image: linear-gradient(top, #36c1da, #2997ab);
-	background-image: -moz-linear-gradient(top, #36c1da, #2997ab);
+	background-color: #36c1da;
+	*background-color: #36c1da;
 }
 
 .woocommerce #content nav.woocommerce-pagination ul li span.current,
