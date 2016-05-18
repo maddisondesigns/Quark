@@ -3,7 +3,7 @@ Contributors: ahortin
 Donate link: http://quarktheme.com
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.6
-Tested up to: 4.3.1
+Tested up to: 4.5.2
 Stable tag: 1.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -121,7 +121,7 @@ Install by uploading the theme zip file:
 
 == Getting Started ==
 
-Since Quark is a starter theme to kick off your own awesome theme, the first thing you want to do is copy the quark theme folder 
+Since Quark is a starter theme to kick off your own awesome theme, the first thing you want to do is copy the quark theme folder
 and change the name to something else. You'll then need to do a three-step find and replace on the name in all the templates.
 
 1. Search for quark inside single quotations to capture the text domain.
@@ -165,11 +165,15 @@ Quark utilises the following awesomeness:
 == Changelog ==
 
 = 1.3.3 =
+- Fixed missing ratings when leaving a review via the WooCommerce product review tab
 - Added new blank page builder template
-- Added new social icon options for Vimeo & Vine
+- Added new social icon options for CodePen, Reddit, Twitch, Slack, Snapchat, Stack Overflow, Vimeo, Vine
 - Added aria-hidden to icons to hide from screen readers
 - Removed word-break from widgets. Props to Aaron Payne (@awdience) for pointing out an issue it was causing in stoopid IE
-- Updated Font Awesome icon font to v4.4.0
+- Updated Font Awesome icon font to v4.6.3
+- Updated Normalize to v4.1.1
+- Updated Modernizr to v3.1.1
+- Updated Post archive page to display excerpt if one has been added
 
 = 1.3.2 =
 - Fixed display of Related Products on Single Product page
@@ -228,7 +232,7 @@ Quark utilises the following awesomeness:
 = 1.2.6 =
 - Updated normalize.css to v2.1.3
 - Updated Font Awesome icon font to v4.0.0 (incl. renaming font classes as per their new naming convention)
-- Removed Font Awesome More font as it's now outdated and no longer needed 
+- Removed Font Awesome More font as it's now outdated and no longer needed
 - Removed minimum-scale & maximum-scale from viewport meta tag
 - Fixed extra period in blockquote style. Props @angeliquejw
 - Fixed 'Skip to main content' accessibility link
@@ -274,7 +278,7 @@ Quark utilises the following awesomeness:
 = 1.2.1 =
 - Fixed sidebars
 - Updated description in stylesheet
-- Updated IE filters in btn class 
+- Updated IE filters in btn class
 - Added extra class when styling frontpage widgets
 
 = 1.2 =
