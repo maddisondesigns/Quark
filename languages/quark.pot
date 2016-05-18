@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: quark\n"
-"POT-Creation-Date: 2015-10-20 11:39+1000\n"
-"PO-Revision-Date: 2015-10-20 11:39+1000\n"
+"POT-Creation-Date: 2016-05-18 12:55+1000\n"
+"PO-Revision-Date: 2016-05-18 12:58+1000\n"
 "Last-Translator: Anthony Hortin <support@maddisondesigns.com>\n"
 "Language-Team: Maddison Designs <support@maddisondesigns.com>\n"
 "Language: english\n"
@@ -75,7 +75,7 @@ msgstr ""
 #: ../content-aside.php:15 ../content-audio.php:24 ../content-chat.php:15
 #: ../content-gallery.php:23 ../content-image.php:15 ../content-link.php:15
 #: ../content-quote.php:16 ../content-status.php:15 ../content-video.php:23
-#: ../content.php:40 ../functions.php:770
+#: ../content.php:42 ../content.php:46 ../functions.php:775
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
@@ -84,7 +84,7 @@ msgstr ""
 #: ../content-gallery.php:28 ../content-image.php:20 ../content-link.php:20
 #: ../content-page.php:22 ../content-postarchives.php:33
 #: ../content-quote.php:23 ../content-status.php:19 ../content-video.php:28
-#: ../content.php:44
+#: ../content.php:52
 msgid "Pages:"
 msgstr ""
 
@@ -92,7 +92,7 @@ msgstr ""
 #: ../content-gallery.php:40 ../content-image.php:32 ../content-link.php:32
 #: ../content-page.php:29 ../content-postarchives.php:36
 #: ../content-quote.php:35 ../content-status.php:31 ../content-video.php:40
-#: ../content.php:57 ../functions.php:559
+#: ../content.php:65 ../functions.php:562
 msgid "Edit"
 msgstr ""
 
@@ -117,305 +117,337 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: ../functions.php:153
+#: ../functions.php:154
 msgctxt "PT Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: ../functions.php:158
+#: ../functions.php:159
 msgctxt "PT Sans font: add new subset (cyrillic)"
 msgid "no-subset"
 msgstr ""
 
-#: ../functions.php:166
+#: ../functions.php:167
 msgctxt "Arvo font: on or off"
 msgid "on"
 msgstr ""
 
-#: ../functions.php:224
+#: ../functions.php:226
 msgid "Main Sidebar"
 msgstr ""
 
-#: ../functions.php:226
+#: ../functions.php:228
 msgid ""
 "Appears in the sidebar on posts and pages except the optional Front Page "
 "template, which has its own widgets"
 msgstr ""
 
-#: ../functions.php:234
+#: ../functions.php:236
 msgid "Blog Sidebar"
 msgstr ""
 
-#: ../functions.php:236
+#: ../functions.php:238
 msgid "Appears in the sidebar on the blog and archive pages only"
 msgstr ""
 
-#: ../functions.php:244
+#: ../functions.php:246
 msgid "Single Post Sidebar"
 msgstr ""
 
-#: ../functions.php:246
+#: ../functions.php:248
 msgid "Appears in the sidebar on single posts only"
 msgstr ""
 
-#: ../functions.php:254
+#: ../functions.php:256
 msgid "Page Sidebar"
 msgstr ""
 
-#: ../functions.php:256
+#: ../functions.php:258
 msgid "Appears in the sidebar on pages only"
 msgstr ""
 
-#: ../functions.php:264
+#: ../functions.php:266
 msgid "First Front Page Banner Widget"
 msgstr ""
 
-#: ../functions.php:266 ../functions.php:276
+#: ../functions.php:268 ../functions.php:278
 msgid "Appears in the banner area on the Front Page"
 msgstr ""
 
-#: ../functions.php:274
+#: ../functions.php:276
 msgid "Second Front Page Banner Widget"
 msgstr ""
 
-#: ../functions.php:284
+#: ../functions.php:286
 msgid "First Front Page Widget Area"
 msgstr ""
 
-#: ../functions.php:286 ../functions.php:296 ../functions.php:306
-#: ../functions.php:316
+#: ../functions.php:288 ../functions.php:298 ../functions.php:308
+#: ../functions.php:318
 msgid ""
 "Appears when using the optional Front Page template with a page set as "
 "Static Front Page"
 msgstr ""
 
-#: ../functions.php:294
+#: ../functions.php:296
 msgid "Second Front Page Widget Area"
 msgstr ""
 
-#: ../functions.php:304
+#: ../functions.php:306
 msgid "Third Front Page Widget Area"
 msgstr ""
 
-#: ../functions.php:314
+#: ../functions.php:316
 msgid "Fourth Front Page Widget Area"
 msgstr ""
 
-#: ../functions.php:324
+#: ../functions.php:326
 msgid "First Footer Widget Area"
 msgstr ""
 
-#: ../functions.php:326 ../functions.php:336 ../functions.php:346
-#: ../functions.php:356
+#: ../functions.php:328 ../functions.php:338 ../functions.php:348
+#: ../functions.php:358
 msgid "Appears in the footer sidebar"
 msgstr ""
 
-#: ../functions.php:334
+#: ../functions.php:336
 msgid "Second Footer Widget Area"
 msgstr ""
 
-#: ../functions.php:344
+#: ../functions.php:346
 msgid "Third Footer Widget Area"
 msgstr ""
 
-#: ../functions.php:354
+#: ../functions.php:356
 msgid "Fourth Footer Widget Area"
 msgstr ""
 
-#: ../functions.php:439
+#: ../functions.php:442
 msgid "Please enter your name"
 msgstr ""
 
-#: ../functions.php:440
+#: ../functions.php:443
 msgid "Please enter a valid email address"
 msgstr ""
 
-#: ../functions.php:441
+#: ../functions.php:444
 msgid "Please add a comment"
 msgstr ""
 
-#: ../functions.php:472
+#: ../functions.php:475
 msgid "Post navigation"
 msgstr ""
 
-#: ../functions.php:476
+#: ../functions.php:479
 msgctxt "Previous post link"
-msgid "<i class=\"fa fa-angle-left\"></i>"
+msgid "<i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i>"
 msgstr ""
 
-#: ../functions.php:477
+#: ../functions.php:480
 msgctxt "Next post link"
-msgid "<i class=\"fa fa-angle-right\"></i>"
+msgid "<i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i>"
 msgstr ""
 
-#: ../functions.php:488
-msgid "<i class=\"fa fa-angle-left\"></i> Previous"
+#: ../functions.php:491
+msgid "<i class=\"fa fa-angle-left\" aria-hidden=\"true\"></i> Previous"
 msgstr ""
 
-#: ../functions.php:490
-msgid "Next <i class=\"fa fa-angle-right\"></i>"
+#: ../functions.php:493
+msgid "Next <i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i>"
 msgstr ""
 
-#: ../functions.php:527
+#: ../functions.php:530
 msgid "Pingback:"
 msgstr ""
 
-#: ../functions.php:527
+#: ../functions.php:530
 msgid "(Edit)"
 msgstr ""
 
-#: ../functions.php:542
+#: ../functions.php:545
 msgid "Post author"
 msgstr ""
 
-#: ../functions.php:545 ../functions.php:665
+#: ../functions.php:548 ../functions.php:668
 #, php-format
 msgid "%1$s @ %2$s"
 msgstr ""
 
-#: ../functions.php:548
+#: ../functions.php:551
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../functions.php:554
+#: ../functions.php:557
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../functions.php:563
+#: ../functions.php:566
 msgid "Reply <span>&darr;</span>"
 msgstr ""
 
-#: ../functions.php:587
+#: ../functions.php:590
 msgid "Name"
 msgstr ""
 
-#: ../functions.php:589
+#: ../functions.php:592
 msgid "Email"
 msgstr ""
 
-#: ../functions.php:591
+#: ../functions.php:594
 msgid "Website"
 msgstr ""
 
-#: ../functions.php:610
+#: ../functions.php:613
 msgctxt "noun"
 msgid "Comment"
 msgstr ""
 
-#: ../functions.php:673
+#: ../functions.php:676
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: ../functions.php:678 ../functions.php:714
+#: ../functions.php:681 ../functions.php:717
 msgid " "
 msgstr ""
 
-#: ../functions.php:683
+#: ../functions.php:686
 msgid "Comment on "
 msgstr ""
 
-#: ../functions.php:684
+#: ../functions.php:687
 #, php-format
 msgid "%1$s Comment"
 msgid_plural "%1$s Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../functions.php:684
+#: ../functions.php:687
 msgid "No Comments"
 msgstr ""
 
-#: ../functions.php:688
+#: ../functions.php:691
 #, php-format
 msgid ""
 "<div class=\"header-meta\">%1$s%2$s<span class=\"post-categories\">%3$s</"
 "span>%4$s</div>"
 msgstr ""
 
-#: ../functions.php:719
+#: ../functions.php:722
 #, php-format
-msgid "<i class=\"fa fa-tag\"></i> %1$s"
+msgid "<i class=\"fa fa-tag\" aria-hidden=\"true\"></i> %1$s"
 msgstr ""
 
-#: ../functions.php:770
+#: ../functions.php:775
 msgid "Continue reading"
 msgstr ""
 
-#: ../functions.php:860
+#: ../functions.php:866
 msgid "Follow me on Twitter"
 msgstr ""
 
-#: ../functions.php:861
+#: ../functions.php:867
 msgid "Friend me on Facebook"
 msgstr ""
 
-#: ../functions.php:862
+#: ../functions.php:868
 msgid "Connect with me on Google+"
 msgstr ""
 
-#: ../functions.php:863
+#: ../functions.php:869
 msgid "Connect with me on LinkedIn"
 msgstr ""
 
-#: ../functions.php:864
+#: ../functions.php:870
 msgid "Follow me on SlideShare"
 msgstr ""
 
-#: ../functions.php:865
-msgid "Follow me on Dribbble"
-msgstr ""
-
-#: ../functions.php:866
-msgid "Follow me on Tumblr"
-msgstr ""
-
-#: ../functions.php:867
-msgid "Fork me on GitHub"
-msgstr ""
-
-#: ../functions.php:868
-msgid "Fork me on Bitbucket"
-msgstr ""
-
-#: ../functions.php:869
-msgid "Follow me on Foursquare"
-msgstr ""
-
-#: ../functions.php:870
-msgid "Subscribe to me on YouTube"
-msgstr ""
-
 #: ../functions.php:871
-msgid "Follow me on Instagram"
+msgid "Join me on Slack"
 msgstr ""
 
 #: ../functions.php:872
-msgid "Connect with me on Flickr"
+msgid "Follow me on Dribbble"
 msgstr ""
 
 #: ../functions.php:873
-msgid "Follow me on Pinterest"
+msgid "Follow me on Tumblr"
 msgstr ""
 
 #: ../functions.php:874
+msgid "Join me on Reddit"
+msgstr ""
+
+#: ../functions.php:875
+msgid "Follow me on Twitch"
+msgstr ""
+
+#: ../functions.php:876
+msgid "Fork me on GitHub"
+msgstr ""
+
+#: ../functions.php:877
+msgid "Fork me on Bitbucket"
+msgstr ""
+
+#: ../functions.php:878
+msgid "Join me on Stack Overflow"
+msgstr ""
+
+#: ../functions.php:879
+msgid "Follow me on CodePen"
+msgstr ""
+
+#: ../functions.php:880
+msgid "Follow me on Foursquare"
+msgstr ""
+
+#: ../functions.php:881
+msgid "Subscribe to me on YouTube"
+msgstr ""
+
+#: ../functions.php:882
+msgid "Follow me on Vimeo"
+msgstr ""
+
+#: ../functions.php:883
+msgid "Follow me on Instagram"
+msgstr ""
+
+#: ../functions.php:884
+msgid "Follow me on Vine"
+msgstr ""
+
+#: ../functions.php:885
+msgid "Add me on Snapchat"
+msgstr ""
+
+#: ../functions.php:886
+msgid "Connect with me on Flickr"
+msgstr ""
+
+#: ../functions.php:887
+msgid "Follow me on Pinterest"
+msgstr ""
+
+#: ../functions.php:888
 msgid "Subscribe to my RSS Feed"
 msgstr ""
 
-#: ../functions.php:909
+#: ../functions.php:923
 msgid "Proudly powered by"
 msgstr ""
 
-#: ../functions.php:910
+#: ../functions.php:924
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: ../functions.php:911
+#: ../functions.php:925
 msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
-#: ../functions.php:912
+#: ../functions.php:926
 msgid "WordPress"
 msgstr ""
 
@@ -573,149 +605,213 @@ msgid "Enter your SlideShare URL."
 msgstr ""
 
 #: ../options.php:133
-msgid "Dribbble"
+msgid "Slack"
 msgstr ""
 
 #: ../options.php:134
-msgid "Enter your Dribbble URL."
+msgid "Enter your Slack URL."
 msgstr ""
 
 #: ../options.php:140
-msgid "Tumblr"
+msgid "Dribbble"
 msgstr ""
 
 #: ../options.php:141
-msgid "Enter your Tumblr URL."
+msgid "Enter your Dribbble URL."
 msgstr ""
 
 #: ../options.php:147
-msgid "GitHub"
+msgid "Tumblr"
 msgstr ""
 
 #: ../options.php:148
-msgid "Enter your GitHub URL."
+msgid "Enter your Tumblr URL."
 msgstr ""
 
 #: ../options.php:154
-msgid "Bitbucket"
+msgid "Reddit"
 msgstr ""
 
 #: ../options.php:155
-msgid "Enter your Bitbucket URL."
+msgid "Enter your Reddit URL."
 msgstr ""
 
 #: ../options.php:161
-msgid "Foursquare"
+msgid "Twitch"
 msgstr ""
 
 #: ../options.php:162
-msgid "Enter your Foursquare URL."
+msgid "Enter your Twitch URL."
 msgstr ""
 
 #: ../options.php:168
-msgid "YouTube"
+msgid "GitHub"
 msgstr ""
 
 #: ../options.php:169
-msgid "Enter your YouTube URL."
+msgid "Enter your GitHub URL."
 msgstr ""
 
 #: ../options.php:175
-msgid "Instagram"
+msgid "Bitbucket"
 msgstr ""
 
 #: ../options.php:176
-msgid "Enter your Instagram URL."
+msgid "Enter your Bitbucket URL."
 msgstr ""
 
 #: ../options.php:182
-msgid "Flickr"
+msgid "Stack Overflow"
 msgstr ""
 
 #: ../options.php:183
-msgid "Enter your Flickr URL."
+msgid "Enter your Stack Overflow URL."
 msgstr ""
 
 #: ../options.php:189
-msgid "Pinterest"
+msgid "CodePen"
 msgstr ""
 
 #: ../options.php:190
-msgid "Enter your Pinterest URL."
+msgid "Enter your CodePen URL."
 msgstr ""
 
 #: ../options.php:196
-msgid "RSS"
+msgid "Foursquare"
 msgstr ""
 
 #: ../options.php:197
-msgid "Enter your RSS Feed URL."
+msgid "Enter your Foursquare URL."
 msgstr ""
 
 #: ../options.php:203
+msgid "YouTube"
+msgstr ""
+
+#: ../options.php:204
+msgid "Enter your YouTube URL."
+msgstr ""
+
+#: ../options.php:210
+msgid "Vimeo"
+msgstr ""
+
+#: ../options.php:211
+msgid "Enter your Vimeo URL."
+msgstr ""
+
+#: ../options.php:217
+msgid "Instagram"
+msgstr ""
+
+#: ../options.php:218
+msgid "Enter your Instagram URL."
+msgstr ""
+
+#: ../options.php:224
+msgid "Vine"
+msgstr ""
+
+#: ../options.php:225
+msgid "Enter your Vine URL."
+msgstr ""
+
+#: ../options.php:231
+msgid "Snapchat"
+msgstr ""
+
+#: ../options.php:232
+msgid "Enter your Snapchat URL."
+msgstr ""
+
+#: ../options.php:238
+msgid "Flickr"
+msgstr ""
+
+#: ../options.php:239
+msgid "Enter your Flickr URL."
+msgstr ""
+
+#: ../options.php:245
+msgid "Pinterest"
+msgstr ""
+
+#: ../options.php:246
+msgid "Enter your Pinterest URL."
+msgstr ""
+
+#: ../options.php:252
+msgid "RSS"
+msgstr ""
+
+#: ../options.php:253
+msgid "Enter your RSS Feed URL."
+msgstr ""
+
+#: ../options.php:259
 msgid "Advanced settings"
 msgstr ""
 
-#: ../options.php:207
+#: ../options.php:263
 msgid "Banner Background"
 msgstr ""
 
-#: ../options.php:208
+#: ../options.php:264
 msgid "Select an image and background color for the homepage banner."
 msgstr ""
 
-#: ../options.php:214
+#: ../options.php:270
 msgid "Footer Background Color"
 msgstr ""
 
-#: ../options.php:215
+#: ../options.php:271
 msgid "Select the background color for the footer."
 msgstr ""
 
-#: ../options.php:221
+#: ../options.php:277
 msgid "Footer Content"
 msgstr ""
 
-#: ../options.php:222
+#: ../options.php:278
 msgid ""
 "Enter the text you&lsquo;d like to display in the footer. This content will "
 "be displayed just below the footer widgets. It&lsquo;s ideal for displaying "
 "your copyright message or credits."
 msgstr ""
 
-#: ../options.php:229
+#: ../options.php:285
 msgid "Footer Content Position"
 msgstr ""
 
-#: ../options.php:230
+#: ../options.php:286
 msgid "Select what position you would like the footer content aligned to."
 msgstr ""
 
-#: ../options.php:239
+#: ../options.php:295
 msgid "WooCommerce settings"
 msgstr ""
 
-#: ../options.php:243
+#: ../options.php:299
 msgid "Shop sidebar"
 msgstr ""
 
-#: ../options.php:244
+#: ../options.php:300
 msgid "Display the sidebar on the WooCommerce Shop page"
 msgstr ""
 
-#: ../options.php:250
+#: ../options.php:306
 msgid "Products sidebar"
 msgstr ""
 
-#: ../options.php:251
+#: ../options.php:307
 msgid "Display the sidebar on the WooCommerce Single Product page"
 msgstr ""
 
-#: ../options.php:257
+#: ../options.php:313
 msgid "Cart, Checkout & My Account sidebars"
 msgstr ""
 
-#: ../options.php:258
+#: ../options.php:314
 msgid ""
 "The &lsquo;Cart&rsquo;, &lsquo;Checkout&rsquo; and &lsquo;My Account&rsquo; "
 "pages are displayed using shortcodes. To remove the sidebar from these "
@@ -723,19 +819,19 @@ msgid ""
 "Panel) to the &lsquo;Full-width Page Template&rsquo;."
 msgstr ""
 
-#: ../options.php:262
+#: ../options.php:318
 msgid "Shop Breadcrumbs"
 msgstr ""
 
-#: ../options.php:263
+#: ../options.php:319
 msgid "Display the breadcrumbs on the WooCommerce pages"
 msgstr ""
 
-#: ../options.php:269
+#: ../options.php:325
 msgid "Shop Products"
 msgstr ""
 
-#: ../options.php:270
+#: ../options.php:326
 msgid "Select the number of products to display on the shop page."
 msgstr ""
 
