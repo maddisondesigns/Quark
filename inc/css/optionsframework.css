@@ -6,8 +6,7 @@
 }
 #optionsframework h3 {
 	cursor: default;
-	background-color: #f1f1f1;
-	border-bottom: 1px solid #ddd;
+	padding-left: 10px;
 }
 #optionsframework p {
 	margin-bottom:0;
