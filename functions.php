@@ -581,20 +581,22 @@ if ( ! function_exists( 'quark_comment' ) ) {
  * @param string Comment form fields html
  * @return string The updated comment form fields html
  */
-function quark_comment_form_default_fields( $fields ) {
+if ( ! function_exists( 'quark_comment_form_default_fields' ) ) {
+	function quark_comment_form_default_fields( $fields ) {
 
-	$commenter = wp_get_current_commenter();
-	$req = get_option( 'require_name_email' );
-	$aria_req = ( $req ? ' aria-required="true"' : "" );
+		$commenter = wp_get_current_commenter();
+		$req = get_option( 'require_name_email' );
+		$aria_req = ( $req ? ' aria-required="true"' : "" );
 
-	$fields[ 'author' ] = '<p class="comment-form-author">' . '<label for="author">' . esc_html__( 'Name', 'quark' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' . '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
+		$fields[ 'author' ] = '<p class="comment-form-author">' . '<label for="author">' . esc_html__( 'Name', 'quark' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' . '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
 
-	$fields[ 'email' ] =  '<p class="comment-form-email"><label for="email">' . esc_html__( 'Email', 'quark' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' . '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
+		$fields[ 'email' ] =  '<p class="comment-form-email"><label for="email">' . esc_html__( 'Email', 'quark' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' . '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
 
-	$fields[ 'url' ] =  '<p class="comment-form-url"><label for="url">' . esc_html__( 'Website', 'quark' ) . '</label>' . '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>';
+		$fields[ 'url' ] =  '<p class="comment-form-url"><label for="url">' . esc_html__( 'Website', 'quark' ) . '</label>' . '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>';
 
-	return $fields;
+		return $fields;
 
+	}
 }
 add_action( 'comment_form_default_fields', 'quark_comment_form_default_fields' );
 
@@ -608,12 +610,14 @@ add_action( 'comment_form_default_fields', 'quark_comment_form_default_fields' )
  * @param string Comment form textarea html
  * @return string The updated comment form textarea html
  */
-function quark_comment_form_field_comment( $field ) {
-	if ( !quark_is_woocommerce_active() || ( quark_is_woocommerce_active() && !is_product() ) ) {
-		$field = '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun', 'quark' ) . ' <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>';
-	}
-	return $field;
+if ( ! function_exists( 'quark_comment_form_field_comment' ) ) {
+	function quark_comment_form_field_comment( $field ) {
+		if ( !quark_is_woocommerce_active() || ( quark_is_woocommerce_active() && !is_product() ) ) {
+			$field = '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun', 'quark' ) . ' <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>';
+		}
+		return $field;
 
+	}
 }
 add_action( 'comment_form_field_comment', 'quark_comment_form_field_comment' );
 
@@ -771,11 +775,12 @@ add_filter( 'the_content_more_link', 'quark_remove_more_jump_link' );
  *
  * @return string The 'Continue reading' link
  */
-function quark_continue_reading_link() {
-	return '&hellip;<p><a class="more-link" href="'. esc_url( get_permalink() ) . '" title="' . esc_html__( 'Continue reading', 'quark' ) . ' &lsquo;' . get_the_title() . '&rsquo;">' . wp_kses( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'quark' ), array( 'span' => array(
-			'class' => array() ) ) ) . '</a></p>';
+if ( ! function_exists( 'quark_continue_reading_link' ) ) {
+	function quark_continue_reading_link() {
+		return '&hellip;<p><a class="more-link" href="'. esc_url( get_permalink() ) . '" title="' . esc_html__( 'Continue reading', 'quark' ) . ' &lsquo;' . get_the_title() . '&rsquo;">' . wp_kses( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'quark' ), array( 'span' => array(
+				'class' => array() ) ) ) . '</a></p>';
+	}
 }
-
 
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with the quark_continue_reading_link().
@@ -785,8 +790,10 @@ function quark_continue_reading_link() {
  * @param string Auto generated excerpt
  * @return string The filtered excerpt
  */
-function quark_auto_excerpt_more( $more ) {
-	return quark_continue_reading_link();
+if ( ! function_exists( 'quark_auto_excerpt_more' ) ) {
+	function quark_auto_excerpt_more( $more ) {
+		return quark_continue_reading_link();
+	}
 }
 add_filter( 'excerpt_more', 'quark_auto_excerpt_more' );
 
@@ -799,7 +806,7 @@ add_filter( 'excerpt_more', 'quark_auto_excerpt_more' );
  * @param array List of user contact methods
  * @return array The filtered list of updated user contact methods
  */
- if ( ! function_exists( 'quark_new_contactmethods' ) ) {
+if ( ! function_exists( 'quark_new_contactmethods' ) ) {
 	function quark_new_contactmethods( $contactmethods ) {
 		// Add Twitter
 		$contactmethods['twitter'] = 'Twitter';
