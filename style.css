@@ -403,6 +403,22 @@ img.wp-smiley, .rsswidget img {
 	height: auto;
 }
 
+.gallery {
+	clear: both;
+	margin: 0 auto;
+	*zoom: 1;
+}
+
+.gallery:before,
+.gallery:after {
+	content: "";
+	display: table;
+}
+
+.gallery:after {
+	clear: both;
+}
+
 #primary .entry-content [id^="gallery-"] img {
 	border: none;
 }
