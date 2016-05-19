@@ -4,7 +4,7 @@ Donate link: http://quarktheme.com
 Tags: black, gray, dark, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.6
 Tested up to: 4.5.2
-Stable tag: 1.3.3
+Stable tag: 1.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -163,6 +163,10 @@ Quark utilises the following awesomeness:
 
 
 == Changelog ==
+
+= 1.3.4 =
+- Added extra function_exists() checks to allow for easier overriding
+- Fixed gallery layout so that it is cleared properly
 
 = 1.3.3 =
 - Fixed missing ratings when leaving a review via the WooCommerce product review tab
