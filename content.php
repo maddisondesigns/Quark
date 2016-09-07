@@ -37,7 +37,7 @@
 		<?php }
 		else { ?>
 			<div class="entry-content">
-				<?php if ( has_excerpt() ) {
+				<?php if ( has_excerpt() && !is_single() ) {
 					the_excerpt(); ?>
 					<p><a class="more-link" href="<?php the_permalink(); ?>"><?php echo wp_kses( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'quark' ), array( 'span' => array(
 						'class' => array() ) ) ) ?></a></p>
