@@ -822,34 +822,6 @@ if ( ! function_exists( 'quark_new_contactmethods' ) ) {
 }
 add_filter( 'user_contactmethods', 'quark_new_contactmethods', 10, 1 );
 
-/**
- * Add a filter for wp_nav_menu to add an extra class for menu items that have children (ie. sub menus)
- * This allows us to perform some nicer styling on our menu items that have multiple levels (eg. dropdown menu arrows)
- *
- * @since Quark 1.0
- *
- * @param Menu items
- * @return array An extra css class is on menu items with children
- */
-function quark_add_menu_parent_class( $items ) {
-
-	$parents = array();
-	foreach ( $items as $item ) {
-		if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) {
-			$parents[] = $item->menu_item_parent;
-		}
-	}
-
-	foreach ( $items as $item ) {
-		if ( in_array( $item->ID, $parents ) ) {
-			$item->classes[] = 'menu-parent-item';
-		}
-	}
-
-	return $items;
-}
-add_filter( 'wp_nav_menu_objects', 'quark_add_menu_parent_class' );
-
 
 /**
  * Add Filter to allow Shortcodes to work in the Sidebar
