@@ -21,7 +21,7 @@ Quark's base is a responsive, 12 column grid. It uses Normalize to make sure tha
 
 It incorporates the [Options Framework](http://wptheming.com/options-framework-theme/) by Devin Price to make it super easy to add custom Theme Options as well as the gorgeous [Font Awesome](http://fortawesome.github.io/Font-Awesome/) icon font by Dave Gandy.
 
-The main navigation uses the standard WordPress menu. Support for dropdown menus is inluded by default. If you'd like to envoke a button toggle for the main navigation menu on small screens, simply uncomment the two lines from the quark_scripts_styles() function within functions.php to register and enqueue the necessary javascript file, and BAM! You're done!
+The main navigation uses the standard WordPress menu. Support for dropdown menus is included by default. If you'd like to envoke a button toggle for the main navigation menu on small screens, simply uncomment the two lines from the quark_scripts_styles() function within functions.php to register and enqueue the necessary javascript file, and BAM! You're done!
 
 If you're looking to build an eCommerce website, Quark now supports WooCommerce. When WooCommerce is activated, an extra tab is displayed within the Theme Options page that provides options to show or hide the sidebar on the default WooCommerce templates, along with the choice to remove the built-in WooCommerce breadcrumbs.
 
@@ -167,6 +167,7 @@ Quark utilises the following awesomeness:
 = 1.3.4 =
 - Added extra function_exists() checks to allow for easier overriding
 - Fixed gallery layout so that it is cleared properly
+- Fixed issue with content not displaying properly on Single Post when a custom excerpt has been written
 
 = 1.3.3 =
 - Fixed missing ratings when leaving a review via the WooCommerce product review tab
