@@ -2,8 +2,7 @@
 /**
  * Template Name: Full-width Page Template
  *
- * Description: Displays a full-width page, with no sidebar. This template is great for pages
- * containing large amounts of content.
+ * Description: Displays a full-width page, with no sidebar. This template is great for pages containing large amounts of content.
  *
  * @package Quark
  * @since Quark 1.0
