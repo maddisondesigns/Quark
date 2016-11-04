@@ -1,8 +1,9 @@
 <?php
 /**
  * Template Name: Left Sidebar Page Template
+ * Template Post Type: page, post
  *
- * Description: Displays a page with a left hand sidebar.
+ * Description: Displays a page with a left hand sidebar. This template works for both Pages & Posts in WordPress 4.7+
  *
  * @package Quark
  * @since Quark 1.0

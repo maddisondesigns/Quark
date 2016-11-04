@@ -166,6 +166,7 @@ Quark utilises the following awesomeness:
 
 = 1.3.4 =
 - Added extra function_exists() checks to allow for easier overriding
+- Added ability for Left Sidebar Page Template to be used on Posts as well as pages (in WordPress 4.7+)
 - Fixed gallery layout so that it is cleared properly
 - Fixed issue with content not displaying properly on Single Post when a custom excerpt has been written
 
