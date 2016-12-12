@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: quark\n"
-"POT-Creation-Date: 2016-05-18 12:55+1000\n"
-"PO-Revision-Date: 2016-05-18 12:58+1000\n"
+"POT-Creation-Date: 2016-12-12 16:32+1000\n"
+"PO-Revision-Date: 2016-12-12 16:32+1000\n"
 "Last-Translator: Anthony Hortin <support@maddisondesigns.com>\n"
 "Language-Team: Maddison Designs <support@maddisondesigns.com>\n"
 "Language: english\n"
@@ -75,7 +75,7 @@ msgstr ""
 #: ../content-aside.php:15 ../content-audio.php:24 ../content-chat.php:15
 #: ../content-gallery.php:23 ../content-image.php:15 ../content-link.php:15
 #: ../content-quote.php:16 ../content-status.php:15 ../content-video.php:23
-#: ../content.php:42 ../content.php:46 ../functions.php:775
+#: ../content.php:42 ../content.php:46 ../functions.php:780
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
@@ -268,7 +268,7 @@ msgstr ""
 msgid "Post author"
 msgstr ""
 
-#: ../functions.php:548 ../functions.php:668
+#: ../functions.php:548 ../functions.php:672
 #, php-format
 msgid "%1$s @ %2$s"
 msgstr ""
@@ -286,168 +286,168 @@ msgstr ""
 msgid "Reply <span>&darr;</span>"
 msgstr ""
 
-#: ../functions.php:590
+#: ../functions.php:591
 msgid "Name"
 msgstr ""
 
-#: ../functions.php:592
+#: ../functions.php:593
 msgid "Email"
 msgstr ""
 
-#: ../functions.php:594
+#: ../functions.php:595
 msgid "Website"
 msgstr ""
 
-#: ../functions.php:613
+#: ../functions.php:616
 msgctxt "noun"
 msgid "Comment"
 msgstr ""
 
-#: ../functions.php:676
+#: ../functions.php:680
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: ../functions.php:681 ../functions.php:717
+#: ../functions.php:685 ../functions.php:721
 msgid " "
 msgstr ""
 
-#: ../functions.php:686
+#: ../functions.php:690
 msgid "Comment on "
 msgstr ""
 
-#: ../functions.php:687
+#: ../functions.php:691
 #, php-format
 msgid "%1$s Comment"
 msgid_plural "%1$s Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../functions.php:687
+#: ../functions.php:691
 msgid "No Comments"
 msgstr ""
 
-#: ../functions.php:691
+#: ../functions.php:695
 #, php-format
 msgid ""
 "<div class=\"header-meta\">%1$s%2$s<span class=\"post-categories\">%3$s</"
 "span>%4$s</div>"
 msgstr ""
 
-#: ../functions.php:722
+#: ../functions.php:726
 #, php-format
 msgid "<i class=\"fa fa-tag\" aria-hidden=\"true\"></i> %1$s"
 msgstr ""
 
-#: ../functions.php:775
+#: ../functions.php:780
 msgid "Continue reading"
 msgstr ""
 
-#: ../functions.php:866
+#: ../functions.php:845
 msgid "Follow me on Twitter"
 msgstr ""
 
-#: ../functions.php:867
+#: ../functions.php:846
 msgid "Friend me on Facebook"
 msgstr ""
 
-#: ../functions.php:868
+#: ../functions.php:847
 msgid "Connect with me on Google+"
 msgstr ""
 
-#: ../functions.php:869
+#: ../functions.php:848
 msgid "Connect with me on LinkedIn"
 msgstr ""
 
-#: ../functions.php:870
+#: ../functions.php:849
 msgid "Follow me on SlideShare"
 msgstr ""
 
-#: ../functions.php:871
+#: ../functions.php:850
 msgid "Join me on Slack"
 msgstr ""
 
-#: ../functions.php:872
+#: ../functions.php:851
 msgid "Follow me on Dribbble"
 msgstr ""
 
-#: ../functions.php:873
+#: ../functions.php:852
 msgid "Follow me on Tumblr"
 msgstr ""
 
-#: ../functions.php:874
+#: ../functions.php:853
 msgid "Join me on Reddit"
 msgstr ""
 
-#: ../functions.php:875
+#: ../functions.php:854
 msgid "Follow me on Twitch"
 msgstr ""
 
-#: ../functions.php:876
+#: ../functions.php:855
 msgid "Fork me on GitHub"
 msgstr ""
 
-#: ../functions.php:877
+#: ../functions.php:856
 msgid "Fork me on Bitbucket"
 msgstr ""
 
-#: ../functions.php:878
+#: ../functions.php:857
 msgid "Join me on Stack Overflow"
 msgstr ""
 
-#: ../functions.php:879
+#: ../functions.php:858
 msgid "Follow me on CodePen"
 msgstr ""
 
-#: ../functions.php:880
+#: ../functions.php:859
 msgid "Follow me on Foursquare"
 msgstr ""
 
-#: ../functions.php:881
+#: ../functions.php:860
 msgid "Subscribe to me on YouTube"
 msgstr ""
 
-#: ../functions.php:882
+#: ../functions.php:861
 msgid "Follow me on Vimeo"
 msgstr ""
 
-#: ../functions.php:883
+#: ../functions.php:862
 msgid "Follow me on Instagram"
 msgstr ""
 
-#: ../functions.php:884
+#: ../functions.php:863
 msgid "Follow me on Vine"
 msgstr ""
 
-#: ../functions.php:885
+#: ../functions.php:864
 msgid "Add me on Snapchat"
 msgstr ""
 
-#: ../functions.php:886
+#: ../functions.php:865
 msgid "Connect with me on Flickr"
 msgstr ""
 
-#: ../functions.php:887
+#: ../functions.php:866
 msgid "Follow me on Pinterest"
 msgstr ""
 
-#: ../functions.php:888
+#: ../functions.php:867
 msgid "Subscribe to my RSS Feed"
 msgstr ""
 
-#: ../functions.php:923
+#: ../functions.php:902
 msgid "Proudly powered by"
 msgstr ""
 
-#: ../functions.php:924
+#: ../functions.php:903
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: ../functions.php:925
+#: ../functions.php:904
 msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
-#: ../functions.php:926
+#: ../functions.php:905
 msgid "WordPress"
 msgstr ""
 
