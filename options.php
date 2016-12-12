@@ -70,7 +70,7 @@ function optionsframework_options() {
 			'a' => array(
 				'href' => array(),
 				'title' => array() )
-			) ), admin_url( 'themes.php?page=custom-background' ) ),
+			) ), admin_url( 'customize.php?autofocus[control]=background_image' ) ),
 		'type' => 'info' );
 
 	$options[] = array(
@@ -79,7 +79,7 @@ function optionsframework_options() {
 			'a' => array(
 				'href' => array(),
 				'title' => array() )
-			) ), admin_url( 'themes.php?page=custom-header' ) ),
+			) ), admin_url( 'customize.php?autofocus[control]=header_image' ) ),
 		'type' => 'info' );
 
 	$options[] = array(

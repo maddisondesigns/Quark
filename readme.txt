@@ -169,6 +169,7 @@ Quark utilises the following awesomeness:
 - Added ability for Left Sidebar Page Template to be used on Posts as well as pages (in WordPress 4.7+)
 - Fixed gallery layout so that it is cleared properly
 - Fixed issue with content not displaying properly on Single Post when a custom excerpt has been written
+- Fixed Background & Header links on Theme Options page to work with Customizer. Props @swiffer
 
 = 1.3.3 =
 - Fixed missing ratings when leaving a review via the WooCommerce product review tab
