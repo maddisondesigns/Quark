@@ -20,7 +20,17 @@ get_header(); ?>
 
 				<?php // Start the Loop ?>
 				<?php while ( have_posts() ) : the_post(); ?>
-					<?php get_template_part( 'content', 'page' ); ?>
+					<?php
+					if( is_page() ) {
+						get_template_part( 'content', 'page' ); // Include the Post-Format-specific template for the content
+					} else {
+						get_template_part( 'content', get_post_format() ); // Include the Post-Format-specific template for the content
+						// If comments are open or we have at least one comment, load up the comment template
+						if ( comments_open() || '0' != get_comments_number() ) {
+							comments_template( '', true );
+						}
+					}
+					?>
 				<?php endwhile; ?>
 
 				<?php quark_content_nav( 'nav-below' ); ?>
