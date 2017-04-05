@@ -166,6 +166,8 @@ Quark utilises the following awesomeness:
 
 = 1.3.5 =
 - Fixed issue with comment form not displaying on Posts that are using the Left Hand Sidebar template
+- Fixed margins & padding on WooCommerce 3.0 product galleries
+- Added support for WooCommerce 3.0 product galleries
 - Removed comment form from pages using Full-width template pages
 
 = 1.3.4 =
