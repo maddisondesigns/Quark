@@ -95,7 +95,7 @@ if ( ! function_exists( 'quark_setup' ) ) {
 		 */
 		add_theme_support( 'title-tag' );
 
-		// Enable support for WooCommerce
+		// Enable support for WooCommerce & WooCommerce product galleries
 		add_theme_support( 'woocommerce' );
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-slider' );
@@ -1125,3 +1125,21 @@ if ( ! function_exists( 'quark_set_number_woocommerce_products' ) ) {
 	}
 	add_action( 'init', 'quark_set_number_woocommerce_products' );
 }
+
+/**
+ * Filter the WooCommerce pagination so that it matches the theme pagination
+ *
+ * @since Quark 1.3.5
+ *
+ * @return array Pagination arguments
+ */
+if ( ! function_exists( 'quark_woocommerce_pagination_args' ) ) {
+	function quark_woocommerce_pagination_args( $paginationargs ) {
+		$paginationargs[ 'prev_text'] = wp_kses( __( '<i class="fa fa-angle-left"></i> Previous', 'quark' ), array( 'i' => array(
+			'class' => array() ) ) );
+		$paginationargs[ 'next_text'] = wp_kses( __( 'Next <i class="fa fa-angle-right"></i>', 'quark' ), array( 'i' => array(
+			'class' => array() ) ) );
+		return $paginationargs;
+	}
+}
+add_filter( 'woocommerce_pagination_args', 'quark_woocommerce_pagination_args', 10 );

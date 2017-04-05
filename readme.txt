@@ -169,6 +169,7 @@ Quark utilises the following awesomeness:
 - Fixed margins & padding on WooCommerce 3.0 product galleries
 - Added support for WooCommerce 3.0 product galleries
 - Removed comment form from pages using Full-width template pages
+- Updated the WooCommerce pagination so that it matches the blog pagination
 
 = 1.3.4 =
 - Added extra function_exists() checks to allow for easier overriding
