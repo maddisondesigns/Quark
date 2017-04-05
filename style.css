@@ -2178,6 +2178,22 @@ h1.page-title {
 	text-decoration: none;
 }
 
+.woocommerce div.product div.images ol.flex-control-thumbs {
+	padding-top: 1em;
+}
+
+.woocommerce div.product div.images ol.flex-control-thumbs li {
+	width: 32%;
+	margin: 0 2% 10px 0;
+}
+.woocommerce div.product div.images ol.flex-control-thumbs li:nth-child(3n+3) {
+	margin-right: 0;
+}
+
+.woocommerce .pswp__caption__center {
+	text-align: center;
+}
+
 /* ==========================================================================
    Page Builders
    ========================================================================== */

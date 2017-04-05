@@ -97,6 +97,8 @@ if ( ! function_exists( 'quark_setup' ) ) {
 
 		// Enable support for WooCommerce
 		add_theme_support( 'woocommerce' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
 
 		// Enable support for Theme Options.
 		// Rather than reinvent the wheel, we're using the Options Framework by Devin Price, so huge props to him!
