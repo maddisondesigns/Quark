@@ -2194,6 +2194,24 @@ h1.page-title {
 	text-align: center;
 }
 
+.woocommerce .quantity .qty,
+.woocommerce #add_payment_method table.cart .input-text,
+.woocommerce-cart .woocommerce table.cart .input-text,
+.woocommerce-checkout .woocommerce table.cart .input-text,
+.woocommerce-cart .woocommerce table.cart td.actions .input-text {
+	line-height: 1.6;
+}
+
+.woocommerce-checkout .woocommerce #billing_phone_field input {
+	border-style: solid;
+	border-width: 1px;
+	padding: 0.5rem;
+}
+
+.woocommerce-cart .woocommerce table.cart #coupon_code {
+	width: 100px;
+}
+
 /* ==========================================================================
    Page Builders
    ========================================================================== */
