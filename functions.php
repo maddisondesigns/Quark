@@ -1052,7 +1052,7 @@ if ( ! function_exists( 'quark_setup_woocommerce_wrappers' ) ) {
  */
 if ( ! function_exists( 'quark_woocommerce_before_main_content' ) ) {
 	function quark_woocommerce_before_main_content() {
-		if( ( is_shop() && !of_get_option( 'woocommerce_shopsidebar', '1' ) ) || ( is_product() && !of_get_option( 'woocommerce_productsidebar', '1' ) ) ) {
+		if( ( is_shop() && !of_get_option( 'woocommerce_shopsidebar', '1' ) ) || ( is_product_taxonomy() && !of_get_option( 'woocommerce_shopsidebar', '1' ) ) || ( is_product() && !of_get_option( 'woocommerce_productsidebar', '1' ) ) ) {
 			echo '<div class="col grid_12_of_12">';
 		}
 		else {
@@ -1087,7 +1087,7 @@ if ( ! function_exists( 'quark_woocommerce_after_main_content' ) ) {
  */
 if ( ! function_exists( 'quark_remove_woocommerce_sidebar' ) ) {
 	function quark_remove_woocommerce_sidebar() {
-		if( ( is_shop() && !of_get_option( 'woocommerce_shopsidebar', '1' ) ) || ( is_product() && !of_get_option( 'woocommerce_productsidebar', '1' ) ) ) {
+		if( ( is_shop() && !of_get_option( 'woocommerce_shopsidebar', '1' ) ) || ( is_product_taxonomy() && !of_get_option( 'woocommerce_shopsidebar', '1' ) ) || ( is_product() && !of_get_option( 'woocommerce_productsidebar', '1' ) ) ) {
 			remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 		}
 	}
