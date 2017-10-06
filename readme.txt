@@ -166,7 +166,7 @@ Quark utilises the following awesomeness:
 
 = 1.3.7 =
 - Updated description to include compatibility with the Elementor Page Builder
-- Added hook (quark_above_banner) inside banner area so that it's possible to add content inside the banner
+- Added hook (quark_above_banner) inside banner area so that it's easier to add content inside the banner
 
 = 1.3.6 =
 - Fixed issue with WooCommerce Category and Tag templates ignoring the Shop sidebar theme option. Props @creativemode for reporting the issue.
