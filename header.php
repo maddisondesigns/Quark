@@ -46,11 +46,11 @@
 			<div class="col grid_5_of_12 site-title">
 				<h1>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" rel="home">
-						<?php 
+						<?php
 						$headerImg = get_header_image();
 						if( !empty( $headerImg ) ) { ?>
 							<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
-						<?php } 
+						<?php }
 						else {
 							echo get_bloginfo( 'name' );
 						} ?>
@@ -73,6 +73,7 @@
 	</div> <!-- /#headercontainer -->
 	<div id="bannercontainer">
 		<div class="banner row">
+			<?php	do_action( 'quark_above_banner' ); ?>
 			<?php if ( is_front_page() ) {
 				// Count how many banner sidebars are active so we can work out how many containers we need
 				$bannerSidebars = 0;
