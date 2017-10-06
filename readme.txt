@@ -4,11 +4,11 @@ Donate link: http://quarktheme.com
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.6
 Tested up to: 4.8
-Stable tag: 1.3.6
+Stable tag: 1.3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Quark is your basic building block for creating beautiful, responsive custom themes. It's not a convoluted or confusing framework that's hard to learn or even harder to modify. It's a simple and elegant starter theme built on HTML5 & CSS3. Its base is a responsive, 12 column grid. It incorporates custom theme options that are easy to modify, a set of common templates, support for WordPress Post Formats and the gorgeous, retina friendly Font Awesome icon font. Quark is WooCommerce compatible, Multilingual Ready (WPML) and translated into Spanish, German and French. Quark is also compatible with popular page builders such as Visual Composer, Beaver Builder, Divi Builder and the SiteOrigin Page Builder.
+Quark is your basic building block for creating beautiful, responsive custom themes. It's not a convoluted or confusing framework that's hard to learn or even harder to modify. It's a simple and elegant starter theme built on HTML5 & CSS3. Its base is a responsive, 12 column grid. It incorporates custom theme options that are easy to modify, a set of common templates, support for WordPress Post Formats and the gorgeous, retina friendly Font Awesome icon font. Quark is WooCommerce compatible, Multilingual Ready (WPML) and translated into Spanish, German and French. Quark is also compatible with popular page builders such as Elementor, Divi Builder, Beaver Builder, the SiteOrigin Page Builder and Visual Composer.
 
 
 == Description ==
@@ -29,7 +29,7 @@ Templates
 
 Quark includes a set of your most common theme templates, including templates for Full-Width pages, Left Sidebar, Right Sidebar (default), Front-Page, Tag, Categories, Authors, Search, Posts Archive and 404.
 
-If you're using one of the many page builder plugins that are available, such as Visual Composer, Beaver Builder, Divi Builder or the SiteOrigin Page Builder, try using the Page Builder Full-Width Template or the Page Builder Boxed Template. The Page Builder Full-Width Template is a true full browser width template while the Page Builder Boxed Template contains your content in a boxed layout. If you want a completely blank full-width page with no header or footer sections, such as for a landing page, then there is also a Page Builder Blank Template. Depending which Page Builder plugin that you're using, you may find that one template provides a better layout than the other.
+If you're using one of the many page builder plugins that are available, such as Elementor, Divi Builder, Beaver Builder, the SiteOrigin Page Builder or Visual Composer, try using the Page Builder Full-Width Template or the Page Builder Boxed Template. The Page Builder Full-Width Template is a true full browser width template while the Page Builder Boxed Template contains your content in a boxed layout. If you want a completely blank full-width page with no header or footer sections, such as for a landing page, then there is also a Page Builder Blank Template. Depending which Page Builder plugin that you're using, you may find that one template provides a better layout than the other.
 
 Post Formats
 
@@ -163,6 +163,10 @@ Quark utilises the following awesomeness:
 
 
 == Changelog ==
+
+= 1.3.7 =
+- Updated description to include compatibility with the Elementor Page Builder
+- Added hook (quark_above_banner) inside banner area so that it's possible to add content inside the banner
 
 = 1.3.6 =
 - Fixed issue with WooCommerce Category and Tag templates ignoring the Shop sidebar theme option. Props @creativemode for reporting the issue.
