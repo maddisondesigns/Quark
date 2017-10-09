@@ -13,7 +13,7 @@ Quark is your basic building block for creating beautiful, responsive custom the
 
 == Description ==
 
-Quark is your basic building block for creating beautiful, responsive custom themes. It's not a convoluted or confusing framework that's hard to learn or even harder to modify. It's a simple and elegant starter theme built on HTML5 & CSS3. It's based on the Underscores (_s) and TwentyTwelve themes, so that means not only is it flexible, it's extremely easy to customise. There's no need to make a child theme (unless you really want to), just dig in to the code & use it to give yourself a kickstart in creating your next awesome theme.
+Quark is your basic building block for creating beautiful, responsive custom themes. It's not a convoluted or confusing framework that's hard to learn or even harder to modify. It's a simple and elegant starter theme built on HTML5 & CSS3. It's based on the Underscores (_s) and TwentyTwelve themes, so that means not only is it flexible, it's extremely easy to customise.
 
 If you do decide to use a child theme with Quark, there's no need to use CSS @import or even enqueue the parent stylesheet. Quark will automatically enqueue the parent stylesheet for you. How nice is that!
 
