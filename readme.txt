@@ -4,7 +4,7 @@ Donate link: http://quarktheme.com
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.6
 Tested up to: 4.8.2
-Stable tag: 1.3.7
+Stable tag: 1.3.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -164,12 +164,10 @@ Quark utilises the following awesomeness:
 
 == Changelog ==
 
-= 1.3.7 =
-- Updated description to include compatibility with the Elementor Page Builder
-- Added hook (quark_above_banner) inside banner area so that it's easier to add content inside the banner
-
 = 1.3.6 =
 - Fixed issue with WooCommerce Category and Tag templates ignoring the Shop sidebar theme option. Props @creativemode for reporting the issue.
+- Added hook (quark_above_banner) inside banner area so that it's easier to add content inside the banner
+- Updated description to include compatibility with the Elementor Page Builder
 
 = 1.3.5 =
 - Fixed issue with comment form not displaying on Posts that are using the Left Hand Sidebar template
