@@ -3,8 +3,8 @@ Contributors: ahortin
 Donate link: http://quarktheme.com
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.6
-Tested up to: 4.8.2
-Stable tag: 1.3.6
+Tested up to: 4.8.3
+Stable tag: 1.3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -163,6 +163,9 @@ Quark utilises the following awesomeness:
 
 
 == Changelog ==
+
+= 1.3.7 =
+- Fixed bold and italic styles so neither is cancelling the other out when used together in either order (props @mikeconaty for the suggestion)
 
 = 1.3.6 =
 - Fixed issue with WooCommerce Category and Tag templates ignoring the Shop sidebar theme option. Props @creativemode for reporting the issue.
