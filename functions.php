@@ -424,7 +424,7 @@ if ( ! function_exists( 'quark_scripts_styles' ) ) {
 		 */
 
 		// Load Modernizr at the top of the document, which enables HTML5 elements and feature detects
-		wp_register_script( 'modernizr', trailingslashit( get_template_directory_uri() ) . 'js/modernizr-min.js', array(), '3.3.1', false );
+		wp_register_script( 'modernizr', trailingslashit( get_template_directory_uri() ) . 'js/modernizr-min.js', array(), '3.5.0', false );
 		wp_enqueue_script( 'modernizr' );
 
 		// Adds JavaScript to pages with the comment form to support sites with threaded comments (when in use)
@@ -435,8 +435,8 @@ if ( ! function_exists( 'quark_scripts_styles' ) ) {
 		// Load jQuery Validation as well as the initialiser to provide client side comment form validation
 		// You can change the validation error messages below
 		if ( is_singular() && comments_open() ) {
-			wp_register_script( 'validate', trailingslashit( get_template_directory_uri() ) . 'js/jquery.validate.min.1.13.0.js', array( 'jquery' ), '1.13.0', true );
-			wp_register_script( 'commentvalidate', trailingslashit( get_template_directory_uri() ) . 'js/comment-form-validation.js', array( 'jquery', 'validate' ), '1.13.0', true );
+			wp_register_script( 'validate', trailingslashit( get_template_directory_uri() ) . 'js/jquery.validate.min.js', array( 'jquery' ), '1.17.0', true );
+			wp_register_script( 'commentvalidate', trailingslashit( get_template_directory_uri() ) . 'js/comment-form-validation.js', array( 'jquery', 'validate' ), '1.17.0', true );
 
 			wp_enqueue_script( 'commentvalidate' );
 			wp_localize_script( 'commentvalidate', 'comments_object', array(
