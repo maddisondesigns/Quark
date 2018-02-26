@@ -1119,12 +1119,14 @@ if ( ! function_exists( 'quark_remove_woocommerce_breadcrumbs' ) ) {
 if ( ! function_exists( 'quark_set_number_woocommerce_products' ) ) {
 	function quark_set_number_woocommerce_products() {
 		if ( of_get_option( 'shop_products', '12' ) ) {
-			$numprods = "return " . sanitize_text_field( of_get_option( 'shop_products', '12' ) ) . ";";
-			add_filter( 'loop_shop_per_page', create_function( '$cols', $numprods ), 20 );
+			add_filter( 'loop_shop_per_page', function() {
+				return sanitize_text_field( of_get_option( 'shop_products', '12' ) );
+			}, 20 );
 		}
 	}
 	add_action( 'init', 'quark_set_number_woocommerce_products' );
 }
+
 
 /**
  * Filter the WooCommerce pagination so that it matches the theme pagination
