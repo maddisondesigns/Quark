@@ -321,14 +321,16 @@ function optionsframework_options() {
 			'std' => '1',
 			'type' => 'checkbox');
 
-		$options[] = array(
-			'name' => esc_html__( 'Shop Products', 'quark' ),
-			'desc' => esc_html__( 'Select the number of products to display on the shop page.', 'quark' ),
-			'id' => 'shop_products',
-			'std' => '12',
-			'type' => 'select',
-			'class' => 'mini',
-			'options' => $shop_products_settings );
+		if ( !quark_woocommerce_version_check( '3.3' ) ) {
+			$options[] = array(
+				'name' => esc_html__( 'Shop Products', 'quark' ),
+				'desc' => esc_html__( 'Select the number of products to display on the shop page.', 'quark' ),
+				'id' => 'shop_products',
+				'std' => '12',
+				'type' => 'select',
+				'class' => 'mini',
+				'options' => $shop_products_settings );
+		}
 
 	}
 
