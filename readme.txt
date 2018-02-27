@@ -3,8 +3,8 @@ Contributors: ahortin
 Donate link: http://quarktheme.com
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.6
-Tested up to: 4.8.3
-Stable tag: 1.3.8
+Tested up to: 4.9
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -164,9 +164,11 @@ Quark utilises the following awesomeness:
 
 == Changelog ==
 
-= 1.3.8 =
-- Update Modernizr to v3.5
+= 1.4 =
+- Update Modernizr to v3.5.0
 - Update jQuery Validate to v1.17.0
+- Update usage of loop_shop_per_page filter so it's only used if WooCommerce is less than v3.3. Please check your Customizer > WooCommerce > Product Catalog settings after updating.
+- Remove create_function() call as it's been deprecated as of PHP 7.2.0. Props @swiffer
 
 = 1.3.7 =
 - Fixed bold and italic styles so neither is cancelling the other out when used together in either order (props @mikeconaty for the suggestion)
