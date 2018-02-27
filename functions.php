@@ -96,7 +96,12 @@ if ( ! function_exists( 'quark_setup' ) ) {
 		add_theme_support( 'title-tag' );
 
 		// Enable support for WooCommerce & WooCommerce product galleries
-		add_theme_support( 'woocommerce' );
+		add_theme_support( 'woocommerce', array(
+			'product_grid' => array(
+				'default_rows' => 3,
+				'default_columns' => 4,
+			),
+		) );
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-slider' );
 
@@ -1117,13 +1122,32 @@ if ( ! function_exists( 'quark_remove_woocommerce_breadcrumbs' ) ) {
  * @return void
  */
 if ( ! function_exists( 'quark_set_number_woocommerce_products' ) ) {
-	function quark_set_number_woocommerce_products() {
-		if ( of_get_option( 'shop_products', '12' ) ) {
-			$numprods = "return " . sanitize_text_field( of_get_option( 'shop_products', '12' ) ) . ";";
-			add_filter( 'loop_shop_per_page', create_function( '$cols', $numprods ), 20 );
+	function quark_set_number_woocommerce_products( $numprods ) {
+		return sanitize_text_field( of_get_option( 'shop_products', '12' ) );
+	}
+}
+if ( quark_is_woocommerce_active() && !quark_woocommerce_version_check( '3.3' ) ) {
+	// Only use the loop_shop_per_page filter if WooCommerce is active and it's less than v3.3.
+	// WooCommerce v3.3 now has it's own Customizer option for changing the number of products on display
+	add_filter( 'loop_shop_per_page', 'quark_set_number_woocommerce_products', 20 );
+}
+
+/**
+ * Check the version of WooCommerce that is current activated
+ *
+ * @since Quark 1.4
+ *
+ * @return boolean
+ */
+function quark_woocommerce_version_check( $version = '3.3' ) {
+	global $woocommerce;
+
+	if ( quark_is_woocommerce_active() ) {
+		if ( version_compare( $woocommerce->version, $version, ">=" ) ) {
+			return true;
 		}
 	}
-	add_action( 'init', 'quark_set_number_woocommerce_products' );
+	return false;
 }
 
 /**
