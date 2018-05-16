@@ -166,6 +166,7 @@ Quark utilises the following awesomeness:
 
 = 1.4.1 =
 - Update styles for cookie consent on comment form
+- Add assistive text containing link title to social media icons. Props @krisnoble
 
 = 1.4 =
 - Update Modernizr to v3.5.0
