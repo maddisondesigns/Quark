@@ -877,7 +877,7 @@ if ( ! function_exists( 'quark_get_social_media' ) ) {
 		foreach ( $icons as $key ) {
 			$value = $key['url'];
 			if ( !empty( $value ) ) {
-				$output .= sprintf( '<li><a href="%1$s" title="%2$s"%3$s><span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa %4$s fa-stack-1x fa-inverse"></i></span></a></li>',
+				$output .= sprintf( '<li><a href="%1$s" title="%2$s"%3$s><span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa %4$s fa-stack-1x fa-inverse"></i></span><span class="assistive-text">%2$s</span></a></li>',
 					esc_url( $value ),
 					$key['title'],
 					( !of_get_option( 'social_newtab', '0' ) ? '' : ' target="_blank"' ),
