@@ -38,11 +38,12 @@
 
 <div id="wrapper" class="hfeed site">
 
-	<div class="visuallyhidden skip-link"><a href="#primary" title="<?php esc_attr_e( 'Skip to main content', 'quark' ); ?>"><?php esc_html_e( 'Skip to main content', 'quark' ); ?></a></div>
-
 	<div id="headercontainer">
+	<a class="assistive-text skip-link" href="#primary" title="<?php esc_attr_e( 'Skip to main content', 'quark' ); ?>"><?php esc_html_e( 'Skip to main content', 'quark' ); ?></a>
 
 		<header id="masthead" class="site-header row" role="banner">
+
+
 			<div class="col grid_5_of_12 site-title">
 				<h1>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" rel="home">
