@@ -3,8 +3,8 @@ Contributors: ahortin
 Donate link: http://quarktheme.com
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.6
-Tested up to: 4.9.6
-Stable tag: 1.4.1
+Tested up to: 5.1
+Stable tag: 1.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -163,6 +163,9 @@ Quark utilises the following awesomeness:
 
 
 == Changelog ==
+
+= 1.4.2 =
+- Fixed Screen-reader skip link. Props @skorasaurus
 
 = 1.4.1 =
 - Update styles for cookie consent on comment form
