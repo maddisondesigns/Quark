@@ -3,8 +3,9 @@ Contributors: ahortin
 Donate link: http://quarktheme.com
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.6
-Tested up to: 5.1
+Tested up to: 5.4.2
 Stable tag: 1.4.2
+Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -154,7 +155,6 @@ Free Software Foundation; either version 2 of the License, or (at your option) a
 Quark utilises the following awesomeness:
 
 [Options Framework](http://wptheming.com/options-framework-theme), which is licensed under the GPLv2 License
-[Modernizr](http://modernizr.com), which is licensed under the MIT license
 [Normalize.css](https://github.com/necolas/normalize.css), which is licensed under the MIT license
 [jQuery Validation](http://bassistance.de/jquery-plugins/jquery-plugin-validation) which is dual licensed under the MIT license and GPL licenses
 [Font Awesome](http://fortawesome.github.io/Font-Awesome) icon font, which is licensed under SIL Open Font License and MIT License
@@ -165,7 +165,12 @@ Quark utilises the following awesomeness:
 == Changelog ==
 
 = 1.4.2 =
+- Updated normalize.css to v8.0.1
+- Update jQuery Validate to v1.19.2
 - Fixed Screen-reader skip link. Props @skorasaurus
+- Removed Modernizr script as it breaks internal page anchor links
+- Removed user_contactmethods filter as it's no longer allowed in themes as per Theme Review guidelines (i.e. Twitter/Facebook profile url fields)
+- Added support for wp_body_open action
 
 = 1.4.1 =
 - Update styles for cookie consent on comment form
