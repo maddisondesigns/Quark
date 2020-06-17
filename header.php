@@ -35,7 +35,12 @@
 </head>
 
 <body <?php body_class(); ?>>
-
+<?php
+	if ( function_exists( 'wp_body_open' ) ) {
+		// Add support for new wp_body_open Hook in WP 5.2+
+		wp_body_open();
+	}
+?>
 <div id="wrapper" class="hfeed site">
 
 	<div id="headercontainer">
