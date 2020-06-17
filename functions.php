@@ -428,10 +428,6 @@ if ( ! function_exists( 'quark_scripts_styles' ) ) {
 		 * Register and enqueue our scripts
 		 */
 
-		// Load Modernizr at the top of the document, which enables HTML5 elements and feature detects
-		wp_register_script( 'modernizr', trailingslashit( get_template_directory_uri() ) . 'js/modernizr-min.js', array(), '3.5.0', false );
-		wp_enqueue_script( 'modernizr' );
-
 		// Adds JavaScript to pages with the comment form to support sites with threaded comments (when in use)
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -803,31 +799,6 @@ if ( ! function_exists( 'quark_auto_excerpt_more' ) ) {
 	}
 }
 add_filter( 'excerpt_more', 'quark_auto_excerpt_more' );
-
-
-/**
- * Extend the user contact methods to include Twitter, Facebook and Google+
- *
- * @since Quark 1.0
- *
- * @param array List of user contact methods
- * @return array The filtered list of updated user contact methods
- */
-if ( ! function_exists( 'quark_new_contactmethods' ) ) {
-	function quark_new_contactmethods( $contactmethods ) {
-		// Add Twitter
-		$contactmethods['twitter'] = 'Twitter';
-
-		//add Facebook
-		$contactmethods['facebook'] = 'Facebook';
-
-		//add Google Plus
-		$contactmethods['googleplus'] = 'Google+';
-
-		return $contactmethods;
-	}
-}
-add_filter( 'user_contactmethods', 'quark_new_contactmethods', 10, 1 );
 
 
 /**
